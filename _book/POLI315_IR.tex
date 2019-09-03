@@ -1,0 +1,1023 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{NanumGothic}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={International Relations},
+            pdfauthor={Sanghoon Park},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{International Relations}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Sanghoon Park}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2019-08-25}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{prerequisites}{%
+\chapter{Prerequisites}\label{prerequisites}}
+
+이 내용은 2019년 University of South Carolina 정치학과의 가을학기 학부 국제관계(International Relations) 강의 내용을 요약 및 정리하여 작성한 것이다. 국제관계 3시간 강의 중 1.5H를 TA로 진행하게 되어 강의에 필요한 내용들을 준비하던 중, 국제관계/국제정치에 관심을 가진 사람들에게는 꽤 도움이 될 수도 있겠다는 생각이 들어 정리하기로 했다.
+
+한국에서 국제관계를 공부하는 사람들의 동기를 과감하게 분류한다면 크게 세 가지로 볼 수 있을 것 같다. 첫째, 외교관 혹은 그와 유사한 직렬의 공무직을 지원하고 싶기 때문이다. 둘째, 국제관계를 공부해야하는 학문 분과에 소속되어 있기 때문이다. 학부, 대학원을 막론하고. 마지막으로는 국제관계라는 분야에 흥미를 느낀 경우이다. 즉, 의무/전공/흥미 이 세 가지가 국제관계를 학문적으로 공부하고자 하는 사람들의 주요 동기라고 할 수 있다.
+
+그런데 한국에서는 다른 나라에서 찾아보기 힘든 요상한 제도가 있는데, 바로 국립외교원이다. 과거에는 외무고시였고 이제는 국립외교원. 몇 년을 신림동 혹은 그에 준하는 곳에서 공부를 하다가 1차와 2차, 그리고 3차에 이르는 검증을 통과하면 그 사람은 1년의 국립외교원 연수생이 되고, 최종적으로는 5급 공채 외교관으로 임용된다.\footnote{약간의 절차 상의 오류가 있을 수는 있지만 이 정도가 아마 외시를 준비하지 않는 일반 사람들이 알고 있는 외시의 개요라고 생각한다.} 내가 문제라고 생각하는 지점은, 의무로 국제관계를 공부하다보니 시험에 특화된 교재들이 존재하고, 그 교재에 맞춰서 정형화된 내용들을 숙달하는 것이 핵심이다. 즉, ``어느 정도 답이 정형화된'' 국제관계를 공부하거나 혹은 ``출제될 법한 사례와 이론들''을 위주로 공부하게 되는 것이다.
+
+\begin{itemize}
+\item
+  여기서 질문. 과연 국제관계란 그렇게 틀에 맞추어서 볼 수 있는 것일까?
+\item
+  본인도 석사를 진학할 무렵에는 IPE와 CPE 사이에서 갈팡질팡했던 사람으로, 국제관계에 조금이나마 매료된 바가 있었다. 최종적으로는 CPE를 선택하기는 했다. 내가 IPE를 포기한 이유는 여러가지가 있겠지만 그 중 하나는 IR는 너무나 많은 것들을 두루두루 섭렵해야 한다는 데에서 오는 부담감이 있었다.
+\item
+  이게 무슨 소리냐면, IR은 기본적으로 그 행위자가 누구인지(국가? 국가에 속한 단체? 개인? 국가를 망라한 국제단체? 등등)에 대한 철학적 고민도 해야하고, 국가 간 유사성과 차이성을 이해하기 위해 비교정치의 일부 분야도 이해해야 하며, 혹은 체계라고 하는 단순 국가 간의 관계를 넘어선 그 무언가에 대해서도 공부해야 한다.
+\item
+  동시에 다른 정치학 분야들에서 진행되고 있는 것처럼, 데이터에 근거한 주장을 해야 설득력이 있기 때문에 높은 수준의 방법론도 요구되고 있는 실정이다.
+\item
+  상대적으로 정치학에서는 역사가 짧은 분야임에도 불구하고 많은 관심으로 정형화된 이론들이 제기되고 있으나, 엄밀하게 말하면 이론이라기 보다는 여러 가설들이라고 하는 것이 더 타당할 듯하다. 아무튼, 이런 가설들이 미처 검증되기도 전에 새로운 유형의 사건들이 세계 이곳 저곳엣 터져나오고 있다.
+\end{itemize}
+
+우리나라가 무슨 일이 터지건 압도적인 역량으로 그것을 관리할 수 있는 국가가 아니라면, 우리는 세계 각지에서 벌어지는 일들에 기민하게 대응해야할 필요가 있다. 그런데 과연 우리는 그런 제도를 제대로 갖추고 있을까?
+
+뭐 이런 생각들을 하며, 의무에 따라 공부하는 국제관계는 어차피 정해진 텍스트들이 있고 외울 이론들이 상대적으로 제약적이니 만큼 굳이 별개의 포스팅을 할 필요는 없을 것 같다. 다만, 이렇게 의무로 공부해야 하는 경우가 아니라 전공 또는 흥미로 공부하는 사람들의 경우에는 조금 더 자유롭고 다양한 관점에서 논의되는 IR을 살펴볼 기회가 있으면 좋지 않을까 하는 생각이 들었다.
+
+내 블로그에도 우철구 교수님과 박건영 교수님의 교재, 그 이외에도 기타 저자들의 논문들을 이리저리 짜깁기하여 정리한 자료들이 있지만\ldots{} 시간이 지나고 다시 읽어보니 정말 재미가 없다. 너무 정형화된 이론적 틀에 집착한 공부를 나도 했었던 것 같다.
+
+\begin{itemize}
+\item
+  이번 학기 강의하게 된 국제관계 강의는 미국 학부생들을 대상으로 토론이 가능한 위주의 수업을 운영하는 것이 교수님의 목표다.
+\item
+  따라서 개별 이론들을 깊게 파고들기 보다는 주제별로 다양하게 다룰 수 있는 것을 목적으로 하고 있다.
+\item
+  동시에 국제관계 이론들, 현상들만이 아니라 국제관계의 수준에서 나타나는 다양한 행위들과 그 행위들의 상호작용을 분석하기 위한 틀로 기본적인 게임이론도 소개하고 있다.
+\end{itemize}
+
+주별로 업데이트되다 보니 아마 초기 방향(실라버스)과는 조금씩 달라질 수도 있을 것 같기는 한데, 한 번 강의하고 나서 되짚어보며 다시 한글로 정리하면 모자랐던 내용도 더할 수 있을 것 같았다. 재밌을지는 모르겠지만, 읽는 사람들에게도 조금은 최신 자료니 도움이 되지 않을까 (2019년 8월의 따끈한 신상입니다)? 그리고 다루는 교재도 인터넷 교보문고에서 검색해보니 한국에서는 아직 번역된 것 같지는 않다. 새로운 관점에서 국제관계를 살펴볼 수 있는 좋은 기회가 될 수 있을 것이라고 생각한다.
+
+\hypertarget{section}{%
+\section{주요 자료}\label{section}}
+
+책 한 권만 보는 것은 아니고 논문도 보고 다른 책들도 여럿 보는데, 일단 교수님이 추천한 주교재는 다음과 같다. 이외로 추가될 수 있는 자료들은 별도로 포스팅과 함께 기재해놓을 생각이다.
+
+\begin{itemize}
+\tightlist
+\item
+  Frieden, Jeffrey, David Lake, and Kenneth Schultz, 2015. \emph{World Politics: Interests, Interactions, Institutions - Fourth Edition}. W.W. Norton \& Company: New York, London (이하 FLS).
+\end{itemize}
+
+\hypertarget{section-1}{%
+\section{주제}\label{section-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  들어가며 (Introduction)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Introduction
+\item
+  Snyder. 2004. ``One World, Rival Theories.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  국제관계란 무엇인가? (What is International Relations?)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.2.
+\item
+  Ikenberry. Ch.2. ``Varieties of Order: Balance of Power, Hegemonic, and Constitutional.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  국제적 상호작용의 게임 (Games of International Interaction)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS ``Primer on Game Theory.'' {[}Special Topic{]}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  죄수의 딜레마 극복하기 (Overcoming the Prisoner's Dilemma)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  U.N. Charter
+\item
+  Stewart, P. 2014. ``The Unruled World: The Case for Good Enough Global Governance.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  국내정치, 주권, 그리고 국제관계 (Domestic Politics, Sovereignty, and IR)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Putnam. 1988. ``Diplomacy and Domestic Politics: The Logic of Two-Level Games.''
+\item
+  Krasner, S. 2004. ``Sharing Sovereignty: New Institutions for Collapsed and Failing States.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  집단 안보 (Collective Security)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS. Ch.5.
+\item
+  Goldgeier. 2010. ``The Future of NATO.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  왜 전쟁인가? 거래/협상하기 (Why war? Bargaining)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.3.
+\item
+  Lake, D. 2011. ``Two Cheers for Bargaining Theory: Assessing Rationalist Explanations of the Iraq War?''
+\item
+  Fearon. 1995. ``Rationalist Explanations for War.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  핵 확산과 대량살상무기 (Nuclear Proliferation and WMD)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.14.
+\item
+  Joffe, J. 2011. ``Less Than Zero.''
+\item
+  ``Getting Though on North Korea.'' 2017. \emph{Foreign Affairs}.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  국가 내부의 분쟁 (Intrastate Conflict)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.6, pp.236-268.
+\item
+  Denny, E. and Walter, B. 2014. ``Ethnicity and Civil War.''
+\item
+  Walter, B. 2009. ``Bargaining Failures and CivilWar.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  테러리즘 (Terrorism)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.6, pp.268-293.
+\item
+  Fortna, V.P. 2015. ``Do Terrorists Win? Rebels' Use of Terrorism and Civil War Outcomes.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  내전에 관한 현행 연구들 (Current Research in Civil War)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Thomas, J.L. and Bond, K. 2015. ``Women's Participation in Violent Political Organizations.''
+\item
+  Kalyvas, S. 2015. ``How Civil Wars Help Explain Organized Crime -- and How They Do Not.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  국내 분쟁의 해결 (Intrastate Conflict Resolution)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  United Nations -``Guidance for Effective Mediation''
+\item
+  Beardsley, K. 2008. ``Agreement without Peace? International Mediation and Time Inconsistency Problems?''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  개임과 글로벌 집단행동 (Intervention and Global Collective Action)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.11, pp.462-479.
+\item
+  Bellamy, A. 2008. ``The Responsibility to Protect and the Problem of Military Intervention.''
+\item
+  ``\href{https://www.npr.org/2012/02/06/146474734/the-worlds-responsibility-to-protect}{The `Responsibility To Protect' In Syria And Beyond}''
+\item
+  Power, S. ``\href{https://www.theatlantic.com/magazine/archive/2001/09/bystanders-to-genocide/304571/}{Bystanders to Genocide: Why the
+  U.S. Let the Rwandan Genocide Happen}.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  인권 (Human Rights)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.12.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\item
+  경제제재 (Economic Sanctions): TBD
+\item
+  국제정치경제 개관 (Overview of International Political Economy)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.7, pp.294-316.
+\item
+  FLS Ch.8, pp.346-360.
+\item
+  FLS Ch.9, pp.389-403.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  무역과 비교우위 (Trade and Comparative Advantage)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.7, 340-345.
+\item
+  Council on Foreign Relations. 2015. ``The Future of U.S. Trade Policy.''
+\item
+  Irwin, D. 2016. ``The Truth on Trade: What Critics Get Wrong About the Global Economy.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  국제 경제제도 (International Economic Institutions)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.7, pp.324-334.
+\item
+  FLS Ch.8, pp.360-368.
+\item
+  Drezner, D. 2012. ``The Irony of Global Economic Governance: The System Worked.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  해외직접투자와 다국적기업들 (Foreign Direct Investment and Multinational Corporations)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.8, pp.371-383.
+\item
+  Pandya, S. 2016. ``Political Economy of Foreign Direct Investment: Globalized Production in the Twenty-First Century.''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{19}
+\item
+  통화와 통화정책 (Currency and Monetary Policy): TBD
+\item
+  해외원조와 개발 (Foreign Aid and Development)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.10, pp.424-453.
+\item
+  Radelet, S. 2016. ``Prosperity Rising: The Success of Global Development, and How to Keep it Going.?''
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  기후변화, 식량불안, 그리고 빈곤 (Climate Change, Food Insecurity, and Poverty)
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  FLS Ch.13, pp.540-568.
+\item
+  Hardin, G. 1968. ``The Tragedy of the Commons.''
+\end{itemize}
+
+\hypertarget{intro}{%
+\chapter{Introduction}\label{intro}}
+
+이 장에서는 고전적인 게임이론(Classic Game Theory)에 대해서 다룹니다. 이 강의는 수강자들이 게임이론에 대한 사전지식이 전무하다는 가정 하에 이루어집니다.
+
+\hypertarget{classic-game-theory}{%
+\section{Classic Game Theory}\label{classic-game-theory}}
+
+\hypertarget{purpose-why-do-we-political-scientists-learn-game-thoery}{%
+\subsection{Purpose: Why do we (political scientists) learn game thoery?}\label{purpose-why-do-we-political-scientists-learn-game-thoery}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To understand strategy, which is essential for political actors.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Without strategies (plans), we will face random situation of losses.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  To get a way to formalize social structures.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  It means that we learn game theory to examine the effects of structures on indiviual decisions.
+\item
+  However, the social structures are endogeneous (hard to estimate and formalize their effects).
+\end{itemize}
+
+\hypertarget{assumptions-what-does-game-theory-assume}{%
+\subsection{Assumptions: What does game theory assume?}\label{assumptions-what-does-game-theory-assume}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Actors behave rationally.
+\item
+  In Basic Rational Choice Theory (RCT),
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Actors have goals and they attempt to achieve those goals through specific actions.
+\item
+  Briefly, \texttt{rational} means that we want something to happen.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    However, morality or normative quality of these goals and actions is not important.
+  \item
+    We just assume that actors are rational; they have goals, preferances and they act in order to acheive that.
+  \item
+    Actors must simply be able to compare different alternatives and make choices based on desire to achieve goals.
+  \end{itemize}
+\end{itemize}
+
+정리하자면, 게임이론은 행위자들은 원하는 목표가 있고, 그 목표를 달성하기 위해 특정한 행동을 하고자 한다고 가정합니다. 이렇게 목표를 가지고 행동하는 행위자를 ``합리적''이라고 합니다.
+
+이러한 행위자들이 합리적으로 행동한다는 것은 그것이 무작위적으로 이루어지는 것이 아니라는 것을 의미합니다. 어떠한 목표를 향한 체계적(systematic) 행위, 선택가능한 여러가지 행동들의 결과로 도출될 가능한 여러 가지 결과들 사이에서 취사선택하는 전략적(strategic) 행위자들의 행태가 어떻게 이루어지는지를 이해함으로써, 우리는 정치의 영역에서 관측되는 다양한 전략적 상호작용의 동학을 이해할 수 있습니다.
+
+또한, 행위자 자신이 통제할 수 없는 외부적 요인들, 즉 사회 구조를 정형화할 수 있습니다. 특히 정치학에서는 개별 행위자들의 행태에 영향을 미치는 사 구조의 효과를 모형화함으로써, 보다 예측가능한 모형을 만들 수 있다는 이점을 가집니다.
+
+\hypertarget{utilities-needed-to-compare-outcomesalternatives-for-choices}{%
+\subsection{Utilities: Needed to compare outcomes/alternatives for choices}\label{utilities-needed-to-compare-outcomesalternatives-for-choices}}
+
+\begin{itemize}
+\item
+  We examine utilities someone has.
+\item
+  Utility Theory
+
+  \begin{itemize}
+  \item
+    Assuems that actors are faced with choices of possible actions.
+  \item
+    Each \(\color{red}{\text{action}}\) corresponds to the probability of possible outcome.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      However, my choice can yield different \(\color{red}{\text{outcome}}\) from expected outcome.
+    \item
+      Here, \(\color{red}{\text{probability}}\) comes.
+    \end{itemize}
+  \item
+    Preferences
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Measures the actor's preferences over the outcome combined with the risk involved with achieving an undesirable outcome.
+    \item
+      To calculate an expected utilities,
+      \(\text{pr(E | Action = 1)} \times \text{U(Outcome | Action = 1)}\), then sum across all possible outcomes.
+    \end{itemize}
+  \item
+    Evaluating Utilities
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Begin with outcomes, which are the possible final results of an actor's decision. Outcomes must be exhaustive and mutually exclusive.
+    \item
+      Assume that ators have preferecnes over sets of possible outcomes (C).
+    \item
+      Compare preferences between pairs of outcomes.
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Strong preferences (C\(_i\) \textgreater{} C\(_j\)); greater
+      \item
+        Weak preferences (C\(_i\) \(\geq\) C\(_j\)); better than equal
+      \item
+        indifferent preferences (C\(_i\) = C\(_j\)); equal
+      \end{itemize}
+    \end{itemize}
+  \item
+    To rank the preferences, we need following:
+
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      Completeness: An ordering is complete iff (if and only if) for all pairs of outcome.
+    \end{enumerate}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      It is necessary assumption so that actors can make comparisons across all pairs of outcomes.
+    \item
+      Everybody knows the preference ordering for themselves.
+    \end{itemize}
+
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \setcounter{enumi}{1}
+    \tightlist
+    \item
+      Transitivity: An ordering if transitive iff C\(_i\) \(\geq\) C\(_j\) \(\geq\) C\(_k\), C\(_i\) \(\geq\) C\(_k\).
+    \end{enumerate}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      If one outcome (C\(_i\)) is at least as good as a second (C\(_j\)), and the second outcome (C\(_j\)) is at least as good as a third (C\(_k\)) \(\rightarrow\) C\(_i\) \(\geq\) C\(_j\) \(\geq\) C\(_k\), C\(_i\) \(\geq\) C\(_k\).
+    \end{itemize}
+  \item
+    Importance of Completeness and Transitivity
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Allows prefrences to be ordered for each other.
+    \item
+      Ordinal preferences can then be used mathematically.
+
+      \begin{itemize}
+      \tightlist
+      \item
+        The higher number represents greater preference than the lower number.
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ordinal-preferences}{%
+\subsection{Ordinal Preferences}\label{ordinal-preferences}}
+
+\begin{itemize}
+\item
+  Representation of preferences
+
+  \begin{itemize}
+  \item
+    We can use descending sequence of numbers to reflect ordinal preferences.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Largest assigned to most preferred outcome.
+    \item
+      Smallest assigned to least preferred outcome.
+    \item
+      Indifferent assigned to equal preferred outcome.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+여기서 착각하지 말아야 하는 것은, 선호가 있기 때문에 효용(utilities)을 알 수 있는 것이지, 효용의 크기에 따라 선호가 결정되는 것은 아니라는 점이다.
+
+효용을 계산함으로써, 행위자는 그들의 선택할 행동에 따른 가능한 (혹은 장정적인) 결과들을 비교할 수 있게 된다.
+
+효용이론은 행위자들이 가능한 여러 행동들의 선택지를 마주하고 있다고 가정하며, 각각의 행동은 그 행동의 가능한 결과를 얻을 '확률'에 대응한다고 가정한다.
+
+\begin{itemize}
+\tightlist
+\item
+  확률이라고 말하는 이유는 때로는 어떠한 결과를 기대하고 선택하였지만 그 결과를 얻지 못할 수도 있기 때문이다.
+\item
+  이처럼 효용이론에서 중요한 개념은 \(\color{red}{\text{행동, 결과}}\), 그리고 \(\color{red}{\text{확률}}\)이다.
+\end{itemize}
+
+효용이론은 기대효용(expected utility)라는 개념을 제시하고 있는데, 이는 어떠한 행동이 취해질 때 기대하는 결과를 얻을 확률과 그 행동을 통해 얻을 것이라고 예상되는 효용의 곱한 뒤, 이처럼 가능한 모든 결과들의 효용을 더한 결과로 측정한다.
+
+\begin{itemize}
+\item
+  즉, 동시사건이다. 어떤 행동을 취하는 것은 개인의 선택이지만 그 행동의 기대한 결과가 실제로 나타나는 것은 사회 구조 등과 같은 외부적 요인의 영향을 받기에 확률적이다.
+\item
+  우리가 선택한 행동에 따른 결과들은 모든 가능한 결과들이어야 하며(exhaustive), 서로 중복되지 않아야 한다(mutually exclusive).
+\item
+  선호들을 줄세우기(ordering) 위해서 우리는 선호에 대해 두 가지 가정을 세운다.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    완전성: 모든 행위자들은 자신의 선호순위를 알고 있다.
+  \item
+    이행성: 선호는 이행적이다. A \(\geq\) B \(\geq\) C라고 하면, A \(\geq\) C이다.
+  \end{enumerate}
+\item
+  이 두 가정 덕분에 우리는 선호의 순위를 매길 수 있고, 나아가 순위적 선호들을 수학적으로 사용할 수 있게 된다. 즉, 큰 숫자는 작은 숫자보다 더 큰 선호를 나타낸다는 것이다.
+\end{itemize}
+
+\hypertarget{utility-functions}{%
+\subsection{Utility Functions}\label{utility-functions}}
+
+\begin{itemize}
+\item
+  Combine choices of the actor with outcome, ordinal preferences, and other factors.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Other factors are out of control of actors.
+  \item
+    We call it as \texttt{states\ of\ the\ world}, and it is exogeneous.
+  \end{itemize}
+\item
+  Used to predict actions, and derive equilibria.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    We want to know what an action will do, and what we can predict.
+  \end{itemize}
+\item
+  Any decision problem can be described formally.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A set of Actions (A), and one of them chosen.
+  \item
+    States of the world (S)
+  \item
+    Outcomes or Consequences (C)
+  \item
+    Preference ordering (P), which is complete, transitive, and fixed.
+  \end{itemize}
+\item
+  Von Neumann-Morgenstern's Utility Function
+
+  \begin{itemize}
+  \item
+    Used to calculate expected utilities for particular action (A).
+  \item
+    \(\text{EU(A)} = \sum_{\text{all S}}pr(S)\times u[C(S, A)]\).
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{pr} is probability, and \texttt{A} is a set of avaiable actions.
+    \item
+      \([C(S, A)]\) is an outcome for an action an actor chosen under certain state.
+    \end{itemize}
+  \end{itemize}
+\item
+  Example: What do we drink?
+
+  \begin{itemize}
+  \item
+    Available choices: Coke, Diet coke, and Sprite.
+  \item
+    Assumption
+
+    \begin{itemize}
+    \item
+      We need caffeine and sugar to wake up, and if you cannot have both, you want caffeine.
+    \item
+      This is an ordinal preference: Coke \textgreater{} Diet \textgreater{} Sprite
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Utility: u(C) = 1, u(D) = 0.4, u(S) = 0
+      \end{itemize}
+    \item
+      Additional information: States of the world by assumption
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Soda machine sometimes gives Coke when you push Sprite button.
+      \item
+        However, when you push Diet coke button, you get Diet coke with 100\%.
+      \end{itemize}
+    \item
+      We have theories to guide to set these probabilities in actual research.
+    \item
+      The outcomes are exhaustive, and mutually exclusive: sum of the probability of possible outcomes is 1.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\begin{longtable}[]{@{}cccc@{}}
+\caption{What do we drink}\tabularnewline
+\toprule
+Coke Slot & Diet coke slot & Sprite Slot & Probability\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Coke Slot & Diet coke slot & Sprite Slot & Probability\tabularnewline
+\midrule
+\endhead
+Coke & Diet coke & Sprite & 0.3\tabularnewline
+Coke & Diet coke & Coke & 0.15\tabularnewline
+Sprite & Diet coke & Coke & 0.2\tabularnewline
+Sprite & Diet coke & Sprite & 0.3\tabularnewline
+\bottomrule
+\end{longtable}
+
+And we can calculate several possible probabilities: \(Pr(\text{Coke | Press Coke}) = 0.45, Pr(\text{Sprite | Press Coke}) = 0.55, Pr(\text{Sprite | Press Sprite}) = 0.65\).
+
+\begin{itemize}
+\tightlist
+\item
+  Then, calculate the expected utilities of the cases; Coke, Diet coke, and Sprite.
+\end{itemize}
+
+\[\begin{aligned} \text{EU(Press Coke)}=&Pr(\text{Coke | Press Coke})\times u(\text{Coke})\\
+    &+ Pr(\text{Diet coke | Press Coke})\times u(\text{Diet coke})\\
+    &+ Pr(\text{Sprite| Press Coke})\times u(\text{Sprite})\\
+    &= 0.45 \times 1 + 0 \times 0.4 + 0.55 \times 0 = 0.45
+    \end{aligned}\]
+
+\[\begin{aligned} \text{EU(Press Diet coke)}=&Pr(\text{Coke | Press Diet coke})\times u(\text{Coke})\\
+    &+ Pr(\text{Diet coke | Press Diet coke})\times u(\text{Diet coke})\\
+    &+ Pr(\text{Sprite | Press Diet coke})\times u(\text{Sprite})\\
+    &= 0 \times 1 + 1 \times 0.4 + 0 \times 0 = 0.4
+    \end{aligned}\]
+
+\[\begin{aligned} \text{EU(Press Sprite)}=&Pr(\text{Coke | Press Sprite})\times u(\text{Coke})\\
+    &+ Pr(\text{Diet coke | Press Sprite})\times u(\text{Diet coke})\\
+    &+ Pr(\text{Sprite| Press Sprite})\times u(\text{Sprite})\\
+    &= 0.35 \times 1 + 0 \times 0.4 + 0 \times 0.65 = 0.35
+    \end{aligned}\]
+
+With these expected utilities, we would expect that it would choose to press coke to acheive our goal.
+
+효용함수는 행위자의 선택과 그 선택을 하게끔 만든 선호의 순위, 선택의 결과, 그리고 그 이외의 요인들로 구성된다. 이때, 이외의 요인은 행위자의 통제 밖의 요인들로 정치학에서 보자면 사회구조와 같은 것들이다.
+
+우리는 효용함수를 이용해서 행위자들이 어떤 행동을 할 것인지를 예측하고자 하고, 나아가 균형점을 찾고자 한다.
+
+\begin{itemize}
+\tightlist
+\item
+  균형이란 행위자들이 자신의 행동을 바꾸지 않는 상태라고 할 수 있다.
+\item
+  일단, 콜라, 다이어트 콜라, 스프라이트의 예제에서는 균형까지는 다루지 않고 기대효용을 계산하는 방법과 그렇기에 행위자가 어떠한 선택을 할지 예측하는 과정을 살펴보고 있다.
+\item
+  콜라를 눌렀을 때의 기대효용이 가장 크므로 (0.45 \textgreater{} 0.4 \textgreater{} 0.35) 우리는 행위자들이 그 자신의 선호순위와 결과로부터 얻을 수 있는 효용, 그리고 그 일이 발생할 확률을 알고 있는 한 콜라 버튼을 누를 것이라고 예측할 수 있다.
+\end{itemize}
+
+\hypertarget{specifying-a-game}{%
+\subsection{Specifying a Game}\label{specifying-a-game}}
+
+\begin{itemize}
+\item
+  Previous example is a good illustration of decision theory.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Evaluation of multiple choices by a single actor.
+  \end{itemize}
+\item
+  Game theory involves evaluating choice of an actor conditioned on a choice made by another actor.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Each actor's decision depends on the choice made by others.
+  \end{itemize}
+\item
+  Types of game structure
+
+  \begin{itemize}
+  \item
+    Normal game: Often used to model decisions made simultaneously.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Example: Prisoner's Dilemma or Chicken Game
+    \end{itemize}
+  \item
+    Extended game: Often used to model decisions made sequentially.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Majority of games in political science are extended game.
+    \item
+      Thus, sequence matters. Simultaneous actions / games are hardly observed.
+    \item
+      Example: Detterance in IR
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+Assumed perfect information and fixed choices are not realistic. \(\rightarrow\) An actor may have private information.
+
+\begin{itemize}
+\item
+  Perfect information
+
+  \begin{itemize}
+  \tightlist
+  \item
+    All information sets are known by all actors.
+  \item
+    Actor possess information about all choices made previously.
+  \end{itemize}
+\item
+  Complete information
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Occuring when all actor possess information about all player's payoffs.
+  \item
+    Preferences are common knowledge.
+  \end{itemize}
+\item
+  Imcomplete information
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Occuring when some information is private.
+  \end{itemize}
+\end{itemize}
+
+사회학의 결정이론과 게임이론의 차이는 단순하다. 결정이론은 단일 행위자가 할 수 있는 여러 가지 결정에 대해 관심을 가지지만, 게임이론은 여러 행위자들의 전략적 상호작용에 관심을 가지고 있다.
+
+게임은 두 행위자가 동시에 선택을 진행하는 정규형(normal)과 행위자들이 순차적으로 행동을 선택하는 확장형(extended)로 구분할 수 있다.
+
+\begin{itemize}
+\item
+  정치학에서는 대개 확장형 게임에 관심을 갖는다.
+\item
+  두 행동이 동시에 일어나는 사건 자체가 관측이 어렵고, 만약에 우리가 관측하였다 하더라도 실제로 우리는 두 행동이 과연 동시에 일어났는지는 알 수 없다.
+
+  \begin{itemize}
+  \item
+    즉, 정치학에서의 게임이론은 확장형으로, 행위자들의 순차적인 전략적 행동에 주목한다.
+  \item
+    그리고 게임이론에서 가정할 수 있는 완전한 정보와 확실한 정보도 정치적 현상에서는 적용되기 힘들다.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      과연 모든 행위자들이 서로의 이전 선택에 대한 정보를 완전하게 갖추고 있고,
+    \item
+      각자의 선낵에 따른 보수(payoffs)가 얼마나 될지 확실하게 아는 경우가 얼마나 될까?
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{literature}{%
+\chapter{Literature}\label{literature}}
+
+Here is a review of existing methods.
+
+\hypertarget{methods}{%
+\chapter{Methods}\label{methods}}
+
+We describe our methods in this chapter.
+
+\hypertarget{applications}{%
+\chapter{Applications}\label{applications}}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\hypertarget{example-one}{%
+\section{Example one}\label{example-one}}
+
+\hypertarget{example-two}{%
+\section{Example two}\label{example-two}}
+
+\hypertarget{final-words}{%
+\chapter{Final Words}\label{final-words}}
+
+We have finished a nice book.
+
+\bibliography{book.bib,packages.bib}
+
+
+\end{document}

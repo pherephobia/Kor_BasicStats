@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Introduction to R | Basic Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Chapter 2 Introduction to R | Basic Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Introduction to R | Basic Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduction to R | Basic Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2019-09-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="ch3.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction to <strong>R</strong></a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#section"><i class="fa fa-check"></i><b>2.1</b> 기본 동작에 관한 소개</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-operations"><i class="fa fa-check"></i><b>2.2</b> <strong>R</strong>의 연산자(operations)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> What is International Relations?</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#section-1"><i class="fa fa-check"></i><b>3.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction to <strong>R</strong></h1>
+<p><strong>R</strong>은 프로그래밍 언어에 가까운데 통계분석에도 꽤나 특화되어 있습니다. 요즘 <em>Python</em> 등도 주목받고 있지만 사회과학적 정량연구에 적용하는 정도로 통계분석을 수행하는 유관 학과들에서는 <strong>R</strong>을 많이 사용하는 것 같습니다. <strong>R</strong>은 단순하지만 동시에 복합적인 조합을 통해서 여러가지 분석을 수행할 수 있기 때문입니다.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>다음 포스팅에서는 <em>RStudio</em>를 이용한 <strong>R</strong>의 기본적인 요소들을 소개할 것입니다. <em>RStudio</em>에 대한 간략한 소개는 <a href="http://sphweb.bumc.bu.edu/otlt/MPH-Modules/QuantCore/PH717-R-Basics/PH717-R-Basics3.html">다음</a>의 <em>RStudio</em> 공식 링크에서 살펴볼 수 있습니다.</p>
+<div id="section" class="section level2">
+<h2><span class="header-section-number">2.1</span> 기본 동작에 관한 소개</h2>
+<p>일단 <strong>R</strong>에서 일반적으로 사용하는 코드를 제외하고 코멘트를 달고 싶을 때에는 <code>#</code> 를 사용합니다. <code>#</code> 기호 뒤에 쓴 글들은 <strong>RStudio</strong>에서 작동되지 않스니다. 코멘트를 작성하는 습관을 들여놓는 게 좋은데, 본인이 만들어놓은 코드와 데이터셋 이름을 까먹어서 고생하지 않도록 해주고 다른 사람이 코드를 읽을 때에도 꽤나 유용하기 때문입니다.</p>
+<ul>
+<li>작동코드를 작성하기 전에 쓰는 설명은 보통 <code>##</code>로, 작동코드 옆에 병기하는 인라인 코드(in-line code)는 <code>#</code>로 구분하여 코멘트를 작성해줍니다.</li>
+<li>예를 들면, 아래와 같은 코드에서 첫 번째 줄은 단순히 어떠한 분석을 수행할지 알려주는 역할만 하고, 아래의 코드가 실제로 작동될 것입니다.</li>
+</ul>
+<pre><code># 1+1을 계산해보자
+1 + 1</code></pre>
+<p><strong>R</strong>을 배우면 배울수록, 여러가지 노하우가 체화되고 보다 효율적인 코딩을 시도하게 되는데, 일단 간단한 팁들은 <a href="https://google.github.io/styleguide/Rguide.xml">여기</a>에서 살펴볼 수 있습니다. 이러한 팁과 노하우들에 익숙해지면 코드를 읽고, 공유하고, 짜는 게 조금 더 쉬워질 것이라고 생각합니다.</p>
+</div>
+<div id="r-operations" class="section level2">
+<h2><span class="header-section-number">2.2</span> <strong>R</strong>의 연산자(operations)</h2>
+<p>일단 사회과학을 연구하고자 하는 입장에서 <strong>R</strong>을 사용하고자 하니, <strong>R</strong>이 가진 단순한 수학연산자들이 어떻게 기능하는지를 살펴볼 필요가 있습니다.</p>
+<ul>
+<li><strong>R</strong> 안에서 어떠한 수학연산자들이 있는지 살펴보고 싶다면 <em>RStudio</em> 좌측 하단 콘솔에 <code>?"*"</code>라고 입력해보면 됩니다.</li>
+<li>사실 코드블럭의 왼쪽 기호는 몰랐을 수도 있는데, 오른쪽의 의미를 모를 것이라고는 생각하지 않습니다. 따라서 자세한 설명은 넘어가고… 이 중에서 마지막 기호는 조금 익숙해질 필요는 있습니다. 저도 아직 연구에서 변수 조작(manipulation)할 때 사용해본 적은 없는 기호입니다만, 평소에는 크게 쓸 일이 없기 때문에 까먹지 않도록 하는 것이 중요할 것 같습니다.</li>
+<li>마지막 기호를 이용해서 할 수 있는 대표적인 작업이 루프에서 특정 변수가 홀수인지 짝수인지 구분하게 하는 것 등입니다. 만약 2로 나누어 나머지가 남으면 홀수, 남지 않으면 짝수라고 생각해볼 수 있습니다.</li>
+</ul>
+<pre><code># 제곱해보기: a^b라고 할 때, a를 b만큼 곱해주는 것
+3^2 #9
+2^3 #8
+# 나머지 구하기 : a%%b라고 할 때, a를 b로 나누고 몫이 아닌 나머지를 보여줌
+27 %% 7 #6
+# 마지막으로 연산자를 가지고 계산할 때, 그리고 연산자 뿐 아니라 코딩 전체에 있어서
+# 순서를 잘 고려하여 코딩해야 한다. 아래 두 계산은 완전히 결과가 다르다.
+3 + 4 / 7
+(3 + 4) / 7</code></pre>
+<p>[출처] [R_Practice] Prerequisites② Introduction to R|작성자 간비상벨</p>
+<p>[출처] [R_Practice] Prerequisites② Introduction to R|작성자 간비상벨</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>그에 관련된 포스팅은 <a href="https://blog.revolutionanalytics.com/2012/07/a-big-list-of-the-things-r-can-do.html">링크</a>를 참조하시기 바랍니다.<a href="intro.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["IR.pdf", "IR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
