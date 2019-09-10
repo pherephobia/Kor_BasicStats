@@ -6,6 +6,9 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 header-includes:
   - \usepackage{kotex}
+  - \usepackage{mathspec}
+  - \usepackage{amsmath,amsthm}
+  - \usepackage{graphicx}
 output: 
   pdf_document: 
     latex_engine: xelatex

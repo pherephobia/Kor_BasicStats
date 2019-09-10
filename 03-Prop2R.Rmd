@@ -1,3 +1,82 @@
-# Methods
+# Probability into R
 
-We describe our methods in this chapter.
+```{r, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(error = FALSE, warning = FALSE, message = FALSE,
+                      fig.height = 3, fig.width = 6, fig.align = 'center')
+```
+
+확률 관련 포스팅에서는 몇 가지 간단한 확률을 **R**을 통해서 증명하고(Some simple probability demonstrations), 정규분포(normal distributions)와 이항분포(binomial distributions)로부터 분위(quantiles)를 얻어내는 방법을 살펴보고자 합니다. 
+
+여기서는 일단 간단하게 정규분포랑 이항분포, 그리고 독립사건과 종속사건만 간단하게 살펴보겠습니다.
+
+  + 분위(Quantiles)에 대해 어떻게 설명할까 고민을 좀 했는데 좋은 블로그 포스팅을 찾아서 참조용으로 링크하겠습니다.
+  + 링크는 [여기](https://blog.naver.com/sw4r/221026102874)를 보시면 됩니다. Q-Q Plot 설명하면서 Quantile의 정의도 잘 정리해놓으셨습니다.
+
+그럼 본격적으로 포스팅을 시작하기에 앞서서 항상 그렇듯이 작업 디렉토리를 설정해보겠습니다.
+
+```{r, eval = FALSE}
+rm(list=ls()) # 현재 콘솔 창에 저장되어 있는 모든 값과 모델 등을 삭제 
+```
+```{r}
+library(here)
+library(knitr)
+library(dplyr)
+library(tidyverse)
+library(kableExtra)
+here::here() %>% setwd()
+```
+
+## 주사위굴리기 게임!
+
+확률을 공부할 때, 지겹도록 등장하는 놈들이 총 셋이 있습니다. 동전, 카드, 그리고 주사위입니다. 인류는 아마도 이 셋을 만듦으로써 스스로를 괴롭히는 통계학을 발전시켰는지도 모르겠습니다... 일단 주사위 굴리기는 직관적으로 확률과 통계를 이해하기 좋은 방식입니다. 먼저 주사위 하나를 한 번 굴리는 것을 시뮬레이팅하는 함수를 코딩해보겠습니다.
+
+```{r}
+die <- as.integer(runif(1, min=1, max=7))
+die
+```
+
+`die`는 `?runif` 라고 입력하여 살펴보면 `generates random deviates.`라고 기술되어 있는 것을 확인할 수 있습니다. 이어지는 함수를 풀어서 설명하면 다음과 같습니다.: 다음의 결과를 정수의 형태로 저장하라(`as.integer`) $\rightarrow$ 무작위로 다음의 범주 내에서 다른 값을 1번 추출하라 $\rightarrow$ 최소값은 1, 최대값은 6 (1 이상 7미만)을 갖게하라.
+
+그러면 이번에는 두 개의 주사위를 굴려보도록 하겠습니다. 굴리는 횟수는 한 번입니다.
+
+```{r}
+dice <- (as.integer(runif(1, min=1, max=7))) +
+  (as.integer(runif(1, min=1, max=7)))
+dice
+```
+
+여기서 `+` 연산자는 부울리안 논리에 따르면 `OR`를 의미합니다. 즉 각 주사위를 한 번씩 랜덤으로 굴려 얻는 값을 더한 결과를 `dice`에 저장하라는 명령입니다. 그럼 이번에는 100번, 1000번, 그리고 100만번을 돌려겠습니다.
+
+```{r}
+# 주사위 두 개를 100번 던져보기
+dice100 <-  (as.integer(runif(100, min=1, max=7))) +
+  (as.integer(runif(100, min=1, max=7)))
+dice100 %>% table() %>% t() %>% knitr::kable() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"),
+                            full_width = F, position = "float_right")
+
+# 주사위 두 개를 1,000번 던져보기
+dice1000 <-  (as.integer(runif(1000, min=1, max=7))) +
+  (as.integer(runif(1000, min=1, max=7)))
+
+dice1000 %>% table() %>% t() %>% knitr::kable() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"),
+                            full_width = F, position = "left")
+
+# 주사위 두 개를 100만 번 던져보기
+dice1M <-  (as.integer(runif(1000000, min=1, max=7))) + 
+  (as.integer(runif(1000000, min=1, max=7)))
+dice1M %>% table() %>% t() %>% knitr::kable() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"), 
+                full_width = F, position = "float_right")
+par(mfrow = c(1, 3))
+hist(dice1000)
+hist(dice100)
+hist(dice1M)
+```
+
+일단 가시적으로 살펴볼 수 있게 각 코드 이후에 그 결과값의 빈도를 표로 나타내보았습니다. 그리고 그 표를 히스토그램으로 재구성해보았습니다. 역시 `N`이 늘어날 수록 우리(?)가 사랑하는 그 녀석의 모습이 드러나기 시작합니다.
+
+주사위는 1에서 6까지의 한정된 값을 가지고, 두 개를 합쳐서 굴려봐야 2부터 12까지의 한정된(bounded) 값이긴 하지만 이 주사위 굴리기를 통해서 우리는 지난 번 포스팅에서 살펴보았던 것처럼 정규분포(normal distribution)와 표본 크기(n), 혹은 표집(sampling)의 관계를 간접적으로 다시 한 번 살펴볼 수 있습니다.
+동전 던지기
+
