@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.8.22)  31 OCT 2019 07:00
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.8.22)  1 NOV 2019 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5038,118 +5038,110 @@ File: ./Chapters_pdfR/plot/correlation.jpg Graphic file (type bmp)
 ]
 Chapter 8.
 [113]
-
-Package xcolor Warning: Incompatible color definition on input line 6561.
-
-[114]
-
-Package xcolor Warning: Incompatible color definition on input line 6565.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6565.
-
 File: ./Chapters_pdfR/plot/superious.jpg Graphic file (type bmp)
 <./Chapters_pdfR/plot/superious.jpg>
-
-Package xcolor Warning: Incompatible color definition on input line 6657.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6661.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6661.
-
+[114]
 File: ./Chapters_pdfR/plot/interaction.jpg Graphic file (type bmp)
 <./Chapters_pdfR/plot/interaction.jpg>
-[115] [116]
+[115]
+File: ./Chapters_pdfR/plot/simpson.jpg Graphic file (type bmp)
+<./Chapters_pdfR/plot/simpson.jpg>
 
-Package xcolor Warning: Incompatible color definition on input line 6720.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6724.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6724.
+Package xcolor Warning: Incompatible color definition on input line 6686.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6728.
+Package xcolor Warning: Incompatible color definition on input line 6690.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6734.
+Package xcolor Warning: Incompatible color definition on input line 6690.
+
+[116]
+
+Package xcolor Warning: Incompatible color definition on input line 6694.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6734.
+Package xcolor Warning: Incompatible color definition on input line 6700.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6761.
+Package xcolor Warning: Incompatible color definition on input line 6700.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6766.
+Package xcolor Warning: Incompatible color definition on input line 6727.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6766.
+Package xcolor Warning: Incompatible color definition on input line 6732.
+
+
+Package xcolor Warning: Incompatible color definition on input line 6732.
+
+
+Package xcolor Warning: Incompatible color definition on input line 6760.
+
+
+Underfull \vbox (badness 1939) has occurred while \output is active []
 
 [117]
+
+Package xcolor Warning: Incompatible color definition on input line 6765.
+
+
+Package xcolor Warning: Incompatible color definition on input line 6765.
+
 
 Package xcolor Warning: Incompatible color definition on input line 6794.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6799.
+Package xcolor Warning: Incompatible color definition on input line 6835.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6799.
+Package xcolor Warning: Incompatible color definition on input line 6835.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6828.
+Overfull \vbox (0.48997pt too high) detected at line 6835
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 6869.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6869.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6869.
+Package xcolor Warning: Incompatible color definition on input line 6835.
 
 [118]
 
-Package xcolor Warning: Incompatible color definition on input line 6869.
+Package xcolor Warning: Incompatible color definition on input line 6835.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6869.
+Package xcolor Warning: Incompatible color definition on input line 6835.
 
 File: Kor_BasicStats_files/figure-latex/unnamed-chunk-226-1.pdf Graphic file (t
 ype pdf)
 <use Kor_BasicStats_files/figure-latex/unnamed-chunk-226-1.pdf>
 
-Package xcolor Warning: Incompatible color definition on input line 6877.
+Package xcolor Warning: Incompatible color definition on input line 6843.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6900.
+Package xcolor Warning: Incompatible color definition on input line 6866.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6900.
+Package xcolor Warning: Incompatible color definition on input line 6866.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6900.
+Package xcolor Warning: Incompatible color definition on input line 6866.
 
 [119]
 
-Package xcolor Warning: Incompatible color definition on input line 6900.
+Package xcolor Warning: Incompatible color definition on input line 6866.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6900.
+Package xcolor Warning: Incompatible color definition on input line 6866.
 
 File: Kor_BasicStats_files/figure-latex/unnamed-chunk-227-1.pdf Graphic file (t
 ype pdf)
 <use Kor_BasicStats_files/figure-latex/unnamed-chunk-227-1.pdf>
 No file Kor_BasicStats.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6911.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6877.
 [120]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6911.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6877.
 (./Kor_BasicStats.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6911.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6911.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6877.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6877.
 
 Package rerunfilecheck Info: File `Kor_BasicStats.out' has not changed.
 (rerunfilecheck)             Checksum: F923D0B092C1153F2D80E88D486F5BFD.
@@ -5158,10 +5150,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 28981 strings out of 492962
- 502406 string characters out of 6136967
- 645010 words of memory out of 5000000
- 32569 multiletter control sequences out of 15000+600000
+ 28983 strings out of 492962
+ 502480 string characters out of 6136967
+ 644922 words of memory out of 5000000
+ 32570 multiletter control sequences out of 15000+600000
  557303 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  51i,8n,126p,811b,2522s stack positions out of 5000i,500n,10000p,200000b,80000s

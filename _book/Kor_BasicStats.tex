@@ -131,7 +131,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-10-31}
+    \date{2019-11-01}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1167,7 +1167,7 @@ RStudio 홈페이지도 두 개의 기초강의를 제공하는데, \href{https:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 32
+## [1] 35
 \end{verbatim}
 
 \begin{Shaded}
@@ -1177,7 +1177,7 @@ RStudio 홈페이지도 두 개의 기초강의를 제공하는데, \href{https:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 36
+## [1] 37
 \end{verbatim}
 
 \begin{Shaded}
@@ -1187,7 +1187,7 @@ RStudio 홈페이지도 두 개의 기초강의를 제공하는데, \href{https:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.64
+## [1] 0.7
 \end{verbatim}
 
 \begin{Shaded}
@@ -1197,7 +1197,7 @@ RStudio 홈페이지도 두 개의 기초강의를 제공하는데, \href{https:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.72
+## [1] 0.74
 \end{verbatim}
 \end{itemize}
 
@@ -1333,7 +1333,7 @@ RStudio 홈페이지도 두 개의 기초강의를 제공하는데, \href{https:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.000727
+## [1] 0.000732
 \end{verbatim}
 \item
   처음에 R을 할 때 잘 외우지 못했던 함수 중 하나인데, \texttt{length()}는 뭐랄까\ldots{} \texttt{count}라고 이해하면 조금 더 쉬울 것 같습니다.\footnote{나중에 가면 알아볼 \texttt{dplyr} 패키지에는 그룹별 관측치의 개수를 셀 수 있는 \texttt{count()} 함수가 존재합니다.}
@@ -2365,7 +2365,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1
+## [1] 5
 \end{verbatim}
 
 \texttt{die}는 \texttt{?runif} 라고 입력하여 살펴보면 \texttt{generates\ random\ deviates.}라고 기술되어 있는 것을 확인할 수 있습니다. 이어지는 함수를 풀어서 설명하면 다음과 같습니다.: 다음의 결과를 정수의 형태로 저장하라(\texttt{as.integer}) \(\rightarrow\) 무작위로 다음의 범주 내에서 다른 값을 1번 추출하라 \(\rightarrow\) 최소값은 1, 최대값은 6 (1 이상 7미만)을 갖게하라.
@@ -2381,7 +2381,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 6
+## [1] 8
 \end{verbatim}
 
 여기서 \texttt{+} 연산자는 부울리안 논리에 따르면 \texttt{OR}를 의미합니다. 즉 각 주사위를 한 번씩 랜덤으로 굴려 얻는 값을 더한 결과를 \texttt{dice}에 저장하라는 명령입니다. 그럼 이번에는 100번, 1000번, 그리고 100만번을 돌려겠습니다.
@@ -2451,9 +2451,9 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \hline
 . & Freq\\
 \hline
-0 & 51\\
+0 & 56\\
 \hline
-1 & 49\\
+1 & 44\\
 \hline
 \end{tabular}
 
@@ -2469,9 +2469,9 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \hline
 . & Freq\\
 \hline
-0 & 468\\
+0 & 490\\
 \hline
-1 & 532\\
+1 & 510\\
 \hline
 \end{tabular}
 
@@ -2514,8 +2514,8 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 
 \begin{verbatim}
 ## 
-##   61   62   63   64   65   66   67   68   69   70   71   72 
-## 7092 4349 2728 1571  835  436  224  117   64   26    8    1
+##   61   62   63   64   65   66   67   68   69   70   71   72   74   75 
+## 7070 4517 2763 1590  876  473  209  114   51   22   13    2    3    1
 \end{verbatim}
 
 \begin{Shaded}
@@ -2524,11 +2524,11 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tabular}{r|r|r|r|r|r|r|r|r|r|r|r}
+\begin{tabular}{r|r|r|r|r|r|r|r|r|r|r|r|r|r}
 \hline
-61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 & 71 & 72\\
+61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 & 71 & 72 & 74 & 75\\
 \hline
-7092 & 4349 & 2728 & 1571 & 835 & 436 & 224 & 117 & 64 & 26 & 8 & 1\\
+7070 & 4517 & 2763 & 1590 & 876 & 473 & 209 & 114 & 51 & 22 & 13 & 2 & 3 & 1\\
 \hline
 \end{tabular}
 
@@ -2541,7 +2541,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.017451
+## [1] 0.017704
 \end{verbatim}
 
 \begin{Shaded}
@@ -2551,7 +2551,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.017451
+## [1] 0.017704
 \end{verbatim}
 
 \texttt{length()}는 \texttt{count()}랑 같은 개념이라고 할 수 있습니다. 전체 \texttt{coin1Mx}의 수, 즉 100만 건 중에서 앞면이 60번보다 많이 나온 경우의 수가 어느 정도인지를 계산한 것입니다. 즉, 앞면이 60번보다 더 많이 나올 확률은 매우 작다고 할 수 있습니다다. 앞면이 60번 초과하여 나올 확률은 ``평균적'' or ``일반적''인 것은 아니라는 뜻입니다.
@@ -2578,7 +2578,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## 0.03238 3.16557 5.60477 5.33437 7.55057 9.90022
+##  0.2348  2.7605  4.7486  5.0535  7.6873  9.8271
 \end{verbatim}
 
 \begin{Shaded}
@@ -2590,7 +2590,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 
 \begin{verbatim}
 ##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -3.73632 -1.13617 -0.06355  0.36930  1.72770  6.04460
+## -4.42537 -1.66515 -0.06935 -0.09913  1.37622  5.83687
 \end{verbatim}
 
 \begin{Shaded}
@@ -2654,7 +2654,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.3178539
+## [1] 0.435429
 \end{verbatim}
 
 \texttt{rand1}과 \texttt{rand4}의 산포도는 좀 더 넓게 퍼진 모양새를 보이고 둘의 상관관계는 식에서 상정한 0.75라는 기울기에서 0.456으로 더 낮아지는 것을 확인할 수 있습니다.
@@ -2774,16 +2774,16 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 63.34240 36.15461 47.41917 51.80402 54.84940 44.40985 71.28738
-##  [8] 53.34798 38.36086 60.20660 61.52449 40.11141 48.14736 52.97732
-## [15] 52.26563 51.19242 48.75131 33.92702 46.76992 53.56210 49.10939
-## [22] 49.60076 35.83345 35.84793 53.43070 31.42648 40.70988 45.74249
-## [29] 50.69922 50.24523 55.96534 30.46902 53.43750 49.22901 49.93349
-## [36] 46.52321 50.33553 52.14581 59.93847 38.87017 53.98538 61.29177
-## [43] 48.30073 62.88989 57.60626 71.45191 62.81587 40.81280 38.26685
-## [50] 66.04048 48.91860 45.71262 43.93178 66.66893 56.96231 56.99201
-## [57] 61.85490 51.91003 54.13086 41.25676 52.21361 43.09953 55.39498
-## [64] 56.29337 35.19085 61.42556 53.61167 46.73505 69.29158 33.93045
+##  [1] 61.57291 45.23483 37.88554 40.09534 53.92205 33.80058 34.78782
+##  [8] 40.49731 62.84562 38.68573 44.63655 28.66694 62.81471 65.31213
+## [15] 40.39513 37.45665 58.92910 51.09220 64.23508 47.62329 57.35632
+## [22] 46.17860 60.05903 47.10488 54.34855 71.61267 45.72614 40.34960
+## [29] 52.14325 65.31368 54.66791 46.79477 55.07526 38.12352 57.81826
+## [36] 67.99108 52.96645 37.97031 61.85548 60.79928 57.67317 36.95250
+## [43] 54.96158 50.24880 45.66564 48.29958 54.62234 42.82173 56.15026
+## [50] 43.69452 47.25371 37.40268 57.83976 59.97281 49.89494 51.54018
+## [57] 60.07255 47.32968 61.89821 56.15981 60.79732 33.04195 53.43144
+## [64] 43.49750 54.23114 59.57227 45.88471 43.87950 65.08663 43.33206
 \end{verbatim}
 
 총 70개의 값이 무작위로 추출되어 \texttt{x}라는 벡터에 담겨 있는 것을 확인할 수 있습니다.
@@ -2917,8 +2917,8 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 28 25 23 20 26 21 23 31 26 23 23 29 30 24 33 26 23 31 19 22 35 29 27
-## [24] 21 28 22 25
+##  [1] 18 27 20 25 23 19 23 24 22 28 31 27 25 20 31 27 19 23 28 22 24 16 28
+## [24] 26 15 28 26
 \end{verbatim}
 
 \begin{Shaded}
@@ -2928,7 +2928,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.864515
+## [1] 3.818906
 \end{verbatim}
 
 마지막으로는 0.25의 확률을 가진 100번의 베르누이 시행을 27번을 반복하는 결과를 보여줍니다. 즉, 평균적으로는 100번 시행 중 25번의 성공을 할 것으로 기대되지만, 실제 시행을 27번 해보면 무작위 추출이기 때문에 25를 중심으로 표준편차 4.21의 범위 내에서 여러 값들이 추출되는 것을 확인할 수 있습니다. 무작위로 추출하기 때문에 돌릴 때마다 값은 다르게 나올 것입니다.
@@ -3226,7 +3226,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 20.2449
+## [1] 23.83352
 \end{verbatim}
 
 \begin{Shaded}
@@ -3268,7 +3268,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 22.45989
+## [1] 22.42464
 \end{verbatim}
 
 \begin{Shaded}
@@ -3299,7 +3299,7 @@ ccode2 & year & ccode1 & countryname1 & countryname2 & cinc1 & cinc2 & caprat\\
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 48.47526 55.59882 62.72237
+## [1] 46.77348 52.72559 58.67770
 \end{verbatim}
 
 \begin{Shaded}
@@ -6555,137 +6555,103 @@ p \(> .05\) & 기각하지 않음 & 채택하지 않음\tabularnewline
 \end{enumerate}
 
 \begin{itemize}
+\tightlist
 \item
   먼저 탈허위적 관계를 간단한 그림을 통해 살펴보겠습니다. 탈허위적 관계란 우리가 설명하고 싶은 현상, 종속변수 \(y\)와 그에 영향을 미칠 주요한 설명변수 \(x\)가 모두 제3의 변수인 \(z\)에 영향을 받는 경우를 말합니다.
+\end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"./Chapters_pdfR/plot/superious.jpg"}\NormalTok{, }\DataTypeTok{dpi =} \DecValTok{100}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{center}\includegraphics[width=12.8in]{./Chapters_pdfR/plot/superious} \end{center}
 
-  \begin{figure}
-
-  {\centering \includegraphics[width=12.8in]{./Chapters_pdfR/plot/superious} 
-
-  }
-
-  \caption{Spurious associations}\label{fig:unnamed-chunk-219}
-  \end{figure}
+\begin{itemize}
 \item
   만약 \(z\)를 통제했을 때, \(x\)와 \(y\)의 관계가 사라진다면, 우리는 기존에 우리가 상정하였던 \(x\)와 \(y\)의 관계가 인과적 관계가 아닌 허위적 관계라는 것을 알게 됩니다.
-\end{itemize}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  연쇄적 관계(Chain relationships)
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  \(x_1 \rightarrow x_2 \rightarrow y\)라는 관계를 생각해보겠습니다. 이는 \(x_1\)이 \(x_2\)를 경유하여 \(y\)에 영향을 미치는 간접적인 효과를 가지고 있다는 것을 보여줍니다.
-\item
-  이때, 우리는 \(x_2\)를 매개변수(mediator) 혹은 간섭변수(intervening variable)라고 부릅니다. 이 관계에서 \(x_2\)가 통제되면 기존에 우리가 보았던 \(x_1\)과 \(y\) 간의 관계는 사라지게 될 것입니다.
-\item
-  허위적 관계와 연쇄 관계는 일견 보기에 비슷해보입니다. 둘 다 특정한 변수가 통제되었을 때, 기존에 상정한 인과적 관계가 사라지는 것을 보여줍니다. 하지만 허위적 관계에서 \(z\)는 인과적으로 \(x\)와 \(y\)에 선행되는 인자를 의미하는 것인데 반하여 연쇄적 관계에서 \(x_2\)는 \(x\)와 \(y\) 사이를 간섭하는 변수입니다.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  다중원인(Multiple causes)
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  대부분의 종속변수들은 직접적이고 간접적인 영향력을 미치는 여러 개의 원인들을 갖습니다.
-\item
-  따라서 어떤 한 변수가 통제되었을 때, 다른 원인들의 효과---즉, 원인들과 종속변수 간의 관계가 사라지는 것이 아니라 변화할 수도 있습니다.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  억압변수(Suppressor variables)
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  제3의 변수 \(z\)가 통제되기 전까지는 두 변수 간의 관계가 나타나지 않을 때, 우리는 \(z\)를 억압변수라고 합니다.
-\item
-  예를 들어, 교육 수준과 소득 간의 관계를 생각해보겠습니다.
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    연쇄적 관계(Chain relationships)
+  \end{enumerate}
 
   \begin{itemize}
   \tightlist
   \item
-    만약 두 변수 간의 관계만 보았을 때에는 유의미한 관계가 나타나지 않았지만, 나이 변수를 통제하자 둘 간의 양의 관계가 나타났다고 해보겠습니다.
+    \(x_1 \rightarrow x_2 \rightarrow y\)라는 관계를 생각해보겠습니다. 이는 \(x_1\)이 \(x_2\)를 경유하여 \(y\)에 영향을 미치는 간접적인 효과를 가지고 있다는 것을 보여줍니다.
   \item
-    이때, 나이 변수는 소득에는 긍정적인 효과를 가지고 있지만 교육 수준에는 부정적인 효과를 가지고 있는 변수라고 하겠습니다.
+    이때, 우리는 \(x_2\)를 매개변수(mediator) 혹은 간섭변수(intervening variable)라고 부릅니다. 이 관계에서 \(x_2\)가 통제되면 기존에 우리가 보았던 \(x_1\)과 \(y\) 간의 관계는 사라지게 될 것입니다.
   \item
-    왜냐하면 나이를 먹을수록 소득 수준이 더 높아질 수는 있지만 반대로 교육 수준은 낮아질 수 있기 때문입니다.
-  \item
-    이 경우에 나이 변수는 교육 수준과 소득 수준의 관계에 대한 억압변수라고 할 수 있습니다.
+    허위적 관계와 연쇄 관계는 일견 보기에 비슷해보입니다. 둘 다 특정한 변수가 통제되었을 때, 기존에 상정한 인과적 관계가 사라지는 것을 보여줍니다. 하지만 허위적 관계에서 \(z\)는 인과적으로 \(x\)와 \(y\)에 선행되는 인자를 의미하는 것인데 반하여 연쇄적 관계에서 \(x_2\)는 \(x\)와 \(y\) 사이를 간섭하는 변수입니다.
   \end{itemize}
-\item
-  이러한 잠재적인 억압변수의 가능성으로 인하여 양변량 분석이 아무 관계도 보여주지 않더라도 다른 변수들을 통제하여 관계 양상의 변화를 살펴보는 것이 좋습니다.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{2}
+  \tightlist
+  \item
+    다중원인(Multiple causes)
+  \end{enumerate}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    대부분의 종속변수들은 직접적이고 간접적인 영향력을 미치는 여러 개의 원인들을 갖습니다.
+  \item
+    따라서 어떤 한 변수가 통제되었을 때, 다른 원인들의 효과---즉, 원인들과 종속변수 간의 관계가 사라지는 것이 아니라 변화할 수도 있습니다.
+  \end{itemize}
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{3}
+  \tightlist
+  \item
+    억압변수(Suppressor variables)
+  \end{enumerate}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    제3의 변수 \(z\)가 통제되기 전까지는 두 변수 간의 관계가 나타나지 않을 때, 우리는 \(z\)를 억압변수라고 합니다.
+  \item
+    예를 들어, 교육 수준과 소득 간의 관계를 생각해보겠습니다.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      만약 두 변수 간의 관계만 보았을 때에는 유의미한 관계가 나타나지 않았지만, 나이 변수를 통제하자 둘 간의 양의 관계가 나타났다고 해보겠습니다.
+    \item
+      이때, 나이 변수는 소득에는 긍정적인 효과를 가지고 있지만 교육 수준에는 부정적인 효과를 가지고 있는 변수라고 하겠습니다.
+    \item
+      왜냐하면 나이를 먹을수록 소득 수준이 더 높아질 수는 있지만 반대로 교육 수준은 낮아질 수 있기 때문입니다.
+    \item
+      이 경우에 나이 변수는 교육 수준과 소득 수준의 관계에 대한 억압변수라고 할 수 있습니다.
+    \end{itemize}
+  \item
+    이러한 잠재적인 억압변수의 가능성으로 인하여 양변량 분석이 아무 관계도 보여주지 않더라도 다른 변수들을 통제하여 관계 양상의 변화를 살펴보는 것이 좋습니다.
+  \end{itemize}
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{4}
+  \tightlist
+  \item
+    통계적 상호작용(Statistical interaction)
+  \end{enumerate}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(x_1\)의 \(y\)에 대한 진정한 영향력이 \(x_2\)의 수준에 따라 다르게 나타난다면 어떻게 될까요?
+  \item
+    \(x_2\)의 수준이 달라질 때마다 \(x_1\)과 \(y\) 관계의 강도나 방향이 달라질 때, 우리는 통계적 상호작용의 문제를 생각해볼 수 있습니다.
+  \end{itemize}
 \end{itemize}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  통계적 상호작용(Statistical interaction)
-\end{enumerate}
-
-\begin{itemize}
-\item
-  \(x_1\)의 \(y\)에 대한 진정한 영향력이 \(x_2\)의 수준에 따라 다르게 나타난다면 어떻게 될까요?
-\item
-  \(x_2\)의 수준이 달라질 때마다 \(x_1\)과 \(y\) 관계의 강도나 방향이 달라질 때, 우리는 통계적 상호작용의 문제를 생각해볼 수 있습니다.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"./Chapters_pdfR/plot/interaction.jpg"}\NormalTok{, }\DataTypeTok{dpi =} \DecValTok{100}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-  \begin{figure}
-
-  {\centering \includegraphics[width=4.12in]{./Chapters_pdfR/plot/interaction} 
-
-  }
-
-  \caption{Interaction}\label{fig:unnamed-chunk-220}
-  \end{figure}
-\end{itemize}
+\begin{center}\includegraphics[width=4.12in]{./Chapters_pdfR/plot/interaction} \end{center}
 
 다변량 관계에서 또 유의해야할 점은 바로 심슨의 패러독스(Simpson's paradox)와 관련되어 있습니다. 심슨의 패러독스란 한 변수를 통제한 이후에 변수들의 관계가 통제 이전과 완전히 달라지는 경우를 의미합니다.
 
-\begin{verbatim}
-```r
-knitr::include_graphics("./Chapters_pdfR/plot/simpson.jpg", dpi = 100)
-```
-
-\begin{figure}
-
-{\centering \includegraphics[width=3.97in]{./Chapters_pdfR/plot/simpson} 
-
-}
-
-\caption{Simpson's paradox}\label{fig:unnamed-chunk-221}
-\end{figure}
-\end{verbatim}
+\begin{center}\includegraphics[width=3.97in]{./Chapters_pdfR/plot/simpson} \end{center}
 
 \hypertarget{uxb2e4uxc911uxc120uxd615uxd68cuxadc0uxbaa8uxb378multiple-linear-regression-model}{%
 \section{다중선형회귀모델(Multiple linear regression model)}\label{uxb2e4uxc911uxc120uxd615uxd68cuxadc0uxbaa8uxb378multiple-linear-regression-model}}

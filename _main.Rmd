@@ -9,6 +9,7 @@ header-includes:
   - \usepackage{mathspec}
   - \usepackage{amsmath,amsthm}
   - \usepackage{graphicx}
+  - \usepackage{setspace}\onehalfspacing
 output: 
   pdf_document: 
     latex_engine: xelatex
@@ -20,6 +21,7 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 mainfont: NanumGothic
+fontsize: 12pt
 urlcolor: blue
 ---
 

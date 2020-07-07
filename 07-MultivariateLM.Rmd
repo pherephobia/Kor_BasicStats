@@ -59,9 +59,9 @@ output:
 
   1. 허위적 관계(Spurious associations)
   + 먼저 탈허위적 관계를 간단한 그림을 통해 살펴보겠습니다. 탈허위적 관계란 우리가 설명하고 싶은 현상, 종속변수 $y$와 그에 영향을 미칠 주요한 설명변수 $x$가 모두 제3의 변수인 $z$에 영향을 받는 경우를 말합니다. 
-    ```{r, fig.cap = "Spurious associations"}
-    knitr::include_graphics("./Chapters_pdfR/plot/superious.jpg", dpi = 100)
-    ```
+```{r, echo = F}
+knitr::include_graphics("./Chapters_pdfR/plot/superious.jpg", dpi = 100)
+```
   + 만약 $z$를 통제했을 때, $x$와 $y$의 관계가 사라진다면, 우리는 기존에 우리가 상정하였던 $x$와 $y$의 관계가 인과적 관계가 아닌 허위적 관계라는 것을 알게 됩니다.
 
   2. 연쇄적 관계(Chain relationships)
@@ -85,15 +85,15 @@ output:
   5. 통계적 상호작용(Statistical interaction)
   + $x_1$의 $y$에 대한 진정한 영향력이 $x_2$의 수준에 따라 다르게 나타난다면 어떻게 될까요? 
   + $x_2$의 수준이 달라질 때마다 $x_1$과 $y$ 관계의 강도나 방향이 달라질 때, 우리는 통계적 상호작용의 문제를 생각해볼 수 있습니다.
-    ```{r, fig.cap = "Interaction"}
-    knitr::include_graphics("./Chapters_pdfR/plot/interaction.jpg", dpi = 100)
-    ```
+```{r, echo = F}
+knitr::include_graphics("./Chapters_pdfR/plot/interaction.jpg", dpi = 100)
+```
 
 다변량 관계에서 또 유의해야할 점은 바로 심슨의 패러독스(Simpson's paradox)와 관련되어 있습니다. 심슨의 패러독스란 한 변수를 통제한 이후에 변수들의 관계가 통제 이전과 완전히 달라지는 경우를 의미합니다.
 
-    ```{r, fig.cap = "Simpson's paradox"}
-    knitr::include_graphics("./Chapters_pdfR/plot/simpson.jpg", dpi = 100)
-    ```
+```{r, echo = F}
+knitr::include_graphics("./Chapters_pdfR/plot/simpson.jpg", dpi = 100)
+```
     
 ## 다중선형회귀모델(Multiple linear regression model)
 
