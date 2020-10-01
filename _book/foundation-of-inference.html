@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Foundation of Inference | Basic Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Chapter 5 Foundation of Inference | Basic Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Foundation of Inference | Basic Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Foundation of Inference | Basic Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2020-08-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="probability-into-r.html"/>
+<link rel="next" href="intoduction-to-simple-linear-regression-model.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction to <strong>R</strong></a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#기본-동작에-관한-소개"><i class="fa fa-check"></i><b>2.1</b> 기본 동작에 관한 소개</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r의-연산자operations"><i class="fa fa-check"></i><b>2.2</b> <strong>R</strong>의 연산자(operations)</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r의-기본적인-자료-유형"><i class="fa fa-check"></i><b>2.3</b> <strong>R</strong>의 기본적인 자료 유형</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#논리형-연산자-logical-operators"><i class="fa fa-check"></i><b>2.3.1</b> 논리형 연산자 (Logical operators)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#벡터-vectors"><i class="fa fa-check"></i><b>2.4</b> 벡터 (Vectors)</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#매트릭스-matrices"><i class="fa fa-check"></i><b>2.5</b> 매트릭스 (Matrices)</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#데이터프레임-data-frame"><i class="fa fa-check"></i><b>2.6</b> 데이터프레임 (Data frame)</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#티블-tibbles"><i class="fa fa-check"></i><b>2.7</b> 티블 (Tibbles)</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#패키지-packages"><i class="fa fa-check"></i><b>2.8</b> 패키지 (Packages)</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#디렉토리-생성-코드"><i class="fa fa-check"></i><b>2.9</b> 디렉토리 생성 코드</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#용례-a-working-example"><i class="fa fa-check"></i><b>2.10</b> 용례 (A working example)</a></li>
+<li class="chapter" data-level="2.11" data-path="intro.html"><a href="intro.html#기타-참고자료"><i class="fa fa-check"></i><b>2.11</b> 기타 참고자료</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> Introduction to Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#작업-디렉토리-설정"><i class="fa fa-check"></i><b>3.1</b> 작업 디렉토리 설정</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#무작위-추출random-draws"><i class="fa fa-check"></i><b>3.2</b> 무작위 추출(Random Draws)</a></li>
+<li class="chapter" data-level="3.3" data-path="ch3.html"><a href="ch3.html#루프-반복loops"><i class="fa fa-check"></i><b>3.3</b> 루프-반복(Loops)</a></li>
+<li class="chapter" data-level="3.4" data-path="ch3.html"><a href="ch3.html#rplots를-파일의-형태로-저장하기"><i class="fa fa-check"></i><b>3.4</b> Rplots를 파일의 형태로 저장하기</a></li>
+<li class="chapter" data-level="3.5" data-path="ch3.html"><a href="ch3.html#데이터-다루기-기본"><i class="fa fa-check"></i><b>3.5</b> 데이터 다루기 기본</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="ch3.html"><a href="ch3.html#데이터에-새로운-변수-더미변수-만들기"><i class="fa fa-check"></i><b>3.5.1</b> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
+<li class="chapter" data-level="3.5.2" data-path="ch3.html"><a href="ch3.html#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><i class="fa fa-check"></i><b>3.5.2</b> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
+<li class="chapter" data-level="3.5.3" data-path="ch3.html"><a href="ch3.html#자료-머징하기-using-data-merging"><i class="fa fa-check"></i><b>3.5.3</b> 자료 머징하기 (Using Data Merging)</a></li>
+<li class="chapter" data-level="3.5.4" data-path="ch3.html"><a href="ch3.html#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><i class="fa fa-check"></i><b>3.5.4</b> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="ch3.html"><a href="ch3.html#요약통계표를-.tex-파일로-저장하기"><i class="fa fa-check"></i><b>3.6</b> 요약통계표를 .tex 파일로 저장하기</a></li>
+<li class="chapter" data-level="3.7" data-path="ch3.html"><a href="ch3.html#서로-다른-분석수준lower-higher-통합하기"><i class="fa fa-check"></i><b>3.7</b> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probability-into-r.html"><a href="probability-into-r.html"><i class="fa fa-check"></i><b>4</b> Probability into R</a><ul>
+<li class="chapter" data-level="4.1" data-path="probability-into-r.html"><a href="probability-into-r.html#주사위굴리기-게임"><i class="fa fa-check"></i><b>4.1</b> 주사위굴리기 게임!</a></li>
+<li class="chapter" data-level="4.2" data-path="probability-into-r.html"><a href="probability-into-r.html#동전-던지기"><i class="fa fa-check"></i><b>4.2</b> 동전 던지기</a></li>
+<li class="chapter" data-level="4.3" data-path="probability-into-r.html"><a href="probability-into-r.html#독립사건-시뮬레이션"><i class="fa fa-check"></i><b>4.3</b> 독립사건 시뮬레이션</a></li>
+<li class="chapter" data-level="4.4" data-path="probability-into-r.html"><a href="probability-into-r.html#종속사건-시뮬레이션"><i class="fa fa-check"></i><b>4.4</b> 종속사건 시뮬레이션</a></li>
+<li class="chapter" data-level="4.5" data-path="probability-into-r.html"><a href="probability-into-r.html#분포distribution"><i class="fa fa-check"></i><b>4.5</b> 분포(Distribution)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="probability-into-r.html"><a href="probability-into-r.html#정규분포-the-normal-distribution"><i class="fa fa-check"></i><b>4.5.1</b> 정규분포 (The normal distribution)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="probability-into-r.html"><a href="probability-into-r.html#이항분포-binomial-distribution"><i class="fa fa-check"></i><b>4.5.2</b> 이항분포 (Binomial distribution)</a></li>
+<li class="chapter" data-level="4.5.3" data-path="probability-into-r.html"><a href="probability-into-r.html#포와송-분포-poison-distribution"><i class="fa fa-check"></i><b>4.5.3</b> 포와송 분포 (Poison distribution)</a></li>
+<li class="chapter" data-level="4.5.4" data-path="probability-into-r.html"><a href="probability-into-r.html#음이항-분포-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.5.4</b> 음이항 분포 (Negative Binomial Distribution)</a></li>
+<li class="chapter" data-level="4.5.5" data-path="probability-into-r.html"><a href="probability-into-r.html#f-분포-f-distribution"><i class="fa fa-check"></i><b>4.5.5</b> F 분포 (F Distribution)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html"><i class="fa fa-check"></i><b>5</b> Foundation of Inference</a><ul>
+<li class="chapter" data-level="5.1" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#표본을-통한-모집단-추론-infer-population-using-samples"><i class="fa fa-check"></i><b>5.1</b> 표본을 통한 모집단 추론 (Infer Population using Samples)</a></li>
+<li class="chapter" data-level="5.2" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#평균의-차이difference-of-means-그리고-분산분석analysis-of-variance-anova"><i class="fa fa-check"></i><b>5.2</b> 평균의 차이(difference of means), 그리고 분산분석(analysis of variance, ANOVA)</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#평균-차이를-보는-이유"><i class="fa fa-check"></i><b>5.2.1</b> 평균 차이를 보는 이유</a></li>
+<li class="chapter" data-level="5.2.2" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#t-검정을-이용한-두-평균의-차이"><i class="fa fa-check"></i><b>5.2.2</b> t-검정을 이용한 두 평균의 차이</a></li>
+<li class="chapter" data-level="5.2.3" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#분산분석anova을-이용해-여러-평균을-비교하기"><i class="fa fa-check"></i><b>5.2.3</b> 분산분석(ANOVA)을 이용해 여러 평균을 비교하기</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#비율-차이-교차표와-카이스퀘어-검정chi-squared-tests"><i class="fa fa-check"></i><b>5.3</b> 비율 차이: 교차표와 카이스퀘어 검정(chi-squared tests)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html"><i class="fa fa-check"></i><b>6</b> Intoduction to Simple Linear Regression Model</a><ul>
+<li class="chapter" data-level="6.1" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#회귀분석의-이해-기울기의-검정"><i class="fa fa-check"></i><b>6.1</b> 회귀분석의 이해: 기울기의 검정</a></li>
+<li class="chapter" data-level="6.2" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기"><i class="fa fa-check"></i><b>6.2</b> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</a></li>
+<li class="chapter" data-level="6.3" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#단순회귀분석-심화"><i class="fa fa-check"></i><b>6.3</b> 단순회귀분석 심화</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html"><i class="fa fa-check"></i><b>7</b> Better Understanding for Linear Model</a><ul>
+<li class="chapter" data-level="7.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#추정estimation"><i class="fa fa-check"></i><b>7.1</b> 추정(Estimation)</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#점추정과-구간추정point-estimation-and-interval-estimation"><i class="fa fa-check"></i><b>7.1.1</b> 점추정과 구간추정(point estimation and interval estimation)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#신뢰구간-평균과-비율"><i class="fa fa-check"></i><b>7.1.2</b> 신뢰구간: 평균과 비율</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정significnace-tests"><i class="fa fa-check"></i><b>7.2</b> 유의성 검정(Significnace Tests)</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정을-이루는-다섯-가지-부분"><i class="fa fa-check"></i><b>7.2.1</b> 유의성 검정을 이루는 다섯 가지 부분</a></li>
+<li class="chapter" data-level="7.2.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#오류의-유형-types-of-errors"><i class="fa fa-check"></i><b>7.2.2</b> 오류의 유형 (Types of Errors)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀와-상관관계"><i class="fa fa-check"></i><b>7.3</b> 선형회귀와 상관관계</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형관계"><i class="fa fa-check"></i><b>7.3.1</b> 선형관계</a></li>
+<li class="chapter" data-level="7.3.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#확률모델probability-model"><i class="fa fa-check"></i><b>7.3.2</b> 확률모델(Probability model)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀모델"><i class="fa fa-check"></i><b>7.3.3</b> 선형회귀모델</a></li>
+<li class="chapter" data-level="7.3.4" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#관계의-측정-상관관계"><i class="fa fa-check"></i><b>7.3.4</b> 관계의 측정: 상관관계</a></li>
+<li class="chapter" data-level="7.3.5" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#정리하며"><i class="fa fa-check"></i><b>7.3.5</b> 정리하며</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html"><i class="fa fa-check"></i><b>8</b> Introduction to Multivariate Linear Regression Model</a><ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#관계와-인과성"><i class="fa fa-check"></i><b>8.1</b> 관계와 인과성</a></li>
+<li class="chapter" data-level="8.2" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#변수의-통제"><i class="fa fa-check"></i><b>8.2</b> 변수의 통제</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다변량-관계multivariate-relationship"><i class="fa fa-check"></i><b>8.2.1</b> 다변량 관계(Multivariate relationship)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다중선형회귀모델multiple-linear-regression-model"><i class="fa fa-check"></i><b>8.3</b> 다중선형회귀모델(Multiple linear regression model)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="foundation-of-inference" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Foundation of Inference</h1>
+<p>오늘 정리해볼 내용은 통계학의 핵심 중 하나인 추론(inference)의 근간이 되는 표본을 구하는 과정, 표집(sampling)을 어떻게 코딩으로 구현하는가와 관련된 것입니다. 즉, 이번 포스팅은 아래와 같은 내용을 주로 다룬다고 할 수 있습니다.</p>
+<ul>
+<li>R에서 표집 작업을 어떻게 수행하는가?</li>
+<li>표집분포는 어떠한 형태를 띄는가?</li>
+<li>표집분포를 어떻게 계산하는가?</li>
+</ul>
+<p>이해를 돕기 위해서 사회과학 분야에서 널리 쓰는 세계발전지표(World Development Indicators, WDI)에서 변수들을 추출하여 활용해보도록 하겠습니다. 먼저 <code>WDI</code>를 라이브러리에서 로드해봅시다. 없으면 당연히 설치해야 겠죠?</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="foundation-of-inference.html#cb258-1"></a><span class="co"># install.packages(&quot;WDI&quot;)</span></span>
+<span id="cb258-2"><a href="foundation-of-inference.html#cb258-2"></a><span class="kw">library</span>(WDI)</span></code></pre></div>
+<p><code>WDI</code> 데이터셋에서 우리는 동일한 국가들이 시간을 거듭해(over time) 갖는 반복적인 값을 갖는 것을 확인할 수 있습니다. 이때 반복이란 동일하다는 얘기가 아니라 미국 2000년의 경제성장률, 미국 2001년의 경제성장률과 같은 식으로 일종의 패널(panel)을 이룬다는 것을 의미합니다.</p>
+<p>이러한 자료의 구조는 자료 내에 내재할 수 있는 시간적 흐름의 상관효과, 그리고 동시기의 국가(단위)들 간에 존재할 수 있는 상관효과 등을 고려해주어야 함을 의미합니다. 물론, 여기서는 추론과 추론에 필요한 표집을 살펴볼 것이기 때문에 더 자세한 내용까지는 들어가지 않을 것입니다.</p>
+<p><code>WDI</code>에서 다음과 같은 변수들을 추출해 <code>WDI.data</code>라는 데이터프레임에 저장해보겠습니다.</p>
+<ul>
+<li>사망률 (mortality rate)</li>
+<li>미국으로부터의 순 원조 유입 (net aid flows from US)</li>
+<li>파상풍 예방주사 (newborns vaccinated for tetanus)</li>
+<li>도시 지역 인구(전체 대비, urban pop %)</li>
+<li>무역개방성 (수출입 총합 대비 GDP, trade % GDP)</li>
+</ul>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="foundation-of-inference.html#cb259-1"></a>WDI.data &lt;-<span class="st">  </span></span>
+<span id="cb259-2"><a href="foundation-of-inference.html#cb259-2"></a><span class="st">  </span><span class="kw">WDI</span>(<span class="dt">country =</span> <span class="st">&quot;all&quot;</span>, </span>
+<span id="cb259-3"><a href="foundation-of-inference.html#cb259-3"></a>      <span class="dt">indicator =</span> <span class="kw">c</span>(<span class="st">&quot;SH.DYN.NMRT&quot;</span>,<span class="st">&quot;DC.DAC.USAL.CD&quot;</span>, <span class="st">&quot;SH.VAC.TTNS.ZS&quot;</span>,</span>
+<span id="cb259-4"><a href="foundation-of-inference.html#cb259-4"></a>                    <span class="st">&quot;SP.URB.TOTL.IN.ZS&quot;</span>, <span class="st">&quot;NE.TRD.GNFS.ZS&quot;</span>), </span>
+<span id="cb259-5"><a href="foundation-of-inference.html#cb259-5"></a>      <span class="dt">start =</span> <span class="dv">1990</span>, <span class="dt">end =</span> <span class="dv">2005</span>, <span class="dt">extra =</span> <span class="ot">FALSE</span>, <span class="dt">cache =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<p>그리고 간단하게 자료에서 변수들의 형태를 살펴보겠습니다.</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="foundation-of-inference.html#cb260-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb260-2"><a href="foundation-of-inference.html#cb260-2"></a><span class="co"># 사망률</span></span>
+<span id="cb260-3"><a href="foundation-of-inference.html#cb260-3"></a><span class="kw">hist</span>(WDI.data<span class="op">$</span>SH.DYN.NMRT, <span class="dt">main =</span> <span class="st">&quot;Mortality rate&quot;</span>)</span>
+<span id="cb260-4"><a href="foundation-of-inference.html#cb260-4"></a></span>
+<span id="cb260-5"><a href="foundation-of-inference.html#cb260-5"></a><span class="co"># 원조 (원조액은 두 가지: 첫 번째는 원자료로 두 번째는 로그화한 결과)</span></span>
+<span id="cb260-6"><a href="foundation-of-inference.html#cb260-6"></a><span class="kw">hist</span>(WDI.data<span class="op">$</span>DC.DAC.USAL.CD, <span class="dt">main =</span> <span class="st">&quot;Aid Raw&quot;</span>)</span>
+<span id="cb260-7"><a href="foundation-of-inference.html#cb260-7"></a><span class="kw">hist</span>(<span class="kw">log</span>(WDI.data<span class="op">$</span>DC.DAC.USAL.CD<span class="fl">+.1</span>), <span class="dt">main =</span> <span class="st">&quot;Logged Aid&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-117-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="foundation-of-inference.html#cb261-1"></a><span class="co"># 파상풍 예방주사</span></span>
+<span id="cb261-2"><a href="foundation-of-inference.html#cb261-2"></a><span class="kw">hist</span>(WDI.data<span class="op">$</span>SH.VAC.TTNS.ZS, <span class="dt">main =</span> <span class="st">&quot;Newborns vaccinated for tetanus&quot;</span>)</span>
+<span id="cb261-3"><a href="foundation-of-inference.html#cb261-3"></a><span class="co"># 도시 인구</span></span>
+<span id="cb261-4"><a href="foundation-of-inference.html#cb261-4"></a><span class="kw">hist</span>(WDI.data<span class="op">$</span>SP.URB.TOTL.IN.ZS, <span class="dt">main =</span> <span class="st">&quot;Urban population rate&quot;</span>)</span>
+<span id="cb261-5"><a href="foundation-of-inference.html#cb261-5"></a></span>
+<span id="cb261-6"><a href="foundation-of-inference.html#cb261-6"></a><span class="co"># 무역개방성 (마찬가지로 원조처럼 원자료와 로그화한 자료로)</span></span>
+<span id="cb261-7"><a href="foundation-of-inference.html#cb261-7"></a><span class="kw">hist</span>(WDI.data<span class="op">$</span>NE.TRD.GNFS.ZS, <span class="dt">main =</span> <span class="st">&quot;Trade openness_raw&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-117-2.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="foundation-of-inference.html#cb262-1"></a><span class="kw">hist</span>(<span class="kw">log</span>(WDI.data<span class="op">$</span>NE.TRD.GNFS.ZS), <span class="dt">main =</span> <span class="st">&quot;Logged trade openness&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-117-3.png" width="576" style="display: block; margin: auto;" /></p>
+<div id="표본을-통한-모집단-추론-infer-population-using-samples" class="section level2">
+<h2><span class="header-section-number">5.1</span> 표본을 통한 모집단 추론 (Infer Population using Samples)</h2>
+<p>이제 이 변수들의 모집단을 우리가 모른다고 가정해보겠습니다. 대신 각각의 변수들로부터 50개의 관측치들을 무작위 표본을 취한다고 생각합시다. 그리고 우리는 이 무작위 표본을 5,000번 반복하여 뽑고 그렇게 뽑힌 5,000개의 무작위 표본들의 평균 분포를 그래프로 나타내겠습니다. 우선, 사망률에 대한 무작위 표본 1개를 뽑아보고, 그 표본 이름은 <code>samp1.mort</code> 라고 하자.</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="foundation-of-inference.html#cb263-1"></a>samp1.mort &lt;-<span class="st"> </span><span class="kw">sample</span>(WDI.data<span class="op">$</span>SH.DYN.NMRT, <span class="dv">50</span>)</span></code></pre></div>
+<p>표본 평균과 모집단 평균을 비교해보겠습니다.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="foundation-of-inference.html#cb264-1"></a><span class="kw">mean</span>(samp1.mort, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="co"># 사망률 표본의 평균</span></span></code></pre></div>
+<pre><code>## [1] 22.66397</code></pre>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="foundation-of-inference.html#cb266-1"></a><span class="co">## na.rm 옵션은 표본에 결측치가 있을 수 있을 때 중요하게 사용됩니다. </span></span>
+<span id="cb266-2"><a href="foundation-of-inference.html#cb266-2"></a><span class="co">## 결측치 빼고 평균을 구하란 뜻입니다.</span></span>
+<span id="cb266-3"><a href="foundation-of-inference.html#cb266-3"></a><span class="kw">mean</span>(WDI.data<span class="op">$</span>SH.DYN.NMRT, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="co"># 사망률 모집단의 평균</span></span></code></pre></div>
+<pre><code>## [1] 22.47402</code></pre>
+<p>이제 5,000개의 표본들을 루프(loop)를 가지고 뽑아서 그 각각의 평균들을 벡터로 저장해보겠습니다. 이를 위해서 먼저 빈깡통, 빈 벡터(Blank vector)를 만들어야 합니다.</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="foundation-of-inference.html#cb268-1"></a><span class="co"># 빈 벡터 만들기</span></span>
+<span id="cb268-2"><a href="foundation-of-inference.html#cb268-2"></a>sample_means50.mort &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">5000</span>)</span>
+<span id="cb268-3"><a href="foundation-of-inference.html#cb268-3"></a><span class="co"># 루프로 5,000개의 표본평균을 구해 저장하기</span></span>
+<span id="cb268-4"><a href="foundation-of-inference.html#cb268-4"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5000</span>) {</span>
+<span id="cb268-5"><a href="foundation-of-inference.html#cb268-5"></a>  samp &lt;-<span class="st"> </span><span class="kw">sample</span>(WDI.data<span class="op">$</span>SH.DYN.NMRT, <span class="dv">50</span>) </span>
+<span id="cb268-6"><a href="foundation-of-inference.html#cb268-6"></a>  sample_means50.mort[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) </span>
+<span id="cb268-7"><a href="foundation-of-inference.html#cb268-7"></a>  }</span></code></pre></div>
+<p>여기에서 루프의 의미는 원래 우리가 가지고 있던 <code>WDI</code>의 사망률 지표에서 50개씩 꺼낸 표본을 1개라고 할 때, 이와 같은 과정을 5,000번 반복하라는 것입니다. 그러면 5,000개의 표본을 얻게 되고, 이 중 당연히 결측치도 있을 수 있으므로 <code>na.rm()</code> 옵션으로 결측치를 제외하여 평균을 구하라고 코딩하는 것입니다.</p>
+<p>평균을 구할 때, 요소 중에 <code>NA</code> (결측치)가 있으면 전체 평균 값도 <code>NA</code>로 계산되므로 이걸 처리해주어야 합니다. 자, 그럼 이렇게 구한 5,000개의 표본들의 평균들이 어떻게 분포되어 있는지 확인해보겠습니다. 히스토그램을 그려봅시다.: 50개의 값(values)을 가지는 5,000개의 표본평균 각각의 평균들의 분포를 플롯으로 살펴보는 것입니다.</p>
+<p>먼저 1개의 표본평균과 모집단 평균을 비교했을 때랑 보자면, 5,000개의 표본평균들과 모집단 평균 간의 차이가 현격하게 감소한 것을 확인할 수 있습니다. 이 시뮬레이션에서 우리는 직관적으로 한 가지를 확인할 수 있습니다. 무작위라는 조건 하에서 표집을 반복할 때, 그 평균들의 평균은 모집단의 평균으로 수렴하므로 우리는 이와 같은 작업을 통해 실제로 모집단을 모르는 상황에서 표본들로 모집단의 특성을 추론할 수 있다는 것입니다.</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="foundation-of-inference.html#cb269-1"></a><span class="kw">mean</span>(sample_means50.mort, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 22.48378</code></pre>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="foundation-of-inference.html#cb271-1"></a><span class="kw">mean</span>(WDI.data<span class="op">$</span>SH.DYN.NMRT, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 22.47402</code></pre>
+<p>이제 전체 인구 대비 도시 인구의 비율 변수를 살펴보겠습니다. 주어진 중심극한정리 (Central Limit Theorem)에 따라 우리는 오직 1개의 표본만을 취해 모집단에 대한 95%의 신뢰 구간을 계산해볼 것입니다. 이전과 마찬가지로 50개의 값을 무작위로 추출해 <code>samp.pop</code> 이라는 자료에 담고 이 표본을 이용하여 평균과 표준오차를 계산해보겠습니다.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="foundation-of-inference.html#cb273-1"></a>samp.pop &lt;-<span class="st"> </span><span class="kw">sample</span>(WDI.data<span class="op">$</span>SP.URB.TOTL.IN.ZS, <span class="dv">50</span>)</span>
+<span id="cb273-2"><a href="foundation-of-inference.html#cb273-2"></a>mean.pop &lt;-<span class="st"> </span><span class="kw">mean</span>(samp.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="co"># 표본의 평균</span></span>
+<span id="cb273-3"><a href="foundation-of-inference.html#cb273-3"></a>se.pop &lt;-<span class="st"> </span><span class="kw">sd</span>(samp.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(samp.pop)) <span class="co"># 표준오차</span></span>
+<span id="cb273-4"><a href="foundation-of-inference.html#cb273-4"></a></span>
+<span id="cb273-5"><a href="foundation-of-inference.html#cb273-5"></a><span class="co"># 평균을 중심으로 95%의 신뢰구간을 구해보자 (위/아래)</span></span>
+<span id="cb273-6"><a href="foundation-of-inference.html#cb273-6"></a>lower.pop &lt;-<span class="st"> </span>mean.pop <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se.pop)</span>
+<span id="cb273-7"><a href="foundation-of-inference.html#cb273-7"></a>upper.pop &lt;-<span class="st"> </span>mean.pop <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>se.pop)</span>
+<span id="cb273-8"><a href="foundation-of-inference.html#cb273-8"></a></span>
+<span id="cb273-9"><a href="foundation-of-inference.html#cb273-9"></a><span class="co"># 95% 신뢰 구간의 경계 값과 평균을 리스트 자료 유형으로 저장한다.</span></span>
+<span id="cb273-10"><a href="foundation-of-inference.html#cb273-10"></a><span class="kw">c</span>(lower.pop, mean.pop, upper.pop)</span></code></pre></div>
+<pre><code>## [1] 44.97470 51.13463 57.29455</code></pre>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="foundation-of-inference.html#cb275-1"></a><span class="co"># 평균 추정치와 신뢰구간을 그래프로 만들 수 있다.</span></span>
+<span id="cb275-2"><a href="foundation-of-inference.html#cb275-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb275-3"><a href="foundation-of-inference.html#cb275-3"></a>estimates.df &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(<span class="kw">tibble</span>(lower.pop, mean.pop, upper.pop))</span>
+<span id="cb275-4"><a href="foundation-of-inference.html#cb275-4"></a>estimates.df<span class="op">$</span>sample.no &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb275-5"><a href="foundation-of-inference.html#cb275-5"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb275-6"><a href="foundation-of-inference.html#cb275-6"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> estimates.df, <span class="kw">aes</span>(<span class="dt">x =</span> sample.no)) <span class="op">+</span></span>
+<span id="cb275-7"><a href="foundation-of-inference.html#cb275-7"></a><span class="st">  </span><span class="kw">geom_pointrange</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mean.pop, <span class="dt">ymin =</span> lower.pop, <span class="dt">ymax =</span> upper.pop))</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-122-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>표본 1개의 평균값과 95% 신뢰구간의 경계값 (bound)을 표현한 그래프입니다.</p>
+<p>동일한 작업을 루프를 이용하여 20개의 표본을 대상으로 하는 평균과 95% 신뢰구간의 하위/상위 경계값을 구해보겠습니다.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="foundation-of-inference.html#cb276-1"></a>mean.pop<span class="fl">.20</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">20</span>)</span>
+<span id="cb276-2"><a href="foundation-of-inference.html#cb276-2"></a>lower.pop<span class="fl">.20</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">20</span>)</span>
+<span id="cb276-3"><a href="foundation-of-inference.html#cb276-3"></a>upper.pop<span class="fl">.20</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, <span class="dv">20</span>)</span>
+<span id="cb276-4"><a href="foundation-of-inference.html#cb276-4"></a></span>
+<span id="cb276-5"><a href="foundation-of-inference.html#cb276-5"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) {</span>
+<span id="cb276-6"><a href="foundation-of-inference.html#cb276-6"></a>  samp.pop &lt;-<span class="st"> </span><span class="kw">sample</span>(WDI.data<span class="op">$</span>SP.URB.TOTL.IN.ZS, <span class="dv">50</span>)</span>
+<span id="cb276-7"><a href="foundation-of-inference.html#cb276-7"></a>  mean.pop<span class="fl">.20</span>[x] &lt;-<span class="st"> </span><span class="kw">mean</span>(samp.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb276-8"><a href="foundation-of-inference.html#cb276-8"></a>  lower.pop<span class="fl">.20</span>[x] &lt;-<span class="st"> </span>mean.pop<span class="fl">.20</span>[x] <span class="op">-</span><span class="st"> </span></span>
+<span id="cb276-9"><a href="foundation-of-inference.html#cb276-9"></a><span class="st">    </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>(<span class="kw">sd</span>(samp.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(samp.pop))))</span>
+<span id="cb276-10"><a href="foundation-of-inference.html#cb276-10"></a>  upper.pop<span class="fl">.20</span>[x] &lt;-<span class="st"> </span>mean.pop<span class="fl">.20</span>[x] <span class="op">+</span><span class="st"> </span></span>
+<span id="cb276-11"><a href="foundation-of-inference.html#cb276-11"></a><span class="st">    </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>(<span class="kw">sd</span>(samp.pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(samp.pop))))</span>
+<span id="cb276-12"><a href="foundation-of-inference.html#cb276-12"></a>}</span></code></pre></div>
+<p>이렇게 구한 총 20개의 표본평균, 하위경계값, 상위경계값을 <code>estimates.df.20</code>이라는 데이터프레임에 저장하고 그래프로 나타내보겠습니다.</p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="foundation-of-inference.html#cb277-1"></a>estimates.df<span class="fl">.20</span> &lt;-<span class="st"> </span><span class="kw">tibble</span>(lower.pop<span class="fl">.20</span>, mean.pop<span class="fl">.20</span>,upper.pop<span class="fl">.20</span>)</span>
+<span id="cb277-2"><a href="foundation-of-inference.html#cb277-2"></a>estimates.df<span class="fl">.20</span><span class="op">$</span>sample.no &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)</span>
+<span id="cb277-3"><a href="foundation-of-inference.html#cb277-3"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> estimates.df<span class="fl">.20</span>, <span class="kw">aes</span>(<span class="dt">x =</span> sample.no)) <span class="op">+</span></span>
+<span id="cb277-4"><a href="foundation-of-inference.html#cb277-4"></a><span class="st">  </span><span class="kw">geom_pointrange</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mean.pop<span class="fl">.20</span>, </span>
+<span id="cb277-5"><a href="foundation-of-inference.html#cb277-5"></a>                      <span class="dt">ymin =</span> lower.pop<span class="fl">.20</span>, </span>
+<span id="cb277-6"><a href="foundation-of-inference.html#cb277-6"></a>                      <span class="dt">ymax =</span> upper.pop<span class="fl">.20</span>))</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-124-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>사실 위와 같은 형태의 그래프를 제공하는 함수가 <code>coefplot()</code>이라고 따로 존재합니다. 요즘에는 회귀분석의 결과표만 보여주기 보다는 평균과 신뢰구간을 같이 보여줄 수 있는 회귀계수 그래프를 위와 같이 제시하는 추세입니다.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="foundation-of-inference.html#cb278-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> estimates.df<span class="fl">.20</span>, <span class="kw">aes</span>(<span class="dt">x =</span> sample.no)) <span class="op">+</span></span>
+<span id="cb278-2"><a href="foundation-of-inference.html#cb278-2"></a><span class="st">  </span><span class="kw">geom_pointrange</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mean.pop<span class="fl">.20</span>, </span>
+<span id="cb278-3"><a href="foundation-of-inference.html#cb278-3"></a>                      <span class="dt">ymin =</span> lower.pop<span class="fl">.20</span>, <span class="dt">ymax =</span> upper.pop<span class="fl">.20</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb278-4"><a href="foundation-of-inference.html#cb278-4"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">data =</span> WDI.data, </span>
+<span id="cb278-5"><a href="foundation-of-inference.html#cb278-5"></a>             <span class="kw">aes</span>(<span class="dt">yintercept =</span> <span class="kw">mean</span>(SP.URB.TOTL.IN.ZS, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb278-6"><a href="foundation-of-inference.html#cb278-6"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb278-7"><a href="foundation-of-inference.html#cb278-7"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb278-8"><a href="foundation-of-inference.html#cb278-8"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sample number&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Estimates&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb278-9"><a href="foundation-of-inference.html#cb278-9"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Sample means for urban pop, with 95% confidence intervals&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-125-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>몇 가지 추가적인 특징들을 더 보여주기 위하여 한 가지 과정을 더해보았습니다. 먼저 95% 신뢰구간 밖에 존재하는 값들을 이탈치 (outliers)라고 할 때, 그 이탈치를 의미하는 더미변수를 하나 만들어보겠습니다. 이탈치면 1, 이탈치가 아니면 0의 값을 갖는 변수를 만들겠다는 것입니다. 95% 신뢰구간을 벗어났다는 것은 표본평균을 가지고 추론한 구간추정 범위 내에 모집단 평균이 존재하지 않는다는 것입니다.</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="foundation-of-inference.html#cb279-1"></a>estimates.df<span class="fl">.20</span><span class="op">$</span>outside &lt;-<span class="st"> </span></span>
+<span id="cb279-2"><a href="foundation-of-inference.html#cb279-2"></a><span class="st">  </span><span class="kw">ifelse</span>(estimates.df<span class="fl">.20</span><span class="op">$</span>lower.pop<span class="fl">.20</span> <span class="op">&gt;</span><span class="st"> </span></span>
+<span id="cb279-3"><a href="foundation-of-inference.html#cb279-3"></a><span class="st">           </span><span class="kw">mean</span>(WDI.data<span class="op">$</span>SP.URB.TOTL.IN.ZS, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">|</span><span class="st"> </span></span>
+<span id="cb279-4"><a href="foundation-of-inference.html#cb279-4"></a><span class="st">           </span>estimates.df<span class="fl">.20</span><span class="op">$</span>upper.pop<span class="fl">.20</span> <span class="op">&lt;</span><span class="st"> </span></span>
+<span id="cb279-5"><a href="foundation-of-inference.html#cb279-5"></a><span class="st">           </span><span class="kw">mean</span>(WDI.data<span class="op">$</span>SP.URB.TOTL.IN.ZS, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), <span class="dv">1</span>, <span class="dv">0</span>)</span></code></pre></div>
+<p>마지막으로 표본평균 + 95% 신뢰구간이 모집단 평균을 포함하지 않는 경우에는 그래프 라인의 색을 빨간 색으로 바꾸는 코딩을 짜보겠습니다.</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="foundation-of-inference.html#cb280-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> estimates.df<span class="fl">.20</span>, </span>
+<span id="cb280-2"><a href="foundation-of-inference.html#cb280-2"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> sample.no, <span class="dt">color =</span> <span class="kw">as.factor</span>(outside))) <span class="op">+</span></span>
+<span id="cb280-3"><a href="foundation-of-inference.html#cb280-3"></a><span class="st">  </span><span class="kw">geom_pointrange</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mean.pop<span class="fl">.20</span>, </span>
+<span id="cb280-4"><a href="foundation-of-inference.html#cb280-4"></a>                      <span class="dt">ymin =</span> lower.pop<span class="fl">.20</span>, </span>
+<span id="cb280-5"><a href="foundation-of-inference.html#cb280-5"></a>                      <span class="dt">ymax =</span> upper.pop<span class="fl">.20</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb280-6"><a href="foundation-of-inference.html#cb280-6"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">data =</span> WDI.data, </span>
+<span id="cb280-7"><a href="foundation-of-inference.html#cb280-7"></a>             <span class="kw">aes</span>(<span class="dt">yintercept =</span> <span class="kw">mean</span>(SP.URB.TOTL.IN.ZS, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb280-8"><a href="foundation-of-inference.html#cb280-8"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb280-9"><a href="foundation-of-inference.html#cb280-9"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb280-10"><a href="foundation-of-inference.html#cb280-10"></a><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>, <span class="dt">values=</span><span class="kw">c</span>(<span class="st">&quot;#9999CC&quot;</span>, <span class="st">&quot;#CC6666&quot;</span>)) <span class="op">+</span></span>
+<span id="cb280-11"><a href="foundation-of-inference.html#cb280-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
+<span id="cb280-12"><a href="foundation-of-inference.html#cb280-12"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Sample number&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Estimates&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb280-13"><a href="foundation-of-inference.html#cb280-13"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Sample means for urban pop, with 95% confidence intervals&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-127-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>실선이 도시 인구 비율의 모집단 평균이라고 할 때, 총 4개의 표본이 평균과 그 평균을 중심으로 한 표준오차 (95% 신뢰구간) 내에 모집단 평균을 포함하지 않는 것을 확인할 수 있습니다.</p>
+</div>
+<div id="평균의-차이difference-of-means-그리고-분산분석analysis-of-variance-anova" class="section level2">
+<h2><span class="header-section-number">5.2</span> 평균의 차이(difference of means), 그리고 분산분석(analysis of variance, ANOVA)</h2>
+<p>사회과학, 정량적 사회과학 연구가 추구하는 목적 중 하나는 인과관계에 관한 추론, 인과추론(causal inference)입니다. 인과관계란 어떤 현상의 생성경로를 추적하기 위한 분석구도로서 경험적으로 확증될 수 없는 논리적 관계를 의미합니다.</p>
+<p>인과관계의 성격은 유리스틱에 따라 달리 규정되지만, 생산(producing)의 관계라는 측면에서는 견해가 일치합니다. 즉, 원인이 기능하여 결과를 생산한다는 것이죠.</p>
+<ul>
+<li>인과관계는 감각경험을 통해 인지할 수 있는 상호독립적 단위로 구성되며, 원인과 결과는
+서로 다른 현상으로 일정한 기능적 연관성 이외에 어떠한 본질적 동질성도 공유하지 않는다고 봅니다.</li>
+<li>또한 경험과학적 시각에서 모든 현상의 원인과 결과 사이의 인과관계는 규칙성과 재생성을
+나타냅니다.</li>
+<li>이 규칙성은 잠정적인 것으로 간주되는데, 그 이유는 네 가지 맥락에서 비롯됩니다.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>어떤 사회현상의 인과적 생성경로는 귀납적으로 추론되나, 귀납적 일반화는 귀납사례의
+범주에 제한되어 조건적입니다.</li>
+<li>마찬가지로 밝혀진 원인들은 충분조건 또는 필요조건에 불과합니다.</li>
+<li>우리는 인과관계를 경험적으로 확인할 수는 없습니다.</li>
+<li>인간의 상호작용으로 나타나는 사회현상은 가변적이므로 그들 간 인과관계도 유동적입니다.</li>
+</ol>
+<p>우리는 <code>X</code>와 <code>Y</code>의 관계를 논리적으로 설정할 수 있을 때, <code>X</code>를 원인으로, <code>Y</code>를 결과로 받아들여 양자 간 인과관계를 부여합니다.</p>
+<ul>
+<li>단, 경험과학적 사회과학연구에서는 도출된 인과관계를 일단의 가정과 선행조건이 충족되었을 경우에 한해 성립되는 개연적 관계로 받아들입니다.</li>
+<li>즉, 인과관계는 언제든 변할 수 있는 경향이나 추세라는 것입니다.</li>
+</ul>
+<p>인과추론에 요구되는 근거는 크게 세 가지로 구분할 수 있습니다. 첫째 시간적 순차, 둘째 항상적 연계, 셋째, 탈허위성입니다.</p>
+<ol style="list-style-type: decimal">
+<li>시간적 순차(time-order)</li>
+</ol>
+<ul>
+<li>원인은 반드시 결과에 시간적으로 앞서야 합니다.</li>
+<li>시간차(time lag)의 경험적 근거가 필요하다.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>항상적 연계</li>
+</ol>
+<ul>
+<li>어떤 현상(원인)의 변화가 다른 현상(결과)의 규칙적 변화를 지속적<span class="math inline">\(\cdot\)</span>안정적으로
+수반할 때, 이들 사이의 인과관계를 추론할 수 있습니다.</li>
+<li>실제 연구과정에 있어서 항상적 연계라는 논리적 척도는 통계적 공변(statistical covariance), 함수적 상관관계(functional correlation)라는 경험적 척도로 대체됩니다.</li>
+<li>예측변수와 종속변수 간의 공변규칙성이 연구의 시간적<span class="math inline">\(\cdot\)</span>공간적 선행조건 하에서
+안정적으로 나타날 때, 인과추론에 요구되는 경험적 근거를 얻을 수 있습니다.</li>
+<li>그러나 공변규칙성만으로 인과관계의 존재를 단정해서는 안 됩니다(관계는 경험적 관측 불가).</li>
+<li>단 항상적 연계는 인과관계의 필요조건입니다(항상적 연계 없으면 일단 인과관계도 없습니다).</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>탈허위성</li>
+</ol>
+<ul>
+<li>인과관계가 허위성을 가지지 않고 진정한(genuine) 것이어야 한다는 뜻입니다.</li>
+</ul>
+<div id="평균-차이를-보는-이유" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> 평균 차이를 보는 이유</h3>
+<p>앞에서 표집을 했을 때와 유사합니다. 사실 우리가 관측한 사회현상이 모집단 그 자체의 사회현상이라고 ‘결코’ 단언할 수 없습니다. 인과성(causality)에 대한 문제는, “어떠한 현상에 대한 원인은 무엇인가?”에 답을 하기 위함입니다. 이것이야말로 사회과학에서 가장 핵심이
+라고 할 수 있습니다. 과학의 정수 는 이론의 수립이며, 이론은 인과적 진술이기 때문입니다. 현상에서 보이지 않는 법칙을 발견하고, 다듬어 나가는 것이 우리 사회“과학자”들이 하는 일이라고 할 수 있습니다. 때문에 인과성(causality)은 우리의 핵심 주제일 수밖에 없습니다.</p>
+<p>인과효과(causal effect)는 다른 요인들이 통제되었을 때, 주요 변인들이 만들어내는 결과의 차이-영향이라고 할 수 있습니다. 예를 들어, 프랑스 혁명의 인과적 효과는 프랑스 혁명이 일어나지 않았을 때의 결과와 비교해볼 때 확인할 수 있습니다. 그런데 문제는 원인이 있을 때와 없을 때를 사회과학에서는 동시에 관찰할 수가 없다는 것입니다(반사실적 사례의 관측불가능성).</p>
+<p>이 문제가 바로 인과추론의 근본적 문제입니다. 이 문제를 해결하기 위해 우리는 두 가지 가설적 방법들을 사용하게 됩니다. 사례를 들어보겠습니다. 가설로 “재직 중인 사람이 선거에서 득표율이 높을 것이다.”라고 할 때, 종속변인은 민주당원이 갖는 득표율이며, 이를 예측하기 위한 변인은 재직 여부가 될 것입니다. 그래서 재직 중인 사람이 나갔을 때 득표율과 새롭게 나간 사람의 득표율
+을 비교, 그 사이의 차이가 바로 인과 효과라고 할 수 있을 것입니다. 예측변인을 제외 한 나머지는 통제되어야 합니다—즉, 변하지 않도록 해야 한다는 것(holding constant)입니다. 이러한 통제의 대상을 어떻게 선정할 것인가는 연구를 설계하는 연구자의 역량에 따라 좌우됩니다.</p>
+<p>위 사례에서 반사실적 조건문(counterfactuals)을 통해 우리가 얻어낼 수 있는 것이 실현된 인과 효과(realized causal effect)이다. 사회과학 연구방법론에 있어서 교과서적으로 읽히는 King, Keohane, 그리고 Verba의 1994년 저작 “Designing Social Inquiry”, 이하 KKV는 이 문제에 대해 우리는 관측가능한 효과에서 체계적인 것과 비체계적인 것을 구분해야 한다고 강조합니다.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> KKV는 우리가 체계적인 변화에 주목해야 한다고 주장합니다. 그리고 그것을 위해서 우리는 가설적인 반복을 통해 비체계적 요인들을 상쇄시키고, 체계적인 요인들만의 영향—평균적인 인과 효과를 살펴볼 수 있다는 것입니다.</p>
+<p>사실, 우리는 우리가 관찰하는 대상 안에 오차(error)가 존재한다고 생각할 수밖에 없기 때문에, 그것을 최소화시키는(maximizing error term) 것이야말로 체계적인 변화의 요인을 추적할 수 있는 방법이 될 수 있습니다. 가설적 반복을 통해 나오는 하나의 분석단위에 대한 확률적인 인과 효과를 평균적으로 보는 것(Random Causal Effect for <span class="math inline">\(\text{unit}_i\)</span>), 즉 평균적 인과 효과(Mean causal effect)는 체계적인 요인들이 가지고 오는 영향의 평균을 의미합니다. KKV는 이와 같이 관측된 인과 효과에서 체계적-비체계적 효과를 구분하는 것을 포함하여 인과 효과의 논의를 발전시켰습니다.</p>
+<p>여기서 하나 더 살펴보아야 하는 것이 바로 분산입니다. 분산이란 실제로 관측된 데이터들이 평균에서 어느 정도 수준으로 흩어져 있는지를 보여주는 통계치입니다. 즉, 관측된 사회현상은 필연적으로 일정한 수준의 분산을 가지게 되는데, 이 변수 자체 분산을 고려하여, 우리가 보고자 하는 두 변수의 관계에 적용할 수 있습니다. 간단히 정리하자면, 두 변수의 평균의 차이가 두 변수의 분산 정도를 무시할 수 있을 정도로 명확하다면, 우리는 통계적으로 이 두 변수 간의 차이가 유의미하다고 볼 수 있습니다. 이에 관한 내용은 추후에 더 자세히 살펴볼 기회가 있을 것입니다.</p>
+<p>일단 여기까지가 바로 우리가 인과추론을 이해하기 위한 기초로서 평균 차 분석의 논리를 살펴보아야 하는 이유입니다. 이론적 논의는 여기까지하고, <strong>R</strong>을 통해 실제 자료를 바탕으로 예제를 통해 구체적인 논의를 이끌어 나가보도록 하겠습니다. 오픈소스로 공개되어 있는 정부의 질(Quality of Government, 이햐 QoG) 데이터셋의 교차사례 자료(cross-section data)를 사용해보겠습니다.</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="foundation-of-inference.html#cb281-1"></a><span class="kw">library</span>(ezpickr)</span>
+<span id="cb281-2"><a href="foundation-of-inference.html#cb281-2"></a>QOG &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="dt">file =</span> <span class="st">&quot;http://www.qogdata.pol.gu.se/data/qog_bas_ts_jan19.dta&quot;</span>)</span>
+<span id="cb281-3"><a href="foundation-of-inference.html#cb281-3"></a><span class="co"># 2010년도 자료만 보겠습니다.</span></span>
+<span id="cb281-4"><a href="foundation-of-inference.html#cb281-4"></a>QOG &lt;-<span class="st"> </span>QOG[QOG<span class="op">$</span>year<span class="op">==</span><span class="dv">2010</span>, ]</span></code></pre></div>
+</div>
+<div id="t-검정을-이용한-두-평균의-차이" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> t-검정을 이용한 두 평균의 차이</h3>
+<p>먼저 <code>Polity</code> 데이터를 이용해서 민주주의/비민주주의를 나타내는 이분변수(dichotomous variable)로 나타내 보겠습니다. POLITY IV 프로젝트에서 제공하는 <code>Polity</code> 데이터는 -10부터 +10까지 총 21개 척도로 정치체제를 구분하고 있습니다. 이러한 방식의 정치체제 측정에 대해서는 여러 가지 비판이 있고, 제 연구주제도 그 비판으로부터 시작한 것이기는 합니다만 여기에서는 구체적으로 다루지 않겠습니다.</p>
+<p><code>Polity</code> 변수는 임의로 7점 이상의 점수를 가진 국가들을 민주주의, 그리고 0 이하를 권위주의, 그리고 그 사이의 국가들은 준민주주의 또는 준권위주의로 구분한다.</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="foundation-of-inference.html#cb282-1"></a><span class="co">## 지금 사용하는 QOG는 1개년도의 194개 국가에 대한 자료로, p_polity2의 결측치가 29개 있다.</span></span>
+<span id="cb282-2"><a href="foundation-of-inference.html#cb282-2"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">table</span>(<span class="kw">is.na</span>(QOG<span class="op">$</span>p_polity2)))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:right;">
+163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="foundation-of-inference.html#cb283-1"></a>QOG<span class="op">$</span>democracy &lt;-<span class="st"> </span><span class="kw">ifelse</span>(QOG<span class="op">$</span>p_polity2 <span class="op">&gt;=</span><span class="st"> </span><span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb283-2"><a href="foundation-of-inference.html#cb283-2"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">table</span>(QOG<span class="op">$</span>democracy))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:right;">
+84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+79
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="foundation-of-inference.html#cb284-1"></a><span class="co">## 결과를 보면 NA를 제외하고 나머지 163개 국 중 민주주의 84개, 비민주주의 79개국이 있음을</span></span>
+<span id="cb284-2"><a href="foundation-of-inference.html#cb284-2"></a><span class="co">## 확인할 수 있습니다.</span></span></code></pre></div>
+<p>그럼 이제 이 민주주의 변수를 자세히 들여다 보겠습니다. 우선 민주주의 국가와 비민주주의 국가 간의 1인당 GDP의 평균을 Gleditsch의 2010년 미국 달러 기준 1인당 GDP 자료를 이용해서 <code>democracy</code> 변수와 함께 살펴보겠습니다.</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="foundation-of-inference.html#cb285-1"></a><span class="kw">by</span>(QOG<span class="op">$</span>gle_cgdpc, QOG<span class="op">$</span>democracy, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## QOG$democracy: 0
+## [1] 8380.733
+## ------------------------------------------------------------ 
+## QOG$democracy: 1
+## [1] 18081.99</code></pre>
+<p>보면 민주주의일 경우 1인당 GDP가 평균 약 18,081달러, 민주주의가 아닐 경우 평균 약 8,380달러임을 확인할 수 있습니다. 이 정보를 좀 더 보기 쉽게 박스플롯으로 나타내보겠습니다.</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="foundation-of-inference.html#cb287-1"></a><span class="co">## 같은 그래프, 다른 그래픽</span></span>
+<span id="cb287-2"><a href="foundation-of-inference.html#cb287-2"></a><span class="kw">boxplot</span>(gle_cgdpc <span class="op">~</span><span class="st"> </span>democracy, <span class="dt">data =</span> QOG) </span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-131-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="foundation-of-inference.html#cb288-1"></a>QOG  <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>(democracy) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb288-2"><a href="foundation-of-inference.html#cb288-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> gle_cgdpc, <span class="dt">x =</span> <span class="kw">as.factor</span>(democracy))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb288-3"><a href="foundation-of-inference.html#cb288-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb288-4"><a href="foundation-of-inference.html#cb288-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Regime type&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;GDPPC by constant 2010 US dollars&quot;</span>) <span class="op">+</span></span>
+<span id="cb288-5"><a href="foundation-of-inference.html#cb288-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span> =<span class="st"> &quot;Non democracy&quot;</span>, <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Democracy&quot;</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb288-6"><a href="foundation-of-inference.html#cb288-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">dollar_format</span>()) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb288-7"><a href="foundation-of-inference.html#cb288-7"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb288-8"><a href="foundation-of-inference.html#cb288-8"></a>    <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">t =</span> <span class="dv">20</span>, <span class="dt">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb288-9"><a href="foundation-of-inference.html#cb288-9"></a>    <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">r =</span> <span class="dv">20</span>, <span class="dt">l =</span> <span class="dv">20</span>))) <span class="op">+</span></span>
+<span id="cb288-10"><a href="foundation-of-inference.html#cb288-10"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">fill=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-131-2.png" width="576" style="display: block; margin: auto;" /></p>
+<p>과연 이 두 평균의 차이가 통계적으로 유의미한지를 결정하기 위해서 t-검정을 해보고자 합니다. t-검정의 기본적인 개념은 하나의 공식으로 보면:<span class="math display">\[
+\text{t-statistics} = \frac{(\mu_A - \mu_B) - \text{(NULL: 0)}}{se_A - se_B}\]</span>
+라고 할 수 있습니다. 다시 풀어서 말하자면 집단 A와 집단 B의 차이<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>가 각 집단의 평균이 표집을 통해 보일 수 있는 표본 추출로 인해 발생할 수 밖에 없는 평균의 차이<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>에 비하여 얼마나 큰지를 보는 것입니다. 즉, 일종의 비율입니다.</p>
+<p>더 단순하게 말하자면: 두 집단이 정말로 차이가 있을지(평균 차이)를 두 집단이 표본이기 때문에 나타날 수 있는 평균의 차이로 인한 차이(표준오차)와 비교하여 보는 것입니다. 만약 두 집단의 평균 차이가 유의미하게 평균 차이의 표준오차보다 크다면, 이 두 집단은 각 집단의 평균이 표집으로 인해 우연으로 차이가 나타났다기 보다는 정말 차이가 있기 때문에 그런 결과로 나타났을 가능성을 시사합니다.</p>
+<p>시작할 때, 비록 민주주의의 1인당 GDP가 비민주주의와는 다를 것이다/혹은 더 높을 것이라는 단측꼬리 가설을 검증하고자 했지만, 여기서의 분석은 양측꼬리 검정(차이가 있다 없다만 보여주는)을 해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="foundation-of-inference.html#cb289-1"></a><span class="co">## 먼저 필요한 통계치들과 표본의 크기를 구해보겠습니다.</span></span>
+<span id="cb289-2"><a href="foundation-of-inference.html#cb289-2"></a><span class="co">## 먼저 평균과 표준편차가 필요합니다.</span></span>
+<span id="cb289-3"><a href="foundation-of-inference.html#cb289-3"></a>mean.dem &lt;-<span class="st"> </span><span class="kw">mean</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span>], <span class="co"># 민주주의 국가들의 GDPPC 평균</span></span>
+<span id="cb289-4"><a href="foundation-of-inference.html#cb289-4"></a>                 <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb289-5"><a href="foundation-of-inference.html#cb289-5"></a>mean.nondem &lt;-<span class="st"> </span><span class="kw">mean</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span>], <span class="co"># 비민주주의</span></span>
+<span id="cb289-6"><a href="foundation-of-inference.html#cb289-6"></a>                    <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb289-7"><a href="foundation-of-inference.html#cb289-7"></a>sd.dem &lt;-<span class="st"> </span><span class="kw">sd</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span>], <span class="co"># 민주주의 국가들의 GDPPC SD</span></span>
+<span id="cb289-8"><a href="foundation-of-inference.html#cb289-8"></a>             <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)                      </span>
+<span id="cb289-9"><a href="foundation-of-inference.html#cb289-9"></a>sd.nondem &lt;-<span class="st"> </span><span class="kw">sd</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span>], <span class="co"># sd: standard deviation</span></span>
+<span id="cb289-10"><a href="foundation-of-inference.html#cb289-10"></a>                <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>표본의 크기를 구해보겠습니다. <code>length()</code>는 결측치까지 포함해서 관측치의 수를 구하기 때문에 매뉴얼대로 하나하나 통계치를 구해 <code>t</code> 값을 구하려는 지금은 반드시 결측치를 제외하고 계산하는 옵션을 추가해주어야 합니다.</p>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="foundation-of-inference.html#cb290-1"></a>n.dem &lt;-<span class="st"> </span><span class="kw">length</span>(QOG<span class="op">$</span>wdi_gdpcapcon2010[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span></span>
+<span id="cb290-2"><a href="foundation-of-inference.html#cb290-2"></a><span class="st">                                        </span><span class="kw">is.na</span>(QOG<span class="op">$</span>democracy) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span></span>
+<span id="cb290-3"><a href="foundation-of-inference.html#cb290-3"></a><span class="st">                                        </span><span class="kw">is.na</span>(QOG<span class="op">$</span>wdi_gdpcapcon2010) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>])</span>
+<span id="cb290-4"><a href="foundation-of-inference.html#cb290-4"></a>n.nondem &lt;-<span class="st"> </span><span class="kw">length</span>(QOG<span class="op">$</span>wdi_gdpcapcon2010[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span></span>
+<span id="cb290-5"><a href="foundation-of-inference.html#cb290-5"></a><span class="st">                                           </span><span class="kw">is.na</span>(QOG<span class="op">$</span>democracy) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span></span>
+<span id="cb290-6"><a href="foundation-of-inference.html#cb290-6"></a><span class="st">                                           </span><span class="kw">is.na</span>(QOG<span class="op">$</span>wdi_gdpcapcon2010) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>])</span></code></pre></div>
+<p>이번에는 두 집단의 차이에 대한 표준오차를 구해보겠습니다.</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="foundation-of-inference.html#cb291-1"></a>se.dnd &lt;-<span class="st"> </span><span class="kw">sqrt</span>((sd.dem<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span>n.dem) <span class="op">+</span><span class="st"> </span>(sd.nondem<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n.nondem))</span>
+<span id="cb291-2"><a href="foundation-of-inference.html#cb291-2"></a><span class="co"># The t statistic is calculated easily using these saved values</span></span>
+<span id="cb291-3"><a href="foundation-of-inference.html#cb291-3"></a>t &lt;-<span class="st"> </span>((mean.dem <span class="op">-</span><span class="st"> </span>mean.nondem) <span class="op">-</span><span class="st"> </span><span class="dv">0</span>) <span class="op">/</span><span class="st"> </span>se.dnd</span>
+<span id="cb291-4"><a href="foundation-of-inference.html#cb291-4"></a>t</span></code></pre></div>
+<pre><code>## [1] 4.03403</code></pre>
+<p>두 집단의 평균이 다를 것이라는 대안가설(Alternative hypothesis, <span class="math inline">\(H_A\)</span>)에 대한 유의수준(p-value)는 아래와 같이 계산할 수 있습니다. 여기서는 <strong>R</strong>에 내장된 굉장히 기본적인 함수들을 조합해서 수학적 공식을 재현하는 것이기 때문에 자유도(degree of freedom)를 대략적으로 구했지만 <strong>R</strong>에 내장된 <code>t-test</code> 함수는 수학적으로 더 정확하게 계산할 것입니다.</p>
+<ul>
+<li><p>대안가설(<span class="math inline">\(H_A\)</span>): 두 집단의 평균이 다를 것이다.</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="foundation-of-inference.html#cb293-1"></a><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(t, <span class="dt">df =</span> <span class="kw">min</span>(n.dem <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, n.nondem <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)))</span></code></pre></div>
+<pre><code>## [1] 0.0001281259</code></pre>
+<ul>
+<li><p>대안가설(<span class="math inline">\(H_A\)</span>): 민주주의의 1인당 GDP가 비민주주의에 비하여 더 높을 것이다.</p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="foundation-of-inference.html#cb295-1"></a>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(t, <span class="dt">df =</span> <span class="kw">min</span>(n.dem <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, n.nondem <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)))</span></code></pre></div>
+<pre><code>## [1] 6.406297e-05</code></pre></li>
+</ul></li>
+</ul>
+<p>여기서 생각해볼 문제: 왜 1에서 제외하는 방식을 사용할까? 그리고 왜 2를 곱하는 것일까?</p>
+<ul>
+<li>1을 제외하는 이유는 <strong>R</strong>은 기본값에 따라서 자동적으로 분포에 있어서 왼쪽으로부터 확률을 계산하기 때문입니다.
+<ul>
+<li>2를 곱하는 이유는 여기서 우리는 방향성을 무시하고 두 집단의 평균 차이가 있는지 없는지의 양측꼬리 검정을 하고자 하기 때문입니다.</li>
+</ul></li>
+</ul>
+<p>위에서 여러 단계에 걸쳐서 작성한 <strong>R</strong> 코드를 다음과 같이 하나의 복잡한 코드로 재구성할 수 있습니다. 다만 이런 경우에는 코드에 에러가 있을 때, 수정이 쉽지 않습니다.</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="foundation-of-inference.html#cb297-1"></a>t.alt &lt;-<span class="st"> </span>(<span class="kw">mean</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span>], </span>
+<span id="cb297-2"><a href="foundation-of-inference.html#cb297-2"></a>               <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span></span>
+<span id="cb297-3"><a href="foundation-of-inference.html#cb297-3"></a><span class="st">            </span><span class="kw">mean</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span>], </span>
+<span id="cb297-4"><a href="foundation-of-inference.html#cb297-4"></a>                 <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span><span class="dv">0</span>) <span class="op">/</span><span class="st"> </span></span>
+<span id="cb297-5"><a href="foundation-of-inference.html#cb297-5"></a><span class="st">  </span><span class="kw">sqrt</span>(</span>
+<span id="cb297-6"><a href="foundation-of-inference.html#cb297-6"></a>        (</span>
+<span id="cb297-7"><a href="foundation-of-inference.html#cb297-7"></a>          <span class="kw">sd</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span>], </span>
+<span id="cb297-8"><a href="foundation-of-inference.html#cb297-8"></a>             <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span></span>
+<span id="cb297-9"><a href="foundation-of-inference.html#cb297-9"></a><span class="st">            </span><span class="kw">length</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;</span><span class="st"> </span></span>
+<span id="cb297-10"><a href="foundation-of-inference.html#cb297-10"></a><span class="st">                                           </span><span class="kw">is.na</span>(QOG<span class="op">$</span>democracy) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span></span>
+<span id="cb297-11"><a href="foundation-of-inference.html#cb297-11"></a><span class="st">            </span><span class="kw">is.na</span>(QOG<span class="op">$</span>gle_cgdpc) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>])</span>
+<span id="cb297-12"><a href="foundation-of-inference.html#cb297-12"></a>        ) <span class="op">+</span></span>
+<span id="cb297-13"><a href="foundation-of-inference.html#cb297-13"></a><span class="st">        </span>(</span>
+<span id="cb297-14"><a href="foundation-of-inference.html#cb297-14"></a>          <span class="kw">sd</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span>], </span>
+<span id="cb297-15"><a href="foundation-of-inference.html#cb297-15"></a>             <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span></span>
+<span id="cb297-16"><a href="foundation-of-inference.html#cb297-16"></a><span class="st">            </span><span class="kw">length</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span></span>
+<span id="cb297-17"><a href="foundation-of-inference.html#cb297-17"></a><span class="st">                                           </span><span class="kw">is.na</span>(QOG<span class="op">$</span>democracy) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span></span>
+<span id="cb297-18"><a href="foundation-of-inference.html#cb297-18"></a><span class="st">            </span><span class="kw">is.na</span>(QOG<span class="op">$</span>gle_cgdpc) <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>])</span>
+<span id="cb297-19"><a href="foundation-of-inference.html#cb297-19"></a>        )</span>
+<span id="cb297-20"><a href="foundation-of-inference.html#cb297-20"></a>      )</span>
+<span id="cb297-21"><a href="foundation-of-inference.html#cb297-21"></a>t.alt</span></code></pre></div>
+<pre><code>## [1] 4.082703</code></pre>
+<div id="r로-할-수-있는-t-test-두-가지-방법" class="section level4">
+<h4><span class="header-section-number">5.2.2.1</span> <strong>R</strong>로 할 수 있는 t-test: 두 가지 방법</h4>
+<ol style="list-style-type: decimal">
+<li>만약 각각의 집단에 대한 서로 다른 두 데이터를 가지고 있다면 유용한 방법</li>
+</ol>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="foundation-of-inference.html#cb299-1"></a>  ttest1 &lt;-<span class="st"> </span><span class="kw">t.test</span>(QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">1</span>],</span>
+<span id="cb299-2"><a href="foundation-of-inference.html#cb299-2"></a>                   QOG<span class="op">$</span>gle_cgdpc[QOG<span class="op">$</span>democracy <span class="op">==</span><span class="st"> </span><span class="dv">0</span>])</span>
+<span id="cb299-3"><a href="foundation-of-inference.html#cb299-3"></a>  ttest1</span></code></pre></div>
+<pre><code>  ## 
+  ## 	Welch Two Sample t-test
+  ## 
+  ## data:  QOG$gle_cgdpc[QOG$democracy == 1] and QOG$gle_cgdpc[QOG$democracy == 0]
+  ## t = 4.0827, df = 159.85, p-value = 7.017e-05
+  ## alternative hypothesis: true difference in means is not equal to 0
+  ## 95 percent confidence interval:
+  ##   5008.492 14394.022
+  ## sample estimates:
+  ## mean of x mean of y 
+  ## 18081.991  8380.733</code></pre>
+<ul>
+<li><code>t.test()</code> 함수는 앞서서는 직접 제거해줘야 했던 결측치의 문제를 자동으로 처리해주는 기본값을 가지고 있습니다.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>두 번째 방법은 두 집단이 하나의 데이터에 같이 있을 때 유용한 방법입니다.</li>
+</ol>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="foundation-of-inference.html#cb301-1"></a>  ttest2 &lt;-<span class="st"> </span><span class="kw">t.test</span>(gle_cgdpc <span class="op">~</span><span class="st"> </span>democracy, <span class="dt">data =</span> QOG)</span>
+<span id="cb301-2"><a href="foundation-of-inference.html#cb301-2"></a>  ttest2</span></code></pre></div>
+<pre><code>  ## 
+  ## 	Welch Two Sample t-test
+  ## 
+  ## data:  gle_cgdpc by democracy
+  ## t = -4.0827, df = 159.85, p-value = 7.017e-05
+  ## alternative hypothesis: true difference in means is not equal to 0
+  ## 95 percent confidence interval:
+  ##  -14394.022  -5008.492
+  ## sample estimates:
+  ## mean in group 0 mean in group 1 
+  ##        8380.733       18081.991</code></pre>
+<ul>
+<li>역시 <code>t.test()</code> 함수를 이용하지만 각 집단의 차이를 규정하는 변수(group identifier)가 있을 때 용이한 방법입니다.</li>
+</ul>
+</div>
+</div>
+<div id="분산분석anova을-이용해-여러-평균을-비교하기" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> 분산분석(ANOVA)을 이용해 여러 평균을 비교하기</h3>
+<p>이번에는 <code>CIRI</code> 데이터를 이용해 국가들의 “고문”(torture) 유형에 따라서 1인당 GDP의 차이가 어떻게 나타나는지를 살펴보겠습니다. 먼저 고문의 유형을 분류해보겠습니다.</p>
+<ul>
+<li>0은 50건 이상의 고문 사례가 있는 경우
+<ul>
+<li>1은 1건에서 49건 사이 사례를 가지는 경우</li>
+<li>2는 보고된 고문 사례가 아예 없는 경우입니다.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="foundation-of-inference.html#cb303-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">table</span>(QOG<span class="op">$</span>ciri_tort))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:right;">
+86
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+75
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+</tbody>
+</table>
+<p>고문 유형에 따른 1인당 GDP의 분포를 그래프로 나타내 보겠습니다.</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="foundation-of-inference.html#cb304-1"></a><span class="kw">boxplot</span>(gle_cgdpc <span class="op">~</span><span class="st"> </span>ciri_tort, <span class="dt">data =</span> QOG)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-141-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="foundation-of-inference.html#cb305-1"></a>QOG  <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>(ciri_tort) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb305-2"><a href="foundation-of-inference.html#cb305-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> gle_cgdpc, <span class="dt">x =</span> <span class="kw">as.factor</span>(ciri_tort))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb305-3"><a href="foundation-of-inference.html#cb305-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb305-4"><a href="foundation-of-inference.html#cb305-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Torture type&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;GDPPC by constant 2010 US dollars&quot;</span>) <span class="op">+</span></span>
+<span id="cb305-5"><a href="foundation-of-inference.html#cb305-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span> =<span class="st"> &quot;Torture (+50)&quot;</span>, </span>
+<span id="cb305-6"><a href="foundation-of-inference.html#cb305-6"></a>                            <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;Torture (1-49)&quot;</span>,</span>
+<span id="cb305-7"><a href="foundation-of-inference.html#cb305-7"></a>                            <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;No torture&quot;</span>)) <span class="op">+</span></span>
+<span id="cb305-8"><a href="foundation-of-inference.html#cb305-8"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">dollar_format</span>()) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb305-9"><a href="foundation-of-inference.html#cb305-9"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb305-10"><a href="foundation-of-inference.html#cb305-10"></a>    <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">t =</span> <span class="dv">20</span>, <span class="dt">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb305-11"><a href="foundation-of-inference.html#cb305-11"></a>    <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">r =</span> <span class="dv">20</span>, <span class="dt">l =</span> <span class="dv">10</span>))) <span class="op">+</span></span>
+<span id="cb305-12"><a href="foundation-of-inference.html#cb305-12"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">fill=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-141-2.png" width="576" style="display: block; margin: auto;" /></p>
+<p>적어도 박스플롯은 세 집단의 평균에 유의미한 차이가 있을 수도 있다고 기대하게 합니다. 이제는 분산분석을 해봅시다. 이번에는 <strong>R</strong>에서 제공하는 분산분석 함수를 이용해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="foundation-of-inference.html#cb306-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">aov</span>(gle_cgdpc <span class="op">~</span><span class="st"> </span><span class="kw">as.factor</span>(ciri_tort), <span class="dt">data =</span> QOG)</span>
+<span id="cb306-2"><a href="foundation-of-inference.html#cb306-2"></a><span class="kw">summary</span>(model1) </span></code></pre></div>
+<pre><code>##                       Df    Sum Sq   Mean Sq F value   Pr(&gt;F)    
+## as.factor(ciri_tort)   2 1.386e+10 6.932e+09   28.03 2.18e-11 ***
+## Residuals            189 4.674e+10 2.473e+08                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 19 observations deleted due to missingness</code></pre>
+<p>결과적으로 ANOVA의 결과는 유의수준(P-value, 여기서는 <code>Pr(&gt;F)</code>)의 값이 매우 작게 나와 영가설(<span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3, \cdots, \mu_n\)</span>)이 기각된 것을 확인할 수 있습니다. 그렇다면 만약 정치체제와 고문유형별로 집단을 더 쪼개어보면 어떻게 될까요?</p>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="foundation-of-inference.html#cb308-1"></a><span class="co">## 먼저, 쪼갠 집단별로 그래프를 그려보겠습니다.</span></span>
+<span id="cb308-2"><a href="foundation-of-inference.html#cb308-2"></a><span class="kw">boxplot</span>(gle_cgdpc <span class="op">~</span><span class="st"> </span>ciri_tort<span class="op">:</span>democracy, <span class="dt">data =</span> QOG) <span class="co">## 콜론(:)은 상호작용을 보여줍니다.</span></span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-143-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="foundation-of-inference.html#cb309-1"></a><span class="co">## 그런데 기본 플롯으로 그리면 x축이 가독성이 떨어집니다.</span></span>
+<span id="cb309-2"><a href="foundation-of-inference.html#cb309-2"></a>QOG <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>(ciri_tort) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>(democracy) <span class="op">%&gt;%</span></span>
+<span id="cb309-3"><a href="foundation-of-inference.html#cb309-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y=</span>gle_cgdpc, <span class="dt">x=</span><span class="kw">as.factor</span>(ciri_tort)<span class="op">:</span><span class="kw">as.factor</span>(democracy),</span>
+<span id="cb309-4"><a href="foundation-of-inference.html#cb309-4"></a>             <span class="dt">group=</span><span class="kw">interaction</span>(democracy, ciri_tort))) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb309-5"><a href="foundation-of-inference.html#cb309-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Torture X Regime type&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;GDPPC by constant 2010 US dollars&quot;</span>) <span class="op">+</span></span>
+<span id="cb309-6"><a href="foundation-of-inference.html#cb309-6"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;0:0&quot;</span> =<span class="st"> &quot;Torture (+50)</span><span class="ch">\n</span><span class="st">Non Democracy&quot;</span>, </span>
+<span id="cb309-7"><a href="foundation-of-inference.html#cb309-7"></a>                            <span class="st">&quot;0:1&quot;</span> =<span class="st"> &quot;Torture (+50)</span><span class="ch">\n</span><span class="st">Democracy&quot;</span>, </span>
+<span id="cb309-8"><a href="foundation-of-inference.html#cb309-8"></a>                            <span class="st">&quot;1:0&quot;</span> =<span class="st"> &quot;Torture (1-49)</span><span class="ch">\n</span><span class="st">Non Democracy&quot;</span>,</span>
+<span id="cb309-9"><a href="foundation-of-inference.html#cb309-9"></a>                            <span class="st">&quot;1:1&quot;</span> =<span class="st"> &quot;Torture (1-49)</span><span class="ch">\n</span><span class="st">Democracy&quot;</span>,</span>
+<span id="cb309-10"><a href="foundation-of-inference.html#cb309-10"></a>                            <span class="st">&quot;2:0&quot;</span> =<span class="st"> &quot;No torture</span><span class="ch">\n</span><span class="st">Non Democracy&quot;</span>,</span>
+<span id="cb309-11"><a href="foundation-of-inference.html#cb309-11"></a>                            <span class="st">&quot;2:1&quot;</span> =<span class="st"> &quot;No torture</span><span class="ch">\n</span><span class="st">Democracy&quot;</span>)) <span class="op">+</span></span>
+<span id="cb309-12"><a href="foundation-of-inference.html#cb309-12"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">dollar_format</span>()) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb309-13"><a href="foundation-of-inference.html#cb309-13"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb309-14"><a href="foundation-of-inference.html#cb309-14"></a>    <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">t =</span> <span class="dv">15</span>, <span class="dt">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb309-15"><a href="foundation-of-inference.html#cb309-15"></a>    <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">r =</span> <span class="dv">20</span>, <span class="dt">l =</span> <span class="dv">10</span>)),</span>
+<span id="cb309-16"><a href="foundation-of-inference.html#cb309-16"></a>    <span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">margin =</span> <span class="kw">margin</span>(<span class="dt">t =</span> <span class="dv">10</span>))) <span class="op">+</span></span>
+<span id="cb309-17"><a href="foundation-of-inference.html#cb309-17"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">fill=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-143-2.png" width="576" style="display: block; margin: auto;" /></p>
+<p>이렇게 두 개 유형의 조합을 분산분석하기 위해서는 마찬가지로 <code>aov()</code> 함수에 두 요인형 변수의 상호작용을 콜론(<code>:</code>)을 이용해 포함해주면 됩니다.</p>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="foundation-of-inference.html#cb310-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">aov</span>(gle_cgdpc <span class="op">~</span><span class="st"> </span><span class="kw">as.factor</span>(ciri_tort)<span class="op">:</span><span class="kw">as.factor</span>(democracy), <span class="dt">data =</span> QOG)</span>
+<span id="cb310-2"><a href="foundation-of-inference.html#cb310-2"></a><span class="kw">summary</span>(model2) </span></code></pre></div>
+<pre><code>##                                            Df    Sum Sq   Mean Sq F value
+## as.factor(ciri_tort):as.factor(democracy)   5 1.851e+10 3.703e+09   26.09
+## Residuals                                 156 2.214e+10 1.419e+08        
+##                                           Pr(&gt;F)    
+## as.factor(ciri_tort):as.factor(democracy) &lt;2e-16 ***
+## Residuals                                           
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 49 observations deleted due to missingness</code></pre>
+<p>단, 명심해야 할 것은 상호작용의 대상이 되는 변수들은 여기서 집단을 보여주는 요인형 변수여야 한다는 것입니다.</p>
+</div>
+</div>
+<div id="비율-차이-교차표와-카이스퀘어-검정chi-squared-tests" class="section level2">
+<h2><span class="header-section-number">5.3</span> 비율 차이: 교차표와 카이스퀘어 검정(chi-squared tests)</h2>
+<p>자료 유형에 따라서 우리가 확인해야할 통계치도 달라집니다. 예를 들어, 연속형 변수의 경우 대표값을 평균(mean)을 보면 되겠지만 이산형 변수의 경우는 비율을 볼 필요가 있습니다. 동전을 100번 던진다고 할 때, 앞면이 56번, 뒷면이 44번 나온 경우, 사실 평균인 0.56은 앞면이 나올 확률과 동일합니다. 즉, 전체 동전을 던진 횟수에 대한 성공 횟수의 비율인 것입니다.</p>
+<p>비율 차이를 확인하고 이 차이의 통계적 유의성을 검정하는 일련의 절차를 확인하기 위하여 두 개의 연도에 걸쳐서 여러 국가들에 걸쳐 수행된 무신론에 관한 설문조사 결과를 다운로드 해보겠습니다.</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="foundation-of-inference.html#cb312-1"></a>here<span class="op">::</span><span class="kw">here</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">setwd</span>()</span>
+<span id="cb312-2"><a href="foundation-of-inference.html#cb312-2"></a><span class="kw">download.file</span>(<span class="st">&quot;http://www.openintro.org/stat/data/atheism.RData&quot;</span>, </span>
+<span id="cb312-3"><a href="foundation-of-inference.html#cb312-3"></a>                <span class="dt">destfile =</span> <span class="st">&quot;atheism.RData&quot;</span>)</span>
+<span id="cb312-4"><a href="foundation-of-inference.html#cb312-4"></a><span class="kw">load</span>(<span class="st">&quot;atheism.RData&quot;</span>)</span></code></pre></div>
+<p>이렇게 불러온 데이터를 자세히 살펴보겠습니다.</p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="foundation-of-inference.html#cb313-1"></a><span class="kw">glimpse</span>(atheism)</span></code></pre></div>
+<pre><code>## Rows: 88,032
+## Columns: 3
+## $ nationality &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, Afg...
+## $ response    &lt;fct&gt; non-atheist, non-atheist, non-atheist, non-atheist, non...
+## $ year        &lt;int&gt; 2012, 2012, 2012, 2012, 2012, 2012, 2012, 2012, 2012, 2...</code></pre>
+<p><code>nationality</code>는 응답자의 국적을 의미하며 <code>year</code>는 설문조사가 시행된 연도, 마지막으로 <code>response</code>는 응답자가 자신이 무신론자인지 아닌지 등을 응답한 내용입니다. 그럼 응답변수만을 한 번 구체적으로 살펴보겠습니다.</p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="foundation-of-inference.html#cb315-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">table</span>(atheism<span class="op">$</span>response))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+atheist
+</td>
+<td style="text-align:right;">
+5498
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-atheist
+</td>
+<td style="text-align:right;">
+82534
+</td>
+</tr>
+</tbody>
+</table>
+<p>교차표를 이용해서 우리는 행과 열에 총계와 비율을 구할 수 있습니다. 이와 같은 빈도/비율표는 변수를 기술하기 위해서 유용하게 사용됩니다.</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="foundation-of-inference.html#cb316-1"></a>table1 &lt;-<span class="st"> </span><span class="kw">table</span>(atheism<span class="op">$</span>response, atheism<span class="op">$</span>year)</span>
+<span id="cb316-2"><a href="foundation-of-inference.html#cb316-2"></a></span>
+<span id="cb316-3"><a href="foundation-of-inference.html#cb316-3"></a><span class="kw">margin.table</span>(table1, <span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>() <span class="co"># 행에 총계를 계산</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+atheist
+</td>
+<td style="text-align:right;">
+5498
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-atheist
+</td>
+<td style="text-align:right;">
+82534
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="foundation-of-inference.html#cb317-1"></a><span class="kw">margin.table</span>(table1, <span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>() <span class="co"># 열에 총계를 계산</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2005
+</td>
+<td style="text-align:right;">
+36105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2012
+</td>
+<td style="text-align:right;">
+51927
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="foundation-of-inference.html#cb318-1"></a><span class="kw">prop.table</span>(table1, <span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>() <span class="co"># 행에 비율을 계산</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+2005
+</th>
+<th style="text-align:right;">
+2012
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+atheist
+</td>
+<td style="text-align:right;">
+0.3677701
+</td>
+<td style="text-align:right;">
+0.6322299
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-atheist
+</td>
+<td style="text-align:right;">
+0.4129571
+</td>
+<td style="text-align:right;">
+0.5870429
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="foundation-of-inference.html#cb319-1"></a><span class="kw">prop.table</span>(table1, <span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>() <span class="co"># 열에 비율을 계산</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+2005
+</th>
+<th style="text-align:right;">
+2012
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+atheist
+</td>
+<td style="text-align:right;">
+0.0560033
+</td>
+<td style="text-align:right;">
+0.0669401
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non-atheist
+</td>
+<td style="text-align:right;">
+0.9439967
+</td>
+<td style="text-align:right;">
+0.9330599
+</td>
+</tr>
+</tbody>
+</table>
+<p>이번에는 2005년과 2012년 간 미국에서 무신론자의 비율이 변화가 있었는지를 검증해보도록 하겠습니다. 먼저, 미국의 응답자들만을 대상으로 하는 서브셋을 만들어보겠습니다.</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="foundation-of-inference.html#cb320-1"></a>us &lt;-<span class="st"> </span><span class="kw">subset</span>(atheism, nationality <span class="op">==</span><span class="st"> &quot;United States&quot;</span>)</span></code></pre></div>
+<p>이렇게 만든 <code>us</code>라는 서브셋을 가지고 카이스퀘어 검정을 해보고자 합니다.</p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="foundation-of-inference.html#cb321-1"></a><span class="kw">prop.test</span>(<span class="kw">table</span>(us<span class="op">$</span>year, us<span class="op">$</span>response), <span class="dt">correct =</span> <span class="ot">FALSE</span>) </span></code></pre></div>
+<pre><code>## 
+## 	2-sample test for equality of proportions without continuity
+## 	correction
+## 
+## data:  table(us$year, us$response)
+## X-squared = 27.49, df = 1, p-value = 1.579e-07
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.05474042 -0.02509990
+## sample estimates:
+##     prop 1     prop 2 
+## 0.00998004 0.04990020</code></pre>
+<p>위에서 중요한 것이 바로 변수의 순서입니다. 어떤 기준별로 특정 변수를 볼 것인가에 따라 그 기준이 될 변수가 앞으로 가고, 분석의 대상이 될 변수가 뒤로 가는 것입니다. 예를 들어, 위의 <code>us</code> 데이터에서 <code>year</code>와 <code>response</code>의 위치를 바꾸어 보겠습니다.</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="foundation-of-inference.html#cb323-1"></a><span class="kw">prop.test</span>(<span class="kw">table</span>(us<span class="op">$</span>response, us<span class="op">$</span>year), <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+## 	2-sample test for equality of proportions without continuity
+## 	correction
+## 
+## data:  table(us$response, us$year)
+## X-squared = 27.49, df = 1, p-value = 1.579e-07
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.4405031 -0.2467397
+## sample estimates:
+##    prop 1    prop 2 
+## 0.1666667 0.5102881</code></pre>
+<p>첫 번째 코드가 두 개의 연도(2005, 2012) 별로 무신론자에 대한 응답 비율을 비교한 것이었다면, 두 번째는 무신론자냐 비무신론자냐에 따라 연도들의 비율을 비교한 결과입니다. 둘 다 두 개 집단만 가지고 있는 변수라 얼핏 비슷해 보이지만 신뢰구간과 표본 추정치(<code>sample estimates</code>)를 보면 다른 것을 확인할 수 있습니다.</p>
+<p>그리고 한 가지 더 명심해야할 것은 <strong>R</strong>은 여러 줄의 코드를 중첩하여 사용하는 것도 가능하다는 것입니다. 예를 들어, 위의 코드는 아래와 같이 쓸 수도 있습니다.</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="foundation-of-inference.html#cb325-1"></a>ustab &lt;-<span class="st"> </span><span class="kw">table</span>(us<span class="op">$</span>year, us<span class="op">$</span>response) <span class="co"># 아예 교차표를 먼저 저장합니다.</span></span>
+<span id="cb325-2"><a href="foundation-of-inference.html#cb325-2"></a><span class="kw">prop.test</span>(ustab, <span class="dt">correct =</span> <span class="ot">FALSE</span>)    <span class="co"># 그리고 prop.test를 저장된 교차표로 시행합니다.</span></span></code></pre></div>
+<pre><code>## 
+## 	2-sample test for equality of proportions without continuity
+## 	correction
+## 
+## data:  ustab
+## X-squared = 27.49, df = 1, p-value = 1.579e-07
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.05474042 -0.02509990
+## sample estimates:
+##     prop 1     prop 2 
+## 0.00998004 0.04990020</code></pre>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="foundation-of-inference.html#cb327-1"></a><span class="co"># R은 때로는 중첩해서 하나의 코드에 여러 기능이 가능하게끔 하기도 합니다.</span></span>
+<span id="cb327-2"><a href="foundation-of-inference.html#cb327-2"></a><span class="kw">prop.test</span>(<span class="kw">table</span>(atheism<span class="op">$</span>year[atheism<span class="op">$</span>nationality <span class="op">==</span><span class="st"> </span></span>
+<span id="cb327-3"><a href="foundation-of-inference.html#cb327-3"></a><span class="st">                               &quot;United States&quot;</span>], </span>
+<span id="cb327-4"><a href="foundation-of-inference.html#cb327-4"></a>                atheism<span class="op">$</span>response[atheism<span class="op">$</span>nationality <span class="op">==</span><span class="st"> </span></span>
+<span id="cb327-5"><a href="foundation-of-inference.html#cb327-5"></a><span class="st">                                   &quot;United States&quot;</span>]), </span>
+<span id="cb327-6"><a href="foundation-of-inference.html#cb327-6"></a>          <span class="dt">correct =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+## 	2-sample test for equality of proportions without continuity
+## 	correction
+## 
+## data:  table(atheism$year[atheism$nationality == &quot;United States&quot;], atheism$response[atheism$nationality == &quot;United States&quot;])
+## X-squared = 27.49, df = 1, p-value = 1.579e-07
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.05474042 -0.02509990
+## sample estimates:
+##     prop 1     prop 2 
+## 0.00998004 0.04990020</code></pre>
+<p>자, 이번에는 2012년 미국 총선의 시계열 설문조사에서 자료를 사용해보도록 하겠습니다. 여기 <a href="https://github.com/jhomola/PS5/blob/master/anes_timeseries_2012_stata12.dta">깃허브</a>에서도 제공하고 있습니다. 다운받았다고 생각하고 진행하겠습니다.</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="foundation-of-inference.html#cb329-1"></a>anes &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="st">&quot;example.data/anes_timeseries_2012_Stata12.dta&quot;</span>)</span>
+<span id="cb329-2"><a href="foundation-of-inference.html#cb329-2"></a><span class="co">## 데이터가 꽤 규모가 있습니다. 2249개의 변수를 가지고 5914개의 관측치가 있습니다.</span></span>
+<span id="cb329-3"><a href="foundation-of-inference.html#cb329-3"></a><span class="co">## 따라서 이렇게 큰 데이터를 사용하기 전에는 코드북을 숙지하여 어떤 변수가</span></span>
+<span id="cb329-4"><a href="foundation-of-inference.html#cb329-4"></a><span class="co">## 어떤 것을 측정하고 있는지를 미리 파악해 두셔야 합니다.</span></span></code></pre></div>
+<p>이렇게 불러온 <code>ANES</code> 자료에서 <code>xtabs()</code> 함수를 이용하여 정당 ID와 2012년에 대통령 후부 누구에게 투표했는지를 보여주는 변수 간의 교차표를 살펴보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="foundation-of-inference.html#cb330-1"></a><span class="kw">xtabs</span>( <span class="op">~</span><span class="st"> </span>pid_x <span class="op">+</span><span class="st"> </span>presvote2012_x, <span class="dt">data =</span> anes) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>() </span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+-9
+</th>
+<th style="text-align:right;">
+-6
+</th>
+<th style="text-align:right;">
+-2
+</th>
+<th style="text-align:right;">
+1
+</th>
+<th style="text-align:right;">
+2
+</th>
+<th style="text-align:right;">
+5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+-2
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+239
+</td>
+<td style="text-align:right;">
+1219
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+519
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+241
+</td>
+<td style="text-align:right;">
+451
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+390
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+161
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+381
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+387
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+627
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="foundation-of-inference.html#cb331-1"></a><span class="co">## xtabs()는 만약 두 개 이상 변수들에 대해 살펴보고 싶을 때 유용한 함수입니다.</span></span>
+<span id="cb331-2"><a href="foundation-of-inference.html#cb331-2"></a><span class="kw">table</span>(anes<span class="op">$</span>pid_x, anes<span class="op">$</span>presvote2012_x) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>() </span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+-9
+</th>
+<th style="text-align:right;">
+-6
+</th>
+<th style="text-align:right;">
+-2
+</th>
+<th style="text-align:right;">
+1
+</th>
+<th style="text-align:right;">
+2
+</th>
+<th style="text-align:right;">
+5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+-2
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+239
+</td>
+<td style="text-align:right;">
+1219
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+519
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+241
+</td>
+<td style="text-align:right;">
+451
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+390
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+161
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+381
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+387
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+627
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+<p>만약 정당 ID와 투표 선택 간 독립성을 보기 위하여 카이스퀘어 검정을 하고 싶다고 한다면, 결측치의 문제를 고려해주어야 합니다. 결측치를 제거하지 않으면 원하는 결과를 얻을 수가 없기 때문입니다. 그럼 결측치를 확인하고 이를 제거하는 작업을 진행하겠습니다.</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="foundation-of-inference.html#cb332-1"></a><span class="co">## 변수 확인하기</span></span>
+<span id="cb332-2"><a href="foundation-of-inference.html#cb332-2"></a><span class="kw">table</span>(anes<span class="op">$</span>pid_x) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+-2
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+1485
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+871
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+747
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+792
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+610
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+623
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+762
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="foundation-of-inference.html#cb333-1"></a><span class="kw">table</span>(anes<span class="op">$</span>presvote2012_x) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+-9
+</td>
+<td style="text-align:right;">
+52
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+-6
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+-2
+</td>
+<td style="text-align:right;">
+1555
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+2496
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+1692
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+118
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="foundation-of-inference.html#cb334-1"></a><span class="co"># 결측치를 제거한 데이터 서브셋을 만들기</span></span>
+<span id="cb334-2"><a href="foundation-of-inference.html#cb334-2"></a></span>
+<span id="cb334-3"><a href="foundation-of-inference.html#cb334-3"></a>anes.nomissing &lt;-<span class="st"> </span>anes <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb334-4"><a href="foundation-of-inference.html#cb334-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(<span class="op">!</span>pid_x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>) <span class="op">&amp;</span><span class="st"> </span></span>
+<span id="cb334-5"><a href="foundation-of-inference.html#cb334-5"></a><span class="st">                  </span><span class="op">!</span>presvote2012_x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="dv">9</span>, <span class="dv">-6</span>, <span class="dv">-2</span>))</span>
+<span id="cb334-6"><a href="foundation-of-inference.html#cb334-6"></a></span>
+<span id="cb334-7"><a href="foundation-of-inference.html#cb334-7"></a><span class="kw">table</span>(anes.nomissing<span class="op">$</span>pid_x) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+1239
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+613
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+505
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+382
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+463
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+647
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="foundation-of-inference.html#cb335-1"></a><span class="kw">table</span>(anes.nomissing<span class="op">$</span>presvote2012_x) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+2489
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+1688
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+118
+</td>
+</tr>
+</tbody>
+</table>
+<p>이제 각각의 변수를 요인형으로 지정해주고, 필요한 경우에는 레이블도 씌워줍니다.</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="foundation-of-inference.html#cb336-1"></a>anes.nomissing<span class="op">$</span>pid_x &lt;-<span class="st"> </span><span class="kw">factor</span>(anes.nomissing<span class="op">$</span>pid_x)</span>
+<span id="cb336-2"><a href="foundation-of-inference.html#cb336-2"></a>anes.nomissing<span class="op">$</span>presvote2012_x &lt;-<span class="st"> </span></span>
+<span id="cb336-3"><a href="foundation-of-inference.html#cb336-3"></a><span class="st">  </span><span class="kw">factor</span>(anes.nomissing<span class="op">$</span>presvote2012_x, </span>
+<span id="cb336-4"><a href="foundation-of-inference.html#cb336-4"></a>         <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Obama&quot;</span>, <span class="st">&quot;Romney&quot;</span>, <span class="st">&quot;Other&quot;</span>))</span>
+<span id="cb336-5"><a href="foundation-of-inference.html#cb336-5"></a></span>
+<span id="cb336-6"><a href="foundation-of-inference.html#cb336-6"></a><span class="co">## 이제 제거한 결측치의 레이블도 없습니다.</span></span>
+<span id="cb336-7"><a href="foundation-of-inference.html#cb336-7"></a><span class="co">## 아까의 경우 결측치를 제거해 내용물은 없지만 결측치임을 보여주었던 라벨은 </span></span>
+<span id="cb336-8"><a href="foundation-of-inference.html#cb336-8"></a><span class="co">## 남아있었습니다. 이제는 지정한 레이블만 남습니다.</span></span>
+<span id="cb336-9"><a href="foundation-of-inference.html#cb336-9"></a></span>
+<span id="cb336-10"><a href="foundation-of-inference.html#cb336-10"></a><span class="kw">table</span>(anes.nomissing<span class="op">$</span>pid_x) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>() <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+1
+</th>
+<th style="text-align:right;">
+2
+</th>
+<th style="text-align:right;">
+3
+</th>
+<th style="text-align:right;">
+4
+</th>
+<th style="text-align:right;">
+5
+</th>
+<th style="text-align:right;">
+6
+</th>
+<th style="text-align:right;">
+7
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1239
+</td>
+<td style="text-align:right;">
+613
+</td>
+<td style="text-align:right;">
+505
+</td>
+<td style="text-align:right;">
+382
+</td>
+<td style="text-align:right;">
+446
+</td>
+<td style="text-align:right;">
+463
+</td>
+<td style="text-align:right;">
+647
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="foundation-of-inference.html#cb337-1"></a><span class="kw">table</span>(anes.nomissing<span class="op">$</span>presvote2012_x) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Obama
+</td>
+<td style="text-align:right;">
+2489
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Romney
+</td>
+<td style="text-align:right;">
+1688
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+118
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="foundation-of-inference.html#cb338-1"></a><span class="co">## 결측치가 없는 상태로 다시 한 번 교차표를 보겠습니다.</span></span>
+<span id="cb338-2"><a href="foundation-of-inference.html#cb338-2"></a><span class="kw">xtabs</span>( <span class="op">~</span><span class="st"> </span>pid_x <span class="op">+</span><span class="st"> </span>presvote2012_x, <span class="dt">data =</span> anes.nomissing) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Obama
+</th>
+<th style="text-align:right;">
+Romney
+</th>
+<th style="text-align:right;">
+Other
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1219
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+519
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+451
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+51
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+381
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+387
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+627
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="foundation-of-inference.html#cb339-1"></a><span class="co">## 카이스퀘어 검정은 xtabs() 결과에 적용할 수 있습니다.</span></span>
+<span id="cb339-2"><a href="foundation-of-inference.html#cb339-2"></a><span class="co">## 단, 변수가 두 개 이상일 경우 카이스퀘어는 작동하지 않습니다.</span></span>
+<span id="cb339-3"><a href="foundation-of-inference.html#cb339-3"></a><span class="kw">chisq.test</span>(<span class="kw">xtabs</span>( <span class="op">~</span><span class="st"> </span>pid_x <span class="op">+</span><span class="st"> </span>presvote2012_x, <span class="dt">data =</span> anes.nomissing)) </span></code></pre></div>
+<pre><code>## 
+## 	Pearson&#39;s Chi-squared test
+## 
+## data:  xtabs(~pid_x + presvote2012_x, data = anes.nomissing)
+## X-squared = 3109.4, df = 12, p-value &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="foundation-of-inference.html#cb341-1"></a><span class="co">## 카이스퀘어 검정을 하는 또 다른 방법입니다.</span></span>
+<span id="cb341-2"><a href="foundation-of-inference.html#cb341-2"></a>model1 &lt;-<span class="st"> </span><span class="kw">xtabs</span>( <span class="op">~</span><span class="st"> </span>pid_x <span class="op">+</span><span class="st"> </span>presvote2012_x, <span class="dt">data =</span> anes.nomissing)</span>
+<span id="cb341-3"><a href="foundation-of-inference.html#cb341-3"></a><span class="kw">chisq.test</span>(model1)</span></code></pre></div>
+<pre><code>## 
+## 	Pearson&#39;s Chi-squared test
+## 
+## data:  model1
+## X-squared = 3109.4, df = 12, p-value &lt; 2.2e-16</code></pre>
+<p>여기서는 개인 수준의 자료를 이용하여 교차표를 만들었습니다. 교차표를 하나의 데이터로 만들어 사용할 수도 있습니다.</p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="foundation-of-inference.html#cb343-1"></a>premade.table &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(<span class="kw">as.data.frame</span>(<span class="kw">table</span>(anes.nomissing<span class="op">$</span>pid_x, </span>
+<span id="cb343-2"><a href="foundation-of-inference.html#cb343-2"></a>                                               anes.nomissing<span class="op">$</span>presvote2012_x)))</span>
+<span id="cb343-3"><a href="foundation-of-inference.html#cb343-3"></a></span>
+<span id="cb343-4"><a href="foundation-of-inference.html#cb343-4"></a><span class="co"># Examine summary table</span></span>
+<span id="cb343-5"><a href="foundation-of-inference.html#cb343-5"></a>premade.table</span></code></pre></div>
+<pre><code>## # A tibble: 21 x 3
+##    Var1  Var2    Freq
+##    &lt;fct&gt; &lt;fct&gt;  &lt;int&gt;
+##  1 1     Obama   1219
+##  2 2     Obama    519
+##  3 3     Obama    451
+##  4 4     Obama    174
+##  5 5     Obama     47
+##  6 6     Obama     61
+##  7 7     Obama     18
+##  8 1     Romney    15
+##  9 2     Romney    86
+## 10 3     Romney    35
+## # ... with 11 more rows</code></pre>
+<p>이렇게 만든 데이터 <code>premade</code>를 사용하여 변수들의 빈도를 계산할 수도 있고, 혹은 가중치 옵션을 반영해서 교차표를 만들 수도 있습니다. 이러한 <code>xtabs()</code>로 만든 교차표로 카이스퀘어 검정을 수행할 수 있습니다.</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="foundation-of-inference.html#cb345-1"></a><span class="kw">xtabs</span>(Freq <span class="op">~</span><span class="st"> </span>Var1 <span class="op">+</span><span class="st"> </span>Var2, <span class="dt">data =</span> premade.table)</span></code></pre></div>
+<pre><code>##     Var2
+## Var1 Obama Romney Other
+##    1  1219     15     5
+##    2   519     86     8
+##    3   451     35    19
+##    4   174    157    51
+##    5    47    381    18
+##    6    61    387    15
+##    7    18    627     2</code></pre>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="foundation-of-inference.html#cb347-1"></a><span class="kw">xtabs</span>(weight_full <span class="op">~</span><span class="st"> </span>pid_x <span class="op">+</span><span class="st"> </span>presvote2012_x, <span class="dt">data =</span> anes.nomissing)</span></code></pre></div>
+<pre><code>##      presvote2012_x
+## pid_x   Obama  Romney   Other
+##     1 926.946  11.628   6.510
+##     2 522.260  93.914  12.367
+##     3 423.043  41.112  16.395
+##     4 171.191 148.613  53.815
+##     5  44.152 434.307  26.494
+##     6  61.747 440.799  12.570
+##     7  19.725 705.899   2.815</code></pre>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="foundation-of-inference.html#cb349-1"></a><span class="kw">chisq.test</span>(<span class="kw">xtabs</span>(weight_full <span class="op">~</span><span class="st"> </span>pid_x <span class="op">+</span><span class="st"> </span>presvote2012_x, <span class="dt">data =</span> anes.nomissing))</span></code></pre></div>
+<pre><code>## 
+## 	Pearson&#39;s Chi-squared test
+## 
+## data:  xtabs(weight_full ~ pid_x + presvote2012_x, data = anes.nomissing)
+## X-squared = 2993.8, df = 12, p-value &lt; 2.2e-16</code></pre>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>King, Gary, Robert Keohane, and Sidney Verba. 1994. <em>Designing Social Inquiry</em>. Princeton: Princeton University Press.<a href="foundation-of-inference.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>엄밀하게 말하면 두 집단의 평균 차이에서 0을 또 빼기 때문에 두 집단의 차이와 0이 다른지 여부를 보는 것이다.<a href="foundation-of-inference.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>표준오차는 여러 번 표본들 하나의 모집단으로 뽑았을 때, 그 각 표본의 평균들 간의 표준편차를 의미한다. 따라서 모집단에서 표본을 뽑음으로써 필연적으로 발생할 수밖에 없는 표본들의 평균의 차이들의 평균을 의미한다.<a href="foundation-of-inference.html#fnref13" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probability-into-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intoduction-to-simple-linear-regression-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-FoundationIF.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Kor_BasicStats.pdf", "Kor_BasicStats.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

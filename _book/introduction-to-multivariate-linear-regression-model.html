@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Introduction to Multivariate Linear Regression Model | Basic Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Chapter 8 Introduction to Multivariate Linear Regression Model | Basic Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Introduction to Multivariate Linear Regression Model | Basic Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Introduction to Multivariate Linear Regression Model | Basic Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2020-08-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="better-understanding-for-linear-model.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction to <strong>R</strong></a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#기본-동작에-관한-소개"><i class="fa fa-check"></i><b>2.1</b> 기본 동작에 관한 소개</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r의-연산자operations"><i class="fa fa-check"></i><b>2.2</b> <strong>R</strong>의 연산자(operations)</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r의-기본적인-자료-유형"><i class="fa fa-check"></i><b>2.3</b> <strong>R</strong>의 기본적인 자료 유형</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#논리형-연산자-logical-operators"><i class="fa fa-check"></i><b>2.3.1</b> 논리형 연산자 (Logical operators)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#벡터-vectors"><i class="fa fa-check"></i><b>2.4</b> 벡터 (Vectors)</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#매트릭스-matrices"><i class="fa fa-check"></i><b>2.5</b> 매트릭스 (Matrices)</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#데이터프레임-data-frame"><i class="fa fa-check"></i><b>2.6</b> 데이터프레임 (Data frame)</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#티블-tibbles"><i class="fa fa-check"></i><b>2.7</b> 티블 (Tibbles)</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#패키지-packages"><i class="fa fa-check"></i><b>2.8</b> 패키지 (Packages)</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#디렉토리-생성-코드"><i class="fa fa-check"></i><b>2.9</b> 디렉토리 생성 코드</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#용례-a-working-example"><i class="fa fa-check"></i><b>2.10</b> 용례 (A working example)</a></li>
+<li class="chapter" data-level="2.11" data-path="intro.html"><a href="intro.html#기타-참고자료"><i class="fa fa-check"></i><b>2.11</b> 기타 참고자료</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> Introduction to Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#작업-디렉토리-설정"><i class="fa fa-check"></i><b>3.1</b> 작업 디렉토리 설정</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#무작위-추출random-draws"><i class="fa fa-check"></i><b>3.2</b> 무작위 추출(Random Draws)</a></li>
+<li class="chapter" data-level="3.3" data-path="ch3.html"><a href="ch3.html#루프-반복loops"><i class="fa fa-check"></i><b>3.3</b> 루프-반복(Loops)</a></li>
+<li class="chapter" data-level="3.4" data-path="ch3.html"><a href="ch3.html#rplots를-파일의-형태로-저장하기"><i class="fa fa-check"></i><b>3.4</b> Rplots를 파일의 형태로 저장하기</a></li>
+<li class="chapter" data-level="3.5" data-path="ch3.html"><a href="ch3.html#데이터-다루기-기본"><i class="fa fa-check"></i><b>3.5</b> 데이터 다루기 기본</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="ch3.html"><a href="ch3.html#데이터에-새로운-변수-더미변수-만들기"><i class="fa fa-check"></i><b>3.5.1</b> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
+<li class="chapter" data-level="3.5.2" data-path="ch3.html"><a href="ch3.html#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><i class="fa fa-check"></i><b>3.5.2</b> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
+<li class="chapter" data-level="3.5.3" data-path="ch3.html"><a href="ch3.html#자료-머징하기-using-data-merging"><i class="fa fa-check"></i><b>3.5.3</b> 자료 머징하기 (Using Data Merging)</a></li>
+<li class="chapter" data-level="3.5.4" data-path="ch3.html"><a href="ch3.html#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><i class="fa fa-check"></i><b>3.5.4</b> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="ch3.html"><a href="ch3.html#요약통계표를-.tex-파일로-저장하기"><i class="fa fa-check"></i><b>3.6</b> 요약통계표를 .tex 파일로 저장하기</a></li>
+<li class="chapter" data-level="3.7" data-path="ch3.html"><a href="ch3.html#서로-다른-분석수준lower-higher-통합하기"><i class="fa fa-check"></i><b>3.7</b> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probability-into-r.html"><a href="probability-into-r.html"><i class="fa fa-check"></i><b>4</b> Probability into R</a><ul>
+<li class="chapter" data-level="4.1" data-path="probability-into-r.html"><a href="probability-into-r.html#주사위굴리기-게임"><i class="fa fa-check"></i><b>4.1</b> 주사위굴리기 게임!</a></li>
+<li class="chapter" data-level="4.2" data-path="probability-into-r.html"><a href="probability-into-r.html#동전-던지기"><i class="fa fa-check"></i><b>4.2</b> 동전 던지기</a></li>
+<li class="chapter" data-level="4.3" data-path="probability-into-r.html"><a href="probability-into-r.html#독립사건-시뮬레이션"><i class="fa fa-check"></i><b>4.3</b> 독립사건 시뮬레이션</a></li>
+<li class="chapter" data-level="4.4" data-path="probability-into-r.html"><a href="probability-into-r.html#종속사건-시뮬레이션"><i class="fa fa-check"></i><b>4.4</b> 종속사건 시뮬레이션</a></li>
+<li class="chapter" data-level="4.5" data-path="probability-into-r.html"><a href="probability-into-r.html#분포distribution"><i class="fa fa-check"></i><b>4.5</b> 분포(Distribution)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="probability-into-r.html"><a href="probability-into-r.html#정규분포-the-normal-distribution"><i class="fa fa-check"></i><b>4.5.1</b> 정규분포 (The normal distribution)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="probability-into-r.html"><a href="probability-into-r.html#이항분포-binomial-distribution"><i class="fa fa-check"></i><b>4.5.2</b> 이항분포 (Binomial distribution)</a></li>
+<li class="chapter" data-level="4.5.3" data-path="probability-into-r.html"><a href="probability-into-r.html#포와송-분포-poison-distribution"><i class="fa fa-check"></i><b>4.5.3</b> 포와송 분포 (Poison distribution)</a></li>
+<li class="chapter" data-level="4.5.4" data-path="probability-into-r.html"><a href="probability-into-r.html#음이항-분포-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.5.4</b> 음이항 분포 (Negative Binomial Distribution)</a></li>
+<li class="chapter" data-level="4.5.5" data-path="probability-into-r.html"><a href="probability-into-r.html#f-분포-f-distribution"><i class="fa fa-check"></i><b>4.5.5</b> F 분포 (F Distribution)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html"><i class="fa fa-check"></i><b>5</b> Foundation of Inference</a><ul>
+<li class="chapter" data-level="5.1" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#표본을-통한-모집단-추론-infer-population-using-samples"><i class="fa fa-check"></i><b>5.1</b> 표본을 통한 모집단 추론 (Infer Population using Samples)</a></li>
+<li class="chapter" data-level="5.2" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#평균의-차이difference-of-means-그리고-분산분석analysis-of-variance-anova"><i class="fa fa-check"></i><b>5.2</b> 평균의 차이(difference of means), 그리고 분산분석(analysis of variance, ANOVA)</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#평균-차이를-보는-이유"><i class="fa fa-check"></i><b>5.2.1</b> 평균 차이를 보는 이유</a></li>
+<li class="chapter" data-level="5.2.2" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#t-검정을-이용한-두-평균의-차이"><i class="fa fa-check"></i><b>5.2.2</b> t-검정을 이용한 두 평균의 차이</a></li>
+<li class="chapter" data-level="5.2.3" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#분산분석anova을-이용해-여러-평균을-비교하기"><i class="fa fa-check"></i><b>5.2.3</b> 분산분석(ANOVA)을 이용해 여러 평균을 비교하기</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#비율-차이-교차표와-카이스퀘어-검정chi-squared-tests"><i class="fa fa-check"></i><b>5.3</b> 비율 차이: 교차표와 카이스퀘어 검정(chi-squared tests)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html"><i class="fa fa-check"></i><b>6</b> Intoduction to Simple Linear Regression Model</a><ul>
+<li class="chapter" data-level="6.1" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#회귀분석의-이해-기울기의-검정"><i class="fa fa-check"></i><b>6.1</b> 회귀분석의 이해: 기울기의 검정</a></li>
+<li class="chapter" data-level="6.2" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기"><i class="fa fa-check"></i><b>6.2</b> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</a></li>
+<li class="chapter" data-level="6.3" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#단순회귀분석-심화"><i class="fa fa-check"></i><b>6.3</b> 단순회귀분석 심화</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html"><i class="fa fa-check"></i><b>7</b> Better Understanding for Linear Model</a><ul>
+<li class="chapter" data-level="7.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#추정estimation"><i class="fa fa-check"></i><b>7.1</b> 추정(Estimation)</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#점추정과-구간추정point-estimation-and-interval-estimation"><i class="fa fa-check"></i><b>7.1.1</b> 점추정과 구간추정(point estimation and interval estimation)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#신뢰구간-평균과-비율"><i class="fa fa-check"></i><b>7.1.2</b> 신뢰구간: 평균과 비율</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정significnace-tests"><i class="fa fa-check"></i><b>7.2</b> 유의성 검정(Significnace Tests)</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정을-이루는-다섯-가지-부분"><i class="fa fa-check"></i><b>7.2.1</b> 유의성 검정을 이루는 다섯 가지 부분</a></li>
+<li class="chapter" data-level="7.2.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#오류의-유형-types-of-errors"><i class="fa fa-check"></i><b>7.2.2</b> 오류의 유형 (Types of Errors)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀와-상관관계"><i class="fa fa-check"></i><b>7.3</b> 선형회귀와 상관관계</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형관계"><i class="fa fa-check"></i><b>7.3.1</b> 선형관계</a></li>
+<li class="chapter" data-level="7.3.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#확률모델probability-model"><i class="fa fa-check"></i><b>7.3.2</b> 확률모델(Probability model)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀모델"><i class="fa fa-check"></i><b>7.3.3</b> 선형회귀모델</a></li>
+<li class="chapter" data-level="7.3.4" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#관계의-측정-상관관계"><i class="fa fa-check"></i><b>7.3.4</b> 관계의 측정: 상관관계</a></li>
+<li class="chapter" data-level="7.3.5" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#정리하며"><i class="fa fa-check"></i><b>7.3.5</b> 정리하며</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html"><i class="fa fa-check"></i><b>8</b> Introduction to Multivariate Linear Regression Model</a><ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#관계와-인과성"><i class="fa fa-check"></i><b>8.1</b> 관계와 인과성</a></li>
+<li class="chapter" data-level="8.2" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#변수의-통제"><i class="fa fa-check"></i><b>8.2</b> 변수의 통제</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다변량-관계multivariate-relationship"><i class="fa fa-check"></i><b>8.2.1</b> 다변량 관계(Multivariate relationship)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다중선형회귀모델multiple-linear-regression-model"><i class="fa fa-check"></i><b>8.3</b> 다중선형회귀모델(Multiple linear regression model)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-multivariate-linear-regression-model" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Introduction to Multivariate Linear Regression Model</h1>
+<p>제6장과 제7장이 하나의 설명변수와 종속변수 간의 관계를 살펴보는 단순선형회귀모델에 초점을 맞추고 있었다면, 제8장에서는 여러 개의 설명변수와 종속변수의 관계—다변량(multivariate) 선형회귀모델, 다중회귀모델(multiple regression model)에 대해서 간단하게 발을 들여 놓아보고자 합니다. 구체적으로는 관계(association)와 인과성(causality), 관심을 가지고 있는 설명변수를 제외한 나머지 변수들의 통제(cotrolling), 그리고 다변량 관계(multivariate relationships)의 유형들에 대해 살펴보겠습니다.</p>
+<div id="관계와-인과성" class="section level2">
+<h2><span class="header-section-number">8.1</span> 관계와 인과성</h2>
+<p>앞선 장들에서는 두 변수 간의 관계를 분석하는 방법들을 주로 살펴보았습니다. 물론 양변량 관계를 분석하는 것도 여러 가지 정보들을 전달해주지만, 대개 우리는 한 가지 현상이 결코 단 하나의 원인에 의해서 발생하지 않는다는 것을 알고 있습니다. 어떻게 보면 우리가 겸험적 세계에 대해서 유일하게 확신을 가지고 말할 수 있는 사실일지도 모르겠네요. 우리는 하나의 종속변수—현상을 설명하기 위해 여러 변수들을 필요로 합니다. 그리고 여러 설명변수들을 포함하여 종속변수에 대한 영향력을 분석할 때, 개별 변수의 종속변수에 대한 효과는 양변량 분석일 때와 달라지고는 합니다.</p>
+<p>인과성은 과학적 연구에서 핵심적인 부분입니다. 예를 들어, 우리는 바이러스에 노출되는 것이 감기에 걸리게 할 수 있다고 말하고는 합니다. 이 결과는 여러 조건들이 통제된 실험실에서 연구를 통해 드러나 우리에게 받아들여지고 있는 주장입니다. 마찬가지로 흡연이 폐암 발병의 원인이 될 수 있다는 주장도 그렇습니다. 그러나 사회적 현상을 보여주는 변수들 간에 인과적 관계가 있는지 여부를 어떻게 판단할 수 있을까요? 무엇이 청소년 비행(uvenile delinquency)의 원인이라고 말할 수 있을까요? 가난일까요? 아니면 편부모 가정인 경우에 그럴까요? 도덕적/종교적인 교육을 받지 못한 경우에 청소년들은 비행을 저지를까요? 아니면 유전적 인자의 효과일까요? 혹은 이 모든 요인들에 더해 다른 요인들의 복합적인 영향일까요?</p>
+<p>인과성을 판단하는 데에는 세 가지 기준이 존재합니다.</p>
+<ol style="list-style-type: decimal">
+<li>관계(association)입니다.</li>
+</ol>
+<ul>
+<li>우리는 두 변수가 관계가 있는지를 통계적으로 확인할 수 있습니다.</li>
+<li>만약 변수가 분류형-명목현 변수라면 우리는 카이스퀘어 검정을 할 수 있고, 정량형 변수라면 <span class="math inline">\(t\)</span>-검정을 할 수 있습니다.</li>
+<li>그러나 관계가 있다는 것이 필연적으로 인과성을 의미하는 것은 아닙니다.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>시간적 순차(time order)</li>
+</ol>
+<ul>
+<li>시간적 순차는 내생성(endogeneity)의 문제에서 인과적 관계를 파악하는 데 도움을 줍니다.
+<ul>
+<li>예를 들어, 보이스카웃이 청소년 비행을 감소시킨다고 해보겠습니다.</li>
+<li>그러나 비행 청소년들이 보이스카웃을 피하는 것일수도 있습니다.</li>
+<li>두 가지 다 가능합니다. 이때, 우리는 무엇이 원인이고 무엇이 결과라고 할 수 있을까요?</li>
+</ul></li>
+<li>실험연구에서 시간적 순차는 명확합니다.</li>
+<li>그러나 관찰연구에서는 시간적 경향성은 존재할 수 있지만 시간적 순차에 대해서는 이론적으로 뒷받침이 되어야 합니다.
+<ul>
+<li>최초의 사회현상, 원인이라고 할 수 있는 사회현상을 관측할 수 있을까요?</li>
+<li>그리고 시간적 경향성이 존재하기 때문에 과연 그 변화가 원인으로 인한 것인지 그냥 시간에 따라 변화한 것인지에 대한 고민도 필요합니다. 이혼률과 범죄율은 과거에 비해 지속적으로 증가해왔습니다. 과연 이혼률이 범죄율을 증가시킨걸까요?</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>대안적 설명의 제거(탈허위성의 문제)</li>
+</ol>
+<ul>
+<li>우리는 변수들 간의 관계를 목격하고는 합니다.</li>
+<li>만약 우리가 어떤 것이 변화할 때, 다른 것이 변화하고 그것들 간의 시간적 순차가 존재한다고 핟라도, 그것이 반드시 인과적 관계라고 단언할 수는 없습니다.</li>
+<li>왜냐하면 만약 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span> 모두에 영향을 미치는 제3의 변수, <span class="math inline">\(z\)</span>가 존재할 경우에는 기존의 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 관계가 허위적(spurious)일 수 있기 때문입니다.</li>
+<li>따라서 대안적 설명의 제거—<span class="math inline">\(z\)</span>의 존재가 영향을 미치지 않는다는 것을 보여주는 것이 중요한데, 사실 이것이 가장 어렵습니다.
+<ul>
+<li>우리는 변수들 간의 인과적 관계를 찾았다고 생각할수 있지만, 단지 그것은 우리가 제3의 변수를 가진 설명을 생각해내지 못한 것일 수도 있기 때문입니다.</li>
+<li>이러한 문제 때문에, 우리는 결코 어떤 변수가 다른 변수의 원인이라고 “증명”(proove)할 수는 없습니다.</li>
+<li>그러나 우리는 위의 세 기준 중에서 최소한 하나에 위배되는 경험적 근거를 보여줌으로써, 인과적 가설을 반증할 수는 있습니다.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="변수의-통제" class="section level2">
+<h2><span class="header-section-number">8.2</span> 변수의 통제</h2>
+<p>우리는 “어떤 변수의 영향력이 제거되었을 때”, 그 변수가 통제되었다고 말합니다. 실험연구를 예로 들어본다면, 온도와 기압 등은 특정 수준에서 고정되어 변화하지 않습니다(holding constant). 하지만 사회과학 연구에서는 실험실처럼 고정할 수 없는 사회적 현상들을 분석대상으로 하고 있습니다. 따라서 우리는 통제하고 싶은 변수들의 값을 고정할 수는 없습니다. 그러나 대략적으로 실험연구의 통제와 비슷한 통제를 통계적으로 할 수 있는데, 바로 통제변수들에 따라 같은 값을 가지는 관측치들을 그룹화해주는 것입니다. 예를 들어, 사회적 계급이나 교육 수준, 그리고 소득 수준에 따라 관측치들을 묶어주는 것이지요. 이러한 방법을 통계적 통제라고 합니다. 정리하자면, 우리는 변수들을 특정한 값으로 변화하지 않고록 고정시킴으로써 통제합니다.</p>
+<p>두 분류형-명목형 변수들 간의 관계를 연구할 때, 우리는 보통 통제변수—<span class="math inline">\(z\)</span>의 수준별로 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 교차표를 분할하여 보여주고는 합니다. 예를 들어, 다시 보이스카웃과 청소년 비행과의 관계를 생각해볼 때, 제3의 변수를 교회에 다니는지 여부라고 한다면 교회에 다니는 경우와 다니지 않는 경우 보이스카웃과 청소년 비행 간의 교차표를 그려서 관계양상을 파악해보는 것입니다. 그렇다면 현실적으로 이러한 <span class="math inline">\(z\)</span>, 통제변수들을 어떻게 선택하여 모델에 투입할까요? 여기서 선행연구 검토의 중요성이 강조됩니다. 사회과학 연구에서는 기존의 이론적 연구들에서 제시되었던 설명변수들 중 내가 상정한 종속변수에 영향을 미칠 것이라고 볼 수 있는 것들을 나의 모델에 통제변수로 투입하고는 합니다. 이러한 점에서 사회과학 연구는 실험연구에 비해 통제라는 부분에서는 연구자의 재량, 이론적 검토가 크게 작용한다고 할 수도 있을 것 같습니다.</p>
+<p>하지만 동시에 우리는 교란변수(omitted or lurkingv variable)의 가능성을 항상 생각해야 합니다. 교란항(disturbance term)이라고도 할 수 있겠는데요, 앞서 말한 것과 같이 우리가 상정한 인과적 관계를 뒤틀 수 있는 제3 변수의 가능성을 잘 살펴보지 않으면, 우리의 인과적 주장—가설은 허무하게 반증될 수 있습니다.</p>
+<ul>
+<li>어떠한 관계를 보고하는 연구에 대해서 읽을 때, 과연 그 관계에 교란변수의 문제가 없을지 생각해보는 습관을 들일 필요가 있습니다.</li>
+<li>과연 대학교 성적이 소득에 영향을 미칠까요?</li>
+<li>당장 여기서만 봐도 우리는 노동 시간과 같은 다른 변수들의 효과를 생각해볼 수 있을 것입니다.</li>
+</ul>
+<p>이제 다변량 관계를 한 번 살펴보겠습니다.</p>
+<div id="다변량-관계multivariate-relationship" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> 다변량 관계(Multivariate relationship)</h3>
+<p>다변량—하나의 종속변수에 대해 여러 개의 설명변수들의 관계를 살펴볼 때에는 다섯 가지 문제들을 염두에 두어야 합니다.</p>
+<ol style="list-style-type: decimal">
+<li>허위적 관계(Spurious associations)</li>
+</ol>
+<ul>
+<li>먼저 탈허위적 관계를 간단한 그림을 통해 살펴보겠습니다. 탈허위적 관계란 우리가 설명하고 싶은 현상, 종속변수 <span class="math inline">\(y\)</span>와 그에 영향을 미칠 주요한 설명변수 <span class="math inline">\(x\)</span>가 모두 제3의 변수인 <span class="math inline">\(z\)</span>에 영향을 받는 경우를 말합니다.
+<img src="Chapters_pdfR/plot/superious.jpg" width="1229" style="display: block; margin: auto;" /></li>
+<li>만약 <span class="math inline">\(z\)</span>를 통제했을 때, <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 관계가 사라진다면, 우리는 기존에 우리가 상정하였던 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 관계가 인과적 관계가 아닌 허위적 관계라는 것을 알게 됩니다.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>연쇄적 관계(Chain relationships)</li>
+</ol>
+<ul>
+<li><span class="math inline">\(x_1 \rightarrow x_2 \rightarrow y\)</span>라는 관계를 생각해보겠습니다. 이는 <span class="math inline">\(x_1\)</span>이 <span class="math inline">\(x_2\)</span>를 경유하여 <span class="math inline">\(y\)</span>에 영향을 미치는 간접적인 효과를 가지고 있다는 것을 보여줍니다.</li>
+<li>이때, 우리는 <span class="math inline">\(x_2\)</span>를 매개변수(mediator) 혹은 간섭변수(intervening variable)라고 부릅니다. 이 관계에서 <span class="math inline">\(x_2\)</span>가 통제되면 기존에 우리가 보았던 <span class="math inline">\(x_1\)</span>과 <span class="math inline">\(y\)</span> 간의 관계는 사라지게 될 것입니다.</li>
+<li>허위적 관계와 연쇄 관계는 일견 보기에 비슷해보입니다. 둘 다 특정한 변수가 통제되었을 때, 기존에 상정한 인과적 관계가 사라지는 것을 보여줍니다. 하지만 허위적 관계에서 <span class="math inline">\(z\)</span>는 인과적으로 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>에 선행되는 인자를 의미하는 것인데 반하여 연쇄적 관계에서 <span class="math inline">\(x_2\)</span>는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span> 사이를 간섭하는 변수입니다.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>다중원인(Multiple causes)</li>
+</ol>
+<ul>
+<li>대부분의 종속변수들은 직접적이고 간접적인 영향력을 미치는 여러 개의 원인들을 갖습니다.</li>
+<li>따라서 어떤 한 변수가 통제되었을 때, 다른 원인들의 효과—즉, 원인들과 종속변수 간의 관계가 사라지는 것이 아니라 변화할 수도 있습니다.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>억압변수(Suppressor variables)</li>
+</ol>
+<ul>
+<li>제3의 변수 <span class="math inline">\(z\)</span>가 통제되기 전까지는 두 변수 간의 관계가 나타나지 않을 때, 우리는 <span class="math inline">\(z\)</span>를 억압변수라고 합니다.</li>
+<li>예를 들어, 교육 수준과 소득 간의 관계를 생각해보겠습니다.
+<ul>
+<li>만약 두 변수 간의 관계만 보았을 때에는 유의미한 관계가 나타나지 않았지만, 나이 변수를 통제하자 둘 간의 양의 관계가 나타났다고 해보겠습니다.</li>
+<li>이때, 나이 변수는 소득에는 긍정적인 효과를 가지고 있지만 교육 수준에는 부정적인 효과를 가지고 있는 변수라고 하겠습니다.</li>
+<li>왜냐하면 나이를 먹을수록 소득 수준이 더 높아질 수는 있지만 반대로 교육 수준은 낮아질 수 있기 때문입니다.</li>
+<li>이 경우에 나이 변수는 교육 수준과 소득 수준의 관계에 대한 억압변수라고 할 수 있습니다.</li>
+</ul></li>
+<li>이러한 잠재적인 억압변수의 가능성으로 인하여 양변량 분석이 아무 관계도 보여주지 않더라도 다른 변수들을 통제하여 관계 양상의 변화를 살펴보는 것이 좋습니다.</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>통계적 상호작용(Statistical interaction)</li>
+</ol>
+<ul>
+<li><span class="math inline">\(x_1\)</span>의 <span class="math inline">\(y\)</span>에 대한 진정한 영향력이 <span class="math inline">\(x_2\)</span>의 수준에 따라 다르게 나타난다면 어떻게 될까요?</li>
+<li><span class="math inline">\(x_2\)</span>의 수준이 달라질 때마다 <span class="math inline">\(x_1\)</span>과 <span class="math inline">\(y\)</span> 관계의 강도나 방향이 달라질 때, 우리는 통계적 상호작용의 문제를 생각해볼 수 있습니다.
+<img src="Chapters_pdfR/plot/interaction.jpg" width="396" style="display: block; margin: auto;" /></li>
+</ul>
+<p>다변량 관계에서 또 유의해야할 점은 바로 심슨의 패러독스(Simpson’s paradox)와 관련되어 있습니다. 심슨의 패러독스란 한 변수를 통제한 이후에 변수들의 관계가 통제 이전과 완전히 달라지는 경우를 의미합니다.</p>
+<p><img src="Chapters_pdfR/plot/simpson.jpg" width="381" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="다중선형회귀모델multiple-linear-regression-model" class="section level2">
+<h2><span class="header-section-number">8.3</span> 다중선형회귀모델(Multiple linear regression model)</h2>
+<p>단순선형회귀모델(simple linear regression model)이 두 변수, <span class="math inline">\(y\)</span>와 <span class="math inline">\(x\)</span> 간의 양변량 관계만을 보여주었다면, 다중선형회귀모델은 하나의 종속변수, <span class="math inline">\(y\)</span>에 대한 여러 설명변수들(<span class="math inline">\(x_1, x_2, \cdots x_i\)</span>)의 다변량 관계를 보여줍니다. 따라서 회귀식을 수리적으로 나타낸다면 <span class="math display">\[y = \alpha + \beta_1x_1 + \beta_2x_2 + \cdots + \beta_ix_i + \epsilon\]</span>과 같이 보여줄 수 있습니다.</p>
+<p>다중선형회귀모델에서 설명변수들은 <code>+</code>로 연결되어 있습니다. 이는 논리적으로 “또는”을 의미하는 것으로, 다중선형회귀모델에서는 각 설명변수들이 서로 상관이 없다—독립적이라고 가정한다는 것을 의미합니다. 하지만 현실세계에서 우리가 확보하는 자료들이 서로 완벽하게 독립적이기는 쉽지 않습니다. 따라서 설명변수들 간의 공선성(collinearity)을 확인하는 것이 중요합니다.</p>
+<p>설명변수가 매우 높은 상관관계를 보일 때, 우리는 변수들이 공선성을 지닌다라고 표현합니다. 공선성은 모델의 추정을 매우 복잡하게 합니다. 왜냐하면 변수들 간의 공분산이 모델에서 제외되기 때문입니다. 간단하게 말하면, 우리는 오롯한 <span class="math inline">\(x_1\)</span>의 변화와 <span class="math inline">\(x_2\)</span>의 변화로 <span class="math inline">\(y\)</span>의 변화를 설명하고 싶어합니다. 그런데 <span class="math inline">\(x_1\)</span>과 <span class="math inline">\(x_2\)</span>의 변화가 상당 부분 겹쳐있다면, 그 겹쳐 있는 부분을 제외하고 순수한 <span class="math inline">\(x_1\)</span>과 <span class="math inline">\(x_2\)</span>의 변화만으로 <span class="math inline">\(y\)</span>를 설명해야하는데, 이는 많은 관측치를 잃어버린 것과 같은 문제(small-n problem)를 야기합니다.</p>
+<p>일반적으로 우리는 가장 간명한(parsimonious) 모델을 추구합니다. 그러나 우리는 인과적 관계의 기준 중 하나인 허위적 관계를 탐색하기 위하여 변수들을 필연적으로 모델에 더 추가해야합니다. 따라서 이와 같은 변수 추가로 인한 공선성이 일부 발생하는 것은 피할 수 없습니다.</p>
+<p>그렇다면 어떤 변수는 모델에 넣고, 어떤 변수를 뺄 것인가—모델 선택 전략(model selection strategies)은 무엇으로 결정할까요? 앞에서도 간단히 언급하였지만, 바로 선행연구들을 바탕으로 한 이론(theory)입니다.</p>
+<p>기본적으로 다중선형회귀모델은 <span class="math inline">\(\hat{y} = \alpha + \beta_1x_1 + \beta_2x_2 + \cdots + \beta_ix_i\)</span>와 같은 형태로 이루어져 있습니다. 그리고 이 모델은 다음과 같은 조건들 위에 있습니다.</p>
+<ol style="list-style-type: decimal">
+<li>잔차는 거의 정규성을 띄어야 한다.</li>
+<li>잔차는 동분산을 지녀야 한다.</li>
+<li>잔차는 변수들과 독립적이어야 한다.</li>
+<li>각 설명변수들은 종속변수와 선형으로 연계되어야 한다.</li>
+</ol>
+<p>이 가정들은 제6장의 단순선형회귀모델에서도 살펴보았고, 추후 <code>Lv.2.Statistics</code> 자료에서 더 자세하게 다루겠습니다. 이제 예제 데이터를 통한 분석으로 다중선형회귀모델을 살펴보도록 하겠습니다. 우선 <code>Quality of Government</code>의 교차사례 자료를 불러오도록 하겠습니다. 불러온 자료는 <code>QOG</code>라는 객체에 저장하도록 하겠습니다.</p>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="introduction-to-multivariate-linear-regression-model.html#cb441-1"></a>QOG &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="dt">file =</span> <span class="st">&quot;http://www.qogdata.pol.gu.se/data/qog_std_cs_jan19.csv&quot;</span>)</span></code></pre></div>
+<p>단순선형회귀모델에서와 같이 부패지수 변수를 그 값이 클수록 부패 수준이 높은 것으로 재조작하여 사용하고자 합니다. 그리고 인간개발지수, 정치적 제약성 변수(political constraints; veto points)를 추가로 불러오겠습니다. 종속변수를 부패지수, 그리고 나머지 두 변수를 설명변수로 다중회귀분석을 수행하도록 하겠습니다.</p>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="introduction-to-multivariate-linear-regression-model.html#cb442-1"></a>QOG<span class="op">$</span>corrupt &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">-</span><span class="st"> </span>QOG<span class="op">$</span>ti_cpi</span>
+<span id="cb442-2"><a href="introduction-to-multivariate-linear-regression-model.html#cb442-2"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(corrupt <span class="op">~</span><span class="st"> </span>undp_hdi <span class="op">+</span><span class="st"> </span>h_polcon5, <span class="dt">data =</span> QOG)</span>
+<span id="cb442-3"><a href="introduction-to-multivariate-linear-regression-model.html#cb442-3"></a>model1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = corrupt ~ undp_hdi + h_polcon5, data = QOG)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -38.297 -10.552   3.105   7.909  29.414 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  121.548      4.658  26.097  &lt; 2e-16 ***
+## undp_hdi     -80.019      6.997 -11.437  &lt; 2e-16 ***
+## h_polcon5    -18.025      3.788  -4.758 4.38e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 12.79 on 158 degrees of freedom
+##   (33 observations deleted due to missingness)
+## Multiple R-squared:  0.5959,	Adjusted R-squared:  0.5908 
+## F-statistic: 116.5 on 2 and 158 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><code>model 1</code>에서 인간개발지수(HDI)와 정치적 제약(veto players) 변수의 상호작용을 포함한 <code>model 2</code>를 만들어보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="introduction-to-multivariate-linear-regression-model.html#cb444-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(corrupt <span class="op">~</span><span class="st">  </span>undp_hdi <span class="op">*</span><span class="st"> </span>h_polcon5 , <span class="dt">data =</span> QOG)</span>
+<span id="cb444-2"><a href="introduction-to-multivariate-linear-regression-model.html#cb444-2"></a>model2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = corrupt ~ undp_hdi * h_polcon5, data = QOG)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -35.541  -9.606   2.689   8.180  27.590 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)           98.62       8.92  11.056  &lt; 2e-16 ***
+## undp_hdi             -46.56      13.12  -3.550 0.000508 ***
+## h_polcon5             31.46      16.97   1.854 0.065652 .  
+## undp_hdi:h_polcon5   -68.45      22.91  -2.988 0.003264 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 12.48 on 157 degrees of freedom
+##   (33 observations deleted due to missingness)
+## Multiple R-squared:  0.6176,	Adjusted R-squared:  0.6103 
+## F-statistic: 84.53 on 3 and 157 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><code>model 2</code>에다가 자유민주주의를 보여주는 새로운 변수(POLITY)를 추가하여 <code>model 3</code>의 분석까지 수행하겠습니다.</p>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="introduction-to-multivariate-linear-regression-model.html#cb446-1"></a>model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(corrupt <span class="op">~</span><span class="st">  </span>undp_hdi <span class="op">*</span><span class="st"> </span>h_polcon5 <span class="op">+</span><span class="st"> </span>p_polity2, <span class="dt">data =</span> QOG)</span>
+<span id="cb446-2"><a href="introduction-to-multivariate-linear-regression-model.html#cb446-2"></a>model3 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = corrupt ~ undp_hdi * h_polcon5 + p_polity2, data = QOG)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -35.503  -7.729   2.870   8.002  26.724 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         95.31192    9.08428  10.492  &lt; 2e-16 ***
+## undp_hdi           -40.42527   13.54667  -2.984  0.00332 ** 
+## h_polcon5           35.59814   17.19071   2.071  0.04010 *  
+## p_polity2           -0.08642    0.22327  -0.387  0.69925    
+## undp_hdi:h_polcon5 -74.71667   23.55421  -3.172  0.00184 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 12.48 on 149 degrees of freedom
+##   (40 observations deleted due to missingness)
+## Multiple R-squared:  0.6202,	Adjusted R-squared:   0.61 
+## F-statistic: 60.83 on 4 and 149 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>자, 결과가 어떻게 나왔을까요? 결과를 확인하기 쉽게 보여주기 위해서 약간의 데이터 전처리 과정을 진행하겠습니다.</p>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb448-2"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb448-3"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-3"></a></span>
+<span id="cb448-4"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-4"></a>models &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(</span>
+<span id="cb448-5"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-5"></a>  tidy.model1 &lt;-<span class="st"> </span>model1 <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb448-6"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-6"></a><span class="st">    </span>broom<span class="op">::</span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb448-7"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-7"></a><span class="st">    </span><span class="kw">bind_cols</span>(</span>
+<span id="cb448-8"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-8"></a>      model1 <span class="op">%&gt;%</span><span class="st"> </span>broom<span class="op">::</span><span class="kw">confint_tidy</span>() <span class="op">%&gt;%</span></span>
+<span id="cb448-9"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-9"></a><span class="st">        </span><span class="kw">select</span>(<span class="dt">ll =</span> conf.low, <span class="dt">ul =</span> conf.high)</span>
+<span id="cb448-10"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-10"></a>      ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</span>
+<span id="cb448-11"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-11"></a>        <span class="dt">Model =</span> <span class="st">&quot;Model 1&quot;</span></span>
+<span id="cb448-12"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-12"></a>      ),</span>
+<span id="cb448-13"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-13"></a>  tidy.model2 &lt;-<span class="st"> </span>model2 <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb448-14"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-14"></a><span class="st">    </span>broom<span class="op">::</span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb448-15"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-15"></a><span class="st">    </span><span class="kw">bind_cols</span>(</span>
+<span id="cb448-16"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-16"></a>      model2 <span class="op">%&gt;%</span><span class="st"> </span>broom<span class="op">::</span><span class="kw">confint_tidy</span>() <span class="op">%&gt;%</span></span>
+<span id="cb448-17"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-17"></a><span class="st">        </span><span class="kw">select</span>(<span class="dt">ll =</span> conf.low, <span class="dt">ul =</span> conf.high)</span>
+<span id="cb448-18"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-18"></a>      ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</span>
+<span id="cb448-19"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-19"></a>        <span class="dt">Model =</span> <span class="st">&quot;Model 2&quot;</span></span>
+<span id="cb448-20"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-20"></a>      ),</span>
+<span id="cb448-21"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-21"></a>  tidy.model3 &lt;-<span class="st"> </span>model3 <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb448-22"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-22"></a><span class="st">    </span>broom<span class="op">::</span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb448-23"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-23"></a><span class="st">    </span><span class="kw">bind_cols</span>(</span>
+<span id="cb448-24"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-24"></a>      model3 <span class="op">%&gt;%</span><span class="st"> </span>broom<span class="op">::</span><span class="kw">confint_tidy</span>() <span class="op">%&gt;%</span></span>
+<span id="cb448-25"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-25"></a><span class="st">        </span><span class="kw">select</span>(<span class="dt">ll =</span> conf.low, <span class="dt">ul =</span> conf.high)</span>
+<span id="cb448-26"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-26"></a>      ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</span>
+<span id="cb448-27"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-27"></a>        <span class="dt">Model =</span> <span class="st">&quot;Model 3&quot;</span></span>
+<span id="cb448-28"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-28"></a>      )</span>
+<span id="cb448-29"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-29"></a>)</span>
+<span id="cb448-30"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-30"></a>   </span>
+<span id="cb448-31"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-31"></a>models <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(term <span class="op">!=</span><span class="st"> &quot;(Intercept)&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb448-32"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-32"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> term, <span class="dt">y =</span> estimate, <span class="dt">color =</span> Model)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb448-33"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-33"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb448-34"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-34"></a><span class="st">  </span><span class="kw">geom_linerange</span>(<span class="kw">aes</span>(<span class="dt">ymin =</span> ll, <span class="dt">ymax =</span> ul), <span class="dt">show.legend =</span> <span class="ot">NA</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb448-35"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Variables&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Estimates&quot;</span>,</span>
+<span id="cb448-36"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-36"></a>       <span class="dt">title =</span> <span class="st">&quot;Three models comparison&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb448-37"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-37"></a><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb448-38"><a href="introduction-to-multivariate-linear-regression-model.html#cb448-38"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-226-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>절편-상수는 우리의 관심사가 아니므로, 상수를 제외한 세 모델들의 변수들의 효과를 플롯으로 나타내 보았습니다. 보시면 정치적 제약 변수가 <code>model 1</code>에서는 부패 지수에 부정적인 효과를 갖는 것으로 나왔는데, 다른 모델에서는 다른 양상을 보이는 것을 확인할 수 있습니다. 물론 상호작용을 해석하는 것에는 주의를 기울여야하지만, 여기서는 단지 제3의 변수에 따라서 회귀모델의 결과가 어떻게 달라질 수 있는지를 보여드리고자 합니다.</p>
+<p>상호작용변수, 정치적 제약성의 수준이 달라질 때마다 과연 인간개발지수(<code>undp_hdi</code>)가 부패지수에 미치는 효과가 조건적인 변화를 보여줄까요? 이를 살펴보기 위해서 조금 다른 플롯을 그려보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-1"></a><span class="kw">library</span>(effects) <span class="co"># 패키지를 이용해줍니다.</span></span>
+<span id="cb449-2"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-2"></a>m3eff &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(<span class="kw">effect</span>(<span class="st">&quot;undp_hdi:h_polcon5&quot;</span>, model3, </span>
+<span id="cb449-3"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-3"></a>                              <span class="dt">xlevels =</span> <span class="kw">list</span>(<span class="dt">h_polcon5 =</span> <span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">0</span>, <span class="fl">.9</span>, <span class="dt">by =</span> <span class="fl">.1</span>)), </span>
+<span id="cb449-4"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-4"></a>                                             <span class="dt">undp_hdi =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">.5</span>, <span class="dv">1</span>)), </span>
+<span id="cb449-5"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-5"></a>                              <span class="dt">multiline =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb449-6"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-6"></a></span>
+<span id="cb449-7"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-7"></a>m3eff <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> h_polcon5, <span class="dt">group =</span> <span class="kw">factor</span>(undp_hdi), </span>
+<span id="cb449-8"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-8"></a>                     <span class="dt">color =</span> <span class="kw">factor</span>(undp_hdi), <span class="dt">fill =</span> <span class="kw">factor</span>(undp_hdi))) <span class="op">+</span></span>
+<span id="cb449-9"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-9"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> fit)) <span class="op">+</span></span>
+<span id="cb449-10"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-10"></a><span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(<span class="dt">ymin =</span> lower, <span class="dt">ymax =</span> upper, <span class="dt">alpha =</span> <span class="fl">.2</span>), <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb449-11"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-11"></a><span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name  =</span> <span class="st">&quot;HDI&quot;</span>, <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0.5&quot;</span>, <span class="st">&quot;1&quot;</span>)) <span class="op">+</span></span>
+<span id="cb449-12"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-12"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span><span class="kw">c</span>(<span class="st">&quot;dark red&quot;</span>, <span class="st">&quot;dark green&quot;</span>,<span class="st">&quot;blue&quot;</span>)) <span class="op">+</span></span>
+<span id="cb449-13"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-13"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Political constraints&quot;</span>) <span class="op">+</span></span>
+<span id="cb449-14"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-14"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Predicted corruption&quot;</span>) <span class="op">+</span></span>
+<span id="cb449-15"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-15"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb449-16"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">hjust=</span><span class="dv">0</span>, <span class="dt">size=</span><span class="kw">rel</span>(<span class="fl">1.1</span>)),</span>
+<span id="cb449-17"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-17"></a>        <span class="dt">panel.grid.major.y =</span> <span class="kw">element_line</span>(<span class="dt">size=</span><span class="fl">0.25</span>, <span class="dt">colour=</span><span class="st">&quot;grey80&quot;</span>, <span class="dt">linetype=</span><span class="st">&quot;dotted&quot;</span>),</span>
+<span id="cb449-18"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-18"></a>        <span class="dt">panel.grid.major.x =</span> <span class="kw">element_line</span>(<span class="dt">size=</span><span class="fl">0.25</span>, <span class="dt">colour=</span><span class="st">&quot;grey80&quot;</span>, <span class="dt">linetype=</span><span class="st">&quot;dotted&quot;</span>),              </span>
+<span id="cb449-19"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-19"></a>        <span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb449-20"><a href="introduction-to-multivariate-linear-regression-model.html#cb449-20"></a>        <span class="dt">axis.ticks =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-227-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>자, 서로 다른 HDI는 정치적 제약 수준이 변화함에 따라 부패 지수에 대한 예측확률(predicted probability)이 다르게 나타나는 것을 확인할 수 있습니다. 예컨대, HDI 수준이 낮은 경우(<code>hdi = 0</code>)에는 정치적 제약 수준이 높아질수록 예측되는 부패 수준이 증가하는 것을 확인할 수 있습니다. 반대로 HDI 수준이 높은 경우(<code>hdi = 1</code>)에는 정치적인 제약 수준이 높아질수록 예측되는 부패의 수준이 감소하는 것을 확인할 수 있습니다. 처음에 정치적 제약 수준과 인간개발지수가 독립적이라고 가정하고 분석한 다중선형회귀모델의 결과와는 사뭇 다른 결과를 확인할 수 있습니다.</p>
+<p>이처럼 다중선형회귀모델을 수행할 경우에는 변수들 간의 상호작용, 관계 양상의 변화 등에 주의를 기울여 연구자 본인이 주장하는 인과적 설명이 얼마나 타당한지 확인해야 합니다.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="better-understanding-for-linear-model.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-MultivariateLM.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Kor_BasicStats.pdf", "Kor_BasicStats.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

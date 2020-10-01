@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Intoduction to Simple Linear Regression Model | Basic Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Chapter 6 Intoduction to Simple Linear Regression Model | Basic Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Intoduction to Simple Linear Regression Model | Basic Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Intoduction to Simple Linear Regression Model | Basic Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2020-08-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="foundation-of-inference.html"/>
+<link rel="next" href="better-understanding-for-linear-model.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction to <strong>R</strong></a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#기본-동작에-관한-소개"><i class="fa fa-check"></i><b>2.1</b> 기본 동작에 관한 소개</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r의-연산자operations"><i class="fa fa-check"></i><b>2.2</b> <strong>R</strong>의 연산자(operations)</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r의-기본적인-자료-유형"><i class="fa fa-check"></i><b>2.3</b> <strong>R</strong>의 기본적인 자료 유형</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#논리형-연산자-logical-operators"><i class="fa fa-check"></i><b>2.3.1</b> 논리형 연산자 (Logical operators)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#벡터-vectors"><i class="fa fa-check"></i><b>2.4</b> 벡터 (Vectors)</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#매트릭스-matrices"><i class="fa fa-check"></i><b>2.5</b> 매트릭스 (Matrices)</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#데이터프레임-data-frame"><i class="fa fa-check"></i><b>2.6</b> 데이터프레임 (Data frame)</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#티블-tibbles"><i class="fa fa-check"></i><b>2.7</b> 티블 (Tibbles)</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#패키지-packages"><i class="fa fa-check"></i><b>2.8</b> 패키지 (Packages)</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#디렉토리-생성-코드"><i class="fa fa-check"></i><b>2.9</b> 디렉토리 생성 코드</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#용례-a-working-example"><i class="fa fa-check"></i><b>2.10</b> 용례 (A working example)</a></li>
+<li class="chapter" data-level="2.11" data-path="intro.html"><a href="intro.html#기타-참고자료"><i class="fa fa-check"></i><b>2.11</b> 기타 참고자료</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>3</b> Introduction to Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch3.html"><a href="ch3.html#작업-디렉토리-설정"><i class="fa fa-check"></i><b>3.1</b> 작업 디렉토리 설정</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3.html"><a href="ch3.html#무작위-추출random-draws"><i class="fa fa-check"></i><b>3.2</b> 무작위 추출(Random Draws)</a></li>
+<li class="chapter" data-level="3.3" data-path="ch3.html"><a href="ch3.html#루프-반복loops"><i class="fa fa-check"></i><b>3.3</b> 루프-반복(Loops)</a></li>
+<li class="chapter" data-level="3.4" data-path="ch3.html"><a href="ch3.html#rplots를-파일의-형태로-저장하기"><i class="fa fa-check"></i><b>3.4</b> Rplots를 파일의 형태로 저장하기</a></li>
+<li class="chapter" data-level="3.5" data-path="ch3.html"><a href="ch3.html#데이터-다루기-기본"><i class="fa fa-check"></i><b>3.5</b> 데이터 다루기 기본</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="ch3.html"><a href="ch3.html#데이터에-새로운-변수-더미변수-만들기"><i class="fa fa-check"></i><b>3.5.1</b> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
+<li class="chapter" data-level="3.5.2" data-path="ch3.html"><a href="ch3.html#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><i class="fa fa-check"></i><b>3.5.2</b> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
+<li class="chapter" data-level="3.5.3" data-path="ch3.html"><a href="ch3.html#자료-머징하기-using-data-merging"><i class="fa fa-check"></i><b>3.5.3</b> 자료 머징하기 (Using Data Merging)</a></li>
+<li class="chapter" data-level="3.5.4" data-path="ch3.html"><a href="ch3.html#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><i class="fa fa-check"></i><b>3.5.4</b> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="ch3.html"><a href="ch3.html#요약통계표를-.tex-파일로-저장하기"><i class="fa fa-check"></i><b>3.6</b> 요약통계표를 .tex 파일로 저장하기</a></li>
+<li class="chapter" data-level="3.7" data-path="ch3.html"><a href="ch3.html#서로-다른-분석수준lower-higher-통합하기"><i class="fa fa-check"></i><b>3.7</b> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probability-into-r.html"><a href="probability-into-r.html"><i class="fa fa-check"></i><b>4</b> Probability into R</a><ul>
+<li class="chapter" data-level="4.1" data-path="probability-into-r.html"><a href="probability-into-r.html#주사위굴리기-게임"><i class="fa fa-check"></i><b>4.1</b> 주사위굴리기 게임!</a></li>
+<li class="chapter" data-level="4.2" data-path="probability-into-r.html"><a href="probability-into-r.html#동전-던지기"><i class="fa fa-check"></i><b>4.2</b> 동전 던지기</a></li>
+<li class="chapter" data-level="4.3" data-path="probability-into-r.html"><a href="probability-into-r.html#독립사건-시뮬레이션"><i class="fa fa-check"></i><b>4.3</b> 독립사건 시뮬레이션</a></li>
+<li class="chapter" data-level="4.4" data-path="probability-into-r.html"><a href="probability-into-r.html#종속사건-시뮬레이션"><i class="fa fa-check"></i><b>4.4</b> 종속사건 시뮬레이션</a></li>
+<li class="chapter" data-level="4.5" data-path="probability-into-r.html"><a href="probability-into-r.html#분포distribution"><i class="fa fa-check"></i><b>4.5</b> 분포(Distribution)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="probability-into-r.html"><a href="probability-into-r.html#정규분포-the-normal-distribution"><i class="fa fa-check"></i><b>4.5.1</b> 정규분포 (The normal distribution)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="probability-into-r.html"><a href="probability-into-r.html#이항분포-binomial-distribution"><i class="fa fa-check"></i><b>4.5.2</b> 이항분포 (Binomial distribution)</a></li>
+<li class="chapter" data-level="4.5.3" data-path="probability-into-r.html"><a href="probability-into-r.html#포와송-분포-poison-distribution"><i class="fa fa-check"></i><b>4.5.3</b> 포와송 분포 (Poison distribution)</a></li>
+<li class="chapter" data-level="4.5.4" data-path="probability-into-r.html"><a href="probability-into-r.html#음이항-분포-negative-binomial-distribution"><i class="fa fa-check"></i><b>4.5.4</b> 음이항 분포 (Negative Binomial Distribution)</a></li>
+<li class="chapter" data-level="4.5.5" data-path="probability-into-r.html"><a href="probability-into-r.html#f-분포-f-distribution"><i class="fa fa-check"></i><b>4.5.5</b> F 분포 (F Distribution)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html"><i class="fa fa-check"></i><b>5</b> Foundation of Inference</a><ul>
+<li class="chapter" data-level="5.1" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#표본을-통한-모집단-추론-infer-population-using-samples"><i class="fa fa-check"></i><b>5.1</b> 표본을 통한 모집단 추론 (Infer Population using Samples)</a></li>
+<li class="chapter" data-level="5.2" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#평균의-차이difference-of-means-그리고-분산분석analysis-of-variance-anova"><i class="fa fa-check"></i><b>5.2</b> 평균의 차이(difference of means), 그리고 분산분석(analysis of variance, ANOVA)</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#평균-차이를-보는-이유"><i class="fa fa-check"></i><b>5.2.1</b> 평균 차이를 보는 이유</a></li>
+<li class="chapter" data-level="5.2.2" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#t-검정을-이용한-두-평균의-차이"><i class="fa fa-check"></i><b>5.2.2</b> t-검정을 이용한 두 평균의 차이</a></li>
+<li class="chapter" data-level="5.2.3" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#분산분석anova을-이용해-여러-평균을-비교하기"><i class="fa fa-check"></i><b>5.2.3</b> 분산분석(ANOVA)을 이용해 여러 평균을 비교하기</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="foundation-of-inference.html"><a href="foundation-of-inference.html#비율-차이-교차표와-카이스퀘어-검정chi-squared-tests"><i class="fa fa-check"></i><b>5.3</b> 비율 차이: 교차표와 카이스퀘어 검정(chi-squared tests)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html"><i class="fa fa-check"></i><b>6</b> Intoduction to Simple Linear Regression Model</a><ul>
+<li class="chapter" data-level="6.1" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#회귀분석의-이해-기울기의-검정"><i class="fa fa-check"></i><b>6.1</b> 회귀분석의 이해: 기울기의 검정</a></li>
+<li class="chapter" data-level="6.2" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기"><i class="fa fa-check"></i><b>6.2</b> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</a></li>
+<li class="chapter" data-level="6.3" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#단순회귀분석-심화"><i class="fa fa-check"></i><b>6.3</b> 단순회귀분석 심화</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html"><i class="fa fa-check"></i><b>7</b> Better Understanding for Linear Model</a><ul>
+<li class="chapter" data-level="7.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#추정estimation"><i class="fa fa-check"></i><b>7.1</b> 추정(Estimation)</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#점추정과-구간추정point-estimation-and-interval-estimation"><i class="fa fa-check"></i><b>7.1.1</b> 점추정과 구간추정(point estimation and interval estimation)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#신뢰구간-평균과-비율"><i class="fa fa-check"></i><b>7.1.2</b> 신뢰구간: 평균과 비율</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정significnace-tests"><i class="fa fa-check"></i><b>7.2</b> 유의성 검정(Significnace Tests)</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정을-이루는-다섯-가지-부분"><i class="fa fa-check"></i><b>7.2.1</b> 유의성 검정을 이루는 다섯 가지 부분</a></li>
+<li class="chapter" data-level="7.2.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#오류의-유형-types-of-errors"><i class="fa fa-check"></i><b>7.2.2</b> 오류의 유형 (Types of Errors)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀와-상관관계"><i class="fa fa-check"></i><b>7.3</b> 선형회귀와 상관관계</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형관계"><i class="fa fa-check"></i><b>7.3.1</b> 선형관계</a></li>
+<li class="chapter" data-level="7.3.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#확률모델probability-model"><i class="fa fa-check"></i><b>7.3.2</b> 확률모델(Probability model)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀모델"><i class="fa fa-check"></i><b>7.3.3</b> 선형회귀모델</a></li>
+<li class="chapter" data-level="7.3.4" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#관계의-측정-상관관계"><i class="fa fa-check"></i><b>7.3.4</b> 관계의 측정: 상관관계</a></li>
+<li class="chapter" data-level="7.3.5" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#정리하며"><i class="fa fa-check"></i><b>7.3.5</b> 정리하며</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html"><i class="fa fa-check"></i><b>8</b> Introduction to Multivariate Linear Regression Model</a><ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#관계와-인과성"><i class="fa fa-check"></i><b>8.1</b> 관계와 인과성</a></li>
+<li class="chapter" data-level="8.2" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#변수의-통제"><i class="fa fa-check"></i><b>8.2</b> 변수의 통제</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다변량-관계multivariate-relationship"><i class="fa fa-check"></i><b>8.2.1</b> 다변량 관계(Multivariate relationship)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다중선형회귀모델multiple-linear-regression-model"><i class="fa fa-check"></i><b>8.3</b> 다중선형회귀모델(Multiple linear regression model)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intoduction-to-simple-linear-regression-model" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Intoduction to Simple Linear Regression Model</h1>
+<p>앞서는 두 집단 간의 차이를 검정해 보았습니다. 두 집단의 변수가 연속형일 경우에는 평균을 구해서 집단 간 평균의 차이를 비교했고, 두 집단의 변수가 이산형(descret), 특히 이항변수(binary)일 때에는 집단의 비율의 차이를 비교해 보았습니다. 그리고 두 분류형 변수(categorical variables) 간에 관계가 있는지 여부를 검증하는 것은 교차표(cross-tabulation)으로 살펴보았습니다.</p>
+<p>여기서는 첫째, 두 연속형 변수가 과연 관계가 있는지, 그리고 관계가 있다면 그것을 어떻게 정량적으로 나타낼 수 있는지를 살펴보겠습니다. 둘째, 연속형 또는 분류형 설명변수-연속형 종속변수로 통계모형을 만들어보고 해석해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="intoduction-to-simple-linear-regression-model.html#cb351-1"></a><span class="kw">library</span>(here)</span>
+<span id="cb351-2"><a href="intoduction-to-simple-linear-regression-model.html#cb351-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb351-3"><a href="intoduction-to-simple-linear-regression-model.html#cb351-3"></a><span class="kw">library</span>(kableExtra)</span>
+<span id="cb351-4"><a href="intoduction-to-simple-linear-regression-model.html#cb351-4"></a><span class="kw">library</span>(ezpickr)</span>
+<span id="cb351-5"><a href="intoduction-to-simple-linear-regression-model.html#cb351-5"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb351-6"><a href="intoduction-to-simple-linear-regression-model.html#cb351-6"></a><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>()) <span class="co"># 혹시 모를 이전 작업의 객체들을 비워주고</span></span>
+<span id="cb351-7"><a href="intoduction-to-simple-linear-regression-model.html#cb351-7"></a>here<span class="op">::</span><span class="kw">here</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">setwd</span>() <span class="co"># 현재 R-script가 열린 디렉토리로 </span></span>
+<span id="cb351-8"><a href="intoduction-to-simple-linear-regression-model.html#cb351-8"></a>                        <span class="co">## 작업 디렉토리를 설정하였습니다.</span></span>
+<span id="cb351-9"><a href="intoduction-to-simple-linear-regression-model.html#cb351-9"></a>GSScut &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="st">&quot;example.data/GSScut.dta&quot;</span>)</span>
+<span id="cb351-10"><a href="intoduction-to-simple-linear-regression-model.html#cb351-10"></a><span class="kw">glimpse</span>(GSScut)</span></code></pre></div>
+<pre><code>## Rows: 13,089
+## Columns: 6
+## $ year &lt;dbl&gt; 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 20...
+## $ id   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,...
+## $ hrs1 &lt;dbl&gt; 35, 40, NA, 24, NA, 37, 40, NA, 38, 35, NA, NA, NA, 43, NA, 40...
+## $ educ &lt;dbl&gt; 13, 14, 9, 12, 14, 16, 12, 14, 16, 18, 9, 12, 16, 16, 13, 18, ...
+## $ sex  &lt;dbl+lbl&gt; 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 2...
+## $ race &lt;dbl+lbl&gt; 2, 3, 1, 2, 2, 3, 2, 2, 2, 3, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2...</code></pre>
+<p>먼저 간단하게 선형모형을 살펴보기 위한 예제 데이터를 불러와보았습니다. <code>GSScut</code>이라는 객체 명으로 저장되었습니다. 원래 GSS 데이터셋은 방대한 변수들을 가지고 있기 때문에, 예제로 사용하기 위해서 지난 주 노동 시간, 교육을 완료한 연도(2006년부터), 성별, 인종과 같은 몇 가지 변수들만 따로 뽑아내었습니다.</p>
+<p>성별과 인종을 이항변수(binary variable, 혹은 dichotomous variable)로 바꾸어보겠습니다. <code>sex</code>는 1, 2로 측정되어 있는데 원래 <code>STATA</code> 파일인 <code>.dta</code>를 보면 남성(<code>Male</code>)이 1, 여성(<code>Female</code>)이 2로 코딩되어 있습니다. 보통 성별의 효과를 볼때는 남녀의 차이를 기대하는 것이기 때문에, 분석을 용이하게 하기 위해서 여성(<code>Female</code>)일 경우, 1 아니면 전부 0으로 재코딩해서 0, 즉 남성일 경우에 비해 여성일 경우 종속변수에 미치는 효과를 살펴보고자 합니다. 마찬가지로 인종에서도 백인(<code>white</code>)일 경우가 1, 흑인(<code>black</code>)이 2, 기타 인종은 3으로 코딩되어 있는데, 백인인지 아닌지 여부만 보여주는 더미변수 <code>white</code>로 재코딩해주겠습니다.</p>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="intoduction-to-simple-linear-regression-model.html#cb353-1"></a>GSScut<span class="op">$</span>female &lt;-<span class="st"> </span><span class="kw">ifelse</span>(GSScut<span class="op">$</span>sex <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb353-2"><a href="intoduction-to-simple-linear-regression-model.html#cb353-2"></a><span class="kw">table</span>(GSScut<span class="op">$</span>female)</span></code></pre></div>
+<pre><code>## 
+##    0    1 
+## 7239 5850</code></pre>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="intoduction-to-simple-linear-regression-model.html#cb355-1"></a>GSScut<span class="op">$</span>white &lt;-<span class="st"> </span><span class="kw">ifelse</span>(GSScut<span class="op">$</span>race <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb355-2"><a href="intoduction-to-simple-linear-regression-model.html#cb355-2"></a><span class="kw">table</span>(GSScut<span class="op">$</span>white)</span></code></pre></div>
+<pre><code>## 
+##    0    1 
+## 3329 9760</code></pre>
+<p>자, 이제 상관관계를 분석해보도록 하겠습니다. 상관관계는 ‘선형’ 관계를 측정하는 통계치라는 것을 유념하시기 바랍니다.</p>
+<ul>
+<li><p>정확하게는 상관계수는 두 변수 간의 선형 관계의 강도(strength)롤 보여줍니다.</p></li>
+<li><p>상관계수는 완벽하게 부의 관계(perfectly negative)를 보여주는 -1부터 완벽한 정의 관계(perfectly positive)를 나타내는 +1 사이의 값을 가집니다.</p></li>
+<li><p>0의 값은 두 변수 간의 선형 관계가 존재하지 않는다는 것을 보여줍니다.</p></li>
+<li><p>상관관계를 보여주는 가장 일반적인 통계치로는 Pearson의 r 값이 있습니다. 공식으로는 아래와 같이 나타냅니다:</p></li>
+</ul>
+<p><span class="math display">\[ r = \frac{N \sum XY - (\sum X \sum Y)}{\sqrt{[N\sum x^2 - (\sum x)^2][N\sum y^2 - (\sum y)^2]}}\]</span></p>
+<p>여기서 사용한 변수는 노동 시간(<code>hrs1</code>)과 교육을 완료한 연도(<code>educ</code>)입니다. 교육을 완료한 연도라고 그러니까 조금 표현이 어색한데, 말 그대로 교육을 얼마나 오랫동안 받았느냐, 즉 학력 수준이 노동 시간에 미치는 효과를 측정하기 위한 분석이라고 할 수 있습니다.</p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="intoduction-to-simple-linear-regression-model.html#cb357-1"></a><span class="kw">cor</span>(<span class="dt">x =</span> GSScut<span class="op">$</span>hrs1, <span class="dt">y =</span> GSScut<span class="op">$</span>educ, <span class="dt">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0723323</code></pre>
+<p>위에서 <code>pairwise.complete.obs</code> 옵션을 사용한 이유는 변수들 간 상관관계나 공분산(covariance)은 해당 변수들 간 결측치가 없는 관측치들 간에서 계산이 가능하기 때문입니다. 상관계수 분석결과, 약 0.07이라는 통계치를 확인할 수 있는데 과연 이것이 직관적으로 어느 정도의 상관성을 보여주는 것인지를 살펴보기 위해 플롯을 그려보도록 하겠습니다.</p>
+<p>먼저 이 두 변수 간의 산포도를 그려보았습니다.</p>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="intoduction-to-simple-linear-regression-model.html#cb359-1"></a><span class="kw">ggplot</span>(GSScut, <span class="kw">aes</span>(<span class="dt">x =</span> educ, <span class="dt">y =</span> hrs1)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-163-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>이 두 변수 간의 관계가 산포도로는 뚜렷하게 보이지는 않는 것 같습니다. 뭔가 교육시간이 증가할수록 노동시간의 변화가 커지는 거 같기는 한데… 그렇다면 둘 간의 ‘선형’ 관계를 포착하기 위해서 선형모델 방법을 이용한 추세선을 그려보겠습니다.</p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="intoduction-to-simple-linear-regression-model.html#cb360-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> GSScut) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb360-2"><a href="intoduction-to-simple-linear-regression-model.html#cb360-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> educ, <span class="dt">y =</span> hrs1)) <span class="op">+</span></span>
+<span id="cb360-3"><a href="intoduction-to-simple-linear-regression-model.html#cb360-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">x=</span>educ, <span class="dt">y=</span>hrs1), <span class="dt">method=</span><span class="st">&#39;lm&#39;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-164-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>플롯을 통해 0.07이라는 크지는 않지만 두 변수 간 양적(positive, +) 상관관계가 존재한다는 것을 확인할 수 있습니다. 즉, 한 변수의 증가가 다른 변수의 증가와 연관이 있다는 것을 의미합니다.</p>
+<p>그렇다면 이번에는 노동 시간을 종속변수(dependent variable)로 하고 교육 수준을 설명변수로 하는 단순회귀분석 모델을 만들어보겠습니다. 보통 “노동 시간에 대한 교육 수준의 단순회귀분석”을 수행한다라고 표현합니다. 이 단순선형회귀 모델은 앞서의 직선을 포함한 플롯과 같은 의미를 가진 결과를 보여줍니다.</p>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="intoduction-to-simple-linear-regression-model.html#cb361-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(hrs1 <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> GSScut)</span>
+<span id="cb361-2"><a href="intoduction-to-simple-linear-regression-model.html#cb361-2"></a>model1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summary</span>()</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hrs1 ~ educ, data = GSScut)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -42.931  -4.906  -1.196   7.436  48.488 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 37.09273    0.76265  48.636  &lt; 2e-16 ***
+## educ         0.34194    0.05375   6.362 2.11e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.33 on 7695 degrees of freedom
+##   (5392 observations deleted due to missingness)
+## Multiple R-squared:  0.005232,	Adjusted R-squared:  0.005103 
+## F-statistic: 40.47 on 1 and 7695 DF,  p-value: 2.109e-10</code></pre>
+<p>물론 <strong>R</strong> 기본 함수로도 더 간단하게 단순선형회귀 모델의 결과를 보여줄 수 있습니다.</p>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="intoduction-to-simple-linear-regression-model.html#cb363-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> GSScut<span class="op">$</span>educ, <span class="dt">y =</span> GSScut<span class="op">$</span>hrs1)</span>
+<span id="cb363-2"><a href="intoduction-to-simple-linear-regression-model.html#cb363-2"></a><span class="kw">abline</span>(<span class="kw">lm</span>(model1))</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-166-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>하지만 이 플롯의 경우는 단 하나의 설명변수와 종속변수의 관계를 나타날 때만 잘 작동합니다.</p>
+<p>회귀분석모델을 이루는 주요 요소는 우리가 설명하고자 하는 종속변수, 그리고 그것을 설명하기 위한 설명변수, 마지막으로 설명하고 남은 나머지—잔차라고 할 수 있습니다.</p>
+<ul>
+<li><p>간단히 말하면, 잔차는 모델에 적합(fit)되고 남은 나머지를 의미합니다: <code>Data = Fit + Residual</code>.</p></li>
+<li><p>잔차(<span class="math inline">\(e_i\)</span>)는 관측된 실제의 개별 <span class="math inline">\(y_i\)</span>와 모델로 예측한 값(<span class="math inline">\(\hat{y_i}\)</span>)의 차이라고 할 수 있습니다: <span class="math inline">\(e_i = y_i - \hat{y_i}\)</span>.</p></li>
+</ul>
+<p>따라서 종속변수를 가장 잘 예측하는 선을 그리는 방법 중 하나로 우리는 이 오차들, 잔차의 값을 최대한 작게끔 하는 선을 그리는 방법을 택할 수 있습니다. 그 선을 그리는 데에는 두 가지 방법이 존재합니다.</p>
+<ul>
+<li><p>첫째, 잔차의 절대값의 총합이 최대한 작아지는 선을 그리는 것</p></li>
+<li><p>둘째, 잔차의 제곱합이 최소화되는 선을 그리는 것: 최소자승법(least squares)</p></li>
+</ul>
+<p>우리는 이 중에서 둘째, 최소자승법을 사용한 회귀분석을 수행합니다. 왜 최소자승법을 사용할까요? 여기서 자세한 설명을 하기는 어렵지만 수리통계적으로 절대값과 제곱은 모두 값을 양수값으로 변환시켜주는 의미를 지니는 데 반하여(거리의 개념으로 환산. 거리에는 마이너스가 있을 수 없으니까요), 절대값은 계산이 좀 더 수학적으로 복잡하기 때문입니다. 어차피 같은 의미를 지니고 있다면 수리적으로 계산이 편리한 제곱합의 방식을 사용하는 것이 효율적입니다.</p>
+<p>이렇게 그려지는 최소자승법에 따른 회귀선은 다음과 같은 공식으로 구현됩니다.</p>
+<p><span class="math display">\[ \hat{y} = \beta_0 + \beta_1x\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\hat{y}\)</span>: 모델로 예측한 종속변수 값</p></li>
+<li><p>절편: 절편은 회귀곡선과 <span class="math inline">\(y\)</span>축이 만나는 지점을 의미합니다.</p>
+<ul>
+<li>모집단을 대상으로 기울기의 모수(parameter)는 <span class="math inline">\(\beta_0\)</span></li>
+<li>표본에 대한 점추정치(point estimate)는 <span class="math inline">\(b_0\)</span></li>
+<li>절편은 <span class="math inline">\(x\)</span>가 0일 때, 기대되는 <span class="math inline">\(y\)</span>의 값입니다.</li>
+</ul></li>
+<li><p>기울기: 회귀분석에서 기울기는 <span class="math inline">\(b_1 = \frac{s_y}{s_x}r\)</span>로 나타낼 수 있습니다.</p>
+<ul>
+<li>모집단을 대상으로 기울기의 모수는 <span class="math inline">\(\beta_1\)</span></li>
+<li>표본에 대한 점추정치는 <span class="math inline">\(\beta_1\)</span></li>
+<li>기울기는 <span class="math inline">\(x\)</span>의 한 단위 증가에 따른 <span class="math inline">\(y\)</span>의 평균적인 증감을 의미합니다.</li>
+</ul></li>
+<li><p><span class="math inline">\(x\)</span>: 설명변수</p></li>
+</ul>
+<p>우리는 선형회귀모델을 통하여 주어진 설명변수의 값에 따른 종속변수의 값을 “예측”(prediction)할 수 있습니다. 공식에 <span class="math inline">\(x\)</span>값과 주어진 기울기, 절편값을 넣어 계산을 해서 값을 얻어내는 것입니다. 그러나 이러한 예측값은 어디까지나 주어진, 관측된 자료들만으로 구성된 모델로 만들어낸 것이기 때문에 불확실성(uncertainty)가 존재합니다. 그것이 바로 잔차(모집단의 수준에서는 오차)의 존재입니다.</p>
+<ul>
+<li><p>또 회귀모델에서 고려해야할 것은 외삽의 문제(extrapolation)가 있습니다. 외삽의 문제는 우리에게 주어진 데이터의 값을 벗어난 범주의 값으로 모델을 예측할 때 발생합니다.</p>
+<ul>
+<li>예를 들어, 실제 우리가 가진 관측된 설명변수의 값은 70-100 사이에 분포하는데, 회귀모델로 기울기를 얻을 경우에 우리는 설명변수의 값이 0일때, 20일때, -10일때 등의 종속변수에 대한 예측값을 구할 수 있습니다. 이때, 과연 그러한 예측값은 의미가 있을까요?</li>
+<li>종종 절편이 외삽의 문제를 직관적으로 보여주고는 합니다.</li>
+<li>혹은 실제 우리가 관측한 데이터가 사실은 다른 추세의 일부만을 보여주고 있을 때, 주어진 데이터로만 그린 회귀선이 실제의 관계(모집단의 관계)를 전혀 예측하지 못하는 문제가 발생할 수도 있습니다.</li>
+</ul></li>
+</ul>
+<p>이번에는 우리가 만든 모델에 대해 잘 만들어졌는지, 종속변수를 기대한대로 설명변수가 잘 설명하고 있는지를 진단(diagnostics)해보겠습니다. 이를 위해서는 최소자승법에 기초한 선형회귀분석의 기본가정들, 조건들에 대해서 살펴볼 필요가 있습니다. 과연 그 조건들이 잘 충족되었는지를 확인해야 우리가 얻은 결과가 충분히 믿을만한 것이라고 볼 수 있기 때문입니다.</p>
+<p>회귀분석의 기본가정들은 나중에 <code>Lv.2.Statistics</code> 자료에서 한 번 더 다룰 것이기 때문에, 일단 여기서는 간단하게 설명하도록 하겠습니다.</p>
+<ul>
+<li><p>선형성(linearity)</p>
+<ul>
+<li>회귀분석을 사용하기 위해서는 두 변수가 선형적인 관계, 한 변수의 증감이 다른 변수의 증감과 연계되어 있을 것이라는 가정이 필요합니다.</li>
+<li>따라서 선형성을 살펴보기 위해서 앞서 우리가 했던 것처럼 산포도를 그려보고는 합니다.</li>
+</ul></li>
+<li><p>잔차의 정규성(Normality of residuals)</p>
+<ul>
+<li><p>한편, 우리는 모집단의 수준에서는 오차(error, <span class="math inline">\(\epsilon\)</span>), 표본의 수준에서는 잔차(residuals, <span class="math inline">\(e\)</span>)가 정규분포를 띄고 있을 것이라고 가정하며, 이때 오차의 정규분포의 기대값을 0일 것이라고 가정합니다(E(<span class="math inline">\(\epsilon\)</span>) = 0). 이는 표본의 수준에서는 잔차의 평균이 0일 것이라고 가정한다는 것을 의미합니다.</p></li>
+<li><p>따라서 과연 잔차가 어떻게 생겨먹었는지를 보기 위해서 잔차의 플롯(residual plot)을 그려보겠습니다.</p>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="intoduction-to-simple-linear-regression-model.html#cb364-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> model1<span class="op">$</span>fitted.values, <span class="dt">y =</span> model1<span class="op">$</span>residuals) </span>
+<span id="cb364-2"><a href="intoduction-to-simple-linear-regression-model.html#cb364-2"></a><span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-167-1.png" width="576" style="display: block; margin: auto;" /></p></li>
+<li><p>잔차를 개별 관측치에서 평균과의 차이를 표준편차로 나누어준, 즉 개별 관측치가 평균으로부터 얼마나 떨어져있는지를 보는 표준화된 잔차(standardized residuals)를 보여주겠습니다. 단위(scale)이 달라지는 거지 관계 양상이 변화하는 것은 아닙니다. 반드시 필수적인 것은 아니지만, 어떤 경우에는 유용하게 사용할 수 있습니다.</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="intoduction-to-simple-linear-regression-model.html#cb365-1"></a>      stpred1 &lt;-<span class="st"> </span>(model1<span class="op">$</span>fitted.values <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(model1<span class="op">$</span>fitted.values)) <span class="op">/</span><span class="st"> </span></span>
+<span id="cb365-2"><a href="intoduction-to-simple-linear-regression-model.html#cb365-2"></a><span class="st"> </span><span class="kw">sd</span>(model1<span class="op">$</span>fitted.values)</span>
+<span id="cb365-3"><a href="intoduction-to-simple-linear-regression-model.html#cb365-3"></a>      stres1 &lt;-<span class="st"> </span>(model1<span class="op">$</span>residuals <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(model1<span class="op">$</span>residuals)) <span class="op">/</span><span class="st"> </span></span>
+<span id="cb365-4"><a href="intoduction-to-simple-linear-regression-model.html#cb365-4"></a><span class="st"> </span><span class="kw">sd</span>(model1<span class="op">$</span>residuals)</span>
+<span id="cb365-5"><a href="intoduction-to-simple-linear-regression-model.html#cb365-5"></a>      <span class="kw">plot</span>(<span class="dt">x =</span> stpred1, <span class="dt">y =</span> stres1)</span>
+<span id="cb365-6"><a href="intoduction-to-simple-linear-regression-model.html#cb365-6"></a>      <span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-168-1.png" width="576" style="display: block; margin: auto;" /></p></li>
+<li><p>한편, 잔차의 정규성을 살펴보기 위해서 표준화된 잔차를 정규밀도(normal density)를 통해 히스토그램으로 보여주거나 QQ 플롯으로 보여줄 수 있습니다.</p>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="intoduction-to-simple-linear-regression-model.html#cb366-1"></a><span class="kw">hist</span>(stres1, <span class="dt">freq =</span> <span class="ot">FALSE</span>) <span class="co"># 이 히스토그램은 빈도보다는 비율일 때 사용합니다.</span></span>
+<span id="cb366-2"><a href="intoduction-to-simple-linear-regression-model.html#cb366-2"></a><span class="kw">curve</span>(dnorm, <span class="dt">add =</span> <span class="ot">TRUE</span>)  <span class="co"># 이 곡선은 표준화된 잔차에 대해서만 사용가능합니다.</span></span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-169-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="intoduction-to-simple-linear-regression-model.html#cb367-1"></a><span class="kw">qqnorm</span>(stres1)</span>
+<span id="cb367-2"><a href="intoduction-to-simple-linear-regression-model.html#cb367-2"></a><span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-169-2.png" width="576" style="display: block; margin: auto;" /></p></li>
+</ul></li>
+<li><p>등분산성(constant variance)</p>
+<ul>
+<li><p>최소자승법을 통해 구한 추세선 주변에 개별 관측치들이 일정하게(constant) 분포하여야 한다는 것을 의미합니다.</p></li>
+<li><p>이것은 잔차의 변동성이 0에 수렴해야 한다는 것으로 등분산성(homoskedasticity)이라고도 표현합니다. 위에서와 마찬가지로 QQ 플롯을 통해서 확인해볼 수 있습니다 (45도선에 근사할수록 정규적이라고 볼 수 있습니다).</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="intoduction-to-simple-linear-regression-model.html#cb368-1"></a><span class="co"># install.packages(&quot;lmtest&quot;) # 등분산성을 검정하기 위한 패키지입니다.</span></span>
+<span id="cb368-2"><a href="intoduction-to-simple-linear-regression-model.html#cb368-2"></a><span class="kw">library</span>(lmtest)</span>
+<span id="cb368-3"><a href="intoduction-to-simple-linear-regression-model.html#cb368-3"></a><span class="co"># 등분산성을 검정하기 위해 Breusch-Pagan 검정을 수행하도록 하겠습니다.</span></span>
+<span id="cb368-4"><a href="intoduction-to-simple-linear-regression-model.html#cb368-4"></a><span class="kw">bptest</span>(model1)</span></code></pre></div>
+<pre><code>## 
+## 	studentized Breusch-Pagan test
+## 
+## data:  model1
+## BP = 2.1288, df = 1, p-value = 0.1446</code></pre></li>
+<li><p>브루슈-패건 검정은 등분산성을 검정하기 위한 기법으로, 영가설(<span class="math inline">\(h_0\)</span>)이 오차 간 분산이 일정할 것이다라고 설정한 뒤, 만약 그것이 기각되면(<span class="math inline">\(p &lt; 0.05\)</span>), 이분산성(heteroskedasticity)의 근거를 얻습니다. 전형적인 통계의 영가설 검정 방식을 취하고 있습니다.</p></li>
+<li><p>만약 우리가 가진 데이터가 영가설을 기각, 이분산성을 가질 것이라고 추정된다면 어떻게 해야할까요? 이때에는 표준오차가 등분산성 가정이 위배됨에 따라 왜곡되었을 것으로 보고, 로버스트 표준오차로 보정하는 작업을 해줍니다.</p>
+<ul>
+<li>이론적 근거는 나중에 <code>Lv.2.Statistics</code>나 <code>Lv.3.Statistics</code>에서 선형확률모형(linear probability models)을 다룰 때 자세하게 언급하도록 하겠습니다.</li>
+</ul></li>
+<li><p>로버스트 표준오차로 보정한 결과를 얻는 작업은 다음과 같은 패키지와 앞에서 로드했던 <code>lmtest</code> 패키지에서 제공하는 코드로 가능합니다.</p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="intoduction-to-simple-linear-regression-model.html#cb370-1"></a><span class="co"># install.packages(&quot;sandwich&quot;)</span></span>
+<span id="cb370-2"><a href="intoduction-to-simple-linear-regression-model.html#cb370-2"></a><span class="kw">library</span>(sandwich)</span>
+<span id="cb370-3"><a href="intoduction-to-simple-linear-regression-model.html#cb370-3"></a><span class="kw">coeftest</span>(model1, <span class="dt">vcov =</span> <span class="kw">vcovHC</span>(model1, <span class="dt">type =</span> <span class="st">&quot;HC1&quot;</span>))</span></code></pre></div>
+<pre><code>## 
+## t test of coefficients:
+## 
+##              Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept) 37.092733   0.735076 50.4611 &lt; 2.2e-16 ***
+## educ         0.341937   0.052076  6.5661 5.502e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre></li>
+</ul></li>
+<li><p>자, 이제는 이탈치(outliers)의 영향력을 살펴보도록 하겠습니다. 이탈치의 영향력을 살펴보는 것은 중요합니다.</p>
+<ul>
+<li>이탈치란 이례적으로(극단적으로) 크거나 작은 값을 지니는 관측치를 의미합니다.
+<ul>
+<li>모델에서 구한 기울기에 큰 영향을 미치는 이탈치를 영향력 있는 관측값(influential points)이라고 부르기도 합니다.</li>
+</ul></li>
+<li>왜냐하면 이탈치란 이론적으로는 우리의 일반화를 반증하는 비정상성(abnormality)를 탐지하는 계기가 될 수도 있고,</li>
+<li>혹은 우리가 일반화하고자 하는 모델의 결과—계수값을 왜곡시키는 요인일 수도 있기 때문입니다.</li>
+</ul></li>
+<li><p>두 개의 변수만으로 돌리는 단순회귀분석에서, 예측값(fitted values)과 잔차 간의 관계를 보여주는 플롯은 이탈치를 가시적으로 보여주는 데 유용합니다.</p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="intoduction-to-simple-linear-regression-model.html#cb372-1"></a><span class="co">## Cook&#39;s distance라는 플롯을 그려보겠습니다.</span></span>
+<span id="cb372-2"><a href="intoduction-to-simple-linear-regression-model.html#cb372-2"></a>cooksd &lt;-<span class="st"> </span><span class="kw">cooks.distance</span>(model1) <span class="co"># 먼저 cooks.distance라는 함수로 앞서 분석한</span></span>
+<span id="cb372-3"><a href="intoduction-to-simple-linear-regression-model.html#cb372-3"></a><span class="co">## 단순회귀모델에 기초한 cooksd라는 객체를 만들어줍니다.</span></span>
+<span id="cb372-4"><a href="intoduction-to-simple-linear-regression-model.html#cb372-4"></a><span class="kw">plot</span>(cooksd, <span class="dt">main=</span><span class="st">&quot;Influential Obs by Cooks distance&quot;</span>) <span class="co"># 보시면 아시겠지만</span></span>
+<span id="cb372-5"><a href="intoduction-to-simple-linear-regression-model.html#cb372-5"></a><span class="co">## 이탈치가 모델에 영향을 미쳤는지를 보여주는  플롯입니다.</span></span>
+<span id="cb372-6"><a href="intoduction-to-simple-linear-regression-model.html#cb372-6"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">1</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)  <span class="co"># 일종의 기준선을 1로 잡아주겠습니다.</span></span>
+<span id="cb372-7"><a href="intoduction-to-simple-linear-regression-model.html#cb372-7"></a><span class="kw">text</span>(<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(cooksd)<span class="op">+</span><span class="dv">1</span>, <span class="dt">y=</span>cooksd, <span class="dt">labels=</span><span class="kw">ifelse</span>(cooksd<span class="op">&gt;</span><span class="dv">1</span>,<span class="kw">names</span>(cooksd),<span class="st">&quot;&quot;</span>),</span>
+<span id="cb372-8"><a href="intoduction-to-simple-linear-regression-model.html#cb372-8"></a>     <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)  <span class="co"># 1이 넘으면 빨간 색으로 표시하게 지정해주었습니다만,</span></span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-172-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="intoduction-to-simple-linear-regression-model.html#cb373-1"></a><span class="co">## 넘질 않네요. 즉, 이 데이터에서는 이탈치가 별로 없습니다.</span></span></code></pre></div>
+<ul>
+<li><p>기술적으로는 Cook’s Distance는 모델에서 데이터들을 하나씩 제거해가면서 회귀분석을 반복하여 계산하여 얻어지는데, 이를 통해서 우리는 몇 번째 관측치가 제거되었을 때 회귀모델의 값이 얼만큼 달라지는지 확인할 수 있습니다.</p>
+<ul>
+<li><p>단, 여기에서 1을 Cook’s distance의 기준치로 삼은 것은 자의적인 기준입니다. 보통 전체 관측치 수를 기준으로 <span class="math inline">\(4/n\)</span>을 설정하고는 합니다.</p>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="intoduction-to-simple-linear-regression-model.html#cb374-1"></a><span class="co"># 다시 Cook&#39;s distance 플롯을 그려보겠습니다.</span></span>
+<span id="cb374-2"><a href="intoduction-to-simple-linear-regression-model.html#cb374-2"></a><span class="kw">plot</span>(cooksd, <span class="dt">main=</span><span class="st">&quot;Influential Obs by Cooks distance&quot;</span>)  </span>
+<span id="cb374-3"><a href="intoduction-to-simple-linear-regression-model.html#cb374-3"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">4</span><span class="op">/</span><span class="kw">length</span>(cooksd), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb374-4"><a href="intoduction-to-simple-linear-regression-model.html#cb374-4"></a><span class="kw">text</span>(<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(cooksd)<span class="op">+</span><span class="dv">1</span>, <span class="dt">y=</span>cooksd, </span>
+<span id="cb374-5"><a href="intoduction-to-simple-linear-regression-model.html#cb374-5"></a>     <span class="dt">labels=</span><span class="kw">ifelse</span>(cooksd<span class="op">&gt;</span><span class="dv">4</span><span class="op">/</span><span class="kw">length</span>(cooksd), </span>
+<span id="cb374-6"><a href="intoduction-to-simple-linear-regression-model.html#cb374-6"></a>                   <span class="kw">names</span>(cooksd),<span class="st">&quot;&quot;</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-173-1.png" width="576" style="display: block; margin: auto;" /></p></li>
+</ul></li>
+<li><p>Cook’s distance 플롯을 통해 이탈치를 특정할 수 있게 되면, 그 이탈치들을 제외하고 모델을 다시 돌려볼 수 있습니다.</p>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="intoduction-to-simple-linear-regression-model.html#cb375-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(hrs1 <span class="op">~</span><span class="st"> </span>educ, <span class="dt">data =</span> GSScut[<span class="op">-</span>(<span class="dv">4030</span>),]) <span class="co"># 4030번째 관측값 제외</span></span></code></pre></div></li>
+</ul></li>
+</ul>
+<div id="회귀분석의-이해-기울기의-검정" class="section level2">
+<h2><span class="header-section-number">6.1</span> 회귀분석의 이해: 기울기의 검정</h2>
+<p>앞에서는 주로 데이터에 기초하여 통계적 문제들을 짚어보았습니다. 이제는 과연 이렇게 모델을 통해 구한 통계치들이 과연 통계적으로 의미있는 차이를 보여주는 것인지, 혹은 변하는(varying) 값들에 따른 우연에 의한 것인지를 구분하기 위한 검정(testing)에 대해 이론적으로 살펴보고자 합니다.</p>
+<ul>
+<li><p>먼저 우리가 기울기를 검정하고자 할 때 세우는 가설은 모두 “모집단”에 대한 것이라는 점을 잊어서는 안 됩니다. 우리가 궁금한 것은 과연 표본 그 너머의 모집단에 존재하는 관계이지, 한정된 표본에서만 관측할 수 있는 관계 양상이 아닙니다.</p></li>
+<li><p>앞서 분석한 모델의 단순회귀분석 결과를 다시 불러와 봅시다.</p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="intoduction-to-simple-linear-regression-model.html#cb376-1"></a>tidy &lt;-<span class="st"> </span>model1 <span class="op">%&gt;%</span><span class="st"> </span>broom<span class="op">::</span><span class="kw">tidy</span>()</span>
+<span id="cb376-2"><a href="intoduction-to-simple-linear-regression-model.html#cb376-2"></a>tidy <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+<p>term</p>
+</th>
+<th style="text-align:right;">
+<p>estimate</p>
+</th>
+<th style="text-align:right;">
+<p>std.error</p>
+</th>
+<th style="text-align:right;">
+<p>statistic</p>
+</th>
+<th style="text-align:right;">
+<p>p.value</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<p>(Intercept)</p>
+</td>
+<td style="text-align:right;">
+<p>37.0105847</p>
+</td>
+<td style="text-align:right;">
+<p>0.7635843</p>
+</td>
+<td style="text-align:right;">
+<p>48.469544</p>
+</td>
+<td style="text-align:right;">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>educ</p>
+</td>
+<td style="text-align:right;">
+<p>0.3475927</p>
+</td>
+<td style="text-align:right;">
+<p>0.0538111</p>
+</td>
+<td style="text-align:right;">
+<p>6.459496</p>
+</td>
+<td style="text-align:right;">
+<p>0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>여기서 <code>statistics</code>란 t-검정의 결과값으로 우리는 회귀분석의 추론을 검정하기 위해 이 통계치를 사용합니다.</p>
+<ul>
+<li><p><span class="math inline">\(\text{t-statistics} = \frac{\text{point estimate} - \text{null value}}{\text{Standard Error}}\)</span></p></li>
+<li><p>이때, 점추정(point estimate)는 <span class="math inline">\(b_1\)</span>으로 표본을 통해 우리가 구한, 관측된 기울기를 의미합니다.</p></li>
+<li><p><span class="math inline">\(SE_{b1}\)</span>은 관측된 기울기의 표준오차를 의미합니다.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p></li>
+<li><p>기울기와 관련된 자유도(degree of freedom)는 표본의 규모에서 변수와 절편을 제외한 <span class="math inline">\(n-2\)</span> 입니다.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>따라서 주어진 값들로 t값을 계산해보면,</p>
+<ul>
+<li><p>대략적으로 <span class="math inline">\(\text{t-statistics} = \frac{0.3419 - 0}{0.0537} = 6.3668\)</span> 정도라고 할 수 있습니다. 오차는 소수점 때문입니다. 간략하게 보여주기 위해서 소수점 넷째자리에서 끊었기 때문에 결과가 조금 다릅니다.</p></li>
+<li><p>자유도는 7,695개 관측치에서 둘을 빼준 7,693이므로,</p></li>
+<li><p>통계적 유의수준(p-value)는 <span class="math inline">\(P(|T| &gt; 6.3668) &lt; 0.05\)</span>로 통계적으로 유의하다는 것을 확인할 수 있습니다. 사실 아마 0.0001 보다 작다 뭐 이정도이지 않을까 싶습니다.</p></li>
+</ul>
+<p>통계적으로 계수값이 우연의 결과가 아니라 실제 설명변수에 의한 것일 확률이 높다는 것을 보여주기 위해서 계수값의 표준오차를 이용한 변동 구간이 0, 즉 효과없음(null effect, null value)을 포함하고 있는지 살펴볼 수도 있습니다. 그 변동구간을 우리는 신뢰구간이라고 합니다. 신뢰구간은 기울기값과 그 기울기값에 대한 t-값에 표준오차를 곱한 범위를 보여줍니다. 이 모델에서 신뢰구간은 다음과 같이 나타내줄 수 있습니다.</p>
+<p><span class="math display">\[ \text{Confidence Intervals} = b_1 \pm t^{*}_{\text{df} = n-2} \times SE_{b_1}\]</span>
++ 이때, 효과없음을 0으로 설정하는 것은 설명변수와 종속변수 간의 어떠한 관계도 없다는 것을 보여주기 위함입니다.</p>
+<ul>
+<li><p>회귀분석 결과로 주어지는 <span class="math inline">\(b_1, SE_{b_1}\)</span>는 양측꼬리 검정(two-tailed)으로 계산된 p-value 값을 보여줍니다. 즉, 기울기의 영가설은 0이라는 것을 의미합니다.</p></li>
+<li><p>주로 변수들 간의 관계에 주목하기 때문에 절편에 대한 추론은 거의 하지 않습니다.</p></li>
+</ul>
+</div>
+<div id="좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기" class="section level2">
+<h2><span class="header-section-number">6.2</span> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</h2>
+<p>만약 우리가 남성과 여성이 노동 시간에 대해서 서로 다른 기준치를 가지고 있다고 가정한다면 어떻게 될까요? 즉, 이는 수리통계적으로는 남성과 여성이 서로 다른 절편값(intercepts)를 가지고 있다는 것을 의미하며, 실질적으로는 다른 어떠한 변수의 영향력에서 자유로울 때, 종속변수에서 남성과 여성이 차이가 있을 것이라는 것을 의미합니다. 그렇다면 두 번째 모델을 한 번 만들어보겠습니다.</p>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="intoduction-to-simple-linear-regression-model.html#cb377-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(hrs1 <span class="op">~</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>female, <span class="dt">data =</span> GSScut)</span>
+<span id="cb377-2"><a href="intoduction-to-simple-linear-regression-model.html#cb377-2"></a><span class="kw">summary</span>(model2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hrs1 ~ educ + female, data = GSScut)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -46.204  -5.661   0.390   5.881  50.933 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 33.44023    0.77008  43.424  &lt; 2e-16 ***
+## educ         0.38560    0.05259   7.332  2.5e-13 ***
+## female       6.05139    0.31958  18.935  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.01 on 7694 degrees of freedom
+##   (5392 observations deleted due to missingness)
+## Multiple R-squared:  0.04952,	Adjusted R-squared:  0.04928 
+## F-statistic: 200.4 on 2 and 7694 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>앞서의 단순회귀분석에서 산포도에 회귀선 하나를 포함할 때와는 달리, 서로 다른 두 개의 선을 그려주고자 할 때는 모델에서 서로 다른 변수 각각의 계수값을 벡터로 추출해서 사용해야 합니다.</p>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="intoduction-to-simple-linear-regression-model.html#cb379-1"></a>model2<span class="op">$</span>coefficients</span></code></pre></div>
+<pre><code>## (Intercept)        educ      female 
+##  33.4402284   0.3856016   6.0513934</code></pre>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="intoduction-to-simple-linear-regression-model.html#cb381-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> GSScut<span class="op">$</span>educ, <span class="dt">y =</span> GSScut<span class="op">$</span>hrs1)</span>
+<span id="cb381-2"><a href="intoduction-to-simple-linear-regression-model.html#cb381-2"></a> <span class="kw">abline</span>(model2<span class="op">$</span>coefficients[<span class="dv">1</span>], model2<span class="op">$</span>coefficients[<span class="dv">2</span>] ) <span class="co"># 남성일 경우의 회귀선</span></span>
+<span id="cb381-3"><a href="intoduction-to-simple-linear-regression-model.html#cb381-3"></a> <span class="kw">abline</span>((model2<span class="op">$</span>coefficients[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span></span>
+<span id="cb381-4"><a href="intoduction-to-simple-linear-regression-model.html#cb381-4"></a><span class="st">           </span>model2<span class="op">$</span>coefficients[<span class="dv">3</span>]), model2<span class="op">$</span>coefficients[<span class="dv">2</span>] ) <span class="co"># 여성일 경우의 회귀선</span></span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-177-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>사실 식으로 보면 까다롭지는 않습니다. 모델 2는 <span class="math inline">\(\text{Worked Hours} = \beta_0 + \beta_1(\text{Education}) + \beta_2(\text{Female}) + \epsilon\)</span> 이라고 할 수 있습니다. 이때, 여성일 경우, 이 모델 2의 추정치는 <span class="math inline">\(\text{Worked Hours} = \beta_0 + \beta_1(\text{Education}) + \beta_2 \times 1 + \epsilon\)</span>, 남성일 경우는 <span class="math inline">\(\text{Worked Hours} = \beta_0 + \beta_1(\text{Education}) + \beta_2 \times 0 + \epsilon\)</span>입니다. 선형회귀분석에서 기울기를 구하는 방법 중 하나는 편미분(partial derivatives, <span class="math inline">\(\partial\)</span>)을 하는 것입니다.</p>
+<ul>
+<li><p>여성일 경우: <span class="math inline">\(\frac{\partial(\text{Worked Hours})}{\partial(\text{Female})} = \beta_0 + \beta_2\)</span>로 절편을 구할 수 있습니다.</p></li>
+<li><p>반면, 남성일 경우: <span class="math inline">\(\frac{\partial(\text{Worked Hours})}{\partial(\text{Male})} = \beta_0\)</span>이 됩니다. 남성의 대표값은 0이기 때문입니다.</p></li>
+<li><p>이때, 두 회귀선은 평행(parellel)한 기울기를 가집니다. 절편값(<span class="math inline">\((\beta_0 + \beta_2) - \beta_0 = \beta_2\)</span>만 달라지는 것입니다.</p></li>
+</ul>
+<p>모델 2는 성별에 따라서 교육 연수의 효과가 동일할 것(비조건적일 것)이라고 가정하지만 여성의 경우 남성일 때와는 다른 기준치를 가진다고 봅니다.</p>
+<p>그렇다면 만약 남성과 여성일 때 각각 서로 다른 기울기를 갖는다고, 즉 교육 연수가 성별에 따라 서로 다른 효과를 가진다고 생각해보면 어떻게 될까요? 선형모델 함수와 <code>ggplot2</code> 패키지를 이용해서 한 번 그려보겠습니다.</p>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="intoduction-to-simple-linear-regression-model.html#cb382-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> GSScut) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb382-2"><a href="intoduction-to-simple-linear-regression-model.html#cb382-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> educ, <span class="dt">y =</span> hrs1, <span class="dt">color =</span> <span class="kw">as.factor</span>(female))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb382-3"><a href="intoduction-to-simple-linear-regression-model.html#cb382-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">x =</span> educ, <span class="dt">y =</span> hrs1, <span class="dt">color =</span> <span class="kw">as.factor</span>(female)), <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-178-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>위의 플롯은 교육 연수가 노동 시간에 미치는 효과가 성별에 따라 “조건적”일 것이라는 것을 가정하고 분석한 것이다. 회귀식으로 모델을 재구성하면 다음과 같다.</p>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="intoduction-to-simple-linear-regression-model.html#cb383-1"></a>model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(hrs1 <span class="op">~</span><span class="st"> </span>educ <span class="op">*</span><span class="st"> </span>female, <span class="dt">data =</span> GSScut) </span>
+<span id="cb383-2"><a href="intoduction-to-simple-linear-regression-model.html#cb383-2"></a><span class="kw">summary</span>(model3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = hrs1 ~ educ * female, data = GSScut)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -45.319  -5.341   0.035   5.663  51.286 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 30.95939    1.12811  27.444  &lt; 2e-16 ***
+## educ         0.56288    0.07897   7.128 1.11e-12 ***
+## female      10.46820    1.50271   6.966 3.52e-12 ***
+## educ:female -0.31830    0.10582  -3.008  0.00264 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14 on 7693 degrees of freedom
+##   (5392 observations deleted due to missingness)
+## Multiple R-squared:  0.05064,	Adjusted R-squared:  0.05027 
+## F-statistic: 136.8 on 3 and 7693 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>이와 같이 두 설명변수 간의 상호작용항(interaction terms)는 설명변수 간 종속변수에 대한 조건적 효과를 분석하는 데 도움을 주지만, 해석에 주의를 요합니다.</p>
+<ul>
+<li><p>다음과 같은 회귀모델을 가정해봅시다: <span class="math inline">\(\text{Worked Hours} = \beta_0 + \beta_1(\text{Education}) + \beta_2(\text{Female}) + \beta_3(\text{Education} \times \text{Female}) + \epsilon\)</span>.</p></li>
+<li><p>이때, 한계효과(marginal effects)는 설명변수 <span class="math inline">\(x_i\)</span>에 대한 기울기(<span class="math inline">\(\beta_i\)</span>)의 도함수로 나타낼 수 있습니다. 아까 위에서 간략하게 살펴본 편미분을 의미합니다.</p>
+<ul>
+<li><p>교육 연수의 한계효과 = <span class="math inline">\(\beta_1 + \text{Female} \times \beta_3\)</span></p></li>
+<li><p>여성의 한계효과 = <span class="math inline">\(\beta_2 + \text{Education} \times \beta_3\)</span></p></li>
+<li><p>남성일 때(<code>Female = 0</code>) 기울기와 절편은 <span class="math inline">\(\beta_1\)</span>과 <span class="math inline">\(\beta_0\)</span>으로 나타낼 수 있습니다. 여성일 때(<code>Female = 1</code>)의 기울기와 절편은 <span class="math inline">\(\beta_1 + \beta_3\)</span>과 <span class="math inline">\(\beta_0 + \beta_2\)</span>로 나타낼 수 있습니다.</p></li>
+</ul></li>
+<li><p>모델 3의 계수값을 분석해보겠습니다.</p>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="intoduction-to-simple-linear-regression-model.html#cb385-1"></a>model3<span class="op">$</span>coefficients</span></code></pre></div>
+<pre><code>## (Intercept)        educ      female educ:female 
+##  30.9593917   0.5628771  10.4681951  -0.3183006</code></pre>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="intoduction-to-simple-linear-regression-model.html#cb387-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> GSScut<span class="op">$</span>educ, <span class="dt">y =</span> GSScut<span class="op">$</span>hrs1)</span>
+<span id="cb387-2"><a href="intoduction-to-simple-linear-regression-model.html#cb387-2"></a><span class="co">## abline 함수는 abline(절편값, 기울기값)으로 설정해줄 수 있습니다;</span></span>
+<span id="cb387-3"><a href="intoduction-to-simple-linear-regression-model.html#cb387-3"></a><span class="kw">abline</span>(model3<span class="op">$</span>coefficients[<span class="dv">1</span>], model3<span class="op">$</span>coefficients[<span class="dv">2</span>])</span>
+<span id="cb387-4"><a href="intoduction-to-simple-linear-regression-model.html#cb387-4"></a><span class="kw">abline</span>((model3<span class="op">$</span>coefficients[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>model3<span class="op">$</span>coefficients[<span class="dv">3</span>]), </span>
+<span id="cb387-5"><a href="intoduction-to-simple-linear-regression-model.html#cb387-5"></a>       (model3<span class="op">$</span>coefficients[<span class="dv">2</span>] <span class="op">+</span><span class="st"> </span>model3<span class="op">$</span>coefficients[<span class="dv">4</span>]))</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-181-1.png" width="576" style="display: block; margin: auto;" /></p></li>
+</ul>
+<p>교육 연수가 0일 때, 남성과 여성의 노동 시간의 차이는 얼마일까요? 교육 연수가 20일 때는 어떤 차이가 나타날까요? 교육 연수가 증가할수록 성별의 효과가 평준화된다고 가정하는 것이 맞을까요? 아니면 교육 연수와 성별, 노동 시간에 영향을 미치는 다른 변수들이 존재할까요? 잠재적인 탈허위적 상관관계(spurious correlations)에 대해 생각해볼 필요가 있습니다.</p>
+</div>
+<div id="단순회귀분석-심화" class="section level2">
+<h2><span class="header-section-number">6.3</span> 단순회귀분석 심화</h2>
+<p>이번에는 <code>Quality of Government</code> 데이터셋의 교차사례 데이터를 이용해 단순회귀분석을 수행, 그 결과표가 보여주는 개별 통계치들의 의미를 살펴보겠습니다. 단, 심화의 이론적 배경 등은 나중에 <code>Lv.2.Statistics</code>에서 자세하게 논의할 것입니다. 여기에서는 <strong>R</strong>의 기본 함수들로도 원리를 이해하면 패키지 없이 해당 통계치들을 계산해낼 수 있다는 것을 보여주고가 합니다.</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="intoduction-to-simple-linear-regression-model.html#cb388-1"></a>QOG &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="dt">file =</span> <span class="st">&quot;http://www.qogdata.pol.gu.se/data/qog_std_cs_jan19.dta&quot;</span>)</span></code></pre></div>
+<p>예제 데이터 <code>QOG</code>는 194개 국가의 2015년을 기준으로 약 1983개의 변수들을 포함하고 있는 변수입니다. 우리는 이 중에서 부패지수(<code>ti_cpi</code>)와 세계화 지수(<code>dr_ig</code>)를 사용하여 단순회귀분석을 수행할 것입니다. 먼저, <code>QOG</code>에서 필요한 변수만을 선택하여 서브셋을 만들어보겠습니다.</p>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="intoduction-to-simple-linear-regression-model.html#cb389-1"></a>QOGcut &lt;-<span class="st"> </span>QOG <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(ccodecow, cname, ti_cpi, dr_ig)</span></code></pre></div>
+<p>서브셋, <code>QOGcut</code>에서 사용할 변수들의 간략한 기술통계(descriptive statistics)를 살펴보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="intoduction-to-simple-linear-regression-model.html#cb390-1"></a>QOGcut <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(ti_cpi, dr_ig) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summary</span>() <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+ti_cpi
+</th>
+<th style="text-align:left;">
+dr_ig
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. : 8.00
+</td>
+<td style="text-align:left;">
+Min. :28.68
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:28.00
+</td>
+<td style="text-align:left;">
+1st Qu.:50.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :38.00
+</td>
+<td style="text-align:left;">
+Median :59.93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :42.97
+</td>
+<td style="text-align:left;">
+Mean :61.13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:55.75
+</td>
+<td style="text-align:left;">
+3rd Qu.:70.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :91.00
+</td>
+<td style="text-align:left;">
+Max. :90.47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA’s :16
+</td>
+<td style="text-align:left;">
+NA’s :10
+</td>
+</tr>
+</tbody>
+</table>
+<p>현재 부패지수는 최대값이 100으로, 높을수록 ’청렴하다는 것’을 의미합니다. 따라서 더 큰 값이 더 높은 수준의 부패를 보여주도록 다시 코딩해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="intoduction-to-simple-linear-regression-model.html#cb391-1"></a>QOGcut &lt;-<span class="st"> </span>QOGcut <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(</span>
+<span id="cb391-2"><a href="intoduction-to-simple-linear-regression-model.html#cb391-2"></a>  <span class="dt">corrupt =</span> <span class="dv">100</span> <span class="op">-</span><span class="st"> </span>ti_cpi</span>
+<span id="cb391-3"><a href="intoduction-to-simple-linear-regression-model.html#cb391-3"></a>)</span></code></pre></div>
+<p>이렇게 다시 코딩한 부패지수(<code>corrupt</code>)를 포함하여 모델 분석에 사용할 변수들을 다시 한 번 살펴보겠습니다.</p>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="intoduction-to-simple-linear-regression-model.html#cb392-1"></a>QOGcut <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(corrupt, dr_ig) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summary</span>() <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+corrupt
+</th>
+<th style="text-align:left;">
+dr_ig
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. : 9.00
+</td>
+<td style="text-align:left;">
+Min. :28.68
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:44.25
+</td>
+<td style="text-align:left;">
+1st Qu.:50.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :62.00
+</td>
+<td style="text-align:left;">
+Median :59.93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :57.03
+</td>
+<td style="text-align:left;">
+Mean :61.13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:72.00
+</td>
+<td style="text-align:left;">
+3rd Qu.:70.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :92.00
+</td>
+<td style="text-align:left;">
+Max. :90.47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA’s :16
+</td>
+<td style="text-align:left;">
+NA’s :10
+</td>
+</tr>
+</tbody>
+</table>
+<p>세계화 지수를 종속변수로, 부패지수를 설명변수로 하는 단순회귀분석을 수행해보겠습니다.</p>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="intoduction-to-simple-linear-regression-model.html#cb393-1"></a>model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(dr_ig <span class="op">~</span><span class="st"> </span>corrupt, <span class="dt">data =</span> QOGcut) </span>
+<span id="cb393-2"><a href="intoduction-to-simple-linear-regression-model.html#cb393-2"></a><span class="kw">summary</span>(model0)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dr_ig ~ corrupt, data = QOGcut)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -32.831  -6.497   0.015   6.788  20.030 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 92.90546    2.19976   42.23   &lt;2e-16 ***
+## corrupt     -0.54974    0.03676  -14.96   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.458 on 172 degrees of freedom
+##   (20 observations deleted due to missingness)
+## Multiple R-squared:  0.5653,	Adjusted R-squared:  0.5628 
+## F-statistic: 223.7 on 1 and 172 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>이같은 결과는 <strong>R</strong>에서 제공되는 패키지 이외에도 수리통계적 식을 매뉴얼대로 구성하여 재현할 수도 있습니다. 먼저, 관측치 중 변수에서 결측치가 있으면 해당 관측치 전체는 회귀모형에서 제외됩니다. 새로운 데이터셋(<code>temp.data</code>)로 수리통계적 재현을 수행해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="intoduction-to-simple-linear-regression-model.html#cb395-1"></a>temp.data &lt;-<span class="st"> </span>QOGcut <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>() <span class="co"># 결측치를 제외시켜줍니다.</span></span></code></pre></div>
+<p>결측치가 존재하지 않는 새로운 데이터셋의 변수들로 OLS 회귀분석의 계수들을 구해보겠습니다. 우리가 추정하고자 하는 회귀식은 <span class="math inline">\(\text{Index of Globalization} = \beta_0 + \beta_1(\text{Corrupt Index}) + \epsilon\)</span>이라고 할 수 있습니다.</p>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="intoduction-to-simple-linear-regression-model.html#cb396-1"></a>y &lt;-<span class="st"> </span>temp.data<span class="op">$</span>dr_ig   <span class="co"># 종속변수: 세계화 지수</span></span>
+<span id="cb396-2"><a href="intoduction-to-simple-linear-regression-model.html#cb396-2"></a>x &lt;-<span class="st"> </span>temp.data<span class="op">$</span>corrupt <span class="co"># 설명변수: 역전시킨(reversed) 부패 지수</span></span></code></pre></div>
+<p>그리고 회귀식에서 기울기를 구하는 공식인 <span class="math inline">\(\beta_1 = \frac{\sigma_y}{\sigma_x} \times cov(y, x)\)</span>라고 할 때,</p>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="intoduction-to-simple-linear-regression-model.html#cb397-1"></a>b1 &lt;-<span class="st"> </span>(<span class="kw">sd</span>(y) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(x)) <span class="op">*</span><span class="st"> </span><span class="kw">cor</span>(y, x)</span>
+<span id="cb397-2"><a href="intoduction-to-simple-linear-regression-model.html#cb397-2"></a>b0 &lt;-<span class="st"> </span><span class="kw">mean</span>(y) <span class="op">-</span><span class="st"> </span>b1 <span class="op">*</span><span class="st"> </span><span class="kw">mean</span>(x)</span></code></pre></div>
+<p>라고 표현할 수 있습니다. 표본 자료를 사용하여 컴파일하는 것이기 때문에 <span class="math inline">\(\beta\)</span>가 아니라 표본의 통계치인 <span class="math inline">\(b\)</span>로 객체를 저장해주었습니다.</p>
+<p>OLS는 행렬대수의 형태, <span class="math inline">\((X&#39;X)^{-1}X&#39;y)\)</span>로 나타낼 수 있습니다. 이렇게 만들어진 <span class="math inline">\(x\)</span>의 벡터의 맨 앞에 1일 더하여 절편을 나타냅니다. 다른 행렬값들은 변수에 따라 달라지지만, 절편은 상수(constant), 변하지 않는 값이기 때문입니다.</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="intoduction-to-simple-linear-regression-model.html#cb398-1"></a>x.matrix &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="kw">nrow</span>(temp.data)), x))</span></code></pre></div>
+<p>이 <span class="math inline">\(x\)</span>의 행렬을 이용하여 우리는 기울기의 벡터값을 얻을 수 있습니다.</p>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="intoduction-to-simple-linear-regression-model.html#cb399-1"></a>b.vector &lt;-<span class="st"> </span><span class="kw">solve</span>(<span class="kw">t</span>(x.matrix) <span class="op">%*%</span><span class="st"> </span>x.matrix) <span class="op">%*%</span><span class="st"> </span>(<span class="kw">t</span>(x.matrix) <span class="op">%*%</span><span class="st"> </span>y)</span></code></pre></div>
+<p>기울기와 절편을 구했으니, 주어진 <span class="math inline">\(x\)</span>값과 기울기, 절편을 이용하여 종속변수의 예측값(predicted values, fitted values)을 구할 수도 있습니다. 예측값은 <span class="math inline">\(\hat{y}\)</span>으로 나타냅니다.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a></p>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="intoduction-to-simple-linear-regression-model.html#cb400-1"></a>y.hat &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>b1 <span class="op">*</span><span class="st"> </span>x</span></code></pre></div>
+<p>예측값을 구했으니, 과연 예측값과 실제값이 얼마나 차이나는지 플롯을 그려보겠습니다.</p>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="intoduction-to-simple-linear-regression-model.html#cb401-1"></a><span class="kw">plot</span>(y.hat, y)</span>
+<span id="cb401-2"><a href="intoduction-to-simple-linear-regression-model.html#cb401-2"></a><span class="kw">abline</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-194-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>예측값과 실제값 간의 차이, 오차를 우리는 표본 수준에서 잔차(residuals)라고 한다고 앞에서 이미 언급한 바가 있습니다. 잔차를 구해보겠습니다.</p>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="intoduction-to-simple-linear-regression-model.html#cb402-1"></a>resid &lt;-<span class="st"> </span>y <span class="op">-</span><span class="st"> </span>y.hat</span></code></pre></div>
+<p>과연 이 잔차는 회귀분석의 가정에 따라 평균이 0인 정규분포를 이루고 있을까요? 혹은, 이에 근사할까요?</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="intoduction-to-simple-linear-regression-model.html#cb403-1"></a><span class="kw">hist</span>(resid)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-196-1.png" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="intoduction-to-simple-linear-regression-model.html#cb404-1"></a><span class="kw">mean</span>(resid)</span></code></pre></div>
+<pre><code>## [1] 7.812197e-16</code></pre>
+<p>또 다른 가정에 따르면 잔차는 설명변수와 종속변수에에 독립적이어야 합니다. 과연 이 모델에서 잔차와 설명변수, 잔차와 종속변수는 상관성이 있을까요?</p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="intoduction-to-simple-linear-regression-model.html#cb406-1"></a><span class="kw">cor</span>(<span class="kw">cbind</span>(resid, x))</span></code></pre></div>
+<pre><code>##             resid           x
+## resid 1.00000e+00 1.43717e-16
+## x     1.43717e-16 1.00000e+00</code></pre>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="intoduction-to-simple-linear-regression-model.html#cb408-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb408-2"><a href="intoduction-to-simple-linear-regression-model.html#cb408-2"></a><span class="kw">plot</span>(x, resid)</span>
+<span id="cb408-3"><a href="intoduction-to-simple-linear-regression-model.html#cb408-3"></a><span class="kw">plot</span>(y.hat, resid)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-197-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>플롯을 보면 잔차는 모델에 포함된 변수들과는 큰 상관성을 보이지 않는 것 같습니다. 그렇다면 이번에는 모델의 설명력을 보여주는 <span class="math inline">\(R^2\)</span> 값을 계산해보도록 하겠습니다. <span class="math inline">\(R^2\)</span>는 두 가지 방식으로 계산할 수 있습니다. <span class="math inline">\(R^2\)</span>는 전체 종속변수의 변동량(total sum of squares) 중 설명이 되는 변동량(explained sum of squared)이 차지하는 비율을 보여줍니다.</p>
+<ul>
+<li><p>첫째, 단순회귀분석에서는 말 그대로 상관계수, <span class="math inline">\(R\)</span>을 제곱하여 구할 수 있습니다.</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="intoduction-to-simple-linear-regression-model.html#cb409-1"></a><span class="kw">cor</span>(y, x)<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0.5697705</code></pre>
+<ul>
+<li><p>둘째, 회귀선을 통해 설명하는 것이 아무 정보도 없을 때 평균을 통해 예측하는 것에 비하여 얼마나 더 나은 설명력을 제공하는지로 보여줄 수 있습니다.</p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="intoduction-to-simple-linear-regression-model.html#cb411-1"></a>SSE &lt;-<span class="st"> </span><span class="kw">sum</span>((y.hat <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y))<span class="op">^</span><span class="dv">2</span>) <span class="co"># 예측값과 평균값의 차이의 제곱합</span></span>
+<span id="cb411-2"><a href="intoduction-to-simple-linear-regression-model.html#cb411-2"></a>SSR &lt;-<span class="st"> </span><span class="kw">sum</span>((y <span class="op">-</span><span class="st"> </span>y.hat)<span class="op">^</span><span class="dv">2</span>) <span class="co"># 실제값과 예측값의 차이의 제곱합(잔차의 제곱합)</span></span>
+<span id="cb411-3"><a href="intoduction-to-simple-linear-regression-model.html#cb411-3"></a>R2 &lt;-<span class="st"> </span>SSE <span class="op">/</span><span class="st"> </span>(SSE <span class="op">+</span><span class="st"> </span>SSR) <span class="co"># 모델로 예측했을 때와 평균으로 예측했을 때의 차이를</span></span>
+<span id="cb411-4"><a href="intoduction-to-simple-linear-regression-model.html#cb411-4"></a>                        <span class="co">## 전체 변동량 대비 비율로 표현합니다.</span></span>
+<span id="cb411-5"><a href="intoduction-to-simple-linear-regression-model.html#cb411-5"></a>R2</span></code></pre></div>
+<pre><code>## [1] 0.5697705</code></pre>
+<ul>
+<li><p><span class="math inline">\(R^2\)</span>는 변수의 개수에 따라 조정됩니다. 왜냐하면 어떠한 변수든 간에 통계적으로 모델에 추가되면, <span class="math inline">\(R^2\)</span>는 증가하기 때문입니다. 따라서 우리는 과연 그것이 유의미한 변수의 추가로 인한 모델의 설명력 증가인지, 단순히 변수 추가투입에 따른 <span class="math inline">\(R^2\)</span> 증가인지 살펴보기 위해 조정된 <span class="math inline">\(R^2\)</span>를 구하고는 합니다.</p></li>
+<li><p>조정된 <span class="math inline">\(R^2\)</span>는 <span class="math inline">\(\frac{n-1}{n-k}\)</span>로 가중치가 부여됩니다.</p>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="intoduction-to-simple-linear-regression-model.html#cb413-1"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(y)</span>
+<span id="cb413-2"><a href="intoduction-to-simple-linear-regression-model.html#cb413-2"></a>k &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb413-3"><a href="intoduction-to-simple-linear-regression-model.html#cb413-3"></a>adj.R2 &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(((<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>R2) <span class="op">*</span><span class="st"> </span>(n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)) <span class="op">/</span><span class="st"> </span>(n <span class="op">-</span><span class="st"> </span>k <span class="op">-</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
+<p>모델을 통해 예측하는 것이 평균(대표값)이나 다른 방법으로 추세를 예측하는 것에 비해 더 많은 정보를 준다는 것을 보여주는 또 하나의 통계치는 F-검정치입니다. 마찬가지로 설명되지 않은 변동량에 비해 설명된 변동량을 보여주는 통계치입니다. 수리통계적으로는 잔차의 제곱합(<span class="math inline">\(SSR / (n-k)\)</span>에 대한 모델로 설명되는 변동량의 제곱합(<span class="math inline">\(SSE / k\)</span>)으로 계산할 수 있습니다.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="intoduction-to-simple-linear-regression-model.html#cb414-1"></a>dfm &lt;-<span class="st"> </span>k</span>
+<span id="cb414-2"><a href="intoduction-to-simple-linear-regression-model.html#cb414-2"></a>dfr &lt;-<span class="st"> </span>n <span class="op">-</span><span class="st"> </span>k <span class="op">-</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb414-3"><a href="intoduction-to-simple-linear-regression-model.html#cb414-3"></a></span>
+<span id="cb414-4"><a href="intoduction-to-simple-linear-regression-model.html#cb414-4"></a>MSM &lt;-<span class="st"> </span>SSE<span class="op">/</span>dfm</span>
+<span id="cb414-5"><a href="intoduction-to-simple-linear-regression-model.html#cb414-5"></a>MSR &lt;-<span class="st"> </span>SSR<span class="op">/</span>dfr </span>
+<span id="cb414-6"><a href="intoduction-to-simple-linear-regression-model.html#cb414-6"></a>F &lt;-<span class="st"> </span>MSM <span class="op">/</span><span class="st"> </span>MSR</span></code></pre></div>
+<p>이렇게 구한 F값이 과연 통계적으로 유의미한지, 유의수준을 계산해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="intoduction-to-simple-linear-regression-model.html#cb415-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pf</span>(F, dfm, dfr) <span class="co"># 거의 0에 수렴합니다. F값은 통계적으로 유의미하다는</span></span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="intoduction-to-simple-linear-regression-model.html#cb417-1"></a>                    <span class="co"># 근거가 된다고 할 수 있습니다.</span></span></code></pre></div>
+<p>잔차의 표준편차와 종속변수의 표준편차를 비교해보겠습니다. 잔차의 표준편차는 모델로 설명되고 남은 나머지 변동량을 보여주며, 종속변수의 표준편차는 설명변수로 설명되기 이전의 종속변수의 변동량을 보여줍니다. 설명변수가 종속변수의 변이를 설명하여 잔차의 표준편차가 감소한 것을 확인할 수 있습니다.</p>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="intoduction-to-simple-linear-regression-model.html#cb418-1"></a><span class="kw">sqrt</span>(MSR) </span></code></pre></div>
+<pre><code>## [1] 9.411872</code></pre>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="intoduction-to-simple-linear-regression-model.html#cb420-1"></a><span class="kw">sd</span>(y)</span></code></pre></div>
+<pre><code>## [1] 14.30737</code></pre>
+<p>이제는 각 계수값에 대한 t검정을 수행해보도록 하겠습니다 먼저 1이 포함된 <span class="math inline">\(x\)</span>, 설명변수 행렬을 이용하여 공분산행렬(variance-covariance matrix)을 계산합니다.</p>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="intoduction-to-simple-linear-regression-model.html#cb422-1"></a>vcov &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span>(n <span class="op">-</span><span class="st"> </span>k <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">t</span>(resid) <span class="op">%*%</span><span class="st"> </span>resid) <span class="op">*</span><span class="st"> </span></span>
+<span id="cb422-2"><a href="intoduction-to-simple-linear-regression-model.html#cb422-2"></a><span class="st">  </span><span class="kw">solve</span>(<span class="kw">t</span>(x.matrix) <span class="op">%*%</span><span class="st"> </span>x.matrix)</span>
+<span id="cb422-3"><a href="intoduction-to-simple-linear-regression-model.html#cb422-3"></a>vcov</span></code></pre></div>
+<pre><code>##                          x
+##    4.79281101 -0.075692250
+## x -0.07569225  0.001338385</code></pre>
+<p>각 계수값의 표준오차는 이 공분산의 제곱근으로 계산할 수 있습니다.</p>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="intoduction-to-simple-linear-regression-model.html#cb424-1"></a>SE.b0 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(vcov[<span class="dv">1</span>,<span class="dv">1</span>])</span>
+<span id="cb424-2"><a href="intoduction-to-simple-linear-regression-model.html#cb424-2"></a>SE.b1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(vcov[<span class="dv">2</span>,<span class="dv">2</span>])</span>
+<span id="cb424-3"><a href="intoduction-to-simple-linear-regression-model.html#cb424-3"></a><span class="co">## 이제 계수값에 대한 t검정을 수행해보겠습니다.</span></span>
+<span id="cb424-4"><a href="intoduction-to-simple-linear-regression-model.html#cb424-4"></a>t.b0 &lt;-<span class="st"> </span>(b0 <span class="op">-</span><span class="st"> </span><span class="dv">0</span>) <span class="op">/</span><span class="st"> </span>SE.b0</span>
+<span id="cb424-5"><a href="intoduction-to-simple-linear-regression-model.html#cb424-5"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(t.b0, <span class="dt">df =</span> n <span class="op">-</span><span class="st"> </span>k <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="intoduction-to-simple-linear-regression-model.html#cb426-1"></a>t.b1 &lt;-<span class="st"> </span>(b1 <span class="op">-</span><span class="st"> </span><span class="dv">0</span>) <span class="op">/</span><span class="st"> </span>SE.b1</span>
+<span id="cb426-2"><a href="intoduction-to-simple-linear-regression-model.html#cb426-2"></a><span class="kw">pt</span>(t.b1, <span class="dt">df =</span> n <span class="op">-</span><span class="st"> </span>k <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 1.929361e-33</code></pre>
+<p>t검정의 의미는 간단합니다. 우리가 모델을 통해 구한 기울기가 과연 실제 설명변수의 효과로 인한 것인지 아니면 단지 설명변수의 변동에 의한 우연의 일치인지를 구분하고자 하는 것입니다.</p>
+<p>이렇게 구한 결과를 <code>lm()</code> 함수의 결과와 비교해보겠습니다.</p>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="intoduction-to-simple-linear-regression-model.html#cb428-1"></a><span class="kw">summary</span>(model0)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dr_ig ~ corrupt, data = QOGcut)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -32.831  -6.497   0.015   6.788  20.030 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 92.90546    2.19976   42.23   &lt;2e-16 ***
+## corrupt     -0.54974    0.03676  -14.96   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.458 on 172 degrees of freedom
+##   (20 observations deleted due to missingness)
+## Multiple R-squared:  0.5653,	Adjusted R-squared:  0.5628 
+## F-statistic: 223.7 on 1 and 172 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="intoduction-to-simple-linear-regression-model.html#cb430-1"></a>manual &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(<span class="kw">bind_cols</span>(</span>
+<span id="cb430-2"><a href="intoduction-to-simple-linear-regression-model.html#cb430-2"></a>  <span class="dt">Term =</span> <span class="kw">c</span>(<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;Corrupt&quot;</span>),</span>
+<span id="cb430-3"><a href="intoduction-to-simple-linear-regression-model.html#cb430-3"></a>  <span class="dt">Estimate =</span> <span class="kw">c</span>(b0, b1),</span>
+<span id="cb430-4"><a href="intoduction-to-simple-linear-regression-model.html#cb430-4"></a>  <span class="dt">Std.Error =</span> <span class="kw">c</span>(SE.b0, SE.b1),</span>
+<span id="cb430-5"><a href="intoduction-to-simple-linear-regression-model.html#cb430-5"></a>  <span class="dt">R.sq =</span> <span class="kw">c</span>(R2, <span class="ot">NA</span>),</span>
+<span id="cb430-6"><a href="intoduction-to-simple-linear-regression-model.html#cb430-6"></a>  <span class="dt">F =</span> <span class="kw">c</span>(F, <span class="ot">NA</span>)))</span>
+<span id="cb430-7"><a href="intoduction-to-simple-linear-regression-model.html#cb430-7"></a>manual <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+Std.Error
+</th>
+<th style="text-align:right;">
+R.sq
+</th>
+<th style="text-align:right;">
+F
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+92.8618773
+</td>
+<td style="text-align:right;">
+2.1892490
+</td>
+<td style="text-align:right;">
+0.5697705
+</td>
+<td style="text-align:right;">
+226.4623
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Corrupt
+</td>
+<td style="text-align:right;">
+-0.5505395
+</td>
+<td style="text-align:right;">
+0.0365839
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<p>거의 유사한 결과를 얻을 수 있습니다. 약간의 차이는 <strong>R</strong> 내부에서 계산할 때 사용되는 공식의 미세한 수리적 차이 때문이라고 이해하실 수 있을 것 같습니다.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="14">
+<li id="fn14"><p>표준오차의 개념이 조금 헷갈릴 수 있습니다. 간단하게 설명하자면, 우리가 하나의 표본을 가지로 기울기, 절편 등을 구하지만 그것이 결코 모집단의 것과 같다고 우리는 확신할 수 없습니다. 왜냐하면 모집단에서 수많은 표본들을 뽑을 수 있지만 현실의 제약으로 우리는 단 하나만을 뽑아서 그것의 결과를 확인한 것이기 때문입니다. 따라서 이론적으로는 백만개의 표본을 뽑을 수 있다고 하면, 우리는 백만개의 기울기, 절편을 얻을 수 있을 것입니다. 이때, 이 백만개의 기울기와 절편도 분포의 형태로 나타낼 수 있을 텐데, 그 기울기와 절편들의 분포의 표준편차를 표준오차라고 부릅니다. 즉, 본질적으로 오차가 존재할 수밖에 없는 표집(sampling)의 변동성을 포착하는 통계치라고 할 수 있습니다.<a href="intoduction-to-simple-linear-regression-model.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>참고로 평균은 <span class="math inline">\(\bar{y}\)</span>로 나타냅니다.<a href="intoduction-to-simple-linear-regression-model.html#fnref15" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="foundation-of-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="better-understanding-for-linear-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-LinearM.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Kor_BasicStats.pdf", "Kor_BasicStats.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

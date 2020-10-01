@@ -568,10 +568,10 @@ table(anes$presvote2012_x) %>% knitr::kable()
 
 # 결측치를 제거한 데이터 서브셋을 만들기
 
-anes.nomissing <- subset(anes, pid_x != "-2" & 
-                           presvote2012_x != "-9" &
-                           presvote2012_x != "-6" & 
-                           presvote2012_x != "-2")
+anes.nomissing <- anes %>% 
+  dplyr::filter(!pid_x %in% c(-2) & 
+                  !presvote2012_x %in% c(-9, -6, -2))
+
 table(anes.nomissing$pid_x) %>% knitr::kable()
 table(anes.nomissing$presvote2012_x) %>% knitr::kable()
 ```

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Better Understanding for Linear Model | Basic Statistics and Data Analysis: Korean Version</title>
   <meta name="description" content="Chapter 7 Better Understanding for Linear Model | Basic Statistics and Data Analysis: Korean Version" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Better Understanding for Linear Model | Basic Statistics and Data Analysis: Korean Version" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Sanghoon Park" />
 
 
-<meta name="date" content="2019-10-29" />
+<meta name="date" content="2020-08-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intoduction-to-simple-linear-regression-model.html">
-
+<link rel="prev" href="intoduction-to-simple-linear-regression-model.html"/>
+<link rel="next" href="introduction-to-multivariate-linear-regression-model.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,12 +48,15 @@
 
 
 
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -61,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -77,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -153,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5.1" data-path="ch3.html"><a href="ch3.html#데이터에-새로운-변수-더미변수-만들기"><i class="fa fa-check"></i><b>3.5.1</b> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
 <li class="chapter" data-level="3.5.2" data-path="ch3.html"><a href="ch3.html#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><i class="fa fa-check"></i><b>3.5.2</b> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
 <li class="chapter" data-level="3.5.3" data-path="ch3.html"><a href="ch3.html#자료-머징하기-using-data-merging"><i class="fa fa-check"></i><b>3.5.3</b> 자료 머징하기 (Using Data Merging)</a></li>
-<li class="chapter" data-level="3.5.4" data-path="ch3.html"><a href="ch3.html#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><i class="fa fa-check"></i><b>3.5.4</b> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기[^3-3]</a></li>
+<li class="chapter" data-level="3.5.4" data-path="ch3.html"><a href="ch3.html#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><i class="fa fa-check"></i><b>3.5.4</b> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="ch3.html"><a href="ch3.html#요약통계표를-.tex-파일로-저장하기"><i class="fa fa-check"></i><b>3.6</b> 요약통계표를 .tex 파일로 저장하기</a></li>
 <li class="chapter" data-level="3.7" data-path="ch3.html"><a href="ch3.html#서로-다른-분석수준lower-higher-통합하기"><i class="fa fa-check"></i><b>3.7</b> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
@@ -184,7 +190,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#회귀분석의-이해-기울기의-검정"><i class="fa fa-check"></i><b>6.1</b> 회귀분석의 이해: 기울기의 검정</a></li>
 <li class="chapter" data-level="6.2" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기"><i class="fa fa-check"></i><b>6.2</b> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</a></li>
 <li class="chapter" data-level="6.3" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#단순회귀분석-심화"><i class="fa fa-check"></i><b>6.3</b> 단순회귀분석 심화</a></li>
-<li class="chapter" data-level="6.4" data-path="intoduction-to-simple-linear-regression-model.html"><a href="intoduction-to-simple-linear-regression-model.html#이제-계수값에-대한-t검정을-수행해보겠습니다."><i class="fa fa-check"></i><b>6.4</b> 이제 계수값에 대한 t검정을 수행해보겠습니다.</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html"><i class="fa fa-check"></i><b>7</b> Better Understanding for Linear Model</a><ul>
 <li class="chapter" data-level="7.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#추정estimation"><i class="fa fa-check"></i><b>7.1</b> 추정(Estimation)</a><ul>
@@ -193,7 +198,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정significnace-tests"><i class="fa fa-check"></i><b>7.2</b> 유의성 검정(Significnace Tests)</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#유의성-검정을-이루는-다섯-가지-부분"><i class="fa fa-check"></i><b>7.2.1</b> 유의성 검정을 이루는 다섯 가지 부분</a></li>
+<li class="chapter" data-level="7.2.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#오류의-유형-types-of-errors"><i class="fa fa-check"></i><b>7.2.2</b> 오류의 유형 (Types of Errors)</a></li>
 </ul></li>
+<li class="chapter" data-level="7.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀와-상관관계"><i class="fa fa-check"></i><b>7.3</b> 선형회귀와 상관관계</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형관계"><i class="fa fa-check"></i><b>7.3.1</b> 선형관계</a></li>
+<li class="chapter" data-level="7.3.2" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#확률모델probability-model"><i class="fa fa-check"></i><b>7.3.2</b> 확률모델(Probability model)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#선형회귀모델"><i class="fa fa-check"></i><b>7.3.3</b> 선형회귀모델</a></li>
+<li class="chapter" data-level="7.3.4" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#관계의-측정-상관관계"><i class="fa fa-check"></i><b>7.3.4</b> 관계의 측정: 상관관계</a></li>
+<li class="chapter" data-level="7.3.5" data-path="better-understanding-for-linear-model.html"><a href="better-understanding-for-linear-model.html#정리하며"><i class="fa fa-check"></i><b>7.3.5</b> 정리하며</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html"><i class="fa fa-check"></i><b>8</b> Introduction to Multivariate Linear Regression Model</a><ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#관계와-인과성"><i class="fa fa-check"></i><b>8.1</b> 관계와 인과성</a></li>
+<li class="chapter" data-level="8.2" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#변수의-통제"><i class="fa fa-check"></i><b>8.2</b> 변수의 통제</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다변량-관계multivariate-relationship"><i class="fa fa-check"></i><b>8.2.1</b> 다변량 관계(Multivariate relationship)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="introduction-to-multivariate-linear-regression-model.html"><a href="introduction-to-multivariate-linear-regression-model.html#다중선형회귀모델multiple-linear-regression-model"><i class="fa fa-check"></i><b>8.3</b> 다중선형회귀모델(Multiple linear regression model)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -218,7 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="better-understanding-for-linear-model" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Better Understanding for Linear Model</h1>
 <p>제6장에서 단순선형회귀모델(simple linear regression model)에 대한 기본적인 내용들을 주로 <strong>R</strong>코드와 통계치들을 중심으로 살펴보았다면, 이 장에서는 설명변수가 2개 이상인 다중선형회귀모델(multiple linear regression model)로 나아가기 이전에 짚고 넘어가야할 선형모델에 대한 이론적 배경들을 짚어보고자 합니다.</p>
-<p>이론적인 측면에서는 제4장과 제5장에서 이어진다고 할 수 있습니다. 구체적으로 이 장은 추정(estimation)-유의성 검정(significance tests)-두 집단의 비교(comparison of two groups)-선형회귀모델과 상관관계 순으로 앞선 장들에서 놓치고 넘어갈 수 있었던 이론적인 논의들을 다루어보고자 합니다.</p>
+<p>이론적인 측면에서 제4장과 제5장에서 이어진다고 할 수 있습니다. 구체적으로 이 장은 추정(estimation)-유의성 검정(significance tests)-선형회귀모델과 상관관계 순으로 앞선 장들에서 놓치고 넘어갈 수 있었던 이론적인 논의들을 다루어보고자 합니다.</p>
 <div id="추정estimation" class="section level2">
 <h2><span class="header-section-number">7.1</span> 추정(Estimation)</h2>
 <p>첫 번째 절에서는 추정의 문제를 살펴볼 것입니다. 통계방법을 이용하여 우리는 무엇을 추정하려고 하는 것인지, 그리고 추정에는 어떠한 종류가 있는지, 데이터에 따라 우리가 추정해야하기 위해 주목해야하는 것이 무엇인지 등을 다룹니다.</p>
@@ -235,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>모든 추정이 동일하지는 않습니다. 왜냐하면 우리는 모집단을 알지 못하여 표본을 가지고 모집단의 특성을 추정, 추론하기 때문에 우리의 추정에는 불확실성(uncertainty)이 존재하는 탓입니다. 여기서는 점추정량(point estimate)과 구간추정량(interval estimate)을 살펴보고자 합니다.</p>
 <ul>
 <li><p>점추정량이란 모수의 값(parameter value)에 대해 최선의 추측이라고 할 수 있는 단 하나의 통계치(single statistic value)를 의미합니다. 즉, 표본을 통해 모집단의 평균이 0.5일 것이라고 말할 때, 우리는 그 0.5를 점추정량이라고 말할 수 있습니다.</p></li>
-<li><p>반면, 구간추정량은 점추정량 둘러싼 구간을 의미하는데, 모수값을 포함할 것이라고 기대되는 “고정된 신뢰수준”(fixed confidence level)을 보여주는 구간<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>이라고 할 수 있습니다. 이 점에서 우리는 이 구간추정량에 대해 신뢰구간(confidence interval)이라고 합니다.</p></li>
+<li><p>반면, 구간추정량은 점추정량 둘러싼 구간을 의미하는데, 모수값을 포함할 것이라고 기대되는 “고정된 신뢰수준”(fixed confidence level)을 보여주는 구간<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>이라고 할 수 있습니다. 이 점에서 우리는 이 구간추정량에 대해 신뢰구간(confidence interval)이라고 합니다.</p></li>
 </ul>
 <p>추정, 추정량, 추정값을 이해하는 것은 아마도 모집단의 모수를 제대로, 잘 추정하는 추정량을 얻기 위해서일 것입니다. 그렇다면 좋은 추정량은 무엇일까요? 크게 두 가지 기준을 생각해볼 수 있습니다.</p>
 <p>첫째는 불편성(unbiasness)입니다. 이는 추정량의 표집분포가 모집단 값을 중심으로 분포되어 있어야 한다는 것을 의미합니다. 즉, 추정량은 표본을 바탕으로 한 것이기 때문에 모수를 추정하는 데 있어서 불확실성을 내표할수밖에 없지만, 그 불확실성이 모수를 중심으로 퍼져있는 것이라면 우리는 기대값—평균이나 비율 등을 이용하여 모수를 추정할 수 있습니다. 만약 추정량이 편향되어 있다면(biased), 평균적으로 모수를 과소추정(underestimate)하거나 과대추정(overestimate)한다면 우리는 그 결과를 신뢰하기 어려울 것입니다.</p>
@@ -265,10 +285,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>결과적으로 우리는 “매우 행복한” 사람들이 모집단에서 차지할 비율이 95%의 신뢰수준에서 0.15와 0.28, 전체의 15%와 28% 사이에 위치할 것이라고 주장할 수 있습니다.</p>
 <p>만약 99% 수준의 신뢰수준에서 신뢰구간을 찾고자 하면 어떻게 될까요? 신뢰구간은 오차한계에 따라 변화합니다. 오차한계는 표준오차를 신뢰수준의 기준값으로 곱해준 결과입니다. 신뢰수준이 변화하면, 기준값도 변화합니다. 99%의 신뢰수준은 양쪽 분포에서 0.5%씩을 차지하므로, 이때 <span class="math inline">\(z\)</span>-score는 2.58입니다. 따라서 99% 수준의 신뢰구간은 위의 예제대로라면 <span class="math inline">\(0.213\pm 2.58(0.032) = 0.213\pm0.083\)</span>이므로, 구간은 <span class="math inline">\((0.13, 0.30)\)</span>이 됩니다. 즉, 신뢰수준이 높아질수록, 신뢰구간은 넓어집니다.</p>
-<p>한편, 신뢰구간은 표본의 크기에도 영향을 받습니다. 위의 예제에서 표본의 수가 164개가 아니라 656개라고 생각해보겠습니다. 그러면 먼저 표준오차가 영향을 받습니다. <span class="math inline">\(se = \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\)</span>이므로, $  = 0.016$이라는 결과를 얻게 됩니다. 앞서 164개일 때(0.032)와 비교하면 표준오차가 작아진 것을 알 수 있습니다. 따라서 이때는 95% 신뢰수준에서 신뢰구간은 <span class="math inline">\(0.213\pm1.96(0.016) = 0.213\pm0.031\)</span>로 <span class="math inline">\((0.18, 0.24)\)</span>가 됩니다. 즉, 표본의 규모가 클수록 신뢰구간은 작아지는 것을 확인할 수 있습니다.</p>
+<p>한편, 신뢰구간은 표본의 크기에도 영향을 받습니다. 위의 예제에서 표본의 수가 164개가 아니라 656개라고 생각해보겠습니다. 그러면 먼저 표준오차가 영향을 받습니다. <span class="math inline">\(se = \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\)</span>이므로, <span class="math inline">\(\sqrt{0.213(0.787)/656} = 0.016\)</span>이라는 결과를 얻게 됩니다. 앞서 164개일 때(0.032)와 비교하면 표준오차가 작아진 것을 알 수 있습니다. 따라서 이때는 95% 신뢰수준에서 신뢰구간은 <span class="math inline">\(0.213\pm1.96(0.016) = 0.213\pm0.031\)</span>로 <span class="math inline">\((0.18, 0.24)\)</span>가 됩니다. 즉, 표본의 규모가 클수록 신뢰구간은 작아지는 것을 확인할 수 있습니다.</p>
 <p>정리하자면, 만약 우리가 정해진 규모(n)의 표본을 무작위로 반복해서 뽑고, 매번 95% 신뢰구간을 계산한다면, 장기적으로 보았을 때 95% 신뢰구간은 모집단의 비율을 그 구간 안에 포함하게 될 것이라고 기대할 수 있습니다.</p>
 <ul>
-<li>비율에 대한 신뢰구간의 공식은 다음과 같습니다: <span class="math inline">\(\hat{\pi} \pm z(se) \text{  with  } se = \sqrt{\frac{\hat{pi}(1-\hat{\pi})}{n}}\)</span></li>
+<li>비율에 대한 신뢰구간의 공식은 다음과 같습니다: <span class="math inline">\(\hat{\pi} \pm z(se) \text{  with  } se = \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\)</span></li>
 </ul>
 <p>통계방법은 대규모 관측치를 통하여 표본비율에 대한 표집분포가 정규분포에 근사하여(CLT), 추정값에 대한 표준오차를 최대한 작게 만들 것을 요구합니다. 수리적으로는 분류형 변수에 있어서 최소 30개의 관측치가 존재하고, 그 중 최소 15개씩의 존부(1;0) 결과가 존재한다면 CLT에 따라서 추정할 수 있다고 봅니다. 만약 이러한 조건이 충족되지 않는다면, 표집분포는 왜곡될 수도 있습니다(skewed). 이는 표본비율이 모집단 비율(<span class="math inline">\(\pi\)</span>)을 추정하는 데 쓸모없는 추정치가 될 수 있음을 의미하며, 표준오차도 모집단 수준의 표준오차를 추론하는 데 무용할 수 있다는 것을 의미합니다.</p>
 </div>
@@ -276,43 +296,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">7.1.2.2</span> 평균의 신뢰구간</h4>
 <p>이번에는 정량적-연속형 변수일 경우에 신뢰구간을 구하는 방법을 살펴보겠습니다. 관측치의 개수가 많은 무작위 표본에서, 표본의 평균은 모집단 평균 <span class="math inline">\(\mu\)</span>와 표준오차를 둘러싼 정규표집분포(normal sampling distribution)에 근사한다고 할 수 있습니다.
 <span class="math display">\[\sigma_{\bar{y}} = \sigma / \sqrt{n}\]</span>
-따라서, <span class="math inline">\(P(\mu - 1.96\sigma_{\bar{y}} \leq \bar{y} \mu + 1.96\sigma_{\bar{y}}) = 0.95\)</span>라고 정리할 수 있습니다. 이때 우리는 “95%의 확률로 표본평균이 (알 수 없는) 모집단 평균을 둘러싼 표준편차의 1.96배 구간 내에 위치한다”고 할 수 있습니다.</p>
+따라서, <span class="math inline">\(P(\mu - 1.96\sigma_{\bar{y}} \leq \bar{y} \leq \mu + 1.96\sigma_{\bar{y}}) = 0.95\)</span>라고 정리할 수 있습니다. 이때 우리는 “95%의 확률로 표본평균이 (알 수 없는) 모집단 평균을 둘러싼 표준편차의 1.96배 구간 내에 위치한다”고 할 수 있습니다.</p>
 <p>여기서의 문제는 우리가 표준오차를 모른다는 것입니다. <span class="math inline">\(\sigma\)</span>도 모집단의 표준편차로, 모수이기 때문에 우리가 알지 못합니다. 따라서 우리는 <span class="math inline">\(\sigma\)</span>를 알 수 없기 때문에 이를 표본 데이터로부터의 점추정값으로 대체해서 추정하게 됩니다. 즉, <span class="math display">\[se = s / \sqrt{n}\]</span>이 되는 것입니다. <span class="math inline">\(\mu\)</span>에 대한 95%의 신뢰구간에서 우리는 <span class="math inline">\(\bar{y}\pm1.96(se)\)</span>라고 주장하지만 실상 그것은 <span class="math inline">\(\bar{y}\pm1.96(\frac{s}{\sqrt{n}})\)</span>과 같습니다.</p>
 <p>이러한 방법은 어디까지나 표본의 표준편차(<span class="math inline">\(s\)</span>)가 모집단의 표준편차(<span class="math inline">\(\sigma\)</span>)에 대해 좋은 추정값이라고 말할 수 있는 CLT의 근거인 “대규모 관측치”가 가정될 때 가능합니다. 만약 관측치의 개수가 적다면, <span class="math inline">\(\sigma\)</span>를 <span class="math inline">\(s\)</span>로 대체하는 것은 또 다른 오류를 불러올 수 있기 때문에, 신뢰구간이 충분한 너비를 가지지 못할 수 있습니다. 이때 우리는 <span class="math inline">\(z\)</span>-score보다 조금 더 큰 값을 가지는 <span class="math inline">\(t\)</span>-score를 기준치로 대신 사용해줌으로써 표본 규모에 따른 문제를 해결하고자 합니다.</p>
-<p>t-분포(<code>Student's t; the t distribution</code>)는 다음과 같은 특징을 가지는 분포입니다.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>t-분포(<code>Student's t; the t distribution</code>)는 다음과 같은 특징을 가지는 분포입니다.<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></p>
 <ul>
 <li><p>0을 중심으로 종 형태(bell-shaped)를 취하는 분포</p></li>
 <li><p>표준편차는 1보다 조금 큰 분포; 따라서 표준정규분포보다 양 꼬리가 조금은 더 두꺼운 모습을 보임.</p></li>
-<li><p>정확한 형태는 자유도(degree of freedom, df)를 따르는데, 평균을 추론할 때 <span class="math inline">\(df\)</span>는 대개 전체 표본 규모에서 -1을 취한 값을 자유도로 봄.</p></li>
+<li><p>정확한 형태는 자유도(degree of freedom, df)를 따르는데, 평균을 추론할 때 df는 대개 전체 표본 규모에서 -1을 취한 값을 자유도로 봄.</p></li>
 <li><p>자유도가 증가함에 따라 t-분포는 표준정규분포와 거의 흡사해짐.</p>
 <ul>
-<li><p>자유도가 30을 넘을 때에는 거의 같다고 볼 수 있음.</p></li>
-<li><p>만약 자유도가 무한대라면 이는 표준정규분포라고 할 수 있음.</p></li>
+<li>자유도가 30을 넘을 때에는 거의 같다고 볼 수 있음.</li>
+<li>만약 자유도가 무한대라면 이는 표준정규분포라고 할 수 있음.</li>
 </ul></li>
 <li><p>평균에 대한 신뢰구간은 오차한계를 비율에 대한 신뢰구간에서처럼 <span class="math inline">\(z(se)\)</span>가 아니라 <span class="math inline">\(t(se)\)</span>로 갖게 됨.</p></li>
 </ul>
 <p>한 번 t-분포와 z-분포, 그리고 표본 규모에 따른 차이를 한 번 살펴보도록 하겠습니다.</p>
-<pre><code>```r
-x &lt;- seq(-4, 4, length=1000)
-hx &lt;- dnorm(x)
-degf &lt;- c(1, 5, 30)
-colors &lt;- c(&quot;green&quot;, &quot;blue&quot;, &quot;red&quot;, &quot;black&quot;)
-labels &lt;- c(&quot;n = 1&quot;, &quot;n = 5&quot;, &quot;n = 30&quot;, &quot;normal&quot;)
-plot(x, hx, type=&quot;l&quot;, lty=1, 
-     xlab=&quot;x값의 분포&quot;,
-     ylab=&quot;밀도&quot;, main=&quot;t-분포와 z-분포의 비교&quot;)
-abline(v = 0)
-for (i in 1:3){
-  lines(x, dt(x,degf[i]), lwd=2, col=colors[i])
-}
-legend(&quot;topright&quot;, inset=.05, title=&quot;분포의 종류&quot;,
-       labels, lwd=2, lty=c(1, 1, 1, 1), col=colors)
-```
-
-&lt;img src=&quot;Kor_BasicStats_files/figure-html/unnamed-chunk-2-1.png&quot; width=&quot;576&quot; style=&quot;display: block; margin: auto;&quot; /&gt;</code></pre>
-<p>정규분포를 띄는 모집단으로부터 무작위 표본을 추출했다고 할 때, 95%의 확률로 모집단 평균 <span class="math inline">\(\mu\)</span>에 대한 신뢰구간은 <span class="math display">\[\bar{y} \pm t_{.025}(se) \text{ , with }se = \frac{s}{\sqrt{n}}\]</span>이라고 할 수 있습니다. 이때 <span class="math inline">\(t\)</span>-score에 따라 <span class="math inline">\(df = n-1\)</span>입니다.</p>
-<p>모집단의 정규성을 가정하는 것은 표집분포가 표본규모에 상관없이 종의 형태를 딀 것이라는 것을 보장해주기 때문입니다. 아래 그림을 보시면 이해가 더 쉬우리라 생각됩니다.</p>
-<p><img src="Chapters_pdf,%20R/plot/population%20distribution.jpg" /></p>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="better-understanding-for-linear-model.html#cb431-1"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dt">length=</span><span class="dv">1000</span>)</span>
+<span id="cb431-2"><a href="better-understanding-for-linear-model.html#cb431-2"></a>hx &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x)</span>
+<span id="cb431-3"><a href="better-understanding-for-linear-model.html#cb431-3"></a>degf &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">30</span>)</span>
+<span id="cb431-4"><a href="better-understanding-for-linear-model.html#cb431-4"></a>colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb431-5"><a href="better-understanding-for-linear-model.html#cb431-5"></a>labels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;n = 1&quot;</span>, <span class="st">&quot;n = 5&quot;</span>, <span class="st">&quot;n = 30&quot;</span>, <span class="st">&quot;normal&quot;</span>)</span>
+<span id="cb431-6"><a href="better-understanding-for-linear-model.html#cb431-6"></a><span class="kw">plot</span>(x, hx, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">lty=</span><span class="dv">1</span>, </span>
+<span id="cb431-7"><a href="better-understanding-for-linear-model.html#cb431-7"></a>     <span class="dt">xlab=</span><span class="st">&quot;x-values&quot;</span>,</span>
+<span id="cb431-8"><a href="better-understanding-for-linear-model.html#cb431-8"></a>     <span class="dt">ylab=</span><span class="st">&quot;density&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Comparison of t-distributions to Std.normal distribution&quot;</span>)</span>
+<span id="cb431-9"><a href="better-understanding-for-linear-model.html#cb431-9"></a><span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>)</span>
+<span id="cb431-10"><a href="better-understanding-for-linear-model.html#cb431-10"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>){</span>
+<span id="cb431-11"><a href="better-understanding-for-linear-model.html#cb431-11"></a>  <span class="kw">lines</span>(x, <span class="kw">dt</span>(x,degf[i]), <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span>colors[i])</span>
+<span id="cb431-12"><a href="better-understanding-for-linear-model.html#cb431-12"></a>  }</span>
+<span id="cb431-13"><a href="better-understanding-for-linear-model.html#cb431-13"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">inset=</span>.<span class="dv">05</span>, <span class="dt">title=</span><span class="st">&quot;Distribution&quot;</span>,</span>
+<span id="cb431-14"><a href="better-understanding-for-linear-model.html#cb431-14"></a>       labels, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">col=</span>colors)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-208-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>정규분포를 띄는 모집단으로부터 무작위 표본을 추출했다고 할 때, 95%의 확률로 모집단 평균 <span class="math inline">\(\mu\)</span>에 대한 신뢰구간은 <span class="math display">\[\bar{y} \pm t_{.025}(se) \text{ , with }se = \frac{s}{\sqrt{n}}\]</span>이라고 할 수 있습니다. 이때 <span class="math inline">\(t\)</span>-score에 따라 df <span class="math inline">\(= n-1\)</span>입니다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-209"></span>
+<img src="Chapters_pdfR/plot/population_distribution.jpg" alt="Population Distribution" width="472" />
+<p class="caption">
+Figure 7.1: Population Distribution
+</p>
+</div>
+<p>모집단의 정규성을 가정하는 것은 표집분포가 표본규모에 상관없이 종의 형태를 딀 것이라는 것을 보장해주기 때문입니다. Figure 7.1을 보시면 이해가 더 쉬우리라 생각됩니다.</p>
 <p>예제로 한 번 평균에 대한 신뢰구간을 살펴보도록 하겠습니다. 관측치가 1,467개라고 할 때, 친한 친구 수의 평균에 대한 95%의 신뢰구간이 <span class="math inline">\((6.8, 8.0)\)</span>이라고 합시다. 그렇다면, 다음 중 어떤 해석이 올바른 해석이라고 할 수 있을까요?</p>
 <ol style="list-style-type: decimal">
 <li><p>우리는 95%의 확률로 <span class="math inline">\(\bar{y}\)</span>가 6.8과 9.0 사이에 존재한다고 할 수 있다.</p></li>
@@ -322,7 +344,7 @@ legend(&quot;topright&quot;, inset=.05, title=&quot;분포의 종류&quot;,
 </ol>
 <p>정답은 4번입니다. 오해하시면 안 되는 게, 신뢰구간은 어디까지나 표집(sampling)의 개념에 바탕을 두고 있습니다. 하나의 표본에서의 평균이 어느 구간에 존재할 것이라고 주장하는 것이 아니라는 점을 유념하셔야 합니다.</p>
 <p><span class="math inline">\(\mu\)</span>에 대한 신뢰구간을 구하는 방법은 모집단의 정규분포 가정이 위배되는 상황에서도 매우 유용합니다. 우리는 직관적으로 신뢰수준이 높을수록 신뢰구간이 넓어진다는 것과 표본규모가 커질수록 더 좁은 신뢰구간을 가진다는 것을 알 수 있습니다.</p>
-<p>표집을 수없이 반복해보면, 장기적으로 95% 신뢰수준에서 우리는 <span class="math inline">\(\mu\)</span>에 대한 신뢰구간이 95%의 확률로 실제 모집단의 평균, <span class="math inline">\(\mu\)</span>를 포함하고 있을 것이라고 주장할 수 있습니다. 다시 한 번 강조하지만, 개별 표본의 신뢰구간이 중요한 것이 아니라 이론적으로 모집단에서 수많은 표본들을 뽑아낼 수 있다고 할 때, 그 표본들로부터 얻어내는 통계치의 분포, 표집분포(sampling distribution)이 얼마나 모집단의 모수 추정에 도움이 되는가가 중요합니다.</p>
+<p>표집을 수없이 반복해보면, 장기적으로 95% 신뢰수준에서 우리는 <span class="math inline">\(\mu\)</span>에 대한 신뢰구간이 95%의 확률로 실제 모집단의 평균, <span class="math inline">\(\mu\)</span>를 포함하고 있을 것이라고 주장할 수 있습니다. 다시 한 번 강조하지만, 개별 표본의 신뢰구간이 중요한 것이 아니라 이론적으로 모집단에서 수많은 표본들을 뽑아낼 수 있다고 할 때, 그 표본들로부터 얻어내는 통계치의 분포, 표집분포(sampling distribution)이 얼마나 모집단의 모수 추정에 도움이 되는가가 중요합니다. 모집단의 정규성 가정은 수많은 표집을 통해 완화될 수 있습니다.</p>
 </div>
 </div>
 </div>
@@ -344,26 +366,26 @@ legend(&quot;topright&quot;, inset=.05, title=&quot;분포의 종류&quot;,
 <div id="평균에-대한-유의성-검정" class="section level4">
 <h4><span class="header-section-number">7.2.1.1</span> 평균에 대한 유의성 검정</h4>
 <p>예시를 통해서 평균에 대한 유의성 검정을 살펴보겠습니다. 만약에 <code>A</code>라고 하는 다이어트 방법이 있고, 그 다이어트 방법을 기점으로 몸무게를 측정했다고 해보겠습니다. 그렇다면 <span class="math inline">\(y\)</span>는 몸무개의 변화라고 할 수 있을 것입니다. 그리고 표본의 크기는 17이며, 데이터가 아래와 같이 있다고 가정하겠습니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">11.4</span>, <span class="fl">11.0</span>, <span class="fl">5.5</span>, <span class="fl">9.4</span>, <span class="fl">13.6</span>, <span class="fl">-2.9</span>, <span class="fl">-0.1</span>, <span class="fl">7.4</span>, <span class="fl">21.5</span>, </a>
-<a class="sourceLine" id="cb2-2" title="2">       <span class="fl">-5.3</span>, <span class="fl">-3.8</span>, <span class="fl">13.4</span>, <span class="fl">13.1</span>, <span class="fl">9.0</span>, <span class="fl">3.9</span>, <span class="fl">5.7</span>, <span class="fl">10.7</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3">n &lt;-<span class="st"> </span><span class="kw">length</span>(y)</a>
-<a class="sourceLine" id="cb2-4" title="4">mean &lt;-<span class="st"> </span><span class="kw">mean</span>(y)</a>
-<a class="sourceLine" id="cb2-5" title="5">sd &lt;-<span class="st"> </span><span class="kw">sd</span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="better-understanding-for-linear-model.html#cb432-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">11.4</span>, <span class="fl">11.0</span>, <span class="fl">5.5</span>, <span class="fl">9.4</span>, <span class="fl">13.6</span>, <span class="fl">-2.9</span>, <span class="fl">-0.1</span>, <span class="fl">7.4</span>, <span class="fl">21.5</span>, </span>
+<span id="cb432-2"><a href="better-understanding-for-linear-model.html#cb432-2"></a>       <span class="fl">-5.3</span>, <span class="fl">-3.8</span>, <span class="fl">13.4</span>, <span class="fl">13.1</span>, <span class="fl">9.0</span>, <span class="fl">3.9</span>, <span class="fl">5.7</span>, <span class="fl">10.7</span>)</span>
+<span id="cb432-3"><a href="better-understanding-for-linear-model.html#cb432-3"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(y)</span>
+<span id="cb432-4"><a href="better-understanding-for-linear-model.html#cb432-4"></a>mean &lt;-<span class="st"> </span><span class="kw">mean</span>(y)</span>
+<span id="cb432-5"><a href="better-understanding-for-linear-model.html#cb432-5"></a>sd &lt;-<span class="st"> </span><span class="kw">sd</span>(y)</span></code></pre></div>
 <p>과연 <code>A</code>라는 다이어트 방법이 효과가 있는지 그 근거는 어떻게 확인할 수 있을까요?</p>
 <ul>
 <li><p>먼저, <span class="math inline">\(\mu\)</span>를 모집단의 평균 몸무게 변화라고 하겠습니다.</p></li>
 <li><p>그리고 우리는 영가설, <span class="math inline">\(H_0: \mu = 0\)</span> (효과가 없음)을 <span class="math inline">\(H_A: \mu \neq 0\)</span> (효과가 없지 않음)이라는 연구가설에 대해 검정해보겠습니다.</p></li>
 </ul>
 <p>주어진 자료의 표본규모(<code>n</code>), 평균(<code>mean</code>), 그리고 표준편차(<code>sd</code>)를 이용해서 간단하게 신뢰구간을 계산해주겠습니다. 모집단 평균에 대한 신뢰구간과 표준오차는 같기 때문에, <span class="math display">\[se = s / \sqrt{n}\]</span>로 계산해주면,</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">se &lt;-<span class="st"> </span>sd <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(n)</a>
-<a class="sourceLine" id="cb3-2" title="2">se</a></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="better-understanding-for-linear-model.html#cb433-1"></a>se &lt;-<span class="st"> </span>sd <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(n)</span>
+<span id="cb433-2"><a href="better-understanding-for-linear-model.html#cb433-2"></a>se</span></code></pre></div>
 <pre><code>## [1] 1.73593</code></pre>
 <p>위와 같은 결과를 얻게 되고, 주어진 자유도(17 -1 = 16)에서 검정통계량은 <span class="math inline">\(t = \frac{\bar{y}-\mu_0}{se}\)</span>라고 할 수 있습니다. 따라서 그 결과는 아래와 같이 계산할 수 있습니다.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">t &lt;-<span class="st"> </span>(mean <span class="op">-</span><span class="st"> </span><span class="dv">0</span>)<span class="op">/</span>se</a>
-<a class="sourceLine" id="cb5-2" title="2">t</a></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="better-understanding-for-linear-model.html#cb435-1"></a>t &lt;-<span class="st"> </span>(mean <span class="op">-</span><span class="st"> </span><span class="dv">0</span>)<span class="op">/</span>se</span>
+<span id="cb435-2"><a href="better-understanding-for-linear-model.html#cb435-2"></a>t</span></code></pre></div>
 <pre><code>## [1] 4.184908</code></pre>
 <p>그렇다면 이 t-값은 유의수준과 어떠한 관계에 있을까요? 우리는 t-값이 계산한 결과보다 클 확률을 양측꼬리 검정으로 계산해볼 수 있습니다.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">pt</span>(<span class="op">-</span><span class="kw">abs</span>(t), <span class="dt">df =</span> n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="better-understanding-for-linear-model.html#cb437-1"></a><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">pt</span>(<span class="op">-</span><span class="kw">abs</span>(t), <span class="dt">df =</span> n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0007002531</code></pre>
 <p>해석하자면, 만약 영가설이 참이라면 영가설값(0)으로부터 최소 약 4.18배의 표준오차 범위 내에서 표본평균을 얻을 확률이 약 0.0007이라는 것이라고 할 수 있습니다. 결국, 우리는 이를 통해 모집단 평균이 0과 다를 것이라는 강력한 근거를 확보하게 되는 것입니다.</p>
 <ul>
@@ -389,24 +411,279 @@ legend(&quot;topright&quot;, inset=.05, title=&quot;분포의 종류&quot;,
 </div>
 <div id="비율에-대한-유의성-검정" class="section level4">
 <h4><span class="header-section-number">7.2.1.2</span> 비율에 대한 유의성 검정</h4>
-<p>접근</p>
+<p>비율에 대한 유의성 검정도 평균과 마찬가지로 다섯 가지 요소들을 중심으로 접근해볼 수 있습니다. 먼저 비율에 대한 유의성 검정의 가정은 데이터가 명목형-분류형 변수일 것이며, 마찬가지로 무작위로 표집된 데이터여야 하고, 표본의 규모가 어느 정도 보장되어야 합니다(large-sample).</p>
+<p>둘째로, 영가설에 있어서는 모비율(<span class="math inline">\(H_0: \pi = \pi_0\)</span>)에 대한 기대를 설정하고, 대안가설로는 양측검정일 경우에는 <span class="math inline">\(H_A: \pi \neq \pi_0\)</span>을, 단측검정일 경우에는 <span class="math inline">\(H_A: \pi &gt; \pi_0, H_A: \pi &lt; \pi_0\)</span>로 설정해줄 수 있습니다.</p>
+<p>그 다음으로 검정통계치는 평균과는 다르게 <span class="math inline">\(z\)</span>를 사용하며, <span class="math inline">\(z = \frac{\hat{\pi} - \pi_0}{\sigma_{\hat{\pi}}}\)</span>로 구할 수 있습니다. 이때, <span class="math inline">\(\sigma_{\hat{\pi}}\)</span>는 영가설에 대한 표준오차(<span class="math inline">\(se_0\)</span>)로 <span class="math inline">\(se_0 = \sqrt{\pi_0(1-\pi_0)/n}\)</span>으로 계산이 가능합니다. 주의해야할 점은 앞서 신뢰구간의<span class="math inline">\(se = \sqrt{\hat{\pi}(1-\hat{\pi})}\)</span>과 다르다는 점입니다. 검정통계치의 논리는 (모수에 대한 추정값 - 영가설 값)/(표준오차)로, 효과가 있다면 표집으로 인해 우연히 만들어질 변동(variation)인 표준오차보다 명백히 큰 값이 분자에 자리하게 되어 큰 <span class="math inline">\(z\)</span>값을 생산할 것이라는 점입니다.</p>
+<p>P-값은 세 가지 경우의 수를 생각해볼 수 있습니다.</p>
+<ul>
+<li><span class="math inline">\(H_A: \pi \neq \pi_0, P =\)</span> 표준정규분포에서 양측꼬리 확률을 의미</li>
+<li><span class="math inline">\(H_A: \pi &gt; \pi_0, P =\)</span> 표준정규분포에서 우측꼬리 확률을 의미</li>
+<li><span class="math inline">\(H_A: \pi &lt; \pi_0, P =\)</span> 표준정규분포에서 좌측꼬리 확률을 의미</li>
+</ul>
+<p>따라서 결론은 평균에 대한 검정과 다르지 않습니다. 예를 들어, 만약 P-값이 유의수준(<span class="math inline">\(\alpha\)</span>-값)보다 작거나 같다면, 영가설을 기각할 근거를 가지게 되는 것입니다.</p>
+</div>
+</div>
+<div id="오류의-유형-types-of-errors" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> 오류의 유형 (Types of Errors)</h3>
+<p>검정에 있어서 우리는 유의수준과 기각역(rejection region)을 결정해야 합니다.</p>
+<ul>
+<li>유의수준, <span class="math inline">\(\alpha\)</span>-값이란 P-값이 “이 기준”에 달하지 못할 때, 우리는 영가설을 기각한다고 미리 특정해둔 일종의 “허들”입니다. 전형적으로 0.05, 혹은 0.01 선에서 결정하고는 합니다.</li>
+</ul>
+<table>
+<caption>검정결과의 결정</caption>
+<thead>
+<tr class="header">
+<th align="center"><strong>P-값</strong></th>
+<th align="center"><strong>영가설 결론</strong></th>
+<th align="center"><strong>대안가설 결론</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">p <span class="math inline">\(\leq .05\)</span></td>
+<td align="center">기각</td>
+<td align="center">채택</td>
+</tr>
+<tr class="even">
+<td align="center">p <span class="math inline">\(&gt; .05\)</span></td>
+<td align="center">기각하지 않음</td>
+<td align="center">채택하지 않음</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>기각역이란 우리가 영가설을 기각하기 위한 검정통계치의 값을 의미합니다. 예를 들어, 양측꼬리 검정일 경우 <span class="math inline">\(\alpha=0.05\)</span>라고 한다면 우리는 <span class="math inline">\(H_0 \text{ if } |z| \geq 1.96\)</span>일 경우에 영가설을 기각합니다.</li>
+</ul>
+<p>문제는 이러한 우리의 결정이 불확실성에 기초하고 있기 때문에 오류가 존재할 수 있다는 것입니다. 크게 두 종류의 오류를 범할 수 있습니다.</p>
+<p><img src="Chapters_pdfR/plot/typeoferrors.jpg" width="433" style="display: block; margin: auto;" /></p>
+<ul>
+<li>제1종오류(Type I Error; false positive)
+<ul>
+<li>영가설이 사실임에도 불구하고 이를 기각하는 오류</li>
+<li>간단하게 말하면 임신하지 않았는데 임신하였다고 잘못 진단하는 경우와도 같습니다.</li>
+<li>제1종오류를 범할 확률은 유의수준과 같습니다.</li>
+<li>전통적으로 검정에 있어서 효과가 없다고 의심하는 것을 더 중요시하기 때문에 작은 유의수준값을 견지하나, 유의수준이 너무 작을 경우에는 제2종오류를 범할 확률, <span class="math inline">\(\beta\)</span>가 높아지게 됩니다.</li>
+</ul></li>
+<li>제2종오류(Type II Error; false negative)
+<ul>
+<li>영가설이 거짓임에도 불구하고 이를 기각하지 못하는 오류</li>
+<li>임신한 사람에게 임신하지 않았다고 진단하는 경우와 같습니다.</li>
+<li>제2종오류를 범할 확률, <span class="math inline">\(\beta\)</span>는 모수의 참값에 좌우됩니다. 모수의 참값이 영가설의 값으로부터 멀어질수록, 영가설을 기각하기는 쉬워지고 <span class="math inline">\(\beta\)</span>도 감소하게 됩니다.</li>
+<li>실질적으로 표본 규모가 충분히 크다면, 제2종오류는 감소합니다.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="선형회귀와-상관관계" class="section level2">
+<h2><span class="header-section-number">7.3</span> 선형회귀와 상관관계</h2>
+<p>제6장에서 간단하게 언급되었던 선형관계, 확률모델, 선형회귀모델, 선형 관계를 측정하기 위한 상관관계, 마지막으로 기울기와 상관관계에 대한 추론 등의 이야기를 이어나가도록 하겠습니다.</p>
+<div id="선형관계" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> 선형관계</h3>
+<p>선형관계를 살펴보기 위해서 우리는 정량적인 데이터를 가져야만 합니다. 우리는 정량적 변수들을 가지고 과연 이 둘 간에 관계가 있는지(독립성 검정), 있다면 그 관계의 강도는 어떻게 되는지(상관관계), 나아가 <span class="math inline">\(x\)</span>를 이용해 <span class="math inline">\(y\)</span>를 예측하는 방식으로 관계의 특성을 어떻게 서술할 수 있는지(회귀식, 잔차)를 살펴볼 것입니다.</p>
+<p>먼저, 선형관계를 우리는 선형함수(linear function)로 나타낼 수 있습니다. 간단히 말하면 두 변수 간의 관계를 반듯한 직선의 관계로 보여줄 수 있다는 것을 의미합니다. 수학적으로는 <span class="math inline">\(y = \alpha + \beta x\)</span>라고 할 수 있겠네요. 이 식은 우리가 <span class="math inline">\(y\)</span>를 <span class="math inline">\(x\)</span>에 관한 기울기 <span class="math inline">\(\beta\)</span>와 절편 <span class="math inline">\(\alpha\)</span>의 선형함수로 표현한 것입니다. 이 함수에 따르면 <span class="math inline">\(x\)</span>의 한 단위 증가는 <span class="math inline">\(y\)</span>를 <span class="math inline">\(\beta\)</span> 단위만큼 증가시킵니다.</p>
+<ul>
+<li><span class="math inline">\(\beta &gt; 0\)</span> 선의 기울기가 우상향하는 정의 관계(positive relationship)</li>
+<li><span class="math inline">\(\beta = 0\)</span> 선의 기울기가 수평(<span class="math inline">\(y\)</span>는 <span class="math inline">\(x\)</span>와 관계가 없음)</li>
+<li><span class="math inline">\(\beta &lt; 0\)</span> 선을 기울기가 우하향하는 부의 관계(negative relation)</li>
+</ul>
+<p>경제 수준과 이산화탄소(<span class="math inline">\(CO_2\)</span>) 배출 변수를 예제로 선형 관계에 대해 좀 더 구체적으로 살펴보겠습니다.</p>
+<ul>
+<li><p>종속변수(<span class="math inline">\(y\)</span>)는 이산화탄소 배출량입니다.</p></li>
+<li><p>설명변수(<span class="math inline">\(x\)</span>)는 1인당 GDP입니다.</p></li>
+<li><p>이 둘의 선형관계를 대략적으로 <span class="math inline">\(y = 0.42 + 0.31x\)</span>로 나타낼 수 있다고 해보겠습니다.</p>
+<ul>
+<li><span class="math inline">\(x=0\)</span>일 때, 주어진 선형회귀모델로 예측할 수 있는 이산화탄소 배출량은 <span class="math inline">\(y = 0.42 + 0.31(0) = 0.42\)</span>이라고 할 수 있습니다.
+<ul>
+<li>물론, 현실적이지는 않습니다. 1인당 GDP가 0인 경우는 없기 때문입니다.</li>
+</ul></li>
+<li>한편, <span class="math inline">\(x = 39.7\)</span>일때, 예측된 이산화탄소 배출량은 <span class="math inline">\(y = 0.42 + 0.31(39.7) = 12.7\)</span>가 됩니다.
+<ul>
+<li>그런데, 실제 배출량은 <span class="math inline">\(19.8\)</span>이라고 해봅시다.</li>
+<li>1인당 GDP가 1천 달러씩 증가할 때마다, 예측되는 이산화탄소 배출량은 0.31 메가톤씩 증가할 것이라고 예측됩니다.</li>
+<li>그러나 이러한 선형 회귀식은 어디까지나 개략적이라고 할 수 있습니다. <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>간의 상관관계는 1이 아니라 0.64에 불과하기 때문입니다.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>왜 이런 결과가 나왔을까요? 먼저, 우리는 변수 코딩에 따른 효과를 생각해볼 수 있습니다. 기울기와 절편은 측정단위에 따라서 달라질 수 있습니다. 만약 설명변수인 1인당 GDP를 1천 달러가 아니라 달러 단위로 측정했다면 어떻게 될까요? 아마 회귀식은 <span class="math inline">\(y = 0.42 + 0.00031x\)</span>으로 추정될 것입니다.</p>
+<ul>
+<li>이 경우 달러로 측정된 <span class="math inline">\(x\)</span>의 한 단위 변화는 1천 달러로 측정된 <span class="math inline">\(x\)</span>의 한 단위 변화의 효과의 1/1000밖에 되지 않습니다. 따라서 기울기는 <span class="math inline">\(0.001\)</span>배가 됩니다. 만약 <span class="math inline">\(y\)</span>인 이산화탄소 배출량이 메가톤(=1천 킬로그램)이 아니라 그냥 킬로그램으로 측정되었다면 어떻게 될까요? 회귀식은 <span class="math inline">\(y = 1000(0.42 + 0.00031x) = 420 + 0.31x\)</span>이 될 것입니다.</li>
+<li>말 그대로 단위가 달러에서 파운드로 바뀐다고 생각해도 이러한 효과의 변화가 나타나는 것은 마찬가지입니다.</li>
+</ul>
+</div>
+<div id="확률모델probability-model" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> 확률모델(Probability model)</h3>
+<p>실질적으로 <span class="math inline">\(y\)</span>와 <span class="math inline">\(x\)</span>의 관계는 완벽하지 않습니다. 왜냐하면 <span class="math inline">\(y\)</span>가 <span class="math inline">\(x\)</span>에 의해서 완벽하게 설명될 수 없기 때문입니다. <span class="math inline">\(x\)</span>로는 설명할 수 없는 <span class="math inline">\(y\)</span>의 속성이 존재하고, 현실에서 우리는 그 외부의 요인들을 모두 관측하여 계량 및 측정할 수는 없습니다.</p>
+<ul>
+<li>우리는 <span class="math inline">\(\alpha + \beta x\)</span>가 <span class="math inline">\(x\)</span>의 함수적 작용으로서 나타나는 <span class="math inline">\(y\)</span> 값의 평균을 보여준다고 봅니다.</li>
+<li>평균은 사실 모집단에서 나타날 종속변수의 기대값(<span class="math inline">\(E(y)\)</span>)을 표본 수준에서 보여주는 것입니다.
+<ul>
+<li><span class="math inline">\(y\)</span>의 기대값(<span class="math inline">\(E(y)\)</span>)는 <span class="math inline">\(y\)</span>의 확률분포의 평균으로 생각할 수 있습니다.</li>
+</ul></li>
+<li>만약 <span class="math inline">\(y\)</span>가 소득, <span class="math inline">\(x\)</span>가 교육 연수라고 생각해보면, <span class="math inline">\(E(y) = \alpha + \beta(12)\)</span>는 모집단에서 교육 연수가 12년차인 모든 사람들의 평균 소득을 보여줄 것이라고 기대됩니다.</li>
+</ul>
+<p>정리하자면 회귀함수는 종속변수 <span class="math inline">\(y\)</span>의 평균이 설명변수 <span class="math inline">\(x\)</span>의 값에 따라서 어떻게 변화하는가를 보여주는 수학적 함수라고 할 수 있습니다. 그렇다면 왜 굳이 “회귀”(regression)라는 표현을 사용하는 것일까요?</p>
+<p>선형회귀함수는 관계를 보여주는, 현실에 대한 단순화한 표현인 모델의 일부에 불과합니다.만약 진정한 현실에서의 관계가 대략적으로 선형이라면 선형 모델로 그 관계를 보여주는 것은 문제가 없겠지만 현실세계의 모습이 매우 비선형적 관계를 보일 때에는 선형 모델을 이용할 때, 그 결과가 현실을 추론하는 데 도움을 줄 것이라고 기대하기 어려울 것입니다.</p>
+<p>그렇다면 우리는 어떻게 선형식(linear equation)을 추정할까요? 제6장에서처럼 예비적 분석으로 산포도를 살펴보고, 선형 모델이 가능한지 여부를 확인하는 것이 하나의 방법입니다.</p>
+<p>그 다음의 문제가 바로 어떻게 데이터에 가장 잘 들어맞는(“best fit”) 추세선을 선택할 수 있을까 입니다. 가장 흔히 사용되는 기준은 관측된 데이터로부터 추세선까지의 수직 거리의 제곱합이 최소화하는 선을 그린다는 것입니다. 우리는 이를 최소자승법(least squares)을 이용한 예측식(prediction equation)이라고 합니다.</p>
+<p>수리적으로 이 선을 그리는 식은 다음과 같이 나타낼 수 있습니다.</p>
+<ul>
+<li>모집단 수준에서의 절편 <span class="math inline">\(\alpha\)</span>의 추정값을 <span class="math inline">\(a\)</span>로, 모집단 수준에서의 기울기 <span class="math inline">\(\beta\)</span>의 추정값을 <span class="math inline">\(b\)</span>로, 그리고 <span class="math inline">\(y\)</span>의 기대값(<span class="math inline">\(E(y)\)</span>)에 대한 예측추정값을 표본에서 <span class="math inline">\(\hat{y}\)</span>라고 보는 것이죠.</li>
+<li>따라서 <span class="math inline">\(\hat{y} = a + bx\)</span>라고 할 수 있고,</li>
+<li>이때, b는 <span class="math inline">\(b=\frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{\sum(x_i-\bar{x})^2}\)</span>가 됩니다.</li>
+<li>그리고 a는 <span class="math inline">\(a = \bar{y}-b\bar{x}\)</span>로 나타낼 수 있습니다.</li>
+</ul>
+<p>수리적으로 공식은 이렇게 구축할 수 있다고 하고, 과연 이 식의 의미는 무엇일까요? 무엇이 저렇게 식을 유도하게끔 한 걸까요? 개념적으로 한 번 식의 의미를 풀어보겠습니다.</p>
+<ul>
+<li>만약 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span> 값 모두가 평균보다 크거나 평균보다 작다면, <span class="math inline">\((x_i-\bar{x})(y_i-\bar{y})\)</span>는 양수가 됩니다.</li>
+<li>앞서의 <span class="math inline">\(a = \bar{y}-b\bar{x}\)</span>는 <span class="math inline">\(\bar{y} = a + b\bar{x}\)</span>와 같습니다.</li>
+<li>즉, <span class="math inline">\(x\)</span>의 평균에서 <span class="math inline">\(y\)</span>의 예측값은 <span class="math inline">\(y\)</span>의 평균이 됩니다. 선형회귀선은 <span class="math inline">\((\bar{x},\bar{y})\)</span>를 지나는 선이라고 할 수 있습니다.</li>
+</ul>
+<p>관측치를 25개 가진 표본으로 산출한 <span class="math inline">\(y = 18.41 + 1.67x\)</span>라는 식이 있다고 해보겠습니다. 해석해보면,</p>
+<ul>
+<li><span class="math inline">\(x\)</span>의 한 단위의 증가에 따라 <span class="math inline">\(y\)</span>는 1.67만큼 증가하는 양상을 보입니다.</li>
+<li><span class="math inline">\(y\)</span>의 절편은 18.4로 <span class="math inline">\(x\)</span>가 0일 때의 <span class="math inline">\(y\)</span>의 값입니다.</li>
+<li>기울기 <span class="math inline">\(b = 1.67 &gt; 0\)</span>이므로, 표본에 있어 변수들 간의 양의 관계를 보여줍니다.</li>
+<li>그러나 표본의 규모가 작을 경우, 추세를 파악하기에는 변동량(variability)이 크기 때문에, 표본이 속할 것이라고 기대되는 모집단에서의 변수들의 관계 역시도 양의 관계라고 하기에는 어렵습니다.</li>
+</ul>
+<p>예측오차(prediction errors), 잔차(residuals)에 대해서도 살펴보겠습니다. 하나의 관측치에 대해서 우리는 관측된 개별 <span class="math inline">\(y\)</span>값, <span class="math inline">\(y_i\)</span>와 주어진 <span class="math inline">\(x\)</span> 값에서의 예측된 <span class="math inline">\(y\)</span>값, <span class="math inline">\(\hat{y}\)</span> 간의 차이를 발견할 수 있습니다: <span class="math inline">\(y - \hat{y}\)</span>. 이를 잔차라고 합니다. 회귀선을 그린 산포도를 예시로 생각해보면, 회귀선과 산포도의 각 관측치(점)들의 수직 거리를 의미합니다.</p>
+<p><span class="math inline">\(x = 9, y = 37\)</span>인 한 점이 있다고 해보겠습니다. 위의 회귀식에서 <span class="math inline">\(x = 9\)</span>일 때, <span class="math inline">\(\hat{y}= 18.41 + 1.67(9) = 33.4\)</span>입니다. 따라서 이때의 잔차는 <span class="math inline">\(37 - 33.4 = 3.6\)</span>이 될 것입니다.</p>
+<p>우리는 잔차의 총합(과 평균)이 0일 것이라고 가정합니다. 이는 이론적으로 모집단에 대한 기대에서 도출된 것이라고 볼 수 있습니다. 모집단에서 우리는 <span class="math inline">\(y\)</span>를 <span class="math inline">\(x\)</span>를 가지고 설명할 수 있을 것이라고 생각합니다. King, Keohane, and Verba (1994)의 용어에 따르자면, <span class="math inline">\(x\)</span>라는 체계적 요인(systematic factor)로 설명하고 남은 <span class="math inline">\(y\)</span>는 <span class="math inline">\(y\)</span>의 예측불가능한 비체계적 요인(nonsystematic errors)입니다. 비체계적이라는 것은 특별한 경향성을 가지지 않는다는 것으로 무작위(randomized)라는 것과 같고, 확률적이므로 그 확률분포의 평균은 0에 수렴하게 될 것이라는 기대입닏. <span class="math inline">\(E(\epsilon) = 0\)</span>이라는 가정적 기대는 표본 수준에서 잔차의 총합 또는 평균이 0일 것이라는, 비체계적 요인들을 서로 그 효과가 상쇄(trade-offs)되어 종속변수에 유의미한 체계적 변화를 일으키지 않을 것이라는 주장의 근거가 됩니다.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-215"></span>
+<img src="Chapters_pdfR/plot/residulas.jpg" alt="Residuals" width="1041" />
+<p class="caption">
+Figure 7.2: Residuals
+</p>
+</div>
+<p>앞서도 언급했다시피, 예측식은 최소자승법으로 그려집니다. 최소자승법이란 잔차의 제곱합이 <span class="math display">\[SSE = \sum(y_i - \hat{y_i})^2 = \sum[y_i - (a+bx_i)]^2\]</span> 최소가 되도록 선을 그리는 방법입니다.</p>
+</div>
+<div id="선형회귀모델" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> 선형회귀모델</h3>
+<p>선형회귀모델이 모집단 수준에서 <span class="math inline">\(E(y) = \alpha + \beta x\)</span>라는 것을 다시 떠올려보겠습니다. 이 식은 각 <span class="math inline">\(x\)</span>의 고정된 값에서 <span class="math inline">\(y\)</span>의 조건분포의 평균들을 이으면 직선의 형태로 나타날 것이라는 의미입니다. 이러한 선형회귀모델은 또 다른 모수인 <span class="math inline">\(\sigma\)</span>를 갖는데, <span class="math inline">\(\sigma\)</span>는 조건분포의 변동성(variability)을 의미합니다. 즉, <span class="math inline">\(x\)</span>값이 같다고 할 때, <span class="math inline">\(y\)</span>값이 가질 수 있는 모든 가능성—변수이기 때문에 가질 수 있는 변동성을 의미합니다. <span class="math inline">\(y\)</span>에 대한 조건적 표준편차의 추정값은 다음과 같이 구할 수 있습니다.<span class="math display">\[s = \sqrt{\frac{SSE}{n-2}} = \sqrt{\frac{\sum(y_i-\hat{y_i})^2}{(n-2)}}\]</span></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-216"></span>
+<img src="Chapters_pdfR/plot/regression_model.jpg" alt="How to draw a regression line" width="413" />
+<p class="caption">
+Figure 7.3: How to draw a regression line
+</p>
+</div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="better-understanding-for-linear-model.html#cb439-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./Chapters_pdfR/plot/regression_model2.jpg&quot;</span>, <span class="dt">dpi =</span> <span class="dv">150</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-217"></span>
+<img src="Chapters_pdfR/plot/regression_model2.jpg" alt="Assumptions and Models of Linear Regression" width="531" />
+<p class="caption">
+Figure 7.4: Assumptions and Models of Linear Regression
+</p>
+</div>
+<p>선형회귀분석의 가정들은 흔히 가우스-마르코프(Gaus-Markov) 가정이라고 불리는데, 이 가정들에 대한 이론적 논의는 <code>Lv.2.Statistics</code> 자료들에서 다루도록 하겠습니다.</p>
+</div>
+<div id="관계의-측정-상관관계" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> 관계의 측정: 상관관계</h3>
+<p>마지막으로 살펴볼 내용은 바로 관계의 강도를 어떻게 측정하는가와 관련된 것입니다. 회귀식에서의 기울기는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span> 간의 관계의 방향을 보여줍니다. 하지만 기울기의 크기는 변수의 측정단위에 따라 달라질 수 있습니다. 따라서 우리는 관계의 강도를 살펴보기 위해서 단위를 신경쓰지 않아도 되는 표준화된 기울기(standardized slope)인 상관관계—상관계수(correlation)을 볼 수 있습니다.</p>
+<p>상관계수 <span class="math inline">\(r\)</span>은 예측식의 기울기(<span class="math inline">\(b\)</span>)의 맥락에서 <span class="math inline">\(r = b(s_x/s_y)\)</span>로 나타낼 수 있습니다. <span class="math inline">\(s_x\)</span>와 <span class="math inline">\(s_y\)</span>는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 한계 표본표준편차(marginal sample standard deviations)라고 할 수 있습니다.</p>
+<div id="상관계수의-특성" class="section level4">
+<h4><span class="header-section-number">7.3.4.1</span> 상관계수의 특성</h4>
+<ul>
+<li>상관계수 <span class="math inline">\(r\)</span>은 <span class="math inline">\(s_x = s_y\)</span>일 때의 기울기 <span class="math inline">\(b\)</span>인 표준화된 기울기입니다.</li>
+<li>상관계수 <span class="math inline">\(r\)</span>은 기울기 <span class="math inline">\(b\)</span>와 같은 부호를 가지며, 표준화되었기 때문에 그 값은 <span class="math inline">\(-1 \leq r \leq +1\)</span> 사이에 위치합니다.</li>
+<li>표본의 모든 관측치가 예측선 위에 정확하게 놓여있을 때, <span class="math inline">\(r = 1\)</span> 또는 <span class="math inline">\(r = -1\)</span>로 나타나고 <span class="math inline">\(r\)</span>은 선형관계의 강도를 보여줍니다.</li>
+<li><span class="math inline">\(b = 0\)</span>일 때, <span class="math inline">\(r = 0\)</span>이며, 관계가 존재는 하지만 그것이 선형이 아닐 때 이런 양상이 나타날 수도 있습니다.</li>
+<li><span class="math inline">\(r\)</span>의 절대값이 커질수록 관계의 강도가 더 강하다는 것을 의미합니다.</li>
+</ul>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="better-understanding-for-linear-model.html#cb440-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;./Chapters_pdfR/plot/correlation.jpg&quot;</span>, <span class="dt">dpi =</span> <span class="dv">150</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-218"></span>
+<img src="Chapters_pdfR/plot/correlation.jpg" alt="Assumptions and Models of Linear Regression" width="588" />
+<p class="caption">
+Figure 7.5: Assumptions and Models of Linear Regression
+</p>
+</div>
+<p>상관계수의 절대값이 1보다 작다는 것은 예측이 평균으로 수렴한다는 것을 의미합니다.</p>
+<ul>
+<li><span class="math inline">\(x\)</span>가 한 단위 증가할 때, 예측된 <span class="math inline">\(y\)</span>는 <span class="math inline">\(b\)</span>만큼 변화한다는 의미입니다.</li>
+<li><span class="math inline">\(x\)</span>가 <span class="math inline">\(s_x\)</span>만큼 증가할 때, 예측된 <span class="math inline">\(y\)</span>는 <span class="math inline">\(s_xb = rs_y\)</span>만큼 변화한다는 의미입니다.
+<ul>
+<li><span class="math inline">\(x\)</span>가 1 표준편차만큼 증가할 때, <span class="math inline">\(y\)</span>가 <span class="math inline">\(r\times\)</span>표준편차만큼 변화할 것이라고 예측할 수 있습니다.</li>
+</ul></li>
+</ul>
+<p><span class="math inline">\(r^2\)</span>는 예측오차가 비율적으로 얼마나 감소했는지를 보여주는 지표입니다. 간단하게 말하면 <span class="math inline">\(x\)</span>가 얼마나 <span class="math inline">\(y\)</span>를 잘 예측하는지를 보여주는 것입니다.</p>
+<ul>
+<li><p>우리는 <span class="math inline">\(x\)</span>를 이용하여 <span class="math inline">\(y\)</span>를 예측하기 위해 회귀식을 구축합니다. 이때, 예측오차는 간단하게 잔차의 제곱합으로 보여줄 수 있습니다.: <span class="math inline">\(\text{sum of squared errors, SSE} = \sum(y - \hat{y})^2\)</span></p></li>
+<li><p><span class="math inline">\(y\)</span>를 <span class="math inline">\(x\)</span> 없이 예측한다고 할 때, 가장 좋은 예측변수는 바로 <span class="math inline">\(y\)</span>의 표본평균일 것입니다. 따라서 <span class="math inline">\(bar{y}\)</span>로 예측할 때의 예측오차에 대한 측정지표는 다음과 같습니다: <span class="math inline">\(\text{total of squared errors, TSS} = \sum(y - \bar{y})^2\)</span></p></li>
+<li><p>즉, <span class="math inline">\(r^2\)</span>는 <span class="math inline">\(x\)</span>를 이용할 경우, <span class="math inline">\(\bar{y}\)</span>로 예측할 때보다 SSE가 TSS에 비해 얼마나 감소하였는가를 보여주는 것입니다:</p></li>
+</ul>
+<p><span class="math display">\[r^2 = \frac{TSS-SSE}{TSS} = \frac{\sum (y-\bar{y})^2 - \sum(y - \hat{y})^2}{\sum(y-\bar{y})^2}\]</span></p>
+<ul>
+<li><p>그리고 단순선형회귀모델에서 오차의 비율적 감소, <span class="math inline">\(r^2\)</span>는 말 그대로 상관계수의 제곱과도 같습니다. <span class="math inline">\(r^2\)</span>는 “알 스퀘어(r-squared)”, 혹은 결정계수(coefficient of determination)이라고도 불립니다.</p>
+<ul>
+<li>당연히 <span class="math inline">\(r\)</span>의 제곱이므로 값은 <span class="math inline">\(0 \leq r^2 \leq 1\)</span> 사이에 위치합니다.</li>
+<li>가능한 SSE의 최소값은 0입니다. 이 경우는 <span class="math inline">\(r^2 = 1\)</span>인 경우로 모든 표본의 관측치들이 예측선 위에 올라와있는 것을 의미합니다.</li>
+<li>만약 <span class="math inline">\(b=0\)</span>이라고 한다면, <span class="math inline">\(a = \bar{y} - b\bar{x} = \bar{y}\)</span>이고, 따라서 TSS = SSE가 되어 <span class="math inline">\(r^2 = 0\)</span>가 됩니다.</li>
+<li><span class="math inline">\(r^2\)</span>는 <span class="math inline">\(x, y\)</span>의 측정단위에 영향을 받지 않습니다.</li>
+</ul></li>
+</ul>
+</div>
+<div id="기울기와-상관계수에-대한-추론" class="section level4">
+<h4><span class="header-section-number">7.3.4.2</span> 기울기와 상관계수에 대한 추론</h4>
+<p>통계적 추론에 대한 가정을 생각해보겠습니다. 먼저, 우리에게는 무작위로 표집된 표본이 필요합니다. 그리고 <span class="math inline">\(y\)</span>의 평균은 <span class="math inline">\(x\)</span>와 선형으로 연계되야 합니다: <span class="math inline">\(y = \alpha + \beta x\)</span>. 그리고 조건적 표준편차(s), <span class="math inline">\(\sigma\)</span>는 각 <span class="math inline">\(x\)</span> 값에서 동일해야하고, 각 <span class="math inline">\(x\)</span> 값에서의 <span class="math inline">\(y\)</span>의 조건분포는 정규성을 띄어야 합니다.</p>
+<p>하지만 실질적으로 이러한 가정들 중 어느것도 완벽하게 만족되기 힘듭니다. 다만 우리는 그 중 무작위성과 선형성 가정만큼은 매우 중요한 것으로 간주합니다.</p>
+<p>그렇다면 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 독립적인지 여부를 어떻게 검정할까요? 우리가 기대하는 모수란 회귀모델에서 모집단의 기울기를 보여주는 <span class="math inline">\(\beta\)</span>일 것입니다. 긔고 그 모수에 대한 추정치는 최소자승법에 따라 추정된 기울기, <span class="math inline">\(b\)</span>입니다. 또한 우리는 표준오차도 추정할 수 있습니다: <span class="math display">\[se = \frac{s}{\sqrt{\sum(x-\bar{x})^2}} - \frac{s}{s_x\sqrt{(n-1)}}\]</span>. 그리고 공식에서 확인할 수 있듯이 표본의 규모(n)이 증가할수록 표준오차는 대개 감소합니다.</p>
+<p>우리는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>가 서로 독립적일 것, 즉 관계가 없을 것이라는 영가설(<span class="math inline">\(H_0: \beta = 0\)</span>)을 세웁니다. 그리고 대안가설은 양측검정—방향성을 고려하지 않을 때에는 <span class="math inline">\(H_A:\beta \neq 0\)</span>으로 수립하며, 만약 방향성을 고려하는 단측검정일 경우에는 <span class="math inline">\(H_A: \beta &gt; 0\)</span>, 또는 <span class="math inline">\(H_A: \beta &lt; 0\)</span>으로 수립합니다.</p>
+<p>이러한 영가설에 대한 검정통계치, <span class="math inline">\(t\)</span>는 <span class="math inline">\(t = (b-0)/se\)</span>이며, 이때의 자유도는 절편과 기울기 변수를 제외한 값(df = <span class="math inline">\(n-2\)</span>)입니다.</p>
+<p>통계적 추론에서 우리는 기울기 <span class="math inline">\(\beta\)</span>에 대한 신뢰구간을 다시 한 번 생각해볼 수 있습니다.</p>
+<ul>
+<li><span class="math inline">\(\beta\)</span>에 대한 신뢰구간은 <span class="math inline">\(b \pm t(se)\)</span>의 형태로 나타낼 수 있습니다.</li>
+<li>예를 들어, <span class="math inline">\(b = 1.666, se = 0.692\)</span>, 그리고 df<span class="math inline">\(=8\)</span>이라고 해보겠습니다.
+<ul>
+<li><span class="math inline">\(\beta\)</span>에 대한 95% 신뢰구간에서 <span class="math inline">\(t\)</span>-score는 <span class="math inline">\(t_{0.025} = 2.306\)</span>입니.</li>
+<li>따라서 신뢰구간은 <span class="math inline">\(1.666\pm2.306(0.692)\)</span>으로 <span class="math inline">\((0.07, 3.26)\)</span>이 됩니다.</li>
+<li>이때 우리는 주어진 신뢰구간에서 변수들의 모집단에서의 관계가 양의 관계라고 결론을 내릴 수 있습니다.
+<ul>
+<li>양측검정에서 P-값은 0.04로 0.05 신뢰수준에서 영가설(<span class="math inline">\(H_0: \beta = 0\)</span>)을 기각하므로 우리는 관계가 존재할 것이라고 결론내릴 수 있습니다.</li>
+<li>이처럼 <span class="math inline">\(\beta\)</span>에 대한 95% 시뢰구간은 0을 포함하지 않을 때, 우리는 <span class="math inline">\(\beta\)</span>가 0이 아닐 것—설명변수 <span class="math inline">\(x\)</span>의 종속변수 <span class="math inline">\(y\)</span>에 대한 효과가 없는 것이 아닐 것(reject the null)이라고 말할 수 있는 것입니다.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="정리하며" class="section level3">
+<h3><span class="header-section-number">7.3.5</span> 정리하며</h3>
+<p>선형회귀모델에서 어떤 가정들이 중요할까요?</p>
+<ol style="list-style-type: decimal">
+<li>선형회귀는 모델입니다.</li>
+</ol>
+<ul>
+<li>따라서 우리는 변수들 간의 관계가 완벽하게 선형일 것이라고 기대할 수는 없습니다.</li>
+<li>그러나 그러한 선형 관계는 실제에 대한 단순화된 개략(approximation)을 보여줄 수는 있습니다.</li>
+<li>만약 실제 변수들의 관계가 U자형이라면, 특정한 관계는 존재할지 모르지만 선형회귀모델로는 P-값이 작게 나타나지 않을 것입니다.</li>
+<li>따라서 이 근본적 가정을 확인하기 위햇 우리는 항상 산포도와 같은 변수들의 관계 양상을 직관적으로 살펴볼 필요가 있습니다.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>각 <span class="math inline">\(x\)</span>값에 대한 표준편차 <span class="math inline">\(\sigma\)</span>가 동일할 때, <span class="math inline">\(y\)</span>의 조건분포는 정규적입니다.</li>
+</ol>
+<ul>
+<li>현실세계에서 이 가정은 완벽하게 들어맞기 힘듭니다.</li>
+<li>표본의 규모가 충분히 클 때, 정규성 가정은 CLT에 따라서 이론적으로 만족될 수 있기 때문에 그다지 중요하지는 않습니다.</li>
+<li>만약 <span class="math inline">\(\sigma\)</span>가 동일하다는 가정이 위배된다면, 최소자승법보다 더 작은 표준오차를 가진 추정값들이 더 효율적일 수 있습니다.</li>
+<li>그러나 통상적인 추론방법은 이러한 가정들이 완벽하게 충족되지 않더라도 “대략적으로” 타당하다고 할 수 있습니다.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><span class="math inline">\(x\)</span>값의 관측된 볌주 밖의 외삽(extrapolation)의 문제는 위험합니다.</li>
+</ol>
+<ul>
+<li><span class="math inline">\(y\)</span>가 고등학교 성적이고 <span class="math inline">\(x\)</span>가 주간 TV 시청시간이라고 해보겠습니다.</li>
+<li>이때, 우리가 가진 회귀식은 <span class="math inline">\(\hat{y} = 3.44 - 0.33x\)</span>라고 해봅시다.</li>
+<li>하지만 <span class="math inline">\(x=100\)</span>일때, 고등학교 성적 <span class="math inline">\(0.44\)</span>를 공식 상으로 예측할 수는 있지만 이는 말이 되지 않습니다.</li>
+<li>따라서 외삽의 문제에 따른 성급한 추론의 일반화를 경계해야할 필요가 있습니다.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>마찬가지로 통계적 유의성과 실질적 유의성에 대해 고민해야 합니다.</li>
+</ol>
 
 </div>
 </div>
 </div>
-</div>
-
-
-
-
-
-
-
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>유의성 검정 부분에서 한 번 더 짚고 넘어갈 것이지만, 여기에서 의미하는 신뢰수준이란 표본과 모집단, 그리고 표집(sampling)의 문제와 관련이 있습니다. 우리가 얻는 특정한 추정량들은 표집 방법에 따라 충분히 표본이 모집단에 대해 대표성을 가진다고 할 때, 신뢰할 수 있는 결과로 받아들여집니다. 그럼에도 불구하고, 모집단에서 표본을 뽑아낸다는 본연적 한계로 인하여 우리는 표본에서 얻어낸 결과가 모집단을 제대로 보여주지 못했을 결과를 감안해야만 합니다. 신뢰구간이란 이론적으로 총 몇 번의 표집과정을 되풀이했을 때, 그 중 얼마만큼의 잘못된 추정을 가질 확률을 의미합니다. 예를 들어, 100번의 표집을 거쳐 5번의 다른 결과를 얻었을 때, 우리는 95%의 확률로 그 결과값을 신뢰할 수 있다고 보는 것입니다.<a href="better-understanding-for-linear-model.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>t-분포를 이용한 방법은 더블린의 기네스 맥주공장에서 일하던 통계학자 William Gosset에 의해서 1908년에 고안되었습니다. 회사 정책 상 자신의 이름으로 논문을 내는 것이 불가능했기 때문에, Gosset은 가명으로 Student라는 이름을 이용하여 논문을 작성하였습니다. 때로 <code>Student's t</code>라고 불리는 이유는 그 때문입니다. 공장에서 Gosset에게는 테스트할 맥주 표본이 매우 소수만 제공되었기 때문에, 그는 그 표본사례를 가지고 기존의 표준오차 공식의 정규 <span class="math inline">\(z\)</span>-score에 사용할 수 없다는 것을 알게 되었습니다. 그 결과가 소수의 사례로 구성된 꼬리가 정규표준분포에 비해 약간 더 두꺼운 t-분포입니다.<a href="better-understanding-for-linear-model.html#fnref2" class="footnote-back">↩</a></p></li>
+<ol start="16">
+<li id="fn16"><p>유의성 검정 부분에서 한 번 더 짚고 넘어갈 것이지만, 여기에서 의미하는 신뢰수준이란 표본과 모집단, 그리고 표집(sampling)의 문제와 관련이 있습니다. 우리가 얻는 특정한 추정량들은 표집 방법에 따라 충분히 표본이 모집단에 대해 대표성을 가진다고 할 때, 신뢰할 수 있는 결과로 받아들여집니다. 그럼에도 불구하고, 모집단에서 표본을 뽑아낸다는 본연적 한계로 인하여 우리는 표본에서 얻어낸 결과가 모집단을 제대로 보여주지 못했을 결과를 감안해야만 합니다. 신뢰구간이란 이론적으로 총 몇 번의 표집과정을 되풀이했을 때, 그 중 얼마만큼의 잘못된 추정을 가질 확률을 의미합니다. 예를 들어, 100번의 표집을 거쳐 5번의 다른 결과를 얻었을 때, 우리는 95%의 확률로 그 결과값을 신뢰할 수 있다고 보는 것입니다.<a href="better-understanding-for-linear-model.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>t-분포를 이용한 방법은 더블린의 기네스 맥주공장에서 일하던 통계학자 William Gosset에 의해서 1908년에 고안되었습니다. 회사 정책 상 자신의 이름으로 논문을 내는 것이 불가능했기 때문에, Gosset은 가명으로 Student라는 이름을 이용하여 논문을 작성하였습니다. 때로 <code>Student's t</code>라고 불리는 이유는 그 때문입니다. 공장에서 Gosset에게는 테스트할 맥주 표본이 매우 소수만 제공되었기 때문에, 그는 그 표본사례를 가지고 기존의 표준오차 공식의 정규 <span class="math inline">\(z\)</span>-score에 사용할 수 없다는 것을 알게 되었습니다. 그 결과가 소수의 사례로 구성된 꼬리가 정규표준분포에 비해 약간 더 두꺼운 t-분포입니다.<a href="better-understanding-for-linear-model.html#fnref17" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -414,17 +691,19 @@ legend(&quot;topright&quot;, inset=.05, title=&quot;분포의 종류&quot;,
           </div>
         </div>
       </div>
-<a href="intoduction-to-simple-linear-regression-model.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="intoduction-to-simple-linear-regression-model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-multivariate-linear-regression-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -432,12 +711,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -449,6 +727,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -467,8 +749,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

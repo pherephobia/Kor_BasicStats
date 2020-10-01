@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Basic Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Basic Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Basic Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Basic Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2020-09-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">Basic Statistics and Data Analysis: Korean Version</h1>
+<h2 class="subtitle"><em>기초 통계와 데이터 관리: 한글판</em></h2>
+<p class="author"><em>Sanghoon Park</em></p>
+<p class="date"><em>2020-09-09</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
+<li><a href="#intro"><span class="toc-section-number">2</span> Introduction to <strong>R</strong></a><ul>
+<li><a href="#기본-동작에-관한-소개"><span class="toc-section-number">2.1</span> 기본 동작에 관한 소개</a></li>
+<li><a href="#r의-연산자operations"><span class="toc-section-number">2.2</span> <strong>R</strong>의 연산자(operations)</a></li>
+<li><a href="#r의-기본적인-자료-유형"><span class="toc-section-number">2.3</span> <strong>R</strong>의 기본적인 자료 유형</a><ul>
+<li><a href="#논리형-연산자-logical-operators"><span class="toc-section-number">2.3.1</span> 논리형 연산자 (Logical operators)</a></li>
+</ul></li>
+<li><a href="#벡터-vectors"><span class="toc-section-number">2.4</span> 벡터 (Vectors)</a></li>
+<li><a href="#매트릭스-matrices"><span class="toc-section-number">2.5</span> 매트릭스 (Matrices)</a></li>
+<li><a href="#데이터프레임-data-frame"><span class="toc-section-number">2.6</span> 데이터프레임 (Data frame)</a></li>
+<li><a href="#티블-tibbles"><span class="toc-section-number">2.7</span> 티블 (Tibbles)</a></li>
+<li><a href="#패키지-packages"><span class="toc-section-number">2.8</span> 패키지 (Packages)</a></li>
+<li><a href="#디렉토리-생성-코드"><span class="toc-section-number">2.9</span> 디렉토리 생성 코드</a></li>
+<li><a href="#용례-a-working-example"><span class="toc-section-number">2.10</span> 용례 (A working example)</a></li>
+<li><a href="#기타-참고자료"><span class="toc-section-number">2.11</span> 기타 참고자료</a></li>
+</ul></li>
+<li><a href="#ch3"><span class="toc-section-number">3</span> Introduction to Data</a><ul>
+<li><a href="#작업-디렉토리-설정"><span class="toc-section-number">3.1</span> 작업 디렉토리 설정</a></li>
+<li><a href="#무작위-추출random-draws"><span class="toc-section-number">3.2</span> 무작위 추출(Random Draws)</a></li>
+<li><a href="#루프-반복loops"><span class="toc-section-number">3.3</span> 루프-반복(Loops)</a></li>
+<li><a href="#rplots를-파일의-형태로-저장하기"><span class="toc-section-number">3.4</span> Rplots를 파일의 형태로 저장하기</a></li>
+<li><a href="#데이터-다루기-기본"><span class="toc-section-number">3.5</span> 데이터 다루기 기본</a><ul>
+<li><a href="#데이터에-새로운-변수-더미변수-만들기"><span class="toc-section-number">3.5.1</span> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
+<li><a href="#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><span class="toc-section-number">3.5.2</span> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
+<li><a href="#자료-머징하기-using-data-merging"><span class="toc-section-number">3.5.3</span> 자료 머징하기 (Using Data Merging)</a></li>
+<li><a href="#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><span class="toc-section-number">3.5.4</span> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기[^3-3]</a></li>
+</ul></li>
+<li><a href="#요약통계표를-.tex-파일로-저장하기"><span class="toc-section-number">3.6</span> 요약통계표를 .tex 파일로 저장하기</a></li>
+<li><a href="#서로-다른-분석수준lower-higher-통합하기"><span class="toc-section-number">3.7</span> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
+<li><a href="#무작위-추출random-draws"><span class="toc-section-number">3.8</span> 무작위 추출(Random Draws)</a></li>
+<li><a href="#루프-반복loops"><span class="toc-section-number">3.9</span> 루프-반복(Loops)</a></li>
+<li><a href="#rplots를-파일의-형태로-저장하기"><span class="toc-section-number">3.10</span> Rplots를 파일의 형태로 저장하기</a></li>
+<li><a href="#데이터-다루기-기본"><span class="toc-section-number">3.11</span> 데이터 다루기 기본</a><ul>
+<li><a href="#데이터에-새로운-변수-더미변수-만들기"><span class="toc-section-number">3.11.1</span> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
+<li><a href="#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><span class="toc-section-number">3.11.2</span> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
+<li><a href="#자료-머징하기-using-data-merging"><span class="toc-section-number">3.11.3</span> 자료 머징하기 (Using Data Merging)</a></li>
+<li><a href="#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><span class="toc-section-number">3.11.4</span> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기[^3-3]</a></li>
+</ul></li>
+<li><a href="#요약통계표를-.tex-파일로-저장하기"><span class="toc-section-number">3.12</span> 요약통계표를 .tex 파일로 저장하기</a></li>
+<li><a href="#서로-다른-분석수준lower-higher-통합하기"><span class="toc-section-number">3.13</span> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
+</ul></li>
+<li><a href="#probability-into-r"><span class="toc-section-number">4</span> Probability into R</a><ul>
+<li><a href="#주사위굴리기-게임"><span class="toc-section-number">4.1</span> 주사위굴리기 게임!</a></li>
+<li><a href="#동전-던지기"><span class="toc-section-number">4.2</span> 동전 던지기</a></li>
+<li><a href="#독립사건-시뮬레이션"><span class="toc-section-number">4.3</span> 독립사건 시뮬레이션</a></li>
+<li><a href="#종속사건-시뮬레이션"><span class="toc-section-number">4.4</span> 종속사건 시뮬레이션</a></li>
+<li><a href="#분포distribution"><span class="toc-section-number">4.5</span> 분포(Distribution)</a><ul>
+<li><a href="#정규분포-the-normal-distribution"><span class="toc-section-number">4.5.1</span> 정규분포 (The normal distribution)</a></li>
+<li><a href="#이항분포-binomial-distribution"><span class="toc-section-number">4.5.2</span> 이항분포 (Binomial distribution)</a></li>
+<li><a href="#포와송-분포-poison-distribution"><span class="toc-section-number">4.5.3</span> 포와송 분포 (Poison distribution)</a></li>
+<li><a href="#음이항-분포-negative-binomial-distribution"><span class="toc-section-number">4.5.4</span> 음이항 분포 (Negative Binomial Distribution)</a></li>
+<li><a href="#f-분포-f-distribution"><span class="toc-section-number">4.5.5</span> F 분포 (F Distribution)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#foundation-of-inference"><span class="toc-section-number">5</span> Foundation of Inference</a><ul>
+<li><a href="#표본을-통한-모집단-추론-infer-population-using-samples"><span class="toc-section-number">5.1</span> 표본을 통한 모집단 추론 (Infer Population using Samples)</a></li>
+<li><a href="#평균의-차이difference-of-means-그리고-분산분석analysis-of-variance-anova"><span class="toc-section-number">5.2</span> 평균의 차이(difference of means), 그리고 분산분석(analysis of variance, ANOVA)</a><ul>
+<li><a href="#평균-차이를-보는-이유"><span class="toc-section-number">5.2.1</span> 평균 차이를 보는 이유</a></li>
+<li><a href="#t-검정을-이용한-두-평균의-차이"><span class="toc-section-number">5.2.2</span> t-검정을 이용한 두 평균의 차이</a></li>
+<li><a href="#분산분석anova을-이용해-여러-평균을-비교하기"><span class="toc-section-number">5.2.3</span> 분산분석(ANOVA)을 이용해 여러 평균을 비교하기</a></li>
+</ul></li>
+<li><a href="#비율-차이-교차표와-카이스퀘어-검정chi-squared-tests"><span class="toc-section-number">5.3</span> 비율 차이: 교차표와 카이스퀘어 검정(chi-squared tests)</a></li>
+</ul></li>
+<li><a href="#intoduction-to-simple-linear-regression-model"><span class="toc-section-number">6</span> Intoduction to Simple Linear Regression Model</a><ul>
+<li><a href="#회귀분석의-이해-기울기의-검정"><span class="toc-section-number">6.1</span> 회귀분석의 이해: 기울기의 검정</a></li>
+<li><a href="#좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기"><span class="toc-section-number">6.2</span> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</a></li>
+<li><a href="#단순회귀분석-심화"><span class="toc-section-number">6.3</span> 단순회귀분석 심화</a></li>
+<li><a href="#이제-계수값에-대한-t검정을-수행해보겠습니다."><span class="toc-section-number">6.4</span> 이제 계수값에 대한 t검정을 수행해보겠습니다.</a></li>
+</ul></li>
+<li><a href="#better-understanding-for-linear-model"><span class="toc-section-number">7</span> Better Understanding for Linear Model</a><ul>
+<li><a href="#추정estimation"><span class="toc-section-number">7.1</span> 추정(Estimation)</a><ul>
+<li><a href="#점추정과-구간추정point-estimation-and-interval-estimation"><span class="toc-section-number">7.1.1</span> 점추정과 구간추정(point estimation and interval estimation)</a></li>
+<li><a href="#신뢰구간-평균과-비율"><span class="toc-section-number">7.1.2</span> 신뢰구간: 평균과 비율</a></li>
+</ul></li>
+<li><a href="#유의성-검정significnace-tests"><span class="toc-section-number">7.2</span> 유의성 검정(Significnace Tests)</a><ul>
+<li><a href="#유의성-검정을-이루는-다섯-가지-부분"><span class="toc-section-number">7.2.1</span> 유의성 검정을 이루는 다섯 가지 부분</a></li>
+<li><a href="#오류의-유형-types-of-errors"><span class="toc-section-number">7.2.2</span> 오류의 유형 (Types of Errors)</a></li>
+</ul></li>
+<li><a href="#선형회귀와-상관관계"><span class="toc-section-number">7.3</span> 선형회귀와 상관관계</a><ul>
+<li><a href="#선형관계"><span class="toc-section-number">7.3.1</span> 선형관계</a></li>
+<li><a href="#확률모델probability-model"><span class="toc-section-number">7.3.2</span> 확률모델(Probability model)</a></li>
+<li><a href="#선형회귀모델"><span class="toc-section-number">7.3.3</span> 선형회귀모델</a></li>
+<li><a href="#관계의-측정-상관관계"><span class="toc-section-number">7.3.4</span> 관계의 측정: 상관관계</a></li>
+<li><a href="#정리하며"><span class="toc-section-number">7.3.5</span> 정리하며</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#introduction-to-multivariate-linear-regression-model"><span class="toc-section-number">8</span> Introduction to Multivariate Linear Regression Model</a><ul>
+<li><a href="#관계와-인과성"><span class="toc-section-number">8.1</span> 관계와 인과성</a></li>
+<li><a href="#변수의-통제"><span class="toc-section-number">8.2</span> 변수의 통제</a><ul>
+<li><a href="#다변량-관계multivariate-relationship"><span class="toc-section-number">8.2.1</span> 다변량 관계(Multivariate relationship)</a></li>
+</ul></li>
+<li><a href="#다중선형회귀모델multiple-linear-regression-model"><span class="toc-section-number">8.3</span> 다중선형회귀모델(Multiple linear regression model)</a></li>
+<li><a href="#무작위-추출random-draws"><span class="toc-section-number">8.4</span> 무작위 추출(Random Draws)</a></li>
+<li><a href="#루프-반복loops"><span class="toc-section-number">8.5</span> 루프-반복(Loops)</a></li>
+<li><a href="#rplots를-파일의-형태로-저장하기"><span class="toc-section-number">8.6</span> Rplots를 파일의 형태로 저장하기</a></li>
+<li><a href="#데이터-다루기-기본"><span class="toc-section-number">8.7</span> 데이터 다루기 기본</a><ul>
+<li><a href="#데이터에-새로운-변수-더미변수-만들기"><span class="toc-section-number">8.7.1</span> 데이터에 새로운 변수 &amp; 더미변수 만들기</a></li>
+<li><a href="#다른-유형의-데이터-불러오기-loading-data-in-different-formats"><span class="toc-section-number">8.7.2</span> 다른 유형의 데이터 불러오기 (Loading data in different formats)</a></li>
+<li><a href="#자료-머징하기-using-data-merging"><span class="toc-section-number">8.7.3</span> 자료 머징하기 (Using Data Merging)</a></li>
+<li><a href="#예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3"><span class="toc-section-number">8.7.4</span> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기</a></li>
+</ul></li>
+<li><a href="#요약통계표를-.tex-파일로-저장하기"><span class="toc-section-number">8.8</span> 요약통계표를 .tex 파일로 저장하기</a></li>
+<li><a href="#서로-다른-분석수준lower-higher-통합하기"><span class="toc-section-number">8.9</span> 서로 다른 분석수준(lower &amp; higher) 통합하기</a></li>
+</ul></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="prerequisites" class="section level1">
+<h1><span class="header-section-number">1</span> Prerequisites</h1>
+<p>Placeholder</p>
+<!--chapter:end:index.Rmd-->
+</div>
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">2</span> Introduction to <strong>R</strong></h1>
+<p>Placeholder</p>
+<div id="기본-동작에-관한-소개" class="section level2">
+<h2><span class="header-section-number">2.1</span> 기본 동작에 관한 소개</h2>
+</div>
+<div id="r의-연산자operations" class="section level2">
+<h2><span class="header-section-number">2.2</span> <strong>R</strong>의 연산자(operations)</h2>
+</div>
+<div id="r의-기본적인-자료-유형" class="section level2">
+<h2><span class="header-section-number">2.3</span> <strong>R</strong>의 기본적인 자료 유형</h2>
+<div id="논리형-연산자-logical-operators" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> 논리형 연산자 (Logical operators)</h3>
+</div>
+</div>
+<div id="벡터-vectors" class="section level2">
+<h2><span class="header-section-number">2.4</span> 벡터 (Vectors)</h2>
+</div>
+<div id="매트릭스-matrices" class="section level2">
+<h2><span class="header-section-number">2.5</span> 매트릭스 (Matrices)</h2>
+</div>
+<div id="데이터프레임-data-frame" class="section level2">
+<h2><span class="header-section-number">2.6</span> 데이터프레임 (Data frame)</h2>
+</div>
+<div id="티블-tibbles" class="section level2">
+<h2><span class="header-section-number">2.7</span> 티블 (Tibbles)</h2>
+</div>
+<div id="패키지-packages" class="section level2">
+<h2><span class="header-section-number">2.8</span> 패키지 (Packages)</h2>
+</div>
+<div id="디렉토리-생성-코드" class="section level2">
+<h2><span class="header-section-number">2.9</span> 디렉토리 생성 코드</h2>
+</div>
+<div id="용례-a-working-example" class="section level2">
+<h2><span class="header-section-number">2.10</span> 용례 (A working example)</h2>
+</div>
+<div id="기타-참고자료" class="section level2">
+<h2><span class="header-section-number">2.11</span> 기타 참고자료</h2>
+<!--chapter:end:01-intro2R.Rmd-->
+</div>
+</div>
+<div id="ch3" class="section level1">
+<h1><span class="header-section-number">3</span> Introduction to Data</h1>
+<p>Placeholder</p>
+<div id="작업-디렉토리-설정" class="section level2">
+<h2><span class="header-section-number">3.1</span> 작업 디렉토리 설정</h2>
+</div>
+<div id="무작위-추출random-draws" class="section level2">
+<h2><span class="header-section-number">3.2</span> 무작위 추출(Random Draws)</h2>
+</div>
+<div id="루프-반복loops" class="section level2">
+<h2><span class="header-section-number">3.3</span> 루프-반복(Loops)</h2>
+</div>
+<div id="rplots를-파일의-형태로-저장하기" class="section level2">
+<h2><span class="header-section-number">3.4</span> Rplots를 파일의 형태로 저장하기</h2>
+</div>
+<div id="데이터-다루기-기본" class="section level2">
+<h2><span class="header-section-number">3.5</span> 데이터 다루기 기본</h2>
+<div id="데이터에-새로운-변수-더미변수-만들기" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> 데이터에 새로운 변수 &amp; 더미변수 만들기</h3>
+</div>
+<div id="다른-유형의-데이터-불러오기-loading-data-in-different-formats" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> 다른 유형의 데이터 불러오기 (Loading data in different formats)</h3>
+</div>
+<div id="자료-머징하기-using-data-merging" class="section level3">
+<h3><span class="header-section-number">3.5.3</span> 자료 머징하기 (Using Data Merging)</h3>
+</div>
+<div id="예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3" class="section level3">
+<h3><span class="header-section-number">3.5.4</span> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기[^3-3]</h3>
+</div>
+</div>
+<div id="요약통계표를-.tex-파일로-저장하기" class="section level2">
+<h2><span class="header-section-number">3.6</span> 요약통계표를 .tex 파일로 저장하기</h2>
+</div>
+<div id="서로-다른-분석수준lower-higher-통합하기" class="section level2">
+<h2><span class="header-section-number">3.7</span> 서로 다른 분석수준(lower &amp; higher) 통합하기</h2>
+<!--chapter:end:02-Intro2Data.Rmd-->
+</div>
+<div id="무작위-추출random-draws" class="section level2">
+<h2><span class="header-section-number">3.8</span> 무작위 추출(Random Draws)</h2>
+</div>
+<div id="루프-반복loops" class="section level2">
+<h2><span class="header-section-number">3.9</span> 루프-반복(Loops)</h2>
+</div>
+<div id="rplots를-파일의-형태로-저장하기" class="section level2">
+<h2><span class="header-section-number">3.10</span> Rplots를 파일의 형태로 저장하기</h2>
+</div>
+<div id="데이터-다루기-기본" class="section level2">
+<h2><span class="header-section-number">3.11</span> 데이터 다루기 기본</h2>
+<div id="데이터에-새로운-변수-더미변수-만들기" class="section level3">
+<h3><span class="header-section-number">3.11.1</span> 데이터에 새로운 변수 &amp; 더미변수 만들기</h3>
+</div>
+<div id="다른-유형의-데이터-불러오기-loading-data-in-different-formats" class="section level3">
+<h3><span class="header-section-number">3.11.2</span> 다른 유형의 데이터 불러오기 (Loading data in different formats)</h3>
+</div>
+<div id="자료-머징하기-using-data-merging" class="section level3">
+<h3><span class="header-section-number">3.11.3</span> 자료 머징하기 (Using Data Merging)</h3>
+</div>
+<div id="예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3" class="section level3">
+<h3><span class="header-section-number">3.11.4</span> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기[^3-3]</h3>
+</div>
+</div>
+<div id="요약통계표를-.tex-파일로-저장하기" class="section level2">
+<h2><span class="header-section-number">3.12</span> 요약통계표를 .tex 파일로 저장하기</h2>
+</div>
+<div id="서로-다른-분석수준lower-higher-통합하기" class="section level2">
+<h2><span class="header-section-number">3.13</span> 서로 다른 분석수준(lower &amp; higher) 통합하기</h2>
+<!--chapter:end:02-Intro2Data_sep.Rmd-->
+</div>
+</div>
+<div id="probability-into-r" class="section level1">
+<h1><span class="header-section-number">4</span> Probability into R</h1>
+<p>Placeholder</p>
+<div id="주사위굴리기-게임" class="section level2">
+<h2><span class="header-section-number">4.1</span> 주사위굴리기 게임!</h2>
+</div>
+<div id="동전-던지기" class="section level2">
+<h2><span class="header-section-number">4.2</span> 동전 던지기</h2>
+</div>
+<div id="독립사건-시뮬레이션" class="section level2">
+<h2><span class="header-section-number">4.3</span> 독립사건 시뮬레이션</h2>
+</div>
+<div id="종속사건-시뮬레이션" class="section level2">
+<h2><span class="header-section-number">4.4</span> 종속사건 시뮬레이션</h2>
+</div>
+<div id="분포distribution" class="section level2">
+<h2><span class="header-section-number">4.5</span> 분포(Distribution)</h2>
+<div id="정규분포-the-normal-distribution" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> 정규분포 (The normal distribution)</h3>
+</div>
+<div id="이항분포-binomial-distribution" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> 이항분포 (Binomial distribution)</h3>
+</div>
+<div id="포와송-분포-poison-distribution" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> 포와송 분포 (Poison distribution)</h3>
+</div>
+<div id="음이항-분포-negative-binomial-distribution" class="section level3">
+<h3><span class="header-section-number">4.5.4</span> 음이항 분포 (Negative Binomial Distribution)</h3>
+</div>
+<div id="f-분포-f-distribution" class="section level3">
+<h3><span class="header-section-number">4.5.5</span> F 분포 (F Distribution)</h3>
+<!--chapter:end:03-Prop2R.Rmd-->
+</div>
+</div>
+</div>
+<div id="foundation-of-inference" class="section level1">
+<h1><span class="header-section-number">5</span> Foundation of Inference</h1>
+<p>Placeholder</p>
+<div id="표본을-통한-모집단-추론-infer-population-using-samples" class="section level2">
+<h2><span class="header-section-number">5.1</span> 표본을 통한 모집단 추론 (Infer Population using Samples)</h2>
+</div>
+<div id="평균의-차이difference-of-means-그리고-분산분석analysis-of-variance-anova" class="section level2">
+<h2><span class="header-section-number">5.2</span> 평균의 차이(difference of means), 그리고 분산분석(analysis of variance, ANOVA)</h2>
+<div id="평균-차이를-보는-이유" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> 평균 차이를 보는 이유</h3>
+</div>
+<div id="t-검정을-이용한-두-평균의-차이" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> t-검정을 이용한 두 평균의 차이</h3>
+<div id="r로-할-수-있는-t-test-두-가지-방법" class="section level4">
+<h4><span class="header-section-number">5.2.2.1</span> <strong>R</strong>로 할 수 있는 t-test: 두 가지 방법</h4>
+</div>
+</div>
+<div id="분산분석anova을-이용해-여러-평균을-비교하기" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> 분산분석(ANOVA)을 이용해 여러 평균을 비교하기</h3>
+</div>
+</div>
+<div id="비율-차이-교차표와-카이스퀘어-검정chi-squared-tests" class="section level2">
+<h2><span class="header-section-number">5.3</span> 비율 차이: 교차표와 카이스퀘어 검정(chi-squared tests)</h2>
+<!--chapter:end:04-FoundationIF.Rmd-->
+</div>
+</div>
+<div id="intoduction-to-simple-linear-regression-model" class="section level1">
+<h1><span class="header-section-number">6</span> Intoduction to Simple Linear Regression Model</h1>
+<p>Placeholder</p>
+<div id="회귀분석의-이해-기울기의-검정" class="section level2">
+<h2><span class="header-section-number">6.1</span> 회귀분석의 이해: 기울기의 검정</h2>
+</div>
+<div id="좀-더-복잡한-회귀분석의-이해-다변량-회귀분석-multivariate-regression에-들어서기" class="section level2">
+<h2><span class="header-section-number">6.2</span> 좀 더 복잡한 회귀분석의 이해: 다변량 회귀분석 (multivariate regression)에 들어서기</h2>
+</div>
+<div id="단순회귀분석-심화" class="section level2">
+<h2><span class="header-section-number">6.3</span> 단순회귀분석 심화</h2>
+</div>
+<div id="이제-계수값에-대한-t검정을-수행해보겠습니다." class="section level2">
+<h2><span class="header-section-number">6.4</span> 이제 계수값에 대한 t검정을 수행해보겠습니다.</h2>
+<!--chapter:end:05-LinearM.Rmd-->
+</div>
+</div>
+<div id="better-understanding-for-linear-model" class="section level1">
+<h1><span class="header-section-number">7</span> Better Understanding for Linear Model</h1>
+<p>Placeholder</p>
+<div id="추정estimation" class="section level2">
+<h2><span class="header-section-number">7.1</span> 추정(Estimation)</h2>
+<div id="점추정과-구간추정point-estimation-and-interval-estimation" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> 점추정과 구간추정(point estimation and interval estimation)</h3>
+</div>
+<div id="신뢰구간-평균과-비율" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> 신뢰구간: 평균과 비율</h3>
+<div id="비율의-신뢰구간" class="section level4">
+<h4><span class="header-section-number">7.1.2.1</span> 비율의 신뢰구간</h4>
+</div>
+<div id="평균의-신뢰구간" class="section level4">
+<h4><span class="header-section-number">7.1.2.2</span> 평균의 신뢰구간</h4>
+</div>
+</div>
+</div>
+<div id="유의성-검정significnace-tests" class="section level2">
+<h2><span class="header-section-number">7.2</span> 유의성 검정(Significnace Tests)</h2>
+<div id="유의성-검정을-이루는-다섯-가지-부분" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> 유의성 검정을 이루는 다섯 가지 부분</h3>
+<div id="평균에-대한-유의성-검정" class="section level4">
+<h4><span class="header-section-number">7.2.1.1</span> 평균에 대한 유의성 검정</h4>
+</div>
+<div id="비율에-대한-유의성-검정" class="section level4">
+<h4><span class="header-section-number">7.2.1.2</span> 비율에 대한 유의성 검정</h4>
+</div>
+</div>
+<div id="오류의-유형-types-of-errors" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> 오류의 유형 (Types of Errors)</h3>
+</div>
+</div>
+<div id="선형회귀와-상관관계" class="section level2">
+<h2><span class="header-section-number">7.3</span> 선형회귀와 상관관계</h2>
+<div id="선형관계" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> 선형관계</h3>
+</div>
+<div id="확률모델probability-model" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> 확률모델(Probability model)</h3>
+</div>
+<div id="선형회귀모델" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> 선형회귀모델</h3>
+</div>
+<div id="관계의-측정-상관관계" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> 관계의 측정: 상관관계</h3>
+<div id="상관계수의-특성" class="section level4">
+<h4><span class="header-section-number">7.3.4.1</span> 상관계수의 특성</h4>
+</div>
+<div id="기울기와-상관계수에-대한-추론" class="section level4">
+<h4><span class="header-section-number">7.3.4.2</span> 기울기와 상관계수에 대한 추론</h4>
+</div>
+</div>
+<div id="정리하며" class="section level3">
+<h3><span class="header-section-number">7.3.5</span> 정리하며</h3>
+<!--chapter:end:06-AdvancedLM.Rmd-->
+</div>
+</div>
+</div>
+<div id="introduction-to-multivariate-linear-regression-model" class="section level1">
+<h1><span class="header-section-number">8</span> Introduction to Multivariate Linear Regression Model</h1>
+<p>Placeholder</p>
+<div id="관계와-인과성" class="section level2">
+<h2><span class="header-section-number">8.1</span> 관계와 인과성</h2>
+</div>
+<div id="변수의-통제" class="section level2">
+<h2><span class="header-section-number">8.2</span> 변수의 통제</h2>
+<div id="다변량-관계multivariate-relationship" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> 다변량 관계(Multivariate relationship)</h3>
+</div>
+</div>
+<div id="다중선형회귀모델multiple-linear-regression-model" class="section level2">
+<h2><span class="header-section-number">8.3</span> 다중선형회귀모델(Multiple linear regression model)</h2>
+<!--chapter:end:07-MultivariateLM.Rmd-->
+</div>
+<div id="무작위-추출random-draws" class="section level2">
+<h2><span class="header-section-number">8.4</span> 무작위 추출(Random Draws)</h2>
+<p>무작위 추출을 실제로 해보기 위해서 한 가지 시뮬레이션을 돌려 보겠습니다. 어떤 사업장에서 사람을 승진시키는 데 있어서 성차별(gender discrimination)이 있을 수 있다고 가정하는 것입니다. 간단하게 100명의 승진 후보자들이 있다고 가정하고, 남녀가 동일한 비율로 나뉘어져 있다고 생각해 보겠습니다. 그리고 일반적으로 승진할 확률은 70% (0.7)라고 가정합니다. R-code로 남녀 각각 50명을 대상으로, 승진할 경우 1로 코딩하고 승진하지 못할 경우를 0으로 코딩하는 일종의 더미변수를 만들겠습니다. 그리고 승진 확률은 70%로 설정합니다.</p>
+<ul>
+<li><p>즉, 무작위로 추출한 50명 중 승진확률이 그대로 반영된다면 우리는 35개의 1과 15개의 0을 확인할 수 있을 것입니다.</p></li>
+<li><p>그러나 표본추출과 무작위화의 본연의 속성 상, 항상 확률대로 정확하게 그러한 비율의 결과를 갖는 것은 불가능합니다.</p></li>
+<li><p>따라서 우리는 무작위로 추출할 때마다 약 70% 승진확률에 근거한 그 언저리의 값들을 얻게 될 것입니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>MP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>) <span class="co">#70%의 승진확률로 무작위로 추출한 50명의 남성</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>WP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>) <span class="co">#70%의 승진확률로 무작위로 추출한 50명의 여성</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">sum</span>(MP) <span class="co">#총 승진한 남성의 수</span></span></code></pre></div>
+<pre><code>## [1] 29</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">sum</span>(WP) <span class="co">#총 승진한 여성의 수</span></span></code></pre></div>
+<pre><code>## [1] 36</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">sum</span>(MP)<span class="op">/</span><span class="dv">50</span> <span class="co">#전체 남성 승진후보자에 대한 승진한 남성의 비율</span></span></code></pre></div>
+<pre><code>## [1] 0.58</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">sum</span>(WP)<span class="op">/</span><span class="dv">50</span> <span class="co">#전체 여성 승진후보자에 대한 승진한 여성의 비율</span></span></code></pre></div>
+<pre><code>## [1] 0.72</code></pre></li>
+</ul>
+<p><code>MP</code>와 <code>WP</code>는 각각 Mem Promotion과 Women Promotion의 약자입니다. <code>rbinom()</code>은 randomly draw as binomial로 이해하면 됩니다. 따라서 이 함수의 뜻은 “50개의 이항변수를 만드는 데 1의 값을 가질 확률을 0.7로 해서 추출해라”고 할 수 있겠습니다.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>이렇게 만든 <code>MP</code>와 <code>WP</code>에 1, 즉 승진자가 각각 몇명인지 살펴보려면 단순하게 <code>sum()</code>, 합계를 나타내는 함수를 이용하면 됩니다. <code>MP</code>와 <code>WP</code>는 각각 벡터 자료로 값을 가지는데, <code>sum()</code>을 이용하면 이 벡터 자료의 각 요소들(elements)의 합을 계산할 수 있습니다. 만약 실제로 관측된 50명 각각에 대한 승진확률을 구하려면 그 집단의 총 인원수로 나누면 됩니다.</p>
+<p>우리가 알고 싶은 것은 과연 이 사업장에서 승진하는 데 남녀의 성차별이 있느냐는 것입니다.</p>
+<ul>
+<li>다시 말하면 남자와 여자의 승진 결과에 있어서 어떤 차이가 나타날 수는 있는데, 과연 그 차이가 진짜로 차별이 있어서 나타나는지를 확인하자는 것입니다.</li>
+<li>이를 위해서 우리는 주어진 표본(남녀 각 50명, 총 100명에 있어서의)에서의 승진자 수의 차이를 계산해야 합니다.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>DP &lt;-<span class="st"> </span><span class="kw">sum</span>(MP) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(WP) <span class="co">#DP는 Difference in Promotion, 승진자 수의 차이입니다.</span></span></code></pre></div>
+<p><code>DP</code>의 값이 양수(positive)라면 남성 승진자의 수가 더 많다는 의미일 것이고, 음수(negative)라면 여성 승진자의 수가 더 많다고 볼 수 있습니다. 만약 <code>DP</code>가 0이면 두 성별에서의 승진자의 수가 동일하다는 것입니다다. 우리는 <strong>R</strong>을 이용하여 이와 같은 표집(sampling)을 여러 번 시뮬레이션 해볼 수 있습니다.</p>
+<p>앞선 100명(남50 여50)을 추출한 것을 말 그대로 여러 번 반복할 수 있다는 것인데, 50명에 대한 확률은 0.7로 동일하더라도 무작위 추출이기 때문에 매번 추출할 때마다 그 결과는 달라질 것입니다.</p>
+<ul>
+<li>우리가 알고 싶은 것은 이렇게 여러 번 추출해서 돌리더라도 만약 성차별이 실제로 존재한다면 꾸준하게, 그리고 일정한 차이로 <code>DP</code>가 나타날 것이라는 점입니다.</li>
+<li>만약 <code>DP</code>가 있다가 없다가 한다면 통계적 관점으로 “평균적으로” (on average) 그 효과는 체계적이지 않을(non-systematic) 가능성이 높습니다.</li>
+</ul>
+<p>먼저, 10개의 결측치를 가진 벡터를 만들어보겠습니다. 이게 무슨 말이냐면 아무 값도 들어있지 않은 10개 열자리 1개 행의 표를 만들라는 얘기로 이해할 수 있습니다. 완전 같은 말은 아닌데, 뭐 이렇게 이해하면 편할 거 같습니다. 그리고 그 각각의 칸에 이제부터 총 10번 시뮬레이팅하여 남50 여50에 대한 승진자 수의 차이 값 10개를 채워넣겠습니다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>trial.size &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co">#시뮬레이션을 시도할 횟수</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>Test10 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, trial.size) <span class="co">##rep는 replicate, 즉 반복하라는 함수입니다.</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>                              <span class="co">##즉, 이 함수는 trial.size의 수만큼 NA를 반복해서</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>                              <span class="co">##Test10이라는 벡터에 담으라는 의미입니다.</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>Test10 <span class="co">#위의 함수를 통해 얻게 되는 Test10 벡터의 값은 아래와 같습니다.</span></span></code></pre></div>
+<pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
+<p>그리고 나서 우리는 이 10칸의 NA, 결측치(missing values)에 10번에 시뮬레이션을 통해 얻은 승진자 수의 차이(총 10개의 차이)를 담을 것입니다. 귀찮게 함수를 10번 반복할 수도 있겠지만, 만약 시뮬레이션을 해야 하는 수가 10번이 아니라 100만 번이라면 그 짓하다가 하루? 일주일이 다 갈 것이기 때문에 여기서부터 루프 (Loops)를 알아봅시다.</p>
+</div>
+<div id="루프-반복loops" class="section level2">
+<h2><span class="header-section-number">8.5</span> 루프-반복(Loops)</h2>
+<p>자, 10번 반복하기를 해보겠습니다. 함수는 아래와 같습니다.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="cf">for</span> (a <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>trial.size) { <span class="co"># a라는 벡터에 1부터 trial.size까지의 수를 넣으라는 명령</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  MP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>) <span class="co"># MP를 계산하라, 총 50명이 0.7의 확률로 1을 가질 것</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  WP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>) <span class="co"># WP를 계산하라, 총 50명이 0.7의 확률로 1을 가질 것</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  Test10[a] &lt;-<span class="st"> </span>(<span class="kw">sum</span>(MP) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(WP))<span class="op">/</span><span class="dv">50</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>}</span></code></pre></div>
+<p>위의 함수를 통해서 우리는 총 10개의 <code>DP</code>값을 50으로 나눈, 승진자 수의 차이가 한 개 집단에(남 or 녀) 대해 비율로 계산된 벡터의 형식으로 <code>Test10</code>에 가지게 됩니다. <code>Test10[1]</code>은 첫 번째 시뮬레이션의 <code>DP</code> 확률이고 <code>Test10[4]</code>는 네 번째 시뮬레이션의 <code>DP</code> 확률을 가지게 될 것입니다. 벡터 자료 뒤에 <code>[n]</code>는 그 벡터의 <code>n</code>번째 요소를 보여달라는 명령입니다.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>Test10</span></code></pre></div>
+<pre><code>##  [1]  0.06 -0.16 -0.04 -0.02 -0.08 -0.08  0.06  0.12 -0.10 -0.04</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">hist</span>(Test10, <span class="dt">breaks =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">## ggplot으로도 동일하게 만들 수 있습니다.</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(Test10), <span class="kw">aes</span>(<span class="dt">x =</span> Test10)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..count..<span class="op">/</span><span class="kw">sum</span>(..count..)), </span>
+<span id="cb16-4"><a href="#cb16-4"></a>                 <span class="dt">binwidth =</span> <span class="fl">0.02</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb16-5"><a href="#cb16-5"></a>                 <span class="dt">position =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">percent_format</span>()) <span class="op">+</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Histogram of Test10&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Test10&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>총 10개의 <code>Test10</code>의 값을 구해 히스토그램을 구한 것입니다. 즉, 10개 <code>DP</code> 확률의 분포를 나타낸 것이라고 할 수 있습니다. 10개의 표본으로는 뚜렷한 경향을 보기가 힘듭니다. 한 번 백 개의 시뮬레이션을 진행해보겠습니다. 진행과정은 10번의 시뮬레이션이랑 동일합니다. 단지 <code>trial.size</code>가 100으로 늘어났다는 것과 반복횟수가 <code>b</code>로 <code>a</code>랑 구분한다는 것만 다릅니다.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>trial.size &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>Test100 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, trial.size)</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="cf">for</span> (b <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>trial.size) {</span>
+<span id="cb17-4"><a href="#cb17-4"></a>  MP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>)</span>
+<span id="cb17-5"><a href="#cb17-5"></a>  WP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>)</span>
+<span id="cb17-6"><a href="#cb17-6"></a>  Test100[b] &lt;-<span class="st"> </span>(<span class="kw">sum</span>(MP) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(WP))<span class="op">/</span><span class="dv">50</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>}</span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="kw">hist</span>(Test100)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>매우 눈에 익숙하고 우리가 사랑하는(?) 분포의 형태로 변해가는 것을 볼 수 있습니다. 이제 극단적으로 백 만번의 시뮬레이션을 진행해보겠습니다.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>trial.size3 &lt;-<span class="st"> </span><span class="dv">1000000</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>Test1M &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, trial.size3)</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="cf">for</span> (c <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>trial.size3) {</span>
+<span id="cb18-4"><a href="#cb18-4"></a>  MP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a>  WP &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">50</span>, <span class="dv">1</span>, <span class="fl">.7</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a>  Test1M[c] &lt;-<span class="st"> </span>(<span class="kw">sum</span>(MP) <span class="op">-</span><span class="st"> </span><span class="kw">sum</span>(WP))<span class="op">/</span><span class="dv">50</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>}</span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="kw">hist</span>(Test1M)</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">## ggplot으로도 동일하게 만들 수 있습니다.</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">ggplot</span>(<span class="kw">data.frame</span>(Test1M), <span class="kw">aes</span>(<span class="dt">x =</span> Test1M)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..count..<span class="op">/</span><span class="kw">sum</span>(..count..)), </span>
+<span id="cb19-4"><a href="#cb19-4"></a>                 <span class="dt">binwidth =</span> <span class="fl">0.02</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb19-5"><a href="#cb19-5"></a>                 <span class="dt">position =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">labels =</span> scales<span class="op">::</span><span class="kw">percent_format</span>()) <span class="op">+</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Histogram of Test1M&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Test1M&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
+<p><img src="Kor_BasicStats_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>여기서 한 가지 알 수 있는 것은 시뮬레이션 시도 횟수가 늘어날수록(무한에 가까워질수록), 우리가 알고 싶어하는 승진에서의 차이(결과)의 진짜 확률(true probabilities)이 드러난다는 것입니다.</p>
+<ul>
+<li>이는 나중에 표집(sampling)과 표집오차(sampling errors), 그리고 중심극한정리(Central Limit Theorem)을 언급할 일이 있을 때 다시 살펴보도록 하겠습니다.</li>
+</ul>
+<p>위에서 추출한 100만번의 시뮬레이션 결과를 토대로 남성과 여성의 승진에 있어서의 차이가 과연 0.3보다 큰지 살펴보겠습니다.</p>
+<ul>
+<li><p>조금 더 문제를 단순화하기 위해서 남자가 여성보다 더 승진할 가능성, 승진자 수의 차이가 전체 후보자에 대한 비율에 있어서 +0.3보다 큰지 작은지를 살펴보려는 것입니다.</p></li>
+<li><p>먼저 각각(남성과 여성)에 있어서의 승진자 수의 차이를 비율로 구하여 그 비율이 0.3보다 크거나 같은 경우가 전체 시뮬레이션으로 나타난 승진자 수의 차이 비율 전체의 몇 퍼센트를 차지하는지 구합니다.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">length</span>(Test1M[Test1M <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.3</span>]) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(Test1M)</span></code></pre></div>
+<pre><code>## [1] 0.000737</code></pre></li>
+<li><p>처음에 R을 할 때 잘 외우지 못했던 함수 중 하나인데, <code>length()</code>는 뭐랄까… <code>count</code>라고 이해하면 조금 더 쉬울 것 같습니다.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
+<li><p>즉, 아래의 함수는 <code>Test1M</code>, 100만개의 승진자 수가 전체 집단에서 차지하는 비율이 0.3보다 큰 경우만을 구해서 그걸 전체 승진차이 확률 100만개에 대한 비율로 구하라는 것입니다.</p>
+<ul>
+<li>남자가 여자에 비해서 30% 이상 승진을 많이 할 확률이 나타난 것이 총 100만번의 시뮬레이션 가운데 몇 번이었냐는 것입니다.</li>
+</ul></li>
+<li><p>아래 함수는 그 결과는 0.000711, 즉 약 0.07%의 확률로 남자가 여자에 비해 30% 이상 승진자가 많을 확률이 나타난다는 것을 알 수 있습니다.</p></li>
+<li><p>적어도 이 예제에 한하여 해석은 개인의 몫으로 남겨 놓겠습니다.</p></li>
+</ul>
+</div>
+<div id="rplots를-파일의-형태로-저장하기" class="section level2">
+<h2><span class="header-section-number">8.6</span> Rplots를 파일의 형태로 저장하기</h2>
+<p>이번 섹션에는 조금 기술적인(technical) 소개를 하고자 합니다. 바로 위에서 만든 히스토그램 등을 <code>pdf</code>나 <code>png</code>와 같은 형태의 파일로 저장하는 함수입니다. 먼저 <code>pdf</code>로 저장하는 것을 살펴보겠습니다. <code>pdf</code>로 저장하는 것은 추천할만한 방식입니다. 이용하는 경우에는 이렇게 저장한 pdf를 깔끔하게 생산하는 pdf 문서에 삽입할 수 있습니다.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">pdf</span>(<span class="st">&quot;figures/histogram.pdf&quot;</span>, <span class="dt">width=</span><span class="dv">8</span>, <span class="dt">height=</span><span class="dv">6</span>) </span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co">## 아까 만든 figures에 histogram.pdf라는 이름으로 저장하게 합니다.</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="kw">hist</span>(Test1M, <span class="dt">xlab =</span> <span class="st">&quot;Margin&quot;</span>, <span class="dt">main =</span> <span class="ot">NULL</span>)  <span class="co">#표 전체 제목은 NULL, 없습니다</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="co">##Test1M, 100만번 시뮬레이팅한 히스토그램 X축에는 Margin이라고 레이블을 달 것입니다.</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="kw">dev.off</span>()</span></code></pre></div>
+<p><code>dev.off</code>는 <code>device off</code>로 위의 함수는 여기서 끝!이라고 이해하시면 되겠습니다다.자세한 내용은 <code>?dev.off</code>로 알아보시길… 그리고 pdf로 저장하기 어려운 경우에는 png로 저장할 경우 해상도 자체는 조금 떨어지지만 유용하게 쓸 수 있는 그림파일로 동일한 Rplots를 저장할 수 있습니다. pdf는 인치(Inches)로 저장되는데, png는 픽셀(Pixels)로 저장됩니다. 그래서 아래 코드에서의 너비랑 높이를 지정하는 방법이 조금 다릅니다.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">png</span>(<span class="st">&quot;figures/histogram.png&quot;</span>, <span class="dt">width=</span><span class="dv">720</span>, <span class="dt">height=</span><span class="dv">480</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">hist</span>(Test1M, <span class="dt">xlab =</span> <span class="st">&quot;Margin&quot;</span>, <span class="dt">main =</span> <span class="ot">NULL</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="kw">dev.off</span>()</span></code></pre></div>
+</div>
+<div id="데이터-다루기-기본" class="section level2">
+<h2><span class="header-section-number">8.7</span> 데이터 다루기 기본</h2>
+<p>이번 섹션부터는 데이터에 대해 조금 더 깊이 살펴보고자 합니다. 구체적으로는,</p>
+<ul>
+<li>데이터 불러오기 (loading)</li>
+<li>서로 다른 분석수준, 분석단위를 가지고 작업하기 (working with different levels of analysis/units of observation)</li>
+<li>작업 흐름(workflow)</li>
+</ul>
+<p>순으로 진행하고자 합니다.</p>
+<p>먼저 기존에 존재하던 데이터셋을 불러오기에 앞서 개략적으로 데이터라는 것이 어떻게 생겼는지를 살펴볼 필요가 있습니다. 데이터프레임은 열에 변수(variables), 행에 관측치들을 갖는 형태로 이루어져 있습니다. 하지만 앞서 언급했던 바와 같이, 데이터프레임 유형보다는 티블을 사용하는 것이 앞으로 배울 함수들을 적용하기에 좀 더 효율적입니다. 따라서 티블 함수를 이용해 가상의 데이터셋을 직접 만들어 보겠습니다.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">library</span>(tidyverse) <span class="co"># 티블을 사용하기 위해서는 tidyverse 패키지를 불러와줘야 합니다.</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>data1 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="st">&quot;Jane&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Jen&quot;</span>, <span class="st">&quot;James&quot;</span>),</span>
+<span id="cb24-3"><a href="#cb24-3"></a>                <span class="dt">height =</span> <span class="kw">c</span>(<span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">68</span>),</span>
+<span id="cb24-4"><a href="#cb24-4"></a>                <span class="dt">eye.color =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>),</span>
+<span id="cb24-5"><a href="#cb24-5"></a>                <span class="dt">gender =</span> <span class="kw">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>),</span>
+<span id="cb24-6"><a href="#cb24-6"></a>                <span class="dt">highest.degree =</span> <span class="kw">c</span>(<span class="st">&quot;college&quot;</span>, </span>
+<span id="cb24-7"><a href="#cb24-7"></a>                                   <span class="st">&quot;high school&quot;</span>, </span>
+<span id="cb24-8"><a href="#cb24-8"></a>                                   <span class="st">&quot;post graduate&quot;</span>, </span>
+<span id="cb24-9"><a href="#cb24-9"></a>                                   <span class="st">&quot;college&quot;</span>))</span>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="kw">glimpse</span>(data1)</span></code></pre></div>
+<pre><code>## Rows: 4
+## Columns: 5
+## $ name           &lt;chr&gt; &quot;Jane&quot;, &quot;John&quot;, &quot;Jen&quot;, &quot;James&quot;
+## $ height         &lt;dbl&gt; 60, 70, 65, 68
+## $ eye.color      &lt;chr&gt; &quot;blue&quot;, &quot;blue&quot;, &quot;brown&quot;, &quot;brown&quot;
+## $ gender         &lt;chr&gt; &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;male&quot;
+## $ highest.degree &lt;chr&gt; &quot;college&quot;, &quot;high school&quot;, &quot;post graduate&quot;, &quot;college&quot;</code></pre>
+<p>만약 티블이 아니라 데이터프레임으로 저장하고 싶으시다면 <code>tibble()</code> 대신 <code>data.frame()</code> 함수를 사용하시면 됩니다. 이렇게 생성된 데이터는 열(column)에 변수를 갖습니다.</p>
+<ul>
+<li><code>data1</code>에서는 <code>name, height, eye.color, gender, highest.degree</code>가 변수명이 됩니다.</li>
+<li>그리고 각 변수의 하위에 행마다 관측치들이 주어집니다다.
+<ul>
+<li><code>name</code>이라는 변수에는 <code>Jane, John, Jen, James</code> 라는 각 개인을 관측한 결과가 입력됩니다다.</li>
+<li><code>c()</code>는 안의 요소들을 벡터의 형태로 묶으라는 것입니다(이전 포스팅에서 벡터에 대한 설명 참조).</li>
+</ul></li>
+<li>그리고 이렇게 만들어진 데이터의 구조를 확인하기 위해서는 <code>glimpse()</code> 함수를 사용하면 된다.
+<ul>
+<li><code>str()</code> 함수도 있는데, <code>glimpse()</code>가 좀 더 깔끔하게 데이터의 구조를 보여주는 것 같습니다.</li>
+</ul></li>
+</ul>
+<div id="데이터에-새로운-변수-더미변수-만들기" class="section level3">
+<h3><span class="header-section-number">8.7.1</span> 데이터에 새로운 변수 &amp; 더미변수 만들기</h3>
+<p>기존 데이터에 새로운 변수를 추가하는 방법은 매우 간단합니다. 그냥 새로운 변수명을 <code>$</code> 표시를 이용해 데이터에 써주고 거기에 배정(assign)을 의미하는 <code>&lt;-</code> 표시로 넣어주면 됩니다. 백문이 불여일견이니 한 번 해보겠습니다.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>data1<span class="op">$</span>female &lt;-<span class="st"> </span><span class="ot">NA</span></span></code></pre></div>
+<p>위의 코드는 <code>female</code>이라는 변수를 새롭게 만들되 <code>female</code>의 모든 관측치는 결측치(missing values)로 생성하라는 것을 의미합니다.우측 항에 단순한 값을 적는다면 데이터의 새로운 변수, 일종의 벡터에는 모두 그 값으로 채워질 것입니다. 반면, 우리가 원하는 체계적인 형태의 변수(<code>var</code>iable)로 대체하고 싶다면 함수(function)를 이용하면 됩니다.</p>
+<p>여기서 살펴볼 더미변수란 말 그대로 더미(dummy), 바보 변수입니다. 더미변수는 존부(存否)만을 나타내는 변수인데 <code>1</code>일 경우에는 있음, <code>0</code>일 경우에는 없음을 나타냅니다. 예를 들어, 바로 아래에서 만들 <code>female</code>변수는 여성일 경우에 <code>1</code>, 남성일 경우에 <code>0</code>을 나타낼 것입니다. 아까 만든 데이터(<code>data1</code>)의 변수 중 <code>gender</code>는 남성(<code>male</code>)과 여성(<code>female</code>)이라는 두 문자열 변수로 구성되어 있는데, 이를 숫자형(numerical)으로 바꿔주고자 하는 것입니다.</p>
+<p>더미변수는 어떤 점에서는 유용하지만 존부 이외의 자세한 정보를 제공하지 못한다는 점에서 더미라고 불립니다. 일단, 더미변수(숫자형)으로서의 여성(사실상 성별) 변수를 추가해보겠습니다.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>data1<span class="op">$</span>female &lt;-<span class="st"> </span><span class="kw">ifelse</span>(data1<span class="op">$</span>gender <span class="op">==</span><span class="st"> &quot;female&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co">## 해석: data1에 female이라는 변수에 우측 함수에 따른 값을 배정하라.</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co">##      ifelse(만약 ~ 면, A를, ~가 아니라면, B를) 배정하라.</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="co">## 따라서 위의 함수는 data1의 gender 변수가 &quot;female&quot;이라는 문자일 경우 새로운 female</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="co">## 변수에 1을, &quot;female&quot;이 아닌 경우에는 0을 주어라.</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>data1<span class="op">$</span>female <span class="co"># 더미 변수의 이름을 지을 때에는 기준값(reference value)이 헷갈리지 않게</span></span></code></pre></div>
+<pre><code>## [1] 1 0 1 0</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>             <span class="co"># 1의 값을 갖는 라벨(label)로 변수 이름을 짓는게 좋다 (TIP)</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>data1<span class="op">$</span>gender &lt;-<span class="st"> </span><span class="ot">NULL</span> <span class="co"># 이제 사용하지 않을 gender 변수는 결측치로 변경.</span></span></code></pre></div>
+<p>그리고 한 가지 짚고 넘어갈 것은 <strong>R</strong>에서는 요인형(factor)과 문자형(character) 유형이 다르다는 것입니다. 요인형 자료를 문자형 자료로 변환하거나 혹은 그 역도 가능하지만 요인형에서 문자형으로 변환하는 것은 별로 추천드리고 싶지 않습니다. 일단 기본적으로 이 내용은 일반적인 통계분석을 다루고 있기 때문에 문자형 그 자체를 가지고 뭔가를 분석하는 텍스트 분석이 아닌 이상 문자열은 그저 고유값, 이상도 이하도 아니기 때문입니다. 하나 밖에 없는 값으로 무언가를 일반화하거나 설명하기란 쉽지 않습니다.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>data1<span class="op">$</span>name &lt;-<span class="st"> </span><span class="kw">as.character</span>(data1<span class="op">$</span>name) </span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="co"># name 변수의 자료들은 문자형(STATA에서 string이라고 하는)으로 이루어져 있는데, </span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="co"># 이를 요인형으로 바꾸는 것이다.</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="kw">glimpse</span>(data1)</span></code></pre></div>
+<pre><code>## Rows: 4
+## Columns: 5
+## $ name           &lt;chr&gt; &quot;Jane&quot;, &quot;John&quot;, &quot;Jen&quot;, &quot;James&quot;
+## $ height         &lt;dbl&gt; 60, 70, 65, 68
+## $ eye.color      &lt;chr&gt; &quot;blue&quot;, &quot;blue&quot;, &quot;brown&quot;, &quot;brown&quot;
+## $ highest.degree &lt;chr&gt; &quot;college&quot;, &quot;high school&quot;, &quot;post graduate&quot;, &quot;college&quot;
+## $ female         &lt;dbl&gt; 1, 0, 1, 0</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">summary</span>(data1))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">name</th>
+<th align="left">height</th>
+<th align="left">eye.color</th>
+<th align="left">highest.degree</th>
+<th align="left">female</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Length:4</td>
+<td align="left">Min. :60.00</td>
+<td align="left">Length:4</td>
+<td align="left">Length:4</td>
+<td align="left">Min. :0.0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Class :character</td>
+<td align="left">1st Qu.:63.75</td>
+<td align="left">Class :character</td>
+<td align="left">Class :character</td>
+<td align="left">1st Qu.:0.0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Mode :character</td>
+<td align="left">Median :66.50</td>
+<td align="left">Mode :character</td>
+<td align="left">Mode :character</td>
+<td align="left">Median :0.5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">Mean :65.75</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Mean :0.5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">3rd Qu.:68.50</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">3rd Qu.:1.0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">Max. :70.00</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Max. :1.0</td>
+</tr>
+</tbody>
+</table>
+<p>위에서 요인형을 문자형으로 바꾸는 함수는 바로 <code>as.factor()</code>입니다. 직관적인 함수인데, 괄호 안의 변수를 요인으로써(as factor) 취급하여 다시 저장하라는 의미라고 볼 수 있습니다. 요인을 문자형으로 바꿀 수 있는 것처럼 요인형 변수를 숫자형 변수로 바꿀 수도 있습니다. 요인형 <span class="math inline">\(\rightarrow\)</span> 숫자형 변환 과정은 두 단계로 이루어집니다. 일단 예제 데이터를 만들어보겠습니다.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>GPA &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;3.0&quot;</span>, <span class="st">&quot;4.0&quot;</span>, <span class="st">&quot;3.8&quot;</span>, <span class="st">&quot;2.2&quot;</span>)</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="co">## 만약 &quot;&quot; 인용부호를 제외하고 벡터로 입력하면 GPA는 숫자형 자료가 될 것입니다.</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co">## 기존의 data1 데이터프레임에다가 방금 만든 GPA를 새로운 열로 추가해보겠습니다.</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>data1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(data1, GPA) <span class="co">#cbind는 열로 묶으라는 것입니다, 행으로 묶는 것은 rbind()</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="kw">glimpse</span>(data1)</span></code></pre></div>
+<pre><code>## Rows: 4
+## Columns: 6
+## $ name           &lt;chr&gt; &quot;Jane&quot;, &quot;John&quot;, &quot;Jen&quot;, &quot;James&quot;
+## $ height         &lt;dbl&gt; 60, 70, 65, 68
+## $ eye.color      &lt;chr&gt; &quot;blue&quot;, &quot;blue&quot;, &quot;brown&quot;, &quot;brown&quot;
+## $ highest.degree &lt;chr&gt; &quot;college&quot;, &quot;high school&quot;, &quot;post graduate&quot;, &quot;college&quot;
+## $ female         &lt;dbl&gt; 1, 0, 1, 0
+## $ GPA            &lt;chr&gt; &quot;3.0&quot;, &quot;4.0&quot;, &quot;3.8&quot;, &quot;2.2&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">summary</span>(data1))</span></code></pre></div>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="17%" />
+<col width="14%" />
+<col width="17%" />
+<col width="17%" />
+<col width="12%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">name</th>
+<th align="left">height</th>
+<th align="left">eye.color</th>
+<th align="left">highest.degree</th>
+<th align="left">female</th>
+<th align="left">GPA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Length:4</td>
+<td align="left">Min. :60.00</td>
+<td align="left">Length:4</td>
+<td align="left">Length:4</td>
+<td align="left">Min. :0.0</td>
+<td align="left">Length:4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Class :character</td>
+<td align="left">1st Qu.:63.75</td>
+<td align="left">Class :character</td>
+<td align="left">Class :character</td>
+<td align="left">1st Qu.:0.0</td>
+<td align="left">Class :character</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Mode :character</td>
+<td align="left">Median :66.50</td>
+<td align="left">Mode :character</td>
+<td align="left">Mode :character</td>
+<td align="left">Median :0.5</td>
+<td align="left">Mode :character</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">Mean :65.75</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Mean :0.5</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">3rd Qu.:68.50</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">3rd Qu.:1.0</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">NA</td>
+<td align="left">Max. :70.00</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">Max. :1.0</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+<p>요인형 변수(<code>GPA</code>)를 만들고 기존 데이터에 추가했으니, 이제 이 변수를 숫자형으로 바꿔겠습니다. 앞서 언급했다시피 이 과정에는 두 가지 단계가 요구됩니다.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>data1<span class="op">$</span>GPA &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(data1<span class="op">$</span>GPA))</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="kw">names</span>(data1)[<span class="dv">6</span>] &lt;-<span class="st"> &quot;GPA.num&quot;</span> <span class="co"># 기존 요인형 GPA랑 새롭게 만든 숫자형 GPA 비교를 위해</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>                             <span class="co"># .num(numeric 약자)을 붙여 새로운 변수로 만듭니다.</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="kw">table</span>(data1<span class="op">$</span>GPA.num)</span></code></pre></div>
+<pre><code>## 
+## 2.2   3 3.8   4 
+##   1   1   1   1</code></pre>
+<p><code>names(data1)[6]</code>은 데이터프레임의 여섯 번째 열에 이름을 지어라(names)라는 코드입니다. 그 이름을 <code>GPA.num</code>으로 하기 위해 <code>&lt;- "GPA.num"</code>이 지정되었습니다. 만약 요인변수를 직접적으로 숫자형으로 바꾸고자 시도할 경우에는 문제가 생길 수 있습니다. 아래의 코드를 보겠습니다.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>data1 &lt;-<span class="st"> </span><span class="kw">cbind</span>(data1, GPA)</span>
+<span id="cb38-2"><a href="#cb38-2"></a>data1<span class="op">$</span>GPA &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(data1<span class="op">$</span>GPA) <span class="co"># 이렇게 하면 문제가 생김</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="kw">glimpse</span>(data1<span class="op">$</span>GPA)</span></code></pre></div>
+<pre><code>##  num [1:4] 3 4 3.8 2.2</code></pre>
+<p>두 방법의 차이를 알시겠나요? <code>GPA</code> 변수의 소수점이 다 사라지고 정수형으로 바뀌어버렸습니다. 이것이 요인형을 숫자형으로 바꾸는 데 두 단계가 필요한 이유입니다.</p>
+</div>
+<div id="다른-유형의-데이터-불러오기-loading-data-in-different-formats" class="section level3">
+<h3><span class="header-section-number">8.7.2</span> 다른 유형의 데이터 불러오기 (Loading data in different formats)</h3>
+<p>간략한 데이터셋을 직접 만들어보았으니, 이번에는 다른 연구자/기관이 구축한 데이터를 불러오는 방법을 살펴보겠습니다. 이 포스팅에서 사용할 데이터셋은 2016년도 기준으로 측정된 국가 단위의 자료이다. 이 자료의 원출처는 다음의 <a href="https://qog.pol.gu.se/data/datadownloads/data-archive">링크</a>에서 확인할 수 있으며, 본 포스팅에서 사용할 자료는 미리 분석을 용이하게 하기 위하여 일정 변수들만을 선별한 자료입니다. <strong>STATA</strong> 파일로 저장된 자료를 사용합니다.</p>
+<p>한 가지 말해두자면, <strong>R</strong>은 여러 가지 과정과 방법들로 동일한 결과를 얻을 수 있기 때문에, 자신에게 보다 효율적인 방법을 찾아가는 것이 중요합니다.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co">## STATA 파일을 불러오기 위해서는 &quot;foreign&quot; 패키지가 필요합니다.</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="co">## install.packages(&quot;foreign&quot;) # 저는 이미 설치가 되어 있습니다.</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="kw">library</span>(foreign) <span class="co"># 설치만 해서는 안되고 패키지를 불러와야 합니다.</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="co">## STATA 파일을 불러와 보겠습니다.</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>here<span class="op">::</span><span class="kw">here</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">setwd</span>()</span>
+<span id="cb40-6"><a href="#cb40-6"></a>QOG &lt;-<span class="st"> </span><span class="kw">read.dta</span>(<span class="dt">file =</span> <span class="st">&quot;example.data/qog_std_cs_jan19_ver13.dta&quot;</span>, </span>
+<span id="cb40-7"><a href="#cb40-7"></a>                <span class="dt">convert.underscore =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb40-8"><a href="#cb40-8"></a><span class="co">## foreign 함수로는 STATA 버전 13 이전의 자료만 불러들일 수 있습니다. 즉, 아래 코드는 불가.</span></span>
+<span id="cb40-9"><a href="#cb40-9"></a>QOG &lt;-<span class="st"> </span><span class="kw">read.dta</span>(<span class="dt">file =</span> <span class="st">&quot;example.data/qog_std_cs_jan19_ver15.dta&quot;</span>, </span>
+<span id="cb40-10"><a href="#cb40-10"></a>                <span class="dt">convert.underscore =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb40-11"><a href="#cb40-11"></a><span class="co">## 그렇다면 버전 13 이후는 무슨 패키지를 사용해야 할까요?</span></span>
+<span id="cb40-12"><a href="#cb40-12"></a><span class="co">## 버전 13 이후는 &quot;readstata13&quot; 로 불러올 수 있습니다.</span></span>
+<span id="cb40-13"><a href="#cb40-13"></a><span class="co"># install.packages(&quot;readstata13&quot;)</span></span>
+<span id="cb40-14"><a href="#cb40-14"></a><span class="kw">library</span>(readstata13)</span>
+<span id="cb40-15"><a href="#cb40-15"></a>QOG.v2 &lt;-<span class="st"> </span><span class="kw">read.dta13</span>(<span class="dt">file =</span> <span class="st">&quot;example.data/qog_std_cs_jan19_ver15.dta&quot;</span>, </span>
+<span id="cb40-16"><a href="#cb40-16"></a>                     <span class="dt">convert.underscore =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.checks:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.gf:
+##   Factor codes of type double or float detected - no labels assigned.
+##   Set option nonint.factors to TRUE to assign labels anyway.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.gprlc1:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.gprlc2:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.gprlc3:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.gs:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.maj:
+##   Factor codes of type double or float detected - no labels assigned.
+##   Set option nonint.factors to TRUE to assign labels anyway.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.nos:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.opf:
+##   Factor codes of type double or float detected - no labels assigned.
+##   Set option nonint.factors to TRUE to assign labels anyway.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.oprlc1:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.polariz:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   dpi.tf:
+##   Factor codes of type double or float detected - no labels assigned.
+##   Set option nonint.factors to TRUE to assign labels anyway.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   gol.mix:
+##   Missing factor labels - no labels assigned.
+##   Set option generate.factors=T to generate labels.</code></pre>
+<pre><code>## Warning in read.dta13(file = &quot;example.data/qog_std_cs_jan19_ver15.dta&quot;, : 
+##   vi.wgi:
+##   Factor codes of type double or float detected - no labels assigned.
+##   Set option nonint.factors to TRUE to assign labels anyway.</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co">## 또 다른 방법이 있다. 바로 &quot;haven&quot; 패키지를 이용하는 것입니다.</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="co">## install.packages(&quot;haven&quot;)</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="kw">library</span>(haven)</span>
+<span id="cb55-4"><a href="#cb55-4"></a>QOG.v3 &lt;-<span class="st"> </span><span class="kw">read_stata</span>(<span class="st">&quot;example.data/qog_std_cs_jan19_ver15.dta&quot;</span>)</span>
+<span id="cb55-5"><a href="#cb55-5"></a></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="co">## 근데 저는 foreign 이나 haven 패키지 모두 안 씁니다.</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a><span class="co">## 더 효율적인 패키지를 찾았거든요. 바로 ezpickr 입니다.</span></span>
+<span id="cb55-8"><a href="#cb55-8"></a><span class="co">## install.packages(&quot;ezpickr&quot;)</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a><span class="kw">library</span>(ezpickr)</span>
+<span id="cb55-10"><a href="#cb55-10"></a>QOG.v4 &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="st">&quot;example.data/qog_std_cs_jan19_ver15.dta&quot;</span>)</span></code></pre></div>
+</div>
+<div id="자료-머징하기-using-data-merging" class="section level3">
+<h3><span class="header-section-number">8.7.3</span> 자료 머징하기 (Using Data Merging)</h3>
+<p>자료 머지(merge)에도 여러 가지 유형이 있는데, 오늘 간단하게 살펴볼 것은 기존 데이터을 다른 데이터의 변수들을 이용해 확장하는 유형의 머징입니다. 두 국가 간의 인구 차이를 측정하는 국가쌍(dyadic) 변수를 코드하고자 한다고 해보겠습니다. 먼저 <code>QOG</code> 데이터의 하위 셋(subset)을 만듭니다.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">## names(QOG) # QOG 데이터프레임의 변수명을 나열하라는 함수입니다.</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="co">## 변수가 엄청 많습니다.</span></span>
+<span id="cb56-3"><a href="#cb56-3"></a><span class="kw">length</span>(<span class="kw">names</span>(QOG)) <span class="co"># 1983개의 변수</span></span></code></pre></div>
+<pre><code>## [1] 1983</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>QOG.tomerge &lt;-<span class="st"> </span><span class="kw">subset</span>(QOG, <span class="dt">select =</span> <span class="kw">c</span>(ccodecow, wdi.pop))</span>
+<span id="cb58-2"><a href="#cb58-2"></a><span class="co">## QOG.tomerge라는 하위 셋을 만들라는 명령입니다.</span></span>
+<span id="cb58-3"><a href="#cb58-3"></a><span class="co">## QOG라는 자료에서 ccodecow와 wdi.pop라는 두 변수만을 선택(select)하여 만듭니다.</span></span>
+<span id="cb58-4"><a href="#cb58-4"></a>QOG.tomerge &lt;-<span class="st"> </span><span class="kw">subset</span>(QOG, ccodecow <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>, <span class="dt">select =</span> <span class="kw">c</span>(ccodecow, wdi.pop))</span>
+<span id="cb58-5"><a href="#cb58-5"></a><span class="co">## QOG.tomerge라는 하위 셋을 만들어라. 이 경우에는 앞의 QOG.tomerge를 대체(replace)합니다.</span></span>
+<span id="cb58-6"><a href="#cb58-6"></a><span class="co">## QOG라는 자료에서 ccodecode가 100보다 큰 경우에 한하여(조건)</span></span>
+<span id="cb58-7"><a href="#cb58-7"></a><span class="co">## ccodecow와 wdi.pop라는 변수를 선택하여 하위 셋을 만듭니다.</span></span>
+<span id="cb58-8"><a href="#cb58-8"></a><span class="co">## 결과적으로 QOG.tomerge는 cowcode가 100보다 큰 국가들의 세계발전지표 상의 인구</span></span>
+<span id="cb58-9"><a href="#cb58-9"></a><span class="co">## 지표들을 가지게 됩니다.</span></span></code></pre></div>
+<p>교차사례 데이터 <code>QOG.tomerge</code>를 중복하여 머지해보겠습니다. 이렇게 하면 우리는 총 <code>국가1</code>과 <code>국가2</code>, 그리고 연도에 따른 동일한 변수들을 갖는 결합된 데이터를 갖게 될 것입니다. 각각의 관측치들은 모든 관측치와 매칭(matching)이 되기 때문에 우리는 동일한 국가 쌍의 자료들을 갖게 됩니다. 말이 더 어렵군요… 백문이 불여일견.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>QOG.dyad &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> QOG.tomerge, <span class="dt">y =</span> QOG.tomerge, <span class="dt">by =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<div class="figure">
+<img src="r.post/merge.png" alt="" />
+<p class="caption">이렇게 머지하면, x 국가군의 cowcode와 인구지표, 그리고 y 국가군의 cowcode를 가지게 됩니다.</p>
+</div>
+<p>이 경우에 동일한 국가쌍(self-dyads)은 제거해야 두 국가 간의 관계를 살펴볼 수 있을 것입니다. 동일한 국가의 인구 지표는 차이가 없으니까요!</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="kw">names</span>(QOG.dyad)</span></code></pre></div>
+<pre><code>## [1] &quot;ccodecow.x&quot; &quot;wdi.pop.x&quot;  &quot;ccodecow.y&quot; &quot;wdi.pop.y&quot;</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>QOG.dyad &lt;-<span class="st"> </span><span class="kw">subset</span>(QOG.dyad, ccodecow.x <span class="op">!=</span><span class="st"> </span>ccodecow.y)</span>
+<span id="cb62-2"><a href="#cb62-2"></a><span class="co">## QOG.dyad 자료에서 ccodecow.x가 ccodecow.y와 다른 경우만 다시 저장합니다.</span></span>
+<span id="cb62-3"><a href="#cb62-3"></a>QOG.dyad<span class="op">$</span>pop.dif &lt;-<span class="st"> </span>QOG.dyad<span class="op">$</span>wdi.pop.x <span class="op">-</span><span class="st"> </span>QOG.dyad<span class="op">$</span>wdi.pop.y</span>
+<span id="cb62-4"><a href="#cb62-4"></a><span class="co">## QOG.dyad 데이터프레임에 pop.dif, 인구차이라는 변수를 새로 만듭니다.</span></span>
+<span id="cb62-5"><a href="#cb62-5"></a><span class="co">## 인구 차이는 x국가의 wdi.pop.x에서 wdi.pop.y 를 감한 값입니다.</span></span>
+<span id="cb62-6"><a href="#cb62-6"></a><span class="co">## 이 변수는 x국가와 y국가 간 인구 차이, 즉 두 국가 간의 역동적 관계를 보여줍니다.</span></span></code></pre></div>
+<p>위와 같이 <code>wdi.dif</code>라는 인구 차이 변수는 사실 <code>x</code>에서 <code>y</code>를 빼나 <code>y</code>에서 <code>x</code>를 빼나 부호를 제외하고 그 크기는 동일합니다. 따라서 우리는 따로 방향(direction)을 고려할 필요가 없습니다. 아래의 코드는 방향성을 제거한 국가쌍 자료(non-directed dyads)를 만드는 것입니다.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>QOG.nddyad &lt;-<span class="st"> </span><span class="kw">subset</span>(QOG.dyad, ccodecow.x <span class="op">&lt;</span><span class="st"> </span>ccodecow.y)</span>
+<span id="cb63-2"><a href="#cb63-2"></a>QOG.nddyad<span class="op">$</span>pop.dif.nd &lt;-<span class="st"> </span><span class="kw">abs</span>(QOG.nddyad<span class="op">$</span>wdi.pop.x <span class="op">-</span><span class="st"> </span>QOG.nddyad<span class="op">$</span>wdi.pop.y)</span>
+<span id="cb63-3"><a href="#cb63-3"></a><span class="co">## abs는 absolute value, 부호를 고려하지 않기 위해서 절대값으로 만들라는 것입니다.</span></span></code></pre></div>
+<p>이번에는 국가-연도(country-year) 자료를 국가쌍-연도(dyad-year) 자료로 전환하는 사례를 살펴보겠습니다. 이를 위해서 일단 교차사례 시계열 데이터셋을 웹에서 다운받아 열어봅니다(time-series cross-sectional dataset). 이렇게 불러온 데이터셋은 1816년부터 2016년 사이의 국가들의 자료를 구축한 국가-연도를 분석단위로 한 자료입니다.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co">## COW 국가-연도 목록을 불러왔습니다.</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>stateyear &lt;-</span>
+<span id="cb64-3"><a href="#cb64-3"></a><span class="st">  </span><span class="kw">read.csv</span>(<span class="st">&quot;http://correlatesofwar.org/data-sets/state-system-membership/system2016&quot;</span>,</span>
+<span id="cb64-4"><a href="#cb64-4"></a>                      <span class="dt">head =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>)<span class="co"># Look at country codes</span></span>
+<span id="cb64-5"><a href="#cb64-5"></a><span class="kw">unique</span>(stateyear<span class="op">$</span>ccode) <span class="co"># 중복되지 않는 국가코드만 보이게 했습니다.</span></span></code></pre></div>
+<pre><code>##   [1]   2 200 210 220 225 230 235 245 255 267 269 271 273 275 300 325 327 329
+##  [19] 337 365 380 390 640 140 616 350 211  70 100 240 135 155 101 160 332 280
+##  [37] 150 600 145 335 130 630 651  41 710 740  90  92 345 360 165 730 800  42
+##  [55] 530  91  93  40  95 385 355 339 375 290 310 315 366 367 368 305 700  20
+##  [73]  94 212 450 560 790 900 920 712 205 678 670 645 395 652 660 663 840 750
+##  [91] 770 666 731 775 780 713 732 850 620 811 812 265 816 817 260 625 452 820
+## [109] 438 352 432 433 434 435 436 437 439 461 471 475 481 482 483 484 490 520
+## [127] 580 451 510 690  51  52 500 516 517 615 501 511 338 551 553 420 552 781
+## [145] 830  53 110 570 571 680 411 572 590 950 692 694 696 698 760 771  31  55
+## [163] 404 115 402 403 540 541 581 910 591 990 522  54 940  56  57  58  80 935
+## [181]  60 835 223 565 679 359 369 370 371 372 373 701 702 703 704 705 983 987
+## [199] 331 344 346 349 221 232 316 317 343 531 986 946 955 970 947 860 341 347
+## [217] 626</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="kw">table</span>(stateyear<span class="op">$</span>ccode)  <span class="co"># 각 국가코드가 몇 개의 관측치를 가지는지를 보여줍니다.</span></span></code></pre></div>
+<pre><code>## 
+##   2  20  31  40  41  42  51  52  53  54  55  56  57  58  60  70  80  90  91  92 
+## 201  97  44 113 140 116  55  55  51  39  43  38  38  36  34 186  36 149 118 142 
+##  93  94  95 100 101 110 115 130 135 140 145 150 155 160 165 200 205 210 211 212 
+## 117  97 114 186 176  51  42 163 178 195 169 166 178 176 135 201  95 197 183  94 
+## 220 221 223 225 230 232 235 240 245 255 260 265 267 269 271 273 275 280 290 300 
+## 200  24  27 201 201  24 201  30  56 157  36  37  56  52  56  51  52  25  94 103 
+## 305 310 315 316 317 325 327 329 331 332 335 337 338 339 341 343 344 345 346 347 
+##  82  99  70  24  24 201  45  46  25  19  10  45  53  99  11  24  25 137  25   9 
+## 349 350 352 355 359 360 365 366 367 368 369 370 371 372 373 375 380 385 390 395 
+##  25 187  57 109  26 139 201  49  49  49  26  26  26  26  26 100 201 108 197  73 
+## 402 403 404 411 420 432 433 434 435 436 437 438 439 450 451 452 461 471 475 481 
+##  42  42  43  49  52  57  57  57  57  57  57  59  57  97  56  60  57  57  57  57 
+## 482 483 484 490 500 501 510 511 516 517 520 522 530 531 540 541 551 552 553 560 
+##  57  57  57  57  55  54  56   2  55  55  57  40 115  24  42  42  53  52  53  97 
+## 565 570 571 572 580 581 590 591 600 615 616 620 625 626 630 640 645 651 652 660 
+##  27  51  51  49  57  42  49  41 127  55 118  66  61   6 162 201  85 108  69  71 
+## 663 666 670 678 679 680 690 692 694 696 698 700 701 702 703 704 705 710 712 713 
+##  71  69  90  65  27  24  56  46  46  46  46  98  26  26  26  26  26 157  96  68 
+## 730 731 732 740 750 760 770 771 775 780 781 790 800 811 812 816 817 820 830 835 
+##  19  69  68 151  70  46  70  46  69  69  52  97 130  64  64  63  22  60  52  33 
+## 840 850 860 900 910 920 935 940 946 947 950 955 970 983 986 987 990 
+##  71  68  15  97  42  97  36  39  18  17  47  18  18  26  23  26  41</code></pre>
+<p>불러온 목록에서 숫자형으로 저장된 <code>COW</code>국가 코드만 따로 떼어서 볼 수 있고, 코드별로 연도별 자료가 얼마나 관측되어 있는지 확인할 수 있습니다. 이제 여기서 연도와 <code>ccode</code> 변수만 따로 떼어보겠습니다.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>stateyear &lt;-<span class="st"> </span><span class="kw">subset</span>(stateyear, <span class="dt">select =</span> <span class="kw">c</span>(year, ccode))</span></code></pre></div>
+<p>그리고 새로운 패키지, <code>countrycode()</code>를 이용하여 국가 이름 변수를 새롭게 만들어 데이터에 추가해보겠습니다.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co">## install.packages(&quot;countrycode&quot;)</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a><span class="kw">library</span>(countrycode)</span>
+<span id="cb69-3"><a href="#cb69-3"></a>stateyear<span class="op">$</span>countryname &lt;-<span class="st"> </span><span class="kw">countrycode</span>(stateyear<span class="op">$</span>ccode, <span class="st">&quot;cown&quot;</span>, <span class="st">&quot;country.name&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in countrycode(stateyear$ccode, &quot;cown&quot;, &quot;country.name&quot;): Some values were not matched unambiguously: 260, 730</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co">## stateyear 자료에서 ccode 변수를 숫자형(&quot;cown&quot;)에서 문자형(&quot;country.name&quot;)으로 변경합니다.</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a><span class="co">## stateyear 자료에 countryname 이라는 새로운 이름 변수를 만들어 바꾼 자료를 배정합니다.</span></span>
+<span id="cb71-3"><a href="#cb71-3"></a></span>
+<span id="cb71-4"><a href="#cb71-4"></a><span class="co">## 이 자료에서 결측치(missing values)를 제거해보겠습니다. </span></span>
+<span id="cb71-5"><a href="#cb71-5"></a><span class="co">## complete.cases는 결측치를 제외한 변수들 짝이 완전하게 맞는 사례들만을 선별하라는 옵션입니다.</span></span>
+<span id="cb71-6"><a href="#cb71-6"></a>stateyear &lt;-<span class="st"> </span><span class="kw">subset</span>(stateyear, <span class="kw">complete.cases</span>(stateyear))</span>
+<span id="cb71-7"><a href="#cb71-7"></a><span class="kw">head</span>(stateyear)</span></code></pre></div>
+<pre><code>##   year ccode    countryname
+## 1 1816     2  United States
+## 2 1816   200 United Kingdom
+## 3 1816   210    Netherlands
+## 4 1816   220         France
+## 5 1816   225    Switzerland
+## 6 1816   230          Spain</code></pre>
+<p>연도 변수를 이용해서 이번에는 다시 국가쌍 자료로 머징해보겠습니다.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>dyadyear &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x=</span>stateyear, <span class="dt">y=</span>stateyear, <span class="dt">by.x=</span><span class="kw">c</span>(<span class="st">&quot;year&quot;</span>), <span class="dt">by.y=</span><span class="kw">c</span>(<span class="st">&quot;year&quot;</span>))</span>
+<span id="cb73-2"><a href="#cb73-2"></a><span class="kw">head</span>(dyadyear)</span></code></pre></div>
+<pre><code>##   year ccode.x countryname.x ccode.y  countryname.y
+## 1 1816       2 United States       2  United States
+## 2 1816       2 United States     200 United Kingdom
+## 3 1816       2 United States     210    Netherlands
+## 4 1816       2 United States     220         France
+## 5 1816       2 United States     225    Switzerland
+## 6 1816       2 United States     230          Spain</code></pre>
+<p>아까처럼 1행의 자기자신의 쌍을 구성하는 경우를 제거해보겠습니다. 이번에는 <code>subset()</code> 함수가 아니라 조건(condition, if)를 의미하는 대괄호를 이용해보겠습니다.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>dyadyear &lt;-<span class="st"> </span>dyadyear[dyadyear<span class="op">$</span>countryname.x <span class="op">!=</span><span class="st"> </span>dyadyear<span class="op">$</span>countryname.y, ]</span>
+<span id="cb75-2"><a href="#cb75-2"></a><span class="kw">head</span>(dyadyear)</span></code></pre></div>
+<pre><code>##   year ccode.x countryname.x ccode.y  countryname.y
+## 2 1816       2 United States     200 United Kingdom
+## 3 1816       2 United States     210    Netherlands
+## 4 1816       2 United States     220         France
+## 5 1816       2 United States     225    Switzerland
+## 6 1816       2 United States     230          Spain
+## 7 1816       2 United States     235       Portugal</code></pre>
+<p>과연 이렇게 만든 게 자기쌍(self-dyads)을 잘 제거했는지 확인해볼 필요가 있습니다. 논리형 연산자(<code>==</code>)를 이용하기 때문에 결과는 <code>TRUE</code> 또는 <code>FALSE</code>로 나타날 것입니다.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="kw">table</span>(dyadyear<span class="op">$</span>countryname.x <span class="op">==</span><span class="st"> </span>dyadyear<span class="op">$</span>countryname.y)</span></code></pre></div>
+<pre><code>## 
+##   FALSE 
+## 1901152</code></pre>
+<p>이번에는 1980년 이후의 자료들만 가지고 국가쌍의 하위 데이터셋을 구해보겠습니다. 대괄호(<code>[]</code>)와 <code>subset()</code> 함수를 이용한 방법 모두를 살펴보겠습니다.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a><span class="co">## 대괄호 [] 를 이용한 방법</span></span>
+<span id="cb79-2"><a href="#cb79-2"></a>dyadyearp80 &lt;-<span class="st"> </span>dyadyear[dyadyear<span class="op">$</span>year <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1980</span>,] </span>
+<span id="cb79-3"><a href="#cb79-3"></a><span class="kw">glimpse</span>(dyadyearp80)</span></code></pre></div>
+<pre><code>## Rows: 1,218,624
+## Columns: 5
+## $ year          &lt;int&gt; 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980,...
+## $ ccode.x       &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...
+## $ countryname.x &lt;chr&gt; &quot;United States&quot;, &quot;United States&quot;, &quot;United States&quot;, &quot;U...
+## $ ccode.y       &lt;int&gt; 20, 31, 40, 41, 42, 51, 52, 53, 54, 55, 56, 57, 70, 9...
+## $ countryname.y &lt;chr&gt; &quot;Canada&quot;, &quot;Bahamas&quot;, &quot;Cuba&quot;, &quot;Haiti&quot;, &quot;Dominican Repu...</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co">## subset 함수를 이용한 방법</span></span>
+<span id="cb81-2"><a href="#cb81-2"></a>dyadyearp80 &lt;-<span class="st"> </span><span class="kw">subset</span>(dyadyear, dyadyear<span class="op">$</span>year <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1980</span>)</span>
+<span id="cb81-3"><a href="#cb81-3"></a><span class="kw">glimpse</span>(dyadyearp80)</span></code></pre></div>
+<pre><code>## Rows: 1,218,624
+## Columns: 5
+## $ year          &lt;int&gt; 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980,...
+## $ ccode.x       &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...
+## $ countryname.x &lt;chr&gt; &quot;United States&quot;, &quot;United States&quot;, &quot;United States&quot;, &quot;U...
+## $ ccode.y       &lt;int&gt; 20, 31, 40, 41, 42, 51, 52, 53, 54, 55, 56, 57, 70, 9...
+## $ countryname.y &lt;chr&gt; &quot;Canada&quot;, &quot;Bahamas&quot;, &quot;Cuba&quot;, &quot;Haiti&quot;, &quot;Dominican Repu...</code></pre>
+<p>이번에는 변수들의 이름을 바꿔보겠습니다. 첫 번째는 기본 함수를 이용하고, 두 번째는 <code>plyr</code> 패키지를 이용해서 동일한 결과를 만들어 보겠습니다.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a><span class="co">## 기본 함수를 이용해 변수명 바꾸기</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a><span class="co">## names(dyadyearp80)[변수 순서] &lt;- &quot;바꿀 변수 이름&quot;</span></span>
+<span id="cb83-3"><a href="#cb83-3"></a><span class="co">## 2번째 변수부터 5번째 변수들의 이름을 바꿔보자.</span></span>
+<span id="cb83-4"><a href="#cb83-4"></a><span class="kw">names</span>(dyadyearp80)[<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ccode1&quot;</span>, <span class="st">&quot;countryname1&quot;</span>, </span>
+<span id="cb83-5"><a href="#cb83-5"></a>                             <span class="st">&quot;ccode2&quot;</span>, <span class="st">&quot;countryname2&quot;</span>)</span>
+<span id="cb83-6"><a href="#cb83-6"></a><span class="kw">head</span>(dyadyearp80)</span></code></pre></div>
+<pre><code>##        year ccode1  countryname1 ccode2       countryname2
+## 691715 1980      2 United States     20             Canada
+## 691716 1980      2 United States     31            Bahamas
+## 691717 1980      2 United States     40               Cuba
+## 691718 1980      2 United States     41              Haiti
+## 691719 1980      2 United States     42 Dominican Republic
+## 691720 1980      2 United States     51            Jamaica</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="co">## install.packages(&quot;plyr&quot;)</span></span>
+<span id="cb85-2"><a href="#cb85-2"></a><span class="kw">library</span>(plyr)</span></code></pre></div>
+<pre><code>## ------------------------------------------------------------------------------</code></pre>
+<pre><code>## You have loaded plyr after dplyr - this is likely to cause problems.
+## If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+## library(plyr); library(dplyr)</code></pre>
+<pre><code>## ------------------------------------------------------------------------------</code></pre>
+<pre><code>## 
+## Attaching package: &#39;plyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     arrange, count, desc, failwith, id, mutate, rename, summarise,
+##     summarize</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     compact</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a>dyadyearp80 &lt;-<span class="st"> </span><span class="kw">rename</span>(dyadyearp80, <span class="kw">c</span>(<span class="st">&quot;ccode.x&quot;</span> =<span class="st"> &quot;ccode1&quot;</span>, </span>
+<span id="cb92-2"><a href="#cb92-2"></a>                                     <span class="st">&quot;ccode.y&quot;</span> =<span class="st"> &quot;ccode2&quot;</span>,</span>
+<span id="cb92-3"><a href="#cb92-3"></a>                                     <span class="st">&quot;countryname.x&quot;</span> =<span class="st"> &quot;countryname1&quot;</span>,</span>
+<span id="cb92-4"><a href="#cb92-4"></a>                                     <span class="st">&quot;countryname.y&quot;</span> =<span class="st"> &quot;countryname2&quot;</span>))</span></code></pre></div>
+<pre><code>## The following `from` values were not present in `x`: ccode.x, ccode.y, countryname.x, countryname.y</code></pre>
+</div>
+<div id="예제-correlatesofwar.org에서-capabilities-데이터셋을-불러오기3-3" class="section level3">
+<h3><span class="header-section-number">8.7.4</span> 예제: correlatesofwar.org에서 capabilities 데이터셋을 불러오기<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></h3>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a>cinc.link &lt;-<span class="st"> </span></span>
+<span id="cb94-2"><a href="#cb94-2"></a><span class="st">  &quot;http://correlatesofwar.org/data-sets/national-material-capabilities/nmc-v4-data&quot;</span></span>
+<span id="cb94-3"><a href="#cb94-3"></a>cinc &lt;-</span>
+<span id="cb94-4"><a href="#cb94-4"></a><span class="st">  </span><span class="kw">read.csv</span>(<span class="dt">file =</span> cinc.link,</span>
+<span id="cb94-5"><a href="#cb94-5"></a>           <span class="dt">head =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb94-6"><a href="#cb94-6"></a>           <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb94-7"><a href="#cb94-7"></a>           <span class="dt">na =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">9</span>))</span></code></pre></div>
+<p><code>COW</code> 홈페이지에서 <code>CINC</code> 데이터셋을 로드해보겠습니다. <code>CINC</code> (Composite Index of National Capability) Score는 국가-연도 별로 국가의 물질적 능력(national materials capabilities)에 대한 구성요소로서 측정된 여섯 가지 개별 지표들을 종합하여 한 지표로 만든 결과입니다 (Singer, Bremer and Stuckey, 1972).</p>
+<ul>
+<li><code>CINC</code>는 각 구성요소를 동등하게 가중치를 부여하여 종합한 개별 연도마다의 능력 (capabilities)의 평균을 체계 전체 (total system)에서의 몫(share)으로 나타낸 것이다.</li>
+<li>결과적으로 <code>CINC</code>는 0부터 1 사이의 값을 가지고 0은 해당 년도 체계 내에서 그 국가가 전체의 0%의 능력을 가지고 있다는 것을 의미합니다.</li>
+<li>반대로 1은 주어진 연도에서의 100%의 역량을 보여줍니다 (Correlates of War Project National Material Capabilities (NMC) Data Documentation Version 5.0. Codebook 참조)</li>
+</ul>
+<p><code>CINC</code> 데이터셋을 <code>ID</code>와 <code>CINC score</code>의 두 변수만 갖도록 분할해보겠습니다.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a>cinc.cut &lt;-<span class="st"> </span>cinc[<span class="kw">c</span>(<span class="st">&quot;ccode&quot;</span>, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;cinc&quot;</span>)]</span></code></pre></div>
+<p><code>CINC</code> 값은 주어진 연도에서 국가쌍이 아닌, <strong>한 국가</strong>의 힘을 측정한 결과입니다. 그러나 우리는 이 <code>CINC</code> score를 이용해서 국가쌍의 변수로 만들 것이기 때문에, 먼저, 첫 번째 국가군 (country1 of <code>ccode1</code>)에 대한 CINC 자료들을 머지해보겠습니다.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>dyadcap &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> dyadyearp80,</span>
+<span id="cb96-2"><a href="#cb96-2"></a>                 <span class="dt">y =</span> cinc.cut,</span>
+<span id="cb96-3"><a href="#cb96-3"></a>                 <span class="dt">by.x =</span> <span class="kw">c</span>(<span class="st">&quot;ccode1&quot;</span>, <span class="st">&quot;year&quot;</span>),</span>
+<span id="cb96-4"><a href="#cb96-4"></a>                 <span class="dt">by.y =</span> <span class="kw">c</span>(<span class="st">&quot;ccode&quot;</span>, <span class="st">&quot;year&quot;</span>))</span>
+<span id="cb96-5"><a href="#cb96-5"></a>dyadcap &lt;-<span class="st"> </span><span class="kw">rename</span>(dyadcap, <span class="kw">c</span>(<span class="st">&quot;cinc&quot;</span> =<span class="st"> &quot;cinc1&quot;</span>))</span>
+<span id="cb96-6"><a href="#cb96-6"></a><span class="kw">head</span>(dyadcap)</span></code></pre></div>
+<pre><code>##   ccode1 year countryname1 ccode2        countryname2     cinc1
+## 1    100 1980     Colombia    404       Guinea-Bissau 0.0036558
+## 2    100 1980     Colombia    411   Equatorial Guinea 0.0036558
+## 3    100 1980     Colombia    484 Congo - Brazzaville 0.0036558
+## 4    100 1980     Colombia    490    Congo - Kinshasa 0.0036558
+## 5    100 1980     Colombia    500              Uganda 0.0036558
+## 6    100 1980     Colombia    501               Kenya 0.0036558</code></pre>
+<p>국가쌍의 역량을 보여주는 변수(dyad capabilities)라는 의미로 <code>dyadcap</code>이라는 데이터를 만들어았습니다. 머지할 첫 번째 데이터는 이전에 만들어 둔 <code>dyadyearp80</code>이고 두 번째 머지 대상 데이터는 <code>cinc.cut</code>입니다. <code>merge()</code> 함수는 나중에 따로 구체적으로 다루겠지만 아래의 <a href="(https://www.rapidinsightinc.com/7-data-cleanup-terms-explained-visually/)">그림</a>에서 개념을 개략적으로 파악할 수 있습니다.</p>
+<p><img src="r.post/Merging.jpg" /></p>
+<p>그림을 보면 <code>State</code> 변수를 기준으로 같은 <code>State</code>에 <code>Capital</code>과 <code>Population</code>이 묶인 것을 볼 수 있습니다다. 위의 R-code에서는 첫 번째 데이터에서는 <code>ccode1</code>과 <code>year</code> 변수를 기준으로, 두 번째 데이터에서는 <code>ccode</code>와 <code>year</code>를 기준으로 <code>dyadyearp80</code>의 <code>ccode1</code>과 <code>year</code>를 <code>cinc.cut</code>의 <code>ccode</code>와 <code>year</code>를 동일한 것으로 간주하여 두 변수를 하나의 데이터셋 안에 머지하라는 의미입니다.</p>
+<p>국가쌍의 <code>CINC</code> 변수를 만든다는 것은 국가1과 국가2의 <code>CINC</code> 변수 두 개가 필요하다는 것입니다. 그렇다면 이후에 또 머지하여 추가될 변수와 기존의 변수가 충돌하지 않기 위해서 이름을 바꾸어줄 필요가 있습니다. 그래서 첫 번째 <code>CINC</code> 변수를 <code>CINC1</code>로 바꾸어주었습니다.</p>
+<p>이제 국가2의 <code>CINC</code> score를 머지해보겠습니다. 앞서와의 동일한 과정을 진행하되 <code>ccode2</code>에 대한 <code>CINC</code> score를 머지해야 하니까 기준을 바꿔주면 됩니다.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a>dyadcap &lt;-<span class="st"> </span><span class="kw">merge</span>(<span class="dt">x =</span> dyadcap, </span>
+<span id="cb98-2"><a href="#cb98-2"></a>                 <span class="dt">y =</span> cinc.cut, </span>
+<span id="cb98-3"><a href="#cb98-3"></a>                 <span class="dt">by.x =</span> <span class="kw">c</span>(<span class="st">&quot;ccode2&quot;</span>, <span class="st">&quot;year&quot;</span>), </span>
+<span id="cb98-4"><a href="#cb98-4"></a>                 <span class="dt">by.y =</span> <span class="kw">c</span>(<span class="st">&quot;ccode&quot;</span>, <span class="st">&quot;year&quot;</span>))</span>
+<span id="cb98-5"><a href="#cb98-5"></a><span class="kw">head</span>(dyadcap)</span></code></pre></div>
+<pre><code>##   ccode2 year ccode1 countryname1 countryname2     cinc1      cinc
+## 1    100 1980    360      Romania     Colombia 0.0092665 0.0036558
+## 2    100 1980    325        Italy     Colombia 0.0197606 0.0036558
+## 3    100 1980    435   Mauritania     Colombia 0.0001495 0.0036558
+## 4    100 1980    812         Laos     Colombia 0.0005248 0.0036558
+## 5    100 1980    670 Saudi Arabia     Colombia 0.0087585 0.0036558
+## 6    100 1980    732  South Korea     Colombia 0.0138224 0.0036558</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a>dyadcap &lt;-<span class="st"> </span><span class="kw">rename</span>(dyadcap, <span class="kw">c</span>(<span class="st">&quot;cinc&quot;</span> =<span class="st"> &quot;cinc2&quot;</span>))</span></code></pre></div>
+<p>이렇게 만들어진 두 개의 <code>CINC</code> score를 이용하여 국가1과 국가2의 상대적 국력을 측정하는 변수를 새롭게 만들어 보겠습니다.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a>dyadcap<span class="op">$</span>caprat &lt;-<span class="st"> </span>dyadcap<span class="op">$</span>cinc1<span class="op">/</span>dyadcap<span class="op">$</span>cinc2</span></code></pre></div>
+<p>이렇게 만들어진 변수는(데이터는) 방향성을 가진 국가쌍의 분석 수준의 자료입니다. 예를 들어, 이 자료에는 미국-캐나다 간의 국력과 캐나다-미국 간의 국력이 순서만 바뀐 채로 동일한 값 (동일한 <code>caprat</code> 변수값)을 가지고 있습니다.</p>
+<p>이 중복된 값은 불필요하기 때문에 방향성을 제거할 필요가 있습니다(non-directed). 아래의 변수는 <code>ccode1</code>이 <code>ccode2</code>보다 작은 경우만을 남기라는 코드입니다. 즉, <code>ccode</code> 값이 2인 미국과 <code>ccode</code> 값이 731(맞나…? 이거 쓸 때는 지금 코드북을 안보고 있숩… 아마 우리나라 맞을 것인디…)인 한국의 상대적 국력 변수를 보면,</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a>dyadcap <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(ccode1, ccode2, year, caprat) <span class="op">%&gt;%</span></span>
+<span id="cb102-2"><a href="#cb102-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(ccode1 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">731</span>), </span>
+<span id="cb102-3"><a href="#cb102-3"></a>                ccode2 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">731</span>), </span>
+<span id="cb102-4"><a href="#cb102-4"></a>                year <span class="op">==</span><span class="st"> </span><span class="dv">2000</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb102-5"><a href="#cb102-5"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ccode1</th>
+<th align="right">ccode2</th>
+<th align="right">year</th>
+<th align="right">caprat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">731</td>
+<td align="right">2</td>
+<td align="right">2000</td>
+<td align="right">0.0712893</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">731</td>
+<td align="right">2000</td>
+<td align="right">14.0273479</td>
+</tr>
+</tbody>
+</table>
+<p>로 두 국가 간의 국력비교 변수가 중복되어 있음을 확인할 수 있습니다. 이를</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a>dyadcap <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb103-2"><a href="#cb103-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(ccode1 <span class="op">%in%</span><span class="st"> </span><span class="dv">2</span>, </span>
+<span id="cb103-3"><a href="#cb103-3"></a>                ccode2 <span class="op">%in%</span><span class="st"> </span><span class="dv">731</span>, </span>
+<span id="cb103-4"><a href="#cb103-4"></a>                year <span class="op">==</span><span class="st"> </span><span class="dv">2000</span>) <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ccode2</th>
+<th align="right">year</th>
+<th align="right">ccode1</th>
+<th align="left">countryname1</th>
+<th align="left">countryname2</th>
+<th align="right">cinc1</th>
+<th align="right">cinc2</th>
+<th align="right">caprat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">731</td>
+<td align="right">2000</td>
+<td align="right">2</td>
+<td align="left">United States</td>
+<td align="left">North Korea</td>
+<td align="right">0.1429513</td>
+<td align="right">0.0101909</td>
+<td align="right">14.02735</td>
+</tr>
+</tbody>
+</table>
+<p>의 결과로 바꾸어주는 것입니다.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a>dyadcapnd &lt;-<span class="st"> </span>dyadcap[dyadcap<span class="op">$</span>ccode1 <span class="op">&lt;</span><span class="st"> </span>dyadcap<span class="op">$</span>ccode2,]</span></code></pre></div>
+<p>이번에는 방향성을 제거한 국가쌍의 상대적 국력 지표를 만들어보겠습니다. 두 국가의 국력 중 큰 국력을 작은 국력으로 나누어서 상대적 국력 변수를 만들 것입니다.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a>dyadcapnd<span class="op">$</span>caprat &lt;-<span class="st"> </span><span class="kw">pmax</span>(dyadcapnd<span class="op">$</span>cinc1, dyadcapnd<span class="op">$</span>cinc2)<span class="op">/</span></span>
+<span id="cb105-2"><a href="#cb105-2"></a><span class="st">  </span><span class="kw">pmin</span>(dyadcapnd<span class="op">$</span>cinc1, dyadcapnd<span class="op">$</span>cinc2)</span>
+<span id="cb105-3"><a href="#cb105-3"></a><span class="kw">summary</span>(dyadcapnd<span class="op">$</span>caprat)</span></code></pre></div>
+<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+##      1.0      2.7      9.1    505.5     52.8 775694.9</code></pre>
+<p>상대적 국력 변수라고 이름짓는 이유는 두 <code>cinc1</code>과 <code>cinc2</code>의 값이 같다면(상대적 국력이 같다면) 이 변수는 1의 값을 가질 것이고, 만약 <code>cinc1</code>이 <code>cinc2</code>에 비해 상대적으로 큰 국력을 가진다면 1보다 큰 값을 가질 것이기 때문입니다. 다만 <code>pmax()</code>와 <code>pmin()</code> 함수는 뒤에 포함된 괄호 안의 두 값 중 <code>최대값</code>과 <code>최소값</code>을 뽑아내라는 의미이므로 두 국가쌍의 값은 항상 최대값/최소값을 갖습니다.</p>
+<p>만약 이 함수를 이용하지 않았더라면 <code>cinc1 &lt; cinc2</code> 인 상황에서 <code>cinc1/cinc2</code>로 계산되어, 1보다 작은 분수 값을 가지게 되었을 테지만, <code>pmax &amp; pmin</code> 조합을 통해서 우리는 1을 최소값으로 갖는 변수로 상대적 지표를 조작하게 된 것입니다.</p>
+</div>
+</div>
+<div id="요약통계표를-.tex-파일로-저장하기" class="section level2">
+<h2><span class="header-section-number">8.8</span> 요약통계표를 .tex 파일로 저장하기</h2>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1"></a><span class="kw">library</span>(stargazer)</span></code></pre></div>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1"></a>dyadcapnd &lt;-<span class="st"> </span><span class="kw">subset</span>(dyadcapnd, </span>
+<span id="cb111-2"><a href="#cb111-2"></a>                    <span class="dt">select =</span> <span class="op">-</span><span class="kw">c</span>(countryname1, countryname2))</span>
+<span id="cb111-3"><a href="#cb111-3"></a><span class="kw">glimpse</span>(dyadcapnd)</span></code></pre></div>
+<pre><code>## Rows: 439,659
+## Columns: 6
+## $ ccode2 &lt;int&gt; 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, ...
+## $ year   &lt;int&gt; 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980, 1980, ...
+## $ ccode1 &lt;int&gt; 31, 2, 90, 40, 94, 93, 52, 20, 70, 51, 95, 92, 41, 53, 42, 5...
+## $ cinc1  &lt;dbl&gt; 0.00023320, 0.13170460, 0.00061660, 0.00287420, 0.00020330, ...
+## $ cinc2  &lt;dbl&gt; 0.0036558, 0.0036558, 0.0036558, 0.0036558, 0.0036558, 0.003...
+## $ caprat &lt;dbl&gt; 15.676672, 36.026205, 5.928965, 1.271937, 17.982292, 8.84967...</code></pre>
+<p><code>= -c</code> 표시는 이 기호 뒤의 벡터를 제외한 모든 변수들을 선택하여 하위 데이터셋을 만들라는 명령입니다. 혹은 아래와 같이 포함하고 싶은 변수들을 벡터로 하나하나 다 적어도 됩니다.
+<code>stargazer()</code> 함수를 이용해서 요약통계치를 만들 때에는 굳이 국가명이 필요하진 않으니 제외하였습니다.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1"></a>stat.table &lt;-<span class="st"> </span><span class="kw">stargazer</span>(dyadcapnd, </span>
+<span id="cb113-2"><a href="#cb113-2"></a>                        <span class="dt">covariate.labels =</span> </span>
+<span id="cb113-3"><a href="#cb113-3"></a>                          <span class="kw">c</span>(<span class="st">&quot;Country code 1&quot;</span>, </span>
+<span id="cb113-4"><a href="#cb113-4"></a>                            <span class="st">&quot;Country code 2&quot;</span>, <span class="st">&quot;Year&quot;</span>, </span>
+<span id="cb113-5"><a href="#cb113-5"></a>                            <span class="st">&quot;CINC 1&quot;</span>, <span class="st">&quot;CINC 2&quot;</span>, </span>
+<span id="cb113-6"><a href="#cb113-6"></a>                            <span class="st">&quot;Capability ratio&quot;</span>), </span>
+<span id="cb113-7"><a href="#cb113-7"></a>                        <span class="dt">title =</span> <span class="st">&quot;Summary Statistics&quot;</span>,</span>
+<span id="cb113-8"><a href="#cb113-8"></a>                        <span class="dt">label =</span> <span class="st">&quot;stat.table&quot;</span>)</span>
+<span id="cb113-9"><a href="#cb113-9"></a><span class="kw">write</span>(<span class="dt">x =</span> stat.table, <span class="dt">file =</span> <span class="st">&quot;tables/table1.tex&quot;</span>)</span></code></pre></div>
+<p>.tex 파일에 대한 소개는 다른 탭의 포스팅을 통해 진행하도록 하겠습니다. 일단 여기서는 코드만 알아두고 써먹을 일 있으면 <code>copy &amp; paste</code> 해보시기 바랍니다.</p>
+</div>
+<div id="서로-다른-분석수준lower-higher-통합하기" class="section level2">
+<h2><span class="header-section-number">8.9</span> 서로 다른 분석수준(lower &amp; higher) 통합하기</h2>
+<p>일단 <code>COW</code>의 양자간 무역 데이터(Correlates of War trade bilateral data version 3.0)를 불러오겠습니다자. 이 변수는 csv 또는 dta 파일과는 달리 <a href="http://www.correlatesofwar.org/COW2%20Data/Trade/Trade.html">온라인</a>에 게재되어 있기 때문에 바로 객체로 불러와 열 수는 없습니다. 따라서 먼저 압축파일(zip)의 형식으로 다운받고 난 뒤에 그 압축파일에서 필요한 자료를 추출해내야 합니다.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a>link &lt;-<span class="st"> &quot;http://correlatesofwar.org/data-sets/bilateral-trade/cow_trade_3.0&quot;</span></span>
+<span id="cb114-2"><a href="#cb114-2"></a><span class="kw">download.file</span>(<span class="dt">url =</span> link,</span>
+<span id="cb114-3"><a href="#cb114-3"></a>              <span class="dt">destfile =</span> <span class="st">&quot;COWTrade3.0.zip&quot;</span>, <span class="dt">mode=</span><span class="st">&quot;wb&quot;</span>)</span>
+<span id="cb114-4"><a href="#cb114-4"></a><span class="kw">unzip</span>(<span class="st">&quot;COWTrade3.0.zip&quot;</span>, <span class="dt">exdir =</span> <span class="kw">getwd</span>())</span></code></pre></div>
+<p>압축을 푼 파일을 <strong>R</strong>의 객체로 불러들여 열고 분석할 것입니다. 데이터는 압축이 풀린 폴더의 하위에 있기 때문에 그 디렉토리를 정확하게 반영하여 코드를 짜야 합니다.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1"></a>btrade &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;COW_Trade_3.0/dyadic_trade_3.0.csv&quot;</span>)</span>
+<span id="cb115-2"><a href="#cb115-2"></a><span class="kw">names</span>(btrade)</span></code></pre></div>
+<pre><code>##  [1] &quot;ccode1&quot;            &quot;ccode2&quot;            &quot;year&quot;             
+##  [4] &quot;importer1&quot;         &quot;importer2&quot;         &quot;flow1&quot;            
+##  [7] &quot;flow2&quot;             &quot;source1&quot;           &quot;source2&quot;          
+## [10] &quot;bel_lux_alt_flow1&quot; &quot;bel_lux_alt_flow2&quot; &quot;china_alt_flow1&quot;  
+## [13] &quot;china_alt_flow2&quot;   &quot;version&quot;</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1"></a><span class="kw">glimpse</span>(btrade)</span></code></pre></div>
+<pre><code>## Rows: 791,490
+## Columns: 14
+## $ ccode1            &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2...
+## $ ccode2            &lt;int&gt; 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 2...
+## $ year              &lt;int&gt; 1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1...
+## $ importer1         &lt;chr&gt; &quot;United States of America&quot;, &quot;United States of Ame...
+## $ importer2         &lt;chr&gt; &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada&quot;,...
+## $ flow1             &lt;dbl&gt; 611.86, 335.44, 364.02, 416.00, 399.14, 473.72, 9...
+## $ flow2             &lt;dbl&gt; 735.48, 442.99, 502.84, 598.14, 496.32, 608.35, 6...
+## $ source1           &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -9, 1, 1, 1, 1, 1, ...
+## $ source2           &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ bel_lux_alt_flow1 &lt;dbl&gt; -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -...
+## $ bel_lux_alt_flow2 &lt;dbl&gt; -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -...
+## $ china_alt_flow1   &lt;dbl&gt; -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -...
+## $ china_alt_flow2   &lt;dbl&gt; -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -...
+## $ version           &lt;dbl&gt; 2.01, 2.01, 2.01, 2.01, 2.01, 2.01, 2.01, 2.01, 2...</code></pre>
+<p>이렇게 불러들여온 양자간 무역 자료의 분석수준은 무엇일까요? 그리고 각 변수들은 무엇을 의미할까요? 이러한 내용은 <strong>R</strong>로 불러들여온 자료만으로는 알 수 없습니다. 따라서 항상 데이터셋을 다운받을 때는 코드북을 같이 다운 받아서 숙지하는 습관을 들일 필요가 있습니다. 일단 당장의 분석에 필요없는 변수들을 날려버리겠습니다.</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1"></a>btrade<span class="op">$</span>source2 &lt;-<span class="st"> </span></span>
+<span id="cb119-2"><a href="#cb119-2"></a><span class="st">  </span>btrade<span class="op">$</span>bel_lux_alt_flow1 &lt;-<span class="st"> </span></span>
+<span id="cb119-3"><a href="#cb119-3"></a><span class="st">  </span>btrade<span class="op">$</span>bel_lux_alt_flow2 &lt;-<span class="st"> </span></span>
+<span id="cb119-4"><a href="#cb119-4"></a><span class="st">  </span>btrade<span class="op">$</span>china_alt_flow1 &lt;-<span class="st"> </span></span>
+<span id="cb119-5"><a href="#cb119-5"></a><span class="st">  </span>btrade<span class="op">$</span>china_alt_flow2 &lt;-<span class="st"> </span></span>
+<span id="cb119-6"><a href="#cb119-6"></a><span class="st">  </span>btrade<span class="op">$</span>version &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb119-7"><a href="#cb119-7"></a><span class="kw">glimpse</span>(btrade)</span></code></pre></div>
+<pre><code>## Rows: 791,490
+## Columns: 8
+## $ ccode1    &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, ...
+## $ ccode2    &lt;int&gt; 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 2...
+## $ year      &lt;int&gt; 1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 192...
+## $ importer1 &lt;chr&gt; &quot;United States of America&quot;, &quot;United States of America&quot;, &quot;...
+## $ importer2 &lt;chr&gt; &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Canada...
+## $ flow1     &lt;dbl&gt; 611.86, 335.44, 364.02, 416.00, 399.14, 473.72, 974.98, 4...
+## $ flow2     &lt;dbl&gt; 735.48, 442.99, 502.84, 598.14, 496.32, 608.35, 609.72, 7...
+## $ source1   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -9, 1, 1, 1, 1, 1, 1, 1, 1,...</code></pre>
+<p>중요한 것은 이 데이터셋에서 결측치는 <code>NA</code>가 아니라 <code>-9</code>로 코딩되어 있다는 사실입니다. 만약 이 <code>-9</code>들을 가만히 놔뒀다가는 요약통계와 추론통계를 부정확하게 만들 것이기 때문에 <code>flow1</code>과 <code>flow2</code>의 결측치들을 <code>NA</code>로 바꾸어 주어야 합니다. 사실 csv 파일을 불러들여올 때 했을 수도 있지만 여기서는 불러들인 상황에서 뒤늦게 <code>-9</code>를 발견하고 바꾸는 대처 방법을 배워봅시다.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a>btrade<span class="op">$</span>flow1[btrade<span class="op">$</span>flow1 <span class="op">==</span><span class="st"> </span><span class="dv">-9</span>] &lt;-<span class="st"> </span><span class="ot">NA</span> <span class="co"># 대괄호는 조건(condition)을 의미합니다.</span></span>
+<span id="cb121-2"><a href="#cb121-2"></a>btrade<span class="op">$</span>flow2[btrade<span class="op">$</span>flow2 <span class="op">==</span><span class="st"> </span><span class="dv">-9</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb121-3"><a href="#cb121-3"></a><span class="kw">summary</span>(btrade<span class="op">$</span>flow1) <span class="co"># -9이 사라졌습니다.</span></span></code></pre></div>
+<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA&#39;s 
+##      0.0      0.0      0.1    158.4      6.0 363989.6   224291</code></pre>
+<p>개별 국가들의 연간 총무역량을 계산해보겠습니다. 먼저 국가쌍의 수입(imports)과 수출(exports)을 더합니다. 이때 만약 <code>flow1</code>나 <code>flow2</code> 둘 중 하나가 결측치일 경우 총무역량 또한 결측치로 나타날 것입니다. 따라서 단순 더하기 코드로는 결과가 왜곡될 수 있습니다.</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1"></a>btrade<span class="op">$</span>tottrade1 &lt;-<span class="st"> </span>btrade<span class="op">$</span>flow1 <span class="op">+</span><span class="st"> </span>btrade<span class="op">$</span>flow2 <span class="co"># 잘못된 결과를 얻게 됩니다.</span></span>
+<span id="cb123-2"><a href="#cb123-2"></a><span class="kw">summary</span>(btrade<span class="op">$</span>tottrade1)</span></code></pre></div>
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max.      NA&#39;s 
+##       0.0       0.0       1.0     315.1      18.9 1198528.8    250983</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1"></a>btrade<span class="op">$</span>tottrade2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">is.na</span>(btrade<span class="op">$</span>flow1), btrade<span class="op">$</span>flow2,</span>
+<span id="cb125-2"><a href="#cb125-2"></a>                          <span class="kw">ifelse</span>(<span class="kw">is.na</span>(btrade<span class="op">$</span>flow2), btrade<span class="op">$</span>flow1,</span>
+<span id="cb125-3"><a href="#cb125-3"></a>                                 btrade<span class="op">$</span>flow1 <span class="op">+</span><span class="st"> </span>btrade<span class="op">$</span>flow2))</span>
+<span id="cb125-4"><a href="#cb125-4"></a><span class="kw">summary</span>(btrade<span class="op">$</span>tottrade2)</span></code></pre></div>
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max.      NA&#39;s 
+##       0.0       0.0       0.6     289.0      14.6 1198528.8    202128</code></pre>
+<p>첫 번째 코드는 <code>flow1</code>과 <code>flow2</code> (수입과 수출)을 더하여 <code>총무역량1</code>이라는 변수를 만들라는 것입니다. 이때, 둘 중 하나에 결측치가 있으면 그 합 역시 결측치가 됩니다.</p>
+<p>이 문제를 피하기 위한 두 번째 코드는 만약 <code>flow1</code>이 결측치라면 <code>총무역량2</code>라는 변수에 <code>flow2</code>의 값을 부여하라는 얘기이고 만약 <code>flow1</code>이 결측치가 아니며, 동시에 <code>flow2</code>는 결측치라면 그 자리에 <code>flow1</code> 값을 부여하라는 얘기입니다. 만약 둘 다 결측치가 아닐 경우에는 마지막의 조건, <code>flow1</code>과 <code>flow2</code>를 결합한 값을 넣으라는 얘기입니다.</p>
+<p>이와 같은 결과는 <code>plyr</code> 패키지를 이용해서도 얻을 수 있습니다. <code>plyr</code>패키지의 <code>summarise()</code> 함수를 이용하여 새로운 데이터프레임을 만들 수 있습니다. 물론 기존 데이터프레임으로 지정하면 새롭게 통합(aggregate)된 자료로 대체됩니다.</p>
+<p>이렇게 얻은 <code>styrtrade1</code>이라는 변수는 <code>ccode1</code>과 <code>year</code> 단위로 결측치를 제외하고(<code>na.rm = TRUE</code>) 총무역값을 전부 더한 결과입니다. 그리고 그 양자간 무역 총액 변수를 머지하여 <code>btrade</code> 데이터에 붙여줍니다. 이제 <code>국가1</code>의 <code>특정연도</code> 하에서의 양자간 무역과 그 해의 총액을 확인할 수 있습니다.</p>
+<p>아래의 코드로 만든 <code>share1</code>은 <code>국가1(state1)</code>의 총무역량에서 양자간 무역이 차지하는 비율을 보여줍니다.</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1"></a><span class="kw">library</span>(plyr)</span>
+<span id="cb127-2"><a href="#cb127-2"></a>btrade &lt;-<span class="st"> </span><span class="kw">ddply</span>(btrade, .(ccode1, year), </span>
+<span id="cb127-3"><a href="#cb127-3"></a>                transform, <span class="dt">styrtrade1 =</span> <span class="kw">sum</span>(tottrade2, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb127-4"><a href="#cb127-4"></a>btrade<span class="op">$</span>share1 &lt;-<span class="st"> </span>btrade<span class="op">$</span>tottrade2 <span class="op">/</span><span class="st"> </span>btrade<span class="op">$</span>styrtrade1 </span></code></pre></div>
+<p>오늘의 포스팅에서는 꽤나 여러 가지 자료들을 다루어 보았는데, 좀 복잡할 수도 있습니다. 사실 저도 IR 쪽 자료는 잘 사용하지 않고 교차사례 시계열로만 쓰는데 IR은 그걸 국가쌍의 자료로(dyadic) 재구성해서 국가들 간의 관계를 살펴보는 연구들도 합니다. 여하튼 이번 포스팅에서는 <code>plyr</code>패키지의 사용을 확인하고 숙지하는 것만 건져도 승리하는 것이라고 할 수 있겠습니다.</p>
+<!--chapter:end:Intro2Data_sep.Rmd-->
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>자세한 내용은 Kachitvichyanukul, V. and Schmeiser, B. W. (1988) “Binomial random variate generation.” <em>Communications of the ACM</em>, 31, 216–222.를 참조. <code>?rbinom</code>이라고 R-console에 입력하면 우측 하단의 창에서 함수들에 대한 자세한 설명을 볼 수 있습니다.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>나중에 가면 알아볼 <code>dplyr</code> 패키지에는 그룹별 관측치의 개수를 셀 수 있는 <code>count()</code> 함수가 존재합니다.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>단, 결측치를 의미하는 -9를 모두 NA로 바꿔서 불러 들여올 것입니다.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>정말 짜증나는군요. 이런 데이터는 써주지 말아야 합니다. <code>COW</code> 불매운동…<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
